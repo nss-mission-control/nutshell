@@ -1,0 +1,10 @@
+{
+   "version": "0.1.0",
+   "configurations": [{
+       "name": "Launch localhost",
+       "type": "chrome",
+       "request": "launch",
+       "url": "http://localhost:8080/",
+       "webRoot": "${workspaceRoot}"
+   }]
+}
