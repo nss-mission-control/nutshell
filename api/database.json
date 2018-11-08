@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+    "userId": 1,
+    "full name": "Kelly Morin",
+    "username": "kmorin06",
+    "password": "1234NSS",
+    "email": "kmorin06@gmail.com"
+    },
+    {
+      "userId": 2,
+      "fullName": "Brad Davis",
+      "username": "braddavistech",
+      "password": "12345NSS",
+      "email": "braddavistech@gmail.com"
+    }
+  ],
+  "messages":[
+    {
+      "messageId": 1,
+      "messageContent": "Hi",
+      "timeStamp": "07:30:29",
+      "userId": 1
+    }
+  ],
+  "articles":[
+    {
+      "articleId": 1,
+      "articleName": "Puppies and Kittens",
+      "url": "http://google.com",
+      "dateSaved": "11/08/2018",
+      "userId": 2
+    }
+  ],
+  "events": [
+    {
+      "eventId": 1,
+      "name": "Class" ,
+      "date": "11/09/2018" ,
+      "location": "Nashville Software School" ,
+      "time": "9:00",
+      "userId": 1
+    }
+  ],
+  "task": [
+    {
+      "taskId":1,
+      "task": "make ERD",
+      "complete": true,
+      "dueDate": "11/08/2018",
+      "userId": 2
+    }
+  ],
+  "friends": [
+    {
+      "friendId": 1,
+      "request_userId": 2,
+      "recieved_userId": 1
+    }
+  ]
+}
