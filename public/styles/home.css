@@ -1,0 +1,9 @@
+.container--sub {
+  flex-basis: 45%;
+  height: 200px;
+  background-color: lightseagreen;
+}
+
+.container--sub:nth-child(3) {
+  flex-basis: 95%;
+}

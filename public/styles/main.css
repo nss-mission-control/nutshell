@@ -1,0 +1,35 @@
+@import "nav.css";
+@import "home.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100vh;
+  background-color: rgb(145, 177, 177);
+}
+
+.container--master--parent {
+  max-width: 960px;
+  height: calc(100vh - 60px); /* viewport height minus nav height */
+  margin: 0 auto;
+  background-color: #ccc;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  /* Control master container position */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container--master {
+  flex-basis: 95%;
+  height: 95%;
+  background-color: #eee;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
