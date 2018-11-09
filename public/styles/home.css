@@ -1,7 +1,18 @@
+:root {
+  --theme-main-primary: #42a5f4;
+  --theme-main-light: #80d6ff;
+  --theme-main-dark: #0077c1;
+  --theme-text-light: white;
+  --theme-sub-primary: #f5f5f5;
+  --theme-sub-light: white;
+  --theme-sub-dark: #c2c2c2;
+}
+
 .container--sub {
   flex-basis: 45%;
-  height: 200px;
-  background-color: lightseagreen;
+  width: 45%;
+  height: 175px;
+  background-color: var(--theme-main-light);
 }
 
 .container--sub:nth-child(3) {

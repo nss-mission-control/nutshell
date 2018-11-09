@@ -1,6 +1,16 @@
 @import "nav.css";
 @import "home.css";
 
+:root {
+  --theme-main-primary: #42a5f4;
+  --theme-main-light: #80d6ff;
+  --theme-main-dark: #0077c1;
+  --theme-text-light: white;
+  --theme-sub-primary: #f5f5f5;
+  --theme-sub-light: white;
+  --theme-sub-dark: #c2c2c2;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +19,14 @@
 
 html, body {
   min-height: 100vh;
-  background-color: rgb(145, 177, 177);
+  background-color: var(--theme-sub-dark);
 }
 
-.container--master--parent {
+.container--outer {
   max-width: 960px;
   height: calc(100vh - 60px); /* viewport height minus nav height */
   margin: 0 auto;
-  background-color: #ccc;
+  background-color: var(--theme-sub-dark);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   /* Control master container position */
   display: flex;
@@ -24,7 +34,7 @@ html, body {
   align-items: center;
 }
 
-.container--master {
+.container--inner {
   flex-basis: 95%;
   height: 95%;
   background-color: #eee;
