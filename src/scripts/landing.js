@@ -1,5 +1,6 @@
 import comp from "./components"
 import logInFuncs from "./login"
+import registerFuncs from "./register"
 
 const landingPageFuncs = {
   loadLandingPage() {
@@ -16,7 +17,7 @@ const landingPageFuncs = {
         if (e.target.textContent === "Login") {
           logInFuncs.loadLogIn()
         } else {
-          console.log("register");
+          registerFuncs.loadRegister()
         }
       })
     })

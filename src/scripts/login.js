@@ -1,4 +1,5 @@
 import comp from "./components"
+import registerFuncs from "./register"
 
 const logInFuncs = {
   loadLogIn(){
@@ -10,7 +11,8 @@ const logInFuncs = {
       new comp.input({name: "password", placeholder: "Password"}),
       new comp.btn("Login Now"),
       new comp.btn("Not a user? Create new account.")
-    ).render(".container--inner")
+      ).render(".container--inner")
+
 
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", (e) => {
@@ -18,8 +20,7 @@ const logInFuncs = {
           e.preventDefault()
           console.log("login now");
         } else {
-          e.preventDefault()
-          console.log("register user");
+          registerFuncs.loadRegister()
         }
       })
     })

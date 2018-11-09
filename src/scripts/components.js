@@ -11,7 +11,7 @@ export default Object.create(null, {
   btn: {
     value: class btn extends DOMComponent {
       constructor( ...children) {
-        super("button", {className: "btn"}, ...children)
+        super("button", {className: "btn", type: "button"}, ...children)
       }
     }
   },
