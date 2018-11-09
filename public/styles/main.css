@@ -52,3 +52,12 @@ html, body {
   /* material design */
   background-color: var(--theme-sub-primary);
 }
+
+/* overlay */
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--theme-sub-dark);
+  opacity: 0.8;
+}
