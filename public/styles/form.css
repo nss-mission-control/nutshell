@@ -22,18 +22,27 @@ form {
   /* material design */
   background-color: var(--theme-sub-primary);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border: 5px solid var(--theme-sub-dark);
 }
 
-.lbl {
+form > .lbl {
   /* layout */
   flex-basis: 100%;
   padding-left: 10%;
   margin-bottom: 5px;
 }
 
-.inpt {
+form > .inpt {
   /* layout */
   flex-basis: 80%;
+  height: 7.5%;
+  margin-bottom: 20px;
+}
+
+/* non-form inputs */
+.inpt {
+  /* layout */
+  width: 80%;
   height: 7.5%;
   margin-bottom: 20px;
 }

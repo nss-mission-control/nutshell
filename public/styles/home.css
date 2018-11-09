@@ -15,6 +15,7 @@
   height: 175px;
   /* material design */
   background-color: var(--theme-main-light);
+  text-align: center;
 }
 
 .container--sub:nth-child(3) {
