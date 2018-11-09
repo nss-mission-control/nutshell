@@ -20,6 +20,26 @@ const API = {
       body: JSON.stringify(item)
     }
     )
+  },
+
+  deleteItem(category, id){
+    return fetch(`${URL}${category}?id=${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+    )
+  },
+
+  updateItem(category, id){
+    return fetch(`${URL}${category}?id=${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+    )
   }
 };
 
