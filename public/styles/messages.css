@@ -1,0 +1,61 @@
+:root {
+  --theme-main-primary: #42a5f4;
+  --theme-main-light: #80d6ff;
+  --theme-main-dark: #0077c1;
+  --theme-text-light: white;
+  --theme-sub-primary: #f5f5f5;
+  --theme-sub-light: white;
+  --theme-sub-dark: #c2c2c2;
+}
+
+.message {
+  /* layout */
+  flex-basis: 75%;
+  /* material design */
+  background-color: var(--theme-sub-light);
+  border: 1px solid var(--theme-main-dark);
+  border-radius: 5px;
+}
+
+.message:last-of-type {
+  margin-bottom: 100px; /* matches height of .new--message */
+}
+
+/* message username and timestamp */
+.message > h2 {
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* message content */
+.message > h1 {
+  font-size: 16px;
+  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-weight: normal;
+}
+
+/* container to create new message */
+.new--message {
+  /* layout */
+  width: 75%;
+  height: 100px; /* pay attention to last message */
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 37.5%); /* 50% - half of flex-basis */
+}
+
+.new--message > h1 {
+  height: 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.new--message > input {
+  /* layout */
+  height: 60px;
+  width: 75%;
+  margin: 0 auto;
+  /* design */
+  font-family: Georgia, Times, 'Times New Roman', serif;
+}
