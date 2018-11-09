@@ -2,7 +2,8 @@
   "users": [
     {
       "id": 1,
-      "fullName": "Kelly Morin",
+      "firstName": "Kelly",
+      "lastName": "Morin",
       "username": "kmorin06",
       "password": "1234NSS",
       "email": "kmorin06@gmail.com",
@@ -10,7 +11,8 @@
     },
     {
       "id": 2,
-      "fullName": "Jase Hackman",
+      "firstName": "Jase",
+      "lastName": "Hackman",
       "username": "JaseTheGreat",
       "password": "MusicMan",
       "email": "jaseH@gmail.com",
@@ -18,7 +20,8 @@
     },
     {
       "id": 3,
-      "fullName": "Brendan McCray",
+      "firstName": "Brendan",
+      "lastName": " McCray",
       "username": "BilliantBrendan",
       "password": "CodeWhiz",
       "email": "brendanMc@gmail.com",
@@ -26,7 +29,8 @@
     },
     {
       "id": 4,
-      "fullName": "Brad Davis",
+      "firstName": "Brad",
+      "lastName": "Davis",
       "username": "braddavistech",
       "password": "12345NSS",
       "email": "braddavistech@gmail.com",
