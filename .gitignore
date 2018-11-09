@@ -1,4 +1,5 @@
 src/lib/node_modules
+api/
    .DS_Store
    dist/
    public/*.js
