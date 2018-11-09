@@ -9,6 +9,17 @@ const API = {
   getOneFromCategory(category, id) {
     return fetch(`${URL}${category}?id=${id}`)
       .then(inputs => inputs.json())
+  },
+
+  saveItem(category, item){
+    return fetch(`${URL}${category}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(item)
+    }
+    )
   }
 };
 
