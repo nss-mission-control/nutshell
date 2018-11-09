@@ -2,6 +2,8 @@
 @import "home.css";
 @import "form.css";
 @import "interactive.css";
+@import "messages.css";
+
 
 :root {
   --theme-main-primary: #42a5f4;
@@ -51,6 +53,7 @@ html, body {
   align-items: center;
   /* material design */
   background-color: var(--theme-sub-primary);
+  overflow-y: auto;
 }
 
 /* overlay */
