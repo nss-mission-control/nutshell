@@ -10,13 +10,13 @@ export default Object.create(null, {
   },
   btn: {
     value: class btn extends DOMComponent {
-      constructor(attributes, ...children) {
-        super("button", attributes, ...children)
+      constructor( ...children) {
+        super("button", {className: "btn", type: "button"}, ...children)
       }
     }
   },
-  inpt: {
-    value: class inpt extends DOMComponent {
+  input: {
+    value: class input extends DOMComponent {
       constructor(attributes, ...children) {
         super("input", attributes, ...children)
       }
@@ -68,6 +68,20 @@ export default Object.create(null, {
     value: class li extends DOMComponent {
       constructor(attributes, ...children) {
         super("li", attributes, ...children)
+      }
+    }
+  },
+  form: {
+    value: class form extends DOMComponent {
+      constructor(...children) {
+        super("form",{}, ...children)
+      }
+    }
+  },
+  label: {
+    value: class label extends DOMComponent {
+      constructor(attributes, ...children) {
+        super("label", attributes, ...children)
       }
     }
   }
