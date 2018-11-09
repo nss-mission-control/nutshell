@@ -16,14 +16,14 @@ const buildMessages = {
     .then(messageObj => messageObj.forEach(message => {
       console.log(message);
       this.printMessages(message)}))
-      .then(() => this.newMessage())
+      .then(() => this.newMessage()) //check promise return on this line
 
   },
 
   newMessage () {
-    const newMessage = new comp.section ({className: "new--message"},
+    const newMessageField = new comp.section ({className: "new--message"},
     new comp.title ("h1", {}, "New Message"),
-    new comp.input ({placeholder: "type your message here", type: "textarea"}),
+    new comp.textarea ({placeholder: "type your message here", wrap: "hard"}),
     new comp.btn ("Submit")).render(".container--inner")
   }
 

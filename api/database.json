@@ -122,7 +122,7 @@
     {
       "id":1,
       "task": "Make ERD",
-      "complete": true,
+      "complete": false,
       "dueDate": "11/08/2018",
       "userId": 2
     },
