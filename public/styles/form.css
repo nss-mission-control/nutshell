@@ -25,14 +25,14 @@ form {
   border: 5px solid var(--theme-sub-dark);
 }
 
-form > .lbl {
+form > label {
   /* layout */
   flex-basis: 100%;
   padding-left: 10%;
   margin-bottom: 5px;
 }
 
-form > .inpt {
+form > input {
   /* layout */
   flex-basis: 80%;
   height: 7.5%;
@@ -40,7 +40,7 @@ form > .inpt {
 }
 
 /* non-form inputs */
-.inpt {
+input {
   /* layout */
   width: 80%;
   height: 7.5%;
