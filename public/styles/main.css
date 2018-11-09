@@ -1,5 +1,7 @@
 @import "nav.css";
 @import "home.css";
+@import "form.css";
+@import "interactive.css";
 
 :root {
   --theme-main-primary: #42a5f4;
@@ -23,23 +25,30 @@ html, body {
 }
 
 .container--outer {
+  /* layout */
   max-width: 960px;
   height: calc(100vh - 60px); /* viewport height minus nav height */
   margin: 0 auto;
-  background-color: var(--theme-sub-dark);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  /* Control master container position */
+  /* position children */
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  /* material design */
+  background-color: var(--theme-sub-dark);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  
 }
 
 .container--inner {
+  /* layout */
   flex-basis: 95%;
   height: 95%;
-  background-color: #eee;
+  /* position children */
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+  /* material design */
+  background-color: var(--theme-sub-primary);
 }

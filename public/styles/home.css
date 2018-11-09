@@ -9,12 +9,15 @@
 }
 
 .container--sub {
+  /* layout */
   flex-basis: 45%;
   width: 45%;
   height: 175px;
+  /* material design */
   background-color: var(--theme-main-light);
 }
 
 .container--sub:nth-child(3) {
+  /* layout */
   flex-basis: 95%;
 }

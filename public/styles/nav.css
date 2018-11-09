@@ -9,28 +9,35 @@
 }
 
 nav {
+  /* layout */
   height: 60px;
   max-width: 960px;
   margin: 0 auto;
+  /* position children */
   display: flex;
   justify-content: center;
   align-items: center;
+  /* material design */
   background-color: var(--theme-main-dark);
   font-family: Arial, Helvetica, sans-serif;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 nav > ul {
+  /* layout */
   width: 100%;
+  /* position children */
   display: flex;
   justify-content: space-evenly;
 }
 
 nav > ul > li {
+  /* layout */
   display: inline-block;
+  padding: 1px;
+  /* material design */
   color: var(--theme-text-light);
   cursor: pointer;
-  padding: 1px;
 }
 
 nav > ul > li:hover {

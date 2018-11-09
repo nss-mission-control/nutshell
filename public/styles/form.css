@@ -1,0 +1,39 @@
+:root {
+  --theme-main-primary: #42a5f4;
+  --theme-main-light: #80d6ff;
+  --theme-main-dark: #0077c1;
+  --theme-text-light: white;
+  --theme-sub-primary: #f5f5f5;
+  --theme-sub-light: white;
+  --theme-sub-dark: #c2c2c2;
+}
+
+form {
+  /* layout */
+  position: absolute;
+  z-index: 1;
+  width: 40%;
+  height: 50%;
+  /* position children */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: center;
+  /* material design */
+  background-color: var(--theme-sub-primary);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.lbl {
+  /* layout */
+  flex-basis: 100%;
+  padding-left: 10%;
+  margin-bottom: 5px;
+}
+
+.inpt {
+  /* layout */
+  flex-basis: 80%;
+  height: 7.5%;
+  margin-bottom: 20px;
+}
