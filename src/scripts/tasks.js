@@ -39,8 +39,21 @@ const buildTasks = {
   newTask () {
     const newTaskField = new comp.section ({className: "new--task"},
     new comp.btn ("+"),
-    new comp.input({type: "text", placeholder: "type new task here"}),
-    new comp.input({type: "date"})).render("#incomplete")
+    new comp.input({id: "input--task", type: "text", placeholder: "type new task here"}),
+    new comp.input({id: "input--date", type: "date"})).render("#incomplete")
+
+    const button = document.querySelector("button")
+    const input_task = document.querySelector("#input--task")
+    const input_date = document.querySelector("#input--date")
+
+    button.addEventListener("click", (e) => {
+      if (input_task.value === "" || input_date.value === "") {
+        console.log("content missing", input_task.value, input_date.value, "x")
+      } else {
+        console.log("content exists", input_task.value, input_date.value)
+      }
+    })
+
   }
 
 };

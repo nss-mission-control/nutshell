@@ -29,7 +29,8 @@
 .task {
   width: 100%;
   padding: 15px;
-  border: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 /* task description */
@@ -43,5 +44,19 @@
 .task > p:last-of-type {
   display: inline-block;
   width: 15%;
+  margin-left: 15px;
+}
+
+.new--task {
+  padding: 10px;
+}
+
+.new--task > input:first-of-type {
+  width: 60%;
+  margin-left: 5px;
+}
+
+.new--task > input:last-of-type {
+  width: 30%;
   margin-left: 15px;
 }
