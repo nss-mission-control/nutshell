@@ -37,7 +37,7 @@ html, body {
   /* material design */
   background-color: var(--theme-sub-dark);
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  
+
 }
 
 .container--inner {
@@ -60,4 +60,15 @@ html, body {
   height: 100%;
   background-color: var(--theme-sub-dark);
   opacity: 0.8;
+}
+
+/* landing page login register */
+.welcome {
+  background-color: var(--theme-sub-dark);
+  flex-basis: 25%;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
