@@ -18,12 +18,21 @@
   flex-basis: 75%;
   height: 250px;
   border: 1px solid black;
+  overflow-y: auto;
+  /* padding to keep new task from hiding first section */
+  padding-top: 75px;
+  position: relative;
 }
 
 #complete {
   flex-basis: 75%;
   height: 250px;
   border: 1px solid black;
+  overflow-y: auto;
+}
+
+#complete > .task > p {
+  text-decoration: line-through;
 }
 
 .task {
@@ -48,7 +57,12 @@
 }
 
 .new--task {
+  height: 75px; /* fixed height for abs positioning */
   padding: 10px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 .new--task > input:first-of-type {

@@ -37,7 +37,7 @@
       "profilePic": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/35884762_10211693141659337_7630947963367325696_n.jpg?_nc_cat=103&_nc_ht=scontent-atl3-1.xx&oh=ffc0c07db4711096066f9a4612ebff3c&oe=5C7CD0B2"
     }
   ],
-  "messages":[
+  "messages": [
     {
       "id": 1,
       "messageContent": "Hi, first message.",
@@ -74,64 +74,92 @@
       "userId": 4
     }
   ],
-  "articles":[
+  "articles": [
     {
-      "id": 1,
       "articleName": "SEN. MARK WARNER ON BREAKING UP FACEBOOK AND CONGRESS’ PLAN TO REGULATE TECH",
       "url": "https://www.theverge.com/2018/11/5/18056610/facebook-mark-warner-congress-cambridge-analytica",
       "articleImage": "https://cdn.vox-cdn.com/thumbor/QjyUSJT76lCgiIXDy_hDdLunnkg=/0x0:2040x1360/2070x1164/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/62169879/eschaff_181023_3061_0001.0.jpg",
-      "dateSaved": "11/06/2018",
-      "userId": 1
+      "dateSaved": "2018-09-09T21:18:52.339Z",
+      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
+      "userId": 1,
+      "id": 1
     },
     {
-      "id": 2,
       "articleName": "THE CLEVER TECH KEEPING AMERICA'S (MANY) DISABLED FARMERS ON THE JOB",
       "url": "https://www.wired.com/story/farmer-disabilities-tools-agrability-breaking-new-ground/",
       "articleImage": "https://media.wired.com/photos/5be36d45ea738f3bb11c870a/master/w_825,c_limit/Farming-Mobility-1006208112.jpg",
-      "dateSaved": "11/08/2018",
-      "userId": 2
+      "dateSaved": "2018-11-01T21:18:52.339Z",
+      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
+      "userId": 2,
+      "id": 2
     },
     {
-      "id": 3,
       "articleName": "In East Palo Alto, the influx of tech companies pushes residents to a breaking point over gentrification",
       "url": "https://www.mercurynews.com/2018/11/05/in-east-palo-alto-the-influx-of-tech-companies-pushes-residents-to-a-breaking-point-over-gentrification/",
       "articleImage": "https://www.mercurynews.com/wp-content/uploads/2018/11/In_East_Palo_Alto_the_influx_of_tech_companies_pushes_residents_to_a_breaking_point_over_gentrification1.jpg?w=863",
-      "dateSaved": "11/09/2018",
-      "userId": 4
+      "dateSaved": "2018-10-09T21:18:52.339Z",
+      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
+      "userId": 4,
+      "id": 3
+    },
+    {
+      "articleName": "Tensions rising between Mueller, Manafort over level of cooperation: Sources",
+      "url": "https://abcnews.go.com/Politics/tensions-rising-mueller-manafort-level-cooperation-sources/story?id=59086047",
+      "articleImage": "https://s.abcnews.com/images/Politics/robert-mueller-ap-file-ps-180920_hpEmbed_4_22x15_992.jpg",
+      "dateSaved": "2018-11-09T21:07:05.773Z",
+      "about": "Something about politics",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "articleName": "McConnell: 'The Mueller investigation is not under threat', this is extra text to see if the article re-aligns",
+      "url": "https://abcnews.go.com/Politics/wireStory/mcconnell-mueller-investigation-threat-59089515",
+      "articleImage": "https://images.outbrainimg.com/transform/v3/eyJpdSI6IjJjNDU4MjZhODk5YzVhOGYyZTM1NmY5MWEyYWRiNzgyOTU4YWRmZDYyMjE1ZmU0ZWU4MjVkMjVkY2VjYTZjM2QiLCJ3IjoyNTAsImgiOjI0MCwiZCI6MS41LCJjcyI6MCwiZiI6MH0.webp",
+      "about": "Something else",
+      "userId": 2,
+      "dateSaved": "2018-11-09T21:18:52.339Z",
+      "id": 5
     }
   ],
   "events": [
     {
       "id": 1,
-      "name": "Class" ,
-      "date": "11/09/2018" ,
-      "location": "Nashville Software School" ,
+      "name": "Class",
+      "date": "11/09/2018",
+      "location": "Nashville Software School",
       "time": "09:00",
       "userId": 1
     },
     {
       "id": 2,
-      "name": "Tech Meet Up" ,
-      "date": "11/25/2018" ,
-      "location": "Emma" ,
+      "name": "Tech Meet Up",
+      "date": "11/25/2018",
+      "location": "Emma",
       "time": "15:00",
       "userId": 3
     }
   ],
   "tasks": [
     {
-      "id":1,
       "task": "Make ERD",
       "complete": false,
-      "dueDate": "11/08/2018",
-      "userId": 2
+      "dueDate": "2018-11-08",
+      "userId": 2,
+      "id": 1
     },
     {
-      "id":2,
       "task": "Finish MVP",
-      "complete": true,
-      "dueDate": "11/11/2018",
-      "userId": 4
+      "complete": false,
+      "dueDate": "2018-11-11",
+      "userId": 4,
+      "id": 2
+    },
+    {
+      "task": "Finish project",
+      "complete": false,
+      "dueDate": "2018-11-09",
+      "userId": 2,
+      "id": 3
     }
   ],
   "friends": [

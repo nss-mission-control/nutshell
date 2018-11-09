@@ -31,9 +31,38 @@ const buildTasks = {
 
   tasksFetch ()  {
     API.getAllCategory("tasks") //check if user is same as session storage
-    .then(tasksObj => tasksObj.forEach(task => {
-      console.log(task);
-      this.printTasks(task)}))
+    .then(tasksObj =>  {
+      tasksObj.forEach(task => {
+      this.printTasks(task)})
+      this.cb_listener()
+    })
+  },
+
+  cb_listener () {
+    const checkboxes = document.querySelectorAll("input[type=checkbox]")
+
+    // if the id of the grandparent container is #complete, then check the box
+    checkboxes.forEach( (checkbox) => {
+      if (checkbox.parentNode.parentNode.id === "complete") {
+        checkbox.checked = true
+      }
+      checkbox.addEventListener("change", (e) => {
+        let patchProperty;
+        //if false -> true
+        if (e.target.checked) {
+          patchProperty = {complete: true}
+          //patch "complete" property of database object using parentNode (section) ID to TRUE
+          API.updateItem("tasks", `${e.target.parentNode.id}`, patchProperty)
+            .then(() => this.buildContainers())
+        } else {
+          //if checkbox is unchecked...
+          patchProperty = {complete: false}
+          API.updateItem("tasks", `${e.target.parentNode.id}`, patchProperty)
+            .then(() => this.buildContainers())
+        }
+      })
+    })
+
   },
 
   newTask () {
@@ -51,11 +80,21 @@ const buildTasks = {
         console.log("content missing", input_task.value, input_date.value, "x")
       } else {
         console.log("content exists", input_task.value, input_date.value)
+        let taskItem = {
+          task: input_task.value,
+          complete: false,
+          dueDate: input_date.value,
+          /*
+          NEED TO UPDATE USER ID TO SAVE SESSION ASSIGNED ID
+          */
+          userId: 3,
+        }
+        API.saveItem("tasks", taskItem).then(data => this.printTasks(data))
+        input_task.value = ""
+        input_date.value = ""
       }
     })
-
   }
-
-};
+}
 
 export default buildTasks
