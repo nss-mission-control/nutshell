@@ -20,15 +20,19 @@ const buildMessages = {
   messageMap ()  {
     document.querySelector(".container--inner").innerHTML = ""
     API.getAllCategory("messages/?_expand=user")
-    .then(messageObj => messageObj.forEach(message => {
-      this.printMessages(message)}))
-      .then(() => this.newMessage())//check promise return on this line
-        .then(() => this.submitMessage())
+    .then(messageObj => {
 
+      messageObj.forEach(message => {
+      this.printMessages(message)})
+      this.newMessage();
+      this.submitMessage();
+      this.editButtonClick();
+
+    })
   },
 
   newMessage () {
-    const newMessageField = new comp.section ({className: "new--message", id: "newMessage"},
+    const newMessageField = new comp.div ({className: "new--message", id: "newMessage"},
     new comp.title ("h1", {}, "New Message"),
     new comp.textarea ({placeholder: "type your message here", wrap: "hard"}),
     new comp.btn ("Submit")).render(".container--inner")
@@ -52,12 +56,15 @@ const buildMessages = {
       }
       API.saveItem("messages", submitMessageObj)
         .then(() => buildMessages.messageMap())
-
-
     })
+  },
+
+  editButtonClick () {
+    console.log($("section > button").not("#newMessage"));
+    console.log("change")
   }
 
-};
+}
 
 
 export default buildMessages

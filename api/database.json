@@ -79,6 +79,62 @@
       "date": "11/10/2018",
       "userId": 3,
       "id": 6
+    },
+    {
+      "messageContent": "",
+      "timeStamp": "11:30:54",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "messageContent": "sdf",
+      "timeStamp": "11:32:07",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 8
+    },
+    {
+      "messageContent": "2345",
+      "timeStamp": "11:32:15",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 9
+    },
+    {
+      "messageContent": "zdc",
+      "timeStamp": "11:34:22",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 10
+    },
+    {
+      "messageContent": "Here is a test",
+      "timeStamp": "11:35:11",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 11
+    },
+    {
+      "messageContent": "Another test",
+      "timeStamp": "11:35:20",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 12
+    },
+    {
+      "messageContent": "",
+      "timeStamp": "11:35:24",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 13
+    },
+    {
+      "messageContent": "test",
+      "timeStamp": "12:38:31",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 14
     }
   ],
   "articles": [
