@@ -28,7 +28,7 @@ const registerFuncs = {
           if (document.querySelector("#firstName").value === "" || document.querySelector("#lastName").value === "" || document.querySelector("#email").value === "" || document.querySelector("#username").value === "" || document.querySelector("#password").value === "" || document.querySelector("#confirmPassword").value === "") {
             //This is the check to ensure all fields are complete.
             alert("All fields must be complete to create an account.")
-          } else if (document.querySelector("#email").value.indexOf("@")=== -1) {
+          } else if (document.querySelector("#email").value.indexOf("@") === -1) {
             //This is a check on the email field to make sure there is an @ present
             alert("Please enter a valid email address.")
           } else if (document.querySelector("#password").value === document.querySelector("#confirmPassword").value) {
@@ -43,7 +43,13 @@ const registerFuncs = {
               //This is a placeholder to a stock "no image available" image that we can use later for actual user images
               profilePic: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiF4fb4-cneAhUEc98KHTuRBWAQjRx6BAgBEAU&url=https%3A%2F%2Fwingslax.com%2Fteam%2Ffront-office%2Fattachment%2Fno-image-available%2F&psig=AOvVaw1iTVpvjLmigkzni5ssYj57&ust=1541943668925656"
             }
-            this.checkRegister(tempUser);
+            API.getAllCategory(`users/?email=${tempUser.email}`).then(thisData => {
+              if (thisData.length === 0) {
+                this.checkRegister(tempUser);
+              } else {
+                alert("This email is already registered.")
+              }
+            })
           } else { alert("Your passwords did not match. Please try again.") }
         } else {
           logInFuncs.loadLogIn()
