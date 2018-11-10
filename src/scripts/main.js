@@ -5,4 +5,5 @@ import buildNews from "./news"
 
 // landingPageFuncs.loadLandingPage();
 // buildMessages.messageMap();
-buildNews.newsMap()
+// buildNews.newsMap()
+
