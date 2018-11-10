@@ -27,15 +27,40 @@ const navBar = {
           buildMissionControl.printPlaceholder();
         }
       } else if (event.target.textContent == "Tasks") {
+        if (sessionStorage.getItem("currentUser") === null){
+          console.log("Not logged in.");
+          logInFuncs.loadLogIn();
+        } else {
         console.log("Task function called.")
+        }
       } else if (event.target.textContent == "Events") {
+        if (sessionStorage.getItem("currentUser") === null){
+          console.log("Not logged in.");
+          logInFuncs.loadLogIn();
+        } else {
         console.log("Events function called.")
+        }
       } else if (event.target.textContent == "Messages") {
+        if (sessionStorage.getItem("currentUser") === null){
+          console.log("Not logged in.");
+          logInFuncs.loadLogIn();
+        } else {
         buildMessages.messageMap();
+        }
       } else if (event.target.textContent == "News") {
+        if (sessionStorage.getItem("currentUser") === null){
+          console.log("Not logged in.");
+          logInFuncs.loadLogIn();
+        } else {
         buildNews.newsMap();
+        }
       } else if (event.target.textContent == "Friends") {
+        if (sessionStorage.getItem("currentUser") === null){
+          console.log("Not logged in.");
+          logInFuncs.loadLogIn();
+        } else {
         console.log("Friends function calles.")
+        }
       } else if (event.target.textContent == "Log Out") {
         console.log("Log Out function called.");
         sessionStorage.removeItem("currentUser");
