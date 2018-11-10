@@ -1,6 +1,24 @@
 import DOMComponent from "../lib/node_modules/nss-domcomponent"
 
 export default Object.create(null, {
+
+  user: {
+    value: class User {
+      constructor(tempInfo) {
+        this.id = tempInfo.id;
+        this.firstName = tempInfo.firstName;
+        this.lastName = tempInfo.lastName;
+        this.username = tempInfo.username;
+        this.password = tempInfo.password;
+        this.email = tempInfo.email;
+        this.profilePic = tempInfo.profilePic;
+    }
+      test() {
+        return `This is the test function in user class: ${this.firstName}`;
+      }
+    }
+  },
+
   div: {
     value: class div extends DOMComponent {
       constructor(attributes, ...children) {
@@ -10,8 +28,8 @@ export default Object.create(null, {
   },
   btn: {
     value: class btn extends DOMComponent {
-      constructor( ...children) {
-        super("button", {className: "btn", type: "button"}, ...children)
+      constructor(...children) {
+        super("button", { className: "btn", type: "button" }, ...children)
       }
     }
   },
@@ -46,7 +64,7 @@ export default Object.create(null, {
   checkbox: {
     value: class checkbox extends DOMComponent {
       constructor(...children) {
-        super("input", {type: "checkbox", className: "cb"}, ...children)
+        super("input", { type: "checkbox", className: "cb" }, ...children)
       }
     }
   },
@@ -74,7 +92,7 @@ export default Object.create(null, {
   form: {
     value: class form extends DOMComponent {
       constructor(...children) {
-        super("form",{}, ...children)
+        super("form", {}, ...children)
       }
     }
   },
