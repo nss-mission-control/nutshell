@@ -141,18 +141,32 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "task": "Make ERD",
-      "complete": true,
-      "dueDate": "11/08/2018",
-      "userId": 2
+      "task": "Make ERD2",
+      "complete": false,
+      "dueDate": "2018-11-11",
+      "userId": 2,
+      "id": 1
     },
     {
-      "id": 2,
       "task": "Finish MVP",
       "complete": true,
-      "dueDate": "11/11/2018",
-      "userId": 4
+      "dueDate": "2018-11-11",
+      "userId": 4,
+      "id": 2
+    },
+    {
+      "task": "Finish project",
+      "complete": false,
+      "dueDate": "2018-11-09",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "task": "New item test",
+      "complete": true,
+      "dueDate": "2018-11-09",
+      "userId": 3,
+      "id": 4
     }
   ],
   "friends": [

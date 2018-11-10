@@ -1,0 +1,76 @@
+:root {
+  --theme-main-primary: #42a5f4;
+  --theme-main-light: #80d6ff;
+  --theme-main-dark: #0077c1;
+  --theme-text-light: white;
+  --theme-sub-primary: #f5f5f5;
+  --theme-sub-light: white;
+  --theme-sub-dark: #c2c2c2;
+}
+
+.title--incomplete, .title--complete {
+  flex-basis: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#incomplete {
+  flex-basis: 75%;
+  height: 250px;
+  border: 1px solid black;
+  overflow-y: auto;
+  /* padding to keep new task from hiding first section */
+  padding-top: 75px;
+  position: relative;
+}
+
+#complete {
+  flex-basis: 75%;
+  height: 250px;
+  border: 1px solid black;
+  overflow-y: auto;
+}
+
+#complete > .task > p {
+  text-decoration: line-through;
+}
+
+.task {
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+/* task description */
+.task > p:first-of-type {
+  display: inline-block;
+  width: 75%;
+  margin-left: 5px;
+}
+
+/* task due date */
+.task > p:last-of-type {
+  display: inline-block;
+  width: 15%;
+  margin-left: 15px;
+}
+
+.new--task {
+  height: 75px; /* fixed height for abs positioning */
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.new--task > input:first-of-type {
+  width: 60%;
+  margin-left: 5px;
+}
+
+.new--task > input:last-of-type {
+  width: 30%;
+  margin-left: 15px;
+}
