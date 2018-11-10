@@ -19,7 +19,7 @@ const API = {
       },
       body: JSON.stringify(item)
     }
-    )
+    ).then(jsonData => jsonData.json())
   },
 
   deleteItem(category, id){
