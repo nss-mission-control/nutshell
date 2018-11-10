@@ -94,7 +94,6 @@ const buildTasks = {
             tempInput.addEventListener("keydown", (e) => {
               if (e.keyCode === 13) {
                 const patchTask = {task: tempInput.value}
-                console.log(patchTask)
                 API.updateItem("tasks", id, patchTask)
                   .then(() => this.buildContainers())
               }
@@ -110,7 +109,6 @@ const buildTasks = {
             const tempDateInput = document.querySelector("#temp2");
             tempDateInput.addEventListener("change", (e) => {
                 const patchDate = {dueDate: tempDateInput.value}
-                console.log(patchDate)
                 API.updateItem("tasks", id, patchDate)
                   .then(() => this.buildContainers())
             })
@@ -134,9 +132,8 @@ const buildTasks = {
     //button click posts new task to database and resets new task input strings
     button.addEventListener("click", (e) => {
       if (input_task.value === "" || input_date.value === "") {
-        console.log("content missing", input_task.value, input_date.value, "x")
+        return
       } else {
-        console.log("content exists", input_task.value, input_date.value)
         let taskItem = {
           task: input_task.value,
           complete: false,
