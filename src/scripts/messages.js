@@ -5,10 +5,16 @@ const currentUser = 3;
 
 const buildMessages = {
   printMessages (messageObj) {
-
-    const message = new comp.section ({className: "message", id: `${messageObj.id}`},
-    new comp.title( "h2", {}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
-    new comp.title("h1", {}, messageObj.messageContent)).render(".container--inner")
+    if(currentUser === messageObj.user.id){
+      const message = new comp.section ({className: "message", id: `${messageObj.id}`},
+      new comp.title( "h2", {}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+      new comp.title("h1", {}, messageObj.messageContent),
+      new comp.btn("Edit")).render(".container--inner")
+    } else {
+      const message = new comp.section ({className: "message", id: `${messageObj.id}`},
+      new comp.title( "h2", {}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+      new comp.title("h1", {}, messageObj.messageContent)).render(".container--inner")
+    }
   },
 
   messageMap ()  {
@@ -16,8 +22,8 @@ const buildMessages = {
     API.getAllCategory("messages/?_expand=user")
     .then(messageObj => messageObj.forEach(message => {
       this.printMessages(message)}))
-      .then(() => this.newMessage())
-        .then(() => this.submitMessage())//check promise return on this line
+      .then(() => this.newMessage())//check promise return on this line
+        .then(() => this.submitMessage())
 
   },
 
@@ -44,7 +50,6 @@ const buildMessages = {
         date: `${month}/${dateArray[2]}/${dateArray[3]}`,
         userId: currentUser
       }
-      console.log(submitMessageObj);
       API.saveItem("messages", submitMessageObj)
         .then(() => buildMessages.messageMap())
 

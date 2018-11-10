@@ -58,6 +58,27 @@
       "timeStamp": "08:30:29",
       "date": "11/08/2018",
       "userId": 2
+    },
+    {
+      "messageContent": "I\"ve got a new message",
+      "timeStamp": "11:11:00",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "messageContent": "Here is another test",
+      "timeStamp": "11:11:16",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "messageContent": "Will the new message include the button? ",
+      "timeStamp": "11:19:01",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 6
     }
   ],
   "articles": [
