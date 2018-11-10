@@ -12,10 +12,11 @@ const buildNews = {
   },
 
   newsMap ()  {
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
+    console.log(user);
     document.querySelector(".container--inner").innerHTML = ""
     API.getAllCategory("articles/?_expand=user&_sort=dateSaved&_order=desc")
     .then(newsObj => newsObj.forEach(news => {
-      console.log(news);
       this.printNews(news)}))
       .then(() => this.newNews())
 

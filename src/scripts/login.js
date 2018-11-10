@@ -1,6 +1,7 @@
 import comp from "./components"
 import registerFuncs from "./register"
 import API from "./apiData";
+import buildMissionControl from "./missionControl";
 
 const logInFuncs = {
   checkUser(username, password) {
@@ -18,10 +19,9 @@ const logInFuncs = {
       }).then(currentUser => {
         console.log(currentUser)
         if (currentUser !== undefined) {
-          //these console logs will be removed once we can add a function to move to mission control page
-          
+          console.log("Build Mission Login")
           sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
-          //this will be the function to send to the mission control page
+          buildMissionControl.printPlaceholder();
         }
 
       })

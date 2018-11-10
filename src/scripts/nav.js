@@ -2,6 +2,7 @@ import comp from "./components"
 import logInFuncs from "./login"
 import buildMessages from "./messages";
 import buildNews from "./news";
+import buildMissionControl from "./missionControl";
 
 
 const navBar = {
@@ -19,7 +20,12 @@ const navBar = {
 
     document.querySelector("#navBar").addEventListener("click", (event) => {
       if (event.target.textContent === "Home") {
-        logInFuncs.loadLogIn()
+        if (sessionStorage.getItem("currentUser") === null){
+          console.log("Not logged in.");
+          logInFuncs.loadLogIn();
+        } else {
+          buildMissionControl.printPlaceholder();
+        }
       } else if (event.target.textContent == "Tasks") {
         console.log("Task function called.")
       } else if (event.target.textContent == "Events") {
@@ -31,7 +37,9 @@ const navBar = {
       } else if (event.target.textContent == "Friends") {
         console.log("Friends function calles.")
       } else if (event.target.textContent == "Log Out") {
-        console.log("Log Out function called.")
+        console.log("Log Out function called.");
+        sessionStorage.removeItem("currentUser");
+        logInFuncs.loadLogIn()
       }
     })
   }

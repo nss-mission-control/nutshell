@@ -1,6 +1,7 @@
-import comp from "./components"
+import comp from "./components";
 import logInFuncs from "./login";
 import API from "./apiData";
+import buildMissionControl from "./missionControl";
 
 const registerFuncs = {
 
@@ -41,7 +42,7 @@ const registerFuncs = {
               username: document.querySelector("#username").value,
               password: document.querySelector("#password").value,
               //This is a placeholder to a stock "no image available" image that we can use later for actual user images
-              profilePic: "https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiF4fb4-cneAhUEc98KHTuRBWAQjRx6BAgBEAU&url=https%3A%2F%2Fwingslax.com%2Fteam%2Ffront-office%2Fattachment%2Fno-image-available%2F&psig=AOvVaw1iTVpvjLmigkzni5ssYj57&ust=1541943668925656"
+              profilePic: "https://hyha.xyz/wp-content/themes/fashion/images/no_image_available.jpg"
             }
             API.getAllCategory(`users/?email=${tempUser.email}`).then(thisData => {
               if (thisData.length === 0) {
@@ -63,7 +64,7 @@ const registerFuncs = {
       if (data.length === 0) {
         API.saveItem("users", user).then(newUser => {
           let currentUser = new comp.user(newUser);
-          sessionStorage.setItem("currentUser", currentUser)
+          console.log("Username checkRegister: ", currentUser)
           //TODO:the function below needs to be the call to load mission control page.
           // Right now it is just sending to a function to console.log user
           this.loadMission(currentUser);
@@ -76,7 +77,9 @@ const registerFuncs = {
 
   //TODO: this function can go away when the function to load mission page is replaced in checkRegister function above
   loadMission(user) {
-    console.log("Load Mission: ", user)
+    console.log(user)
+    sessionStorage.setItem("currentUser", JSON.stringify(user));
+    buildMissionControl.printPlaceholder();
   }
 
 }
