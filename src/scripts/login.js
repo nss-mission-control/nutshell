@@ -8,7 +8,10 @@ const logInFuncs = {
       alert("You must enter both your username and password to log in.")
     } else {
       API.getAllCategory(`users/?username=${username}`).then(data => {
-        if (password === data[0].password) {
+        if (data.length === 0) {
+          alert("There is no user with that username.");
+          return;
+        } else if (password === data[0].password) {
           let currentUser = new comp.user (data[0]);
           return currentUser;
         } else ( alert("You entered the wrong password. Try again."))
