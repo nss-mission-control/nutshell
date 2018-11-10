@@ -58,20 +58,6 @@
       "timeStamp": "08:30:29",
       "date": "11/08/2018",
       "userId": 2
-    },
-    {
-      "id": 4,
-      "messageContent": "Here's another one.",
-      "timeStamp": "10:30:29",
-      "date": "11/08/2018",
-      "userId": 1
-    },
-    {
-      "id": 5,
-      "messageContent": "Last test message.",
-      "timeStamp": "07:11:29",
-      "date": "11/09/2018",
-      "userId": 4
     }
   ],
   "articles": [
