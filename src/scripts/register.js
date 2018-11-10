@@ -28,6 +28,9 @@ const registerFuncs = {
           if (document.querySelector("#firstName").value === "" || document.querySelector("#lastName").value === "" || document.querySelector("#email").value === "" || document.querySelector("#username").value === "" || document.querySelector("#password").value === "" || document.querySelector("#confirmPassword").value === "") {
             //This is the check to ensure all fields are complete.
             alert("All fields must be complete to create an account.")
+          } else if (document.querySelector("#email").value.indexOf("@")=== -1) {
+            //This is a check on the email field to make sure there is an @ present
+            alert("Please enter a valid email address.")
           } else if (document.querySelector("#password").value === document.querySelector("#confirmPassword").value) {
             //This is the check to make sure passwords are the same.
             e.preventDefault()
@@ -59,7 +62,7 @@ const registerFuncs = {
           this.loadMission(currentUser);
         })
       } else if (data.length === 1) {
-        alert("That username is already being used. Please choose another.")
+        alert(`Username, ${data[0].username}, is already being used. Please choose another.`)
       }
     })
   },
