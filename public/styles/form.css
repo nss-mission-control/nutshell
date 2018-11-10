@@ -38,11 +38,3 @@ form > input {
   height: 7.5%;
   margin-bottom: 20px;
 }
-
-/* non-form inputs */
-input {
-  /* layout */
-  width: 80%;
-  height: 7.5%;
-  margin-bottom: 20px;
-}

@@ -1,8 +1,10 @@
 import comp from "./components"
 import landingPageFuncs from "./landing"
 import buildMessages from "./messages"
+import buildTasks from "./tasks"
 import buildNews from "./news"
 
 // landingPageFuncs.loadLandingPage();
 // buildMessages.messageMap();
-buildNews.newsMap()
+buildTasks.buildContainers();
+// buildNews.newsMap()

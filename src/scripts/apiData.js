@@ -19,7 +19,7 @@ const API = {
       },
       body: JSON.stringify(item)
     }
-    )
+    ).then(jsonData => jsonData.json())
   },
 
   deleteItem(category, id){
@@ -32,12 +32,13 @@ const API = {
     )
   },
 
-  updateItem(category, id){
-    return fetch(`${URL}${category}?id=${id}`, {
+  updateItem(category, id, item){
+    return fetch(`${URL}${category}/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
-      }
+      },
+      body: JSON.stringify(item)
     }
     )
   }
