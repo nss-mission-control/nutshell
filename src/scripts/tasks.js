@@ -132,9 +132,8 @@ const buildTasks = {
     //button click posts new task to database and resets new task input strings
     button.addEventListener("click", (e) => {
       if (input_task.value === "" || input_date.value === "") {
-        console.log("content missing", input_task.value, input_date.value, "x")
+        return
       } else {
-        console.log("content exists", input_task.value, input_date.value)
         let taskItem = {
           task: input_task.value,
           complete: false,
