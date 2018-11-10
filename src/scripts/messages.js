@@ -5,7 +5,8 @@ import API from "./apiData"
 const buildMessages = {
   printMessages (messageObj) {
     new comp.section ({className: "message", id: `${messageObj.id}`},
-    new comp.title( "h2", {}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+    new comp.image({src: `${messageObj.user.profilePic}`, alt: "Profile Pic", style:"display:inline-block; border-radius: 8px; margin: 4px", height: "25", width: "25"}),
+    new comp.title( "h2", {style:"display: inline-block; position: relative; bottom: 10px"}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
     new comp.title("h1", {}, messageObj.messageContent)).render(".container--inner")
   },
 
