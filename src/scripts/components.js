@@ -13,8 +13,10 @@ export default Object.create(null, {
         this.email = tempInfo.email;
         this.profilePic = tempInfo.profilePic;
     }
+    //TODO: this is just a test function. we would have the ability to call for saving
+    // messages,articles, events be referencing a function defined here
       test() {
-        return `This is the test function in user class: ${this.firstName}`;
+        return `Welcome ${this.firstName}! Let's see what's going on.`;
       }
     }
   },

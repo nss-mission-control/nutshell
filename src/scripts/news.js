@@ -4,8 +4,7 @@ import API from "./apiData"
 
 const buildNews = {
   printNews(newsObj) {
-
-    const news = new comp.section ({className: "news", id: `${newsObj.id}`},
+    new comp.section ({className: "news", id: `${newsObj.id}`},
     new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
     new comp.title( "h2", {}, `${newsObj.articleName}`),
     new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${newsObj.dateSaved}`),
@@ -23,7 +22,7 @@ const buildNews = {
   },
 
   newNews () {
-    const newNews = new comp.section ({className: "new--news"},
+    new comp.section ({className: "new--news"},
     new comp.title ("h1", {}, "Save News Article"),
     new comp.form(
       new comp.label({for: "articleName"}, "Article Name"),

@@ -11,35 +11,32 @@ const API = {
       .then(inputs => inputs.json())
   },
 
-  saveItem(category, item){
+  saveItem(category, item) {
     return fetch(`${URL}${category}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify(item)
-    }
-    )
+    }).then(data => data.json())
   },
 
-  deleteItem(category, id){
+  deleteItem(category, id) {
     return fetch(`${URL}${category}?id=${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
       }
-    }
-    )
+    })
   },
 
-  updateItem(category, id){
+  updateItem(category, id) {
     return fetch(`${URL}${category}?id=${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
       }
-    }
-    )
+    })
   }
 };
 

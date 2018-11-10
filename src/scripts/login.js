@@ -17,9 +17,10 @@ const logInFuncs = {
         } else ( alert("You entered the wrong password. Try again."))
       }).then(currentUser => {
         if (currentUser !== undefined) {
-        console.log(currentUser.test());
-        console.log(currentUser);
-        //this will be the function to send to the mission control page
+          //these console logs will be removed once we can add a function to move to mission control page
+          console.log(currentUser.test());
+          console.log(currentUser);
+          //this will be the function to send to the mission control page
         }
       })
     }
