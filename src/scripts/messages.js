@@ -11,6 +11,8 @@ const buildMessages = {
   },
 
   messageMap ()  {
+    const user = JSON.parse(sessionStorage.getItem("currentUser"));
+    console.log(user);
     document.querySelector(".container--inner").innerHTML = ""
     API.getAllCategory("messages/?_expand=user")
     .then(messageObj => messageObj.forEach(message => {

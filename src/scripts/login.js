@@ -16,12 +16,14 @@ const logInFuncs = {
           return currentUser;
         } else ( alert("You entered the wrong password. Try again."))
       }).then(currentUser => {
+        console.log(currentUser)
         if (currentUser !== undefined) {
           //these console logs will be removed once we can add a function to move to mission control page
-          console.log(currentUser.test());
-          console.log(currentUser);
+          
+          sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
           //this will be the function to send to the mission control page
         }
+
       })
     }
   },

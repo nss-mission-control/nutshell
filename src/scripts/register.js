@@ -63,6 +63,7 @@ const registerFuncs = {
       if (data.length === 0) {
         API.saveItem("users", user).then(newUser => {
           let currentUser = new comp.user(newUser);
+          sessionStorage.setItem("currentUser", currentUser)
           //TODO:the function below needs to be the call to load mission control page.
           // Right now it is just sending to a function to console.log user
           this.loadMission(currentUser);
