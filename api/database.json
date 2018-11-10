@@ -47,7 +47,7 @@
     },
     {
       "id": 2,
-      "messageContent": "Hello, second message.",
+      "messageContent": "I changed the message.",
       "timeStamp": "10:45:29",
       "date": "11/07/2018",
       "userId": 3
@@ -60,18 +60,25 @@
       "userId": 2
     },
     {
-      "id": 4,
-      "messageContent": "Here's another one.",
-      "timeStamp": "10:30:29",
-      "date": "11/08/2018",
-      "userId": 1
+      "messageContent": "This makes a better message",
+      "timeStamp": "13:24:21",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 4
     },
     {
-      "id": 5,
-      "messageContent": "Last test message.",
-      "timeStamp": "07:11:29",
-      "date": "11/09/2018",
-      "userId": 4
+      "messageContent": "Final Edit",
+      "timeStamp": "14:06:16",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "messageContent": "New Message",
+      "timeStamp": "14:06:48",
+      "date": "11/10/2018",
+      "userId": 3,
+      "id": 6
     }
   ],
   "articles": [
@@ -142,8 +149,8 @@
   "tasks": [
     {
       "task": "Make ERD2",
-      "complete": false,
-      "dueDate": "2018-11-11",
+      "complete": true,
+      "dueDate": "2018-11-12",
       "userId": 2,
       "id": 1
     },
@@ -156,7 +163,7 @@
     },
     {
       "task": "Finish project",
-      "complete": false,
+      "complete": true,
       "dueDate": "2018-11-09",
       "userId": 2,
       "id": 3
@@ -167,6 +174,20 @@
       "dueDate": "2018-11-09",
       "userId": 3,
       "id": 4
+    },
+    {
+      "task": "Here is a new task",
+      "complete": true,
+      "dueDate": "2018-11-29",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "task": "Hello",
+      "complete": true,
+      "dueDate": "2018-11-21",
+      "userId": 3,
+      "id": 6
     }
   ],
   "friends": [

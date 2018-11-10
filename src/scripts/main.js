@@ -5,6 +5,6 @@ import buildTasks from "./tasks"
 import buildNews from "./news"
 
 // landingPageFuncs.loadLandingPage();
-// buildMessages.messageMap();
-buildTasks.buildContainers();
+buildMessages.messageMap();
+// buildTasks.buildContainers();
 // buildNews.newsMap()
