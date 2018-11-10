@@ -94,7 +94,6 @@ const buildTasks = {
             tempInput.addEventListener("keydown", (e) => {
               if (e.keyCode === 13) {
                 const patchTask = {task: tempInput.value}
-                console.log(patchTask)
                 API.updateItem("tasks", id, patchTask)
                   .then(() => this.buildContainers())
               }
@@ -110,7 +109,6 @@ const buildTasks = {
             const tempDateInput = document.querySelector("#temp2");
             tempDateInput.addEventListener("change", (e) => {
                 const patchDate = {dueDate: tempDateInput.value}
-                console.log(patchDate)
                 API.updateItem("tasks", id, patchDate)
                   .then(() => this.buildContainers())
             })

@@ -142,8 +142,8 @@
   "tasks": [
     {
       "task": "Make ERD2",
-      "complete": false,
-      "dueDate": "2018-11-11",
+      "complete": true,
+      "dueDate": "2018-11-12",
       "userId": 2,
       "id": 1
     },
@@ -156,7 +156,7 @@
     },
     {
       "task": "Finish project",
-      "complete": false,
+      "complete": true,
       "dueDate": "2018-11-09",
       "userId": 2,
       "id": 3
@@ -167,6 +167,20 @@
       "dueDate": "2018-11-09",
       "userId": 3,
       "id": 4
+    },
+    {
+      "task": "Here is a new task",
+      "complete": true,
+      "dueDate": "2018-11-29",
+      "userId": 3,
+      "id": 5
+    },
+    {
+      "task": "Hello",
+      "complete": true,
+      "dueDate": "2018-11-21",
+      "userId": 3,
+      "id": 6
     }
   ],
   "friends": [
