@@ -50,6 +50,12 @@
   background: none;
   box-shadow: none;
   border-radius: none;
+  cursor: initial;
+}
+
+.ghost-2 > .container--sub2, .ghost-4 > .container--sub2,
+.ghost-6 > .container--sub2, .ghost-8 > .container--sub2 {
+  background-color: transparent;
 }
 
 /* order circles for proper position of ghost elements and user items */
