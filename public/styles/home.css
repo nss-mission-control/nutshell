@@ -10,15 +10,29 @@
 
 .container--sub {
   /* layout */
-  flex-basis: 45%;
-  width: 45%;
-  height: 175px;
-  /* material design */
-  background-color: var(--theme-main-light);
-  text-align: center;
+  width: 100%;
+  max-width: 225px;
+  height: 225px;
+  margin: 20px 20px;
+  padding: 7px;
+  /* position children */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* design */
+  background: -webkit-linear-gradient(left top, crimson 0%, #f90 100%);
+  border-radius: 50%;
 }
 
 .container--sub:nth-child(3) {
   /* layout */
-  flex-basis: 95%;
+}
+
+/* cover background of container--sub to create border effect */
+.container--sub2 {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: var(--theme-sub-primary);
+  text-align: center;
 }

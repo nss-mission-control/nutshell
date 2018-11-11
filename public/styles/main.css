@@ -27,20 +27,40 @@ html, body {
   background-color: var(--theme-sub-dark);
 }
 
+#abort {
+  /* layout */
+  height: 25px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-right: 5px;
+  /* position children */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* design */
+  background-color: var(--theme-main-dark);
+  color: var(--theme-text-light);
+  font-size: 14px;
+}
+
+#master {
+  max-width: 960px;
+  margin: 0 auto;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
 .container--outer {
   /* layout */
   max-width: 960px;
-  height: calc(100vh - 60px); /* viewport height minus nav height */
+  height: calc(100vh - 85px); /* viewport height minus abort and nav height */
   margin: 0 auto;
   /* position children */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  /* material design */
-  background-color: var(--theme-sub-dark);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
+  /* design */
+  background-color: var(--theme-main-dark);
 }
 
 .container--inner {
@@ -52,7 +72,7 @@ html, body {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  /* material design */
+  /* design */
   background-color: var(--theme-sub-primary);
   overflow-y: auto;
 }

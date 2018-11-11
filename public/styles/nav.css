@@ -15,12 +15,12 @@ nav {
   margin: 0 auto;
   /* position children */
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
   /* material design */
-  background-color: var(--theme-main-dark);
+  background-color: var(--theme-main-primary);
   font-family: Arial, Helvetica, sans-serif;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 nav > ul {
