@@ -1,6 +1,26 @@
 import DOMComponent from "../lib/node_modules/nss-domcomponent"
 
 export default Object.create(null, {
+
+  user: {
+    value: class User {
+      constructor(tempInfo) {
+        this.id = tempInfo.id;
+        this.firstName = tempInfo.firstName;
+        this.lastName = tempInfo.lastName;
+        this.username = tempInfo.username;
+        this.password = tempInfo.password;
+        this.email = tempInfo.email;
+        this.profilePic = tempInfo.profilePic;
+    }
+    //TODO: this is just a test function. we would have the ability to call for saving
+    // messages,articles, events be referencing a function defined here
+      test() {
+        return `Welcome ${this.firstName}! Let's see what's going on.`;
+      }
+    }
+  },
+
   div: {
     value: class div extends DOMComponent {
       constructor(attributes, ...children) {
@@ -10,8 +30,8 @@ export default Object.create(null, {
   },
   btn: {
     value: class btn extends DOMComponent {
-      constructor( ...children) {
-        super("button", {className: "btn", type: "button"}, ...children)
+      constructor(...children) {
+        super("button", { className: "btn", type: "button" }, ...children)
       }
     }
   },
@@ -46,7 +66,7 @@ export default Object.create(null, {
   checkbox: {
     value: class checkbox extends DOMComponent {
       constructor(...children) {
-        super("input", {type: "checkbox", className: "cb"}, ...children)
+        super("input", { type: "checkbox", className: "cb" }, ...children)
       }
     }
   },
@@ -74,7 +94,7 @@ export default Object.create(null, {
   form: {
     value: class form extends DOMComponent {
       constructor(...children) {
-        super("form",{}, ...children)
+        super("form", {}, ...children)
       }
     }
   },

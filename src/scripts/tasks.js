@@ -1,16 +1,20 @@
 import comp from "./components"
 import API from "./apiData"
 
+let currentUser = {}
+
 
 const buildTasks = {
 
   //function run first in order to clear HTML, create parent containers, then add new task input and call fetch
   buildContainers () {
+    currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+    console.log(currentUser);
     document.querySelector(".container--inner").innerHTML = ""
-    const title1 = new comp.title ("h1", {className: "title--incomplete"}, "Incomplete Tasks").render(".container--inner")
-    const incomplete = new comp.div ({id: "incomplete"}).render(".container--inner")
-    const title2 = new comp.title ("h1", {className: "title--complete"}, "Complete Tasks").render(".container--inner")
-    const complete = new comp.div ({id: "complete"}).render(".container--inner")
+    new comp.title ("h1", {className: "title--incomplete"}, "Incomplete Tasks").render(".container--inner")
+    new comp.div ({id: "incomplete"}).render(".container--inner")
+    new comp.title ("h1", {className: "title--complete"}, "Complete Tasks").render(".container--inner")
+    new comp.div ({id: "complete"}).render(".container--inner")
     this.newTask()
     this.tasksFetch()
   },
@@ -25,7 +29,7 @@ const buildTasks = {
       outputContainer = "#incomplete"
     }
 
-    const task = new comp.section ({className: "task", id: `${tasksObj.id}`},
+    new comp.section ({className: "task", id: `${tasksObj.id}`},
     new comp.checkbox(),
     new comp.par({className: "editable--task"}, tasksObj.task),
     new comp.par({className: "editable--date"}, tasksObj.dueDate)).render(outputContainer)
@@ -120,7 +124,7 @@ const buildTasks = {
 
   //creates new task input field with append button inside first section of INCOMPLETE container
   newTask () {
-    const newTaskField = new comp.section ({className: "new--task"},
+    new comp.section ({className: "new--task"},
     new comp.btn ("+"),
     new comp.input({id: "input--task", type: "text", placeholder: "type new task here"}),
     new comp.input({id: "input--date", type: "date"})).render("#incomplete")

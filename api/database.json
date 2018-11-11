@@ -63,7 +63,7 @@
       "messageContent": "This makes a better message",
       "timeStamp": "13:24:21",
       "date": "11/10/2018",
-      "userId": 3,
+      "userId": 4,
       "id": 4
     },
     {
@@ -79,6 +79,20 @@
       "date": "11/10/2018",
       "userId": 3,
       "id": 6
+    },
+    {
+      "messageContent": "Test",
+      "timeStamp": "15:44:57",
+      "date": "11/11/2018",
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "messageContent": "Test",
+      "timeStamp": "15:45:02",
+      "date": "11/11/2018",
+      "userId": 2,
+      "id": 8
     }
   ],
   "articles": [
@@ -140,8 +154,8 @@
     {
       "id": 2,
       "name": "Tech Meet Up",
-      "date": "2018-11-8",
-      "location": "Emma",
+      "date": "2018-11-14",
+      "location": "The Moon",
       "time": "15:00",
       "userId": 3
     },
@@ -152,6 +166,14 @@
       "location": "The Field",
       "userId": 2,
       "id": 3
+    },
+    {
+      "name": "Sleep",
+      "date": "2018-11-11",
+      "time": "Now",
+      "location": "My Bed",
+      "userId": 3,
+      "id": 4
     }
   ],
   "tasks": [
@@ -187,7 +209,7 @@
       "task": "Here is a new task",
       "complete": true,
       "dueDate": "2018-11-29",
-      "userId": 3,
+      "userId": 4,
       "id": 5
     },
     {
