@@ -2,7 +2,7 @@ import comp from "./components"
 import API from "./apiData"
 
 // delete this
-let currentUser = 2;
+let currentUser = 3;
 
 
 const buildEvents = {
@@ -52,7 +52,7 @@ const buildEvents = {
   },
 
   eventFetch() {
-    API.getAllCategory("events") //check if user is same as session storage
+    API.getAllCategory(`events/?userId=${currentUser}`) //check if user is same as session storage
       .then(eventObj => {
         eventObj.forEach(event => {
           this.printEvents(event)
