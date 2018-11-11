@@ -1,8 +1,6 @@
 import comp from "./components"
 import API from "./apiData"
-
-// delete this
-let currentUser = 3;
+import activeUser from "./sessionStorage"
 
 
 const buildEvents = {
@@ -31,8 +29,7 @@ const buildEvents = {
     // this.newTask()
     this.newEventButton();
     this.eventFetch()
-
-  },
+    },
 
   printEvents(eventObj) {
     // takes the objects from the api and prints them to the dom
@@ -52,7 +49,7 @@ const buildEvents = {
   },
 
   eventFetch() {
-    API.getAllCategory(`events/?userId=${currentUser}`) //check if user is same as session storage
+    API.getAllCategory(`events/?userId=${activeUser.info().id}`) //check if user is same as session storage
       .then(eventObj => {
         eventObj.forEach(event => {
           this.printEvents(event)
@@ -65,7 +62,6 @@ const buildEvents = {
     // when clicked it clears the dom and calls the function to build the form
     $("#newEventBtn").click(
       function (e) {
-        console.log("click,click")
         $(".container--inner").text("")
         buildEvents.newEventPopUp();
       }
@@ -104,7 +100,7 @@ const buildEvents = {
         date: inputArray[1].value,
         time: inputArray[2].value,
         location: inputArray[3].value,
-        userId: currentUser
+        userId: activeUser.info().id
       }
       // saves new event to API
       API.saveItem("events", newEventObj).then(() => {
@@ -164,7 +160,7 @@ const buildEvents = {
         date: inputArray[1].value,
         time: inputArray[2].value,
         location: inputArray[3].value,
-        userId: currentUser
+        userId: activeUser.info().id
       }
       // saves new event to API
       API.updateItem("events", id, editEventObj).then(() => {

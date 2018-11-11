@@ -93,6 +93,13 @@
       "date": "11/11/2018",
       "userId": 2,
       "id": 8
+    },
+    {
+      "messageContent": "Testing message as Kelly",
+      "timeStamp": "17:15:39",
+      "date": "11/11/2018",
+      "userId": 1,
+      "id": 9
     }
   ],
   "articles": [
@@ -174,6 +181,30 @@
       "location": "My Bed",
       "userId": 3,
       "id": 4
+    },
+    {
+      "name": "Concert",
+      "date": "2018-11-09",
+      "time": "The Past",
+      "location": "Narnia",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "name": "Testing SessionStorage",
+      "date": "2018-11-23",
+      "time": "Right Now",
+      "location": "My computer",
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "name": "Class",
+      "date": "2018-11-12",
+      "time": "9:05am",
+      "location": "NSS",
+      "userId": 1,
+      "id": 7
     }
   ],
   "tasks": [
