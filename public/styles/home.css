@@ -13,19 +13,15 @@
   width: 100%;
   max-width: 225px;
   height: 225px;
-  margin: 20px 20px;
+  margin: 10px 10px;
   padding: 7px;
   /* position children */
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-content: center;
   /* design */
   background: -webkit-linear-gradient(left top, crimson 0%, #f90 100%);
   border-radius: 50%;
-}
-
-.container--sub:nth-child(3) {
-  /* layout */
 }
 
 /* cover background of container--sub to create border effect */
@@ -35,4 +31,56 @@
   border-radius: 50%;
   background-color: var(--theme-sub-primary);
   text-align: center;
+}
+
+/* size ghost elements to place real elements closer together in flex parent */
+.ghost-2, .ghost-4, .ghost-6, .ghost-8 {
+  width: 100%;
+  max-width: 250px;
+  height: 0px;
+  background: none;
+  border-radius: none;
+}
+
+.ghost-2 {
+  order: 2;
+}
+
+.ghost-4 {
+  order: 4;
+}
+
+.ghost-6 {
+  order: 6;
+}
+
+.ghost-8 {
+  order: 8;
+}
+
+.visible-1 {
+  order: 1;
+}
+
+.visible-3 {
+  order: 3;
+}
+
+.visible-5 {
+  order: 5;
+}
+
+.visible-7 {
+  order: 7;
+}
+
+.visible-9 {
+  order: 9;
+}
+
+/* single-column circle layout won't have placeholder containers */
+@media only screen and (max-width: 850px) {
+  .ghost-2, .ghost-4, .ghost-6, .ghost-8 {
+    display: none;
+  }
 }
