@@ -4,6 +4,7 @@
 @import "interactive.css";
 @import "messages.css";
 @import "tasks.css";
+@import "events.css";
 
 
 :root {
@@ -55,6 +56,9 @@ html, body {
   /* material design */
   background-color: var(--theme-sub-primary);
   overflow-y: auto;
+
+  /* Jase - I did this but don't know if it changes anything with the rest of the site */
+  position: relative;
 }
 
 /* overlay */
