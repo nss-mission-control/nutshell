@@ -84,26 +84,51 @@
 
 /* add background image element */
 .visible-1 > span {
-  background-image: url(../images/animat-checkmark-color.gif);
+  background-image: url(../images/static-checkmark-color.png);
   background-size: cover;
 }
 
 .visible-3 > span {
-  background-image: url(../images/animat-pencil-color.gif);
+  background-image: url(../images/static-pencil-color.png);
   background-size: cover;
 }
 
 .visible-5 > span {
-  background-image: url(../images/animat-linechart-color.gif);
+  background-image: url(../images/static-linechart-color.png);
   background-size: cover;
 }
 
 .visible-7 > span {
-  background-image: url(../images/animat-rocket-color.gif);
+  background-image: url(../images/static-rocket-color.png);
   background-size: cover;
 }
 
 .visible-9 > span {
+  background-image: url(../images/static-image-color.png);
+  background-size: cover;
+}
+
+.visible-1 > span:hover {
+  background-image: url(../images/animat-checkmark-color.gif);
+  background-size: cover;
+}
+
+.visible-3 > span:hover {
+  background-image: url(../images/animat-pencil-color.gif);
+  background-size: cover;
+}
+
+.visible-5 > span:hover {
+  background-image: url(../images/animat-linechart-color.gif);
+  background-size: cover;
+}
+
+.visible-7 > span:hover {
+  background-image: url(../images/animat-rocket-color.gif);
+  background-size: cover;
+}
+
+.visible-9 > span:hover {
   background-image: url(../images/animat-image-color.gif);
   background-size: cover;
 }
