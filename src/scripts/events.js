@@ -98,10 +98,23 @@ const buildEvents = {
   },
   newEventPopUpBtnClicks() {
     // grabs the two buttons on the page and adds a click listener based on index
-    let popUpBtns = document.querySelectorAll("button");
+    const popUpBtns = document.querySelectorAll("button");
     popUpBtns[0].addEventListener("click", () => {
+      const inputArray = document.querySelectorAll("input");
+      console.log(inputArray);
+      const newEventObj = {
+        name: inputArray[0].value,
+        date: inputArray[1].value,
+        time: inputArray[2].value,
+        location: inputArray[3].value,
+        userId: currentUser
+      }
+      console.log(newEventObj);
+      API.saveItem("events", newEventObj).then(() => {
       buildEvents.buildContainers();
-    })
+     }) })
+
+    // Back Button Returns to Event Page
     popUpBtns[1].addEventListener("click", () => {
       buildEvents.buildContainers();
     })
