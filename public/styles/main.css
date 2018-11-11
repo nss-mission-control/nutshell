@@ -64,7 +64,6 @@ body {
   align-items: center;
   position: relative;
   /* design */
-  /* background-color: var(--theme-main-dark); */
 }
 
 .container--inner {
@@ -77,9 +76,9 @@ body {
   justify-content: space-around;
   align-items: center;
   /* design */
-  /* background-color: var(--theme-sub-primary); */
   overflow-y: auto;
   position: relative;
+  overflow-x: none;
 }
 
 /* overlay */

@@ -6,6 +6,17 @@
   --theme-sub-primary: #f5f5f5;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
+  --font-family-title: 'Ubuntu', 'Arial', sans-serif;
+  --planet-yellow: #FBD281;
+  --planet-dark-yellow: #FFB881;
+  --planet-bright-green: #24FFDD;
+  --planet-dark-green: #04DFD5;
+  --planet-bright-red: #FF1C76;
+  --planet-dark-red: #E30773;
+  --planet-orange: #FE5671;
+  --planet-dark-purple: #382B56;
+  --planet-light-purple: #3B3466;
+  --planet-purple-space: #3F3363;
 }
 
 .container--sub {
@@ -20,7 +31,6 @@
   justify-content: center;
   align-content: center;
   /* design */
-  background: -webkit-linear-gradient(left top, crimson 0%, #f90 100%);
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
@@ -57,6 +67,24 @@
   cursor: initial;
 }
 
+/* add gradient to planets */
+.visible-1 {
+  background: -webkit-linear-gradient(left top, var(--planet-light-purple) 0%, var(--planet-bright-green) 100%);
+}
+.visible-3 {
+  background: -webkit-linear-gradient(left top, var(--planet-bright-red) 0%, var(--planet-dark-yellow) 100%);
+}
+.visible-5 {
+  background: -webkit-linear-gradient(left top,var(--planet-bright-green) 0%, var(--planet-yellow) 100%);
+}
+.visible-7 {
+  background: -webkit-linear-gradient(left top, var(--planet-dark-purple) 0%, var(--planet-light-purple) 100%);
+}
+.visible-9 {
+  background: -webkit-linear-gradient(left top, var(--planet-dark-yellow) 0%, var(--planet-orange) 100%);
+}
+
+/* add rings to planets */
 .visible-1 > .ring {
   width: 190px;
   height: 190px;
@@ -69,7 +97,19 @@
   z-index: -1;
 }
 
-.visible-9 > .ring {
+.visible-1 > .ring-2 {
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border: 1px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(50deg);
+  z-index: -1;
+}
+
+.visible-5 > .ring {
   width: 190px;
   height: 190px;
   position: absolute;

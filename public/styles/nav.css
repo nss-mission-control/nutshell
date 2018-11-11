@@ -49,6 +49,7 @@ nav {
   background-color: var(--planet-bright-green);
   font-family: var(--font-family-title);
   -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 0);
+  clip-path: polygon(100% 0, 100% 50%, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 0);
 }
 
 nav > ul {
