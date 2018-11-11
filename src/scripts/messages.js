@@ -28,6 +28,7 @@ const buildMessages = {
   messageMap() {
     currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
     console.log(currentUser)
+
     document.querySelector(".container--inner").innerHTML = ""
     API.getAllCategory("messages/?_expand=user")
       .then(messageObj => {
@@ -55,6 +56,7 @@ const buildMessages = {
       new comp.btn("Submit")).render(".container--inner")
   },
 
+
   submitMessage() {
     $("#newMessage > button").click(function (e) {
       //if statment to prevent blank entries
@@ -74,6 +76,7 @@ const buildMessages = {
           timeStamp: dateArray[4], //TODO: make it non military time
           date: `${month}/${dateArray[2]}/${dateArray[3]}`,
           userId: currentUser.id
+
         }
         // send to API
         API.saveItem("messages", submitMessageObj)

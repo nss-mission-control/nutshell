@@ -3,6 +3,7 @@ import API from "./apiData"
 
 let currentUser = {}
 
+
 const buildTasks = {
 
   //function run first in order to clear HTML, create parent containers, then add new task input and call fetch
@@ -21,6 +22,7 @@ const buildTasks = {
   //used to create and append all tasks from database to DOM
   printTasks (tasksObj) {
     let outputContainer;
+
     if (tasksObj.complete) {
       outputContainer = "#complete"
     } else {
