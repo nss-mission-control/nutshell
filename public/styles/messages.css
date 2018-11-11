@@ -7,7 +7,18 @@
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
 }
-
+.messagePic {
+  display:inline-block;
+  border-radius: 8px;
+  margin: 4px;
+  height: 25px;
+  width: 25px
+}
+.messageAuthor {
+  display: inline-block;
+  position: relative;
+  bottom: 10px
+}
 .message {
   /* layout */
   flex-basis: 75%;

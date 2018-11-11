@@ -1,29 +1,34 @@
 import comp from "./components"
 import API from "./apiData"
 
-const currentUser = 3;
+let currentUser = {};
 
 const buildMessages = {
   printMessages(messageObj) {
-    if (currentUser === messageObj.user.id) {
-      const message = new comp.section({
+    if (currentUser.id === messageObj.user.id) {
+      new comp.section({
           className: "message",
           id: `${messageObj.id}`
         },
-        new comp.title("h2", {}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+        new comp.image({src: `${messageObj.user.profilePic}`, className: "messagePic", alt: "Profile Pic"}),
+        new comp.title("h2", {className: "messageAuthor"}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
         new comp.title("h1", {}, messageObj.messageContent),
         new comp.btn("Edit")).render(".container--inner")
     } else {
-      const message = new comp.section({
+      new comp.section({
           className: "message",
           id: `${messageObj.id}`
         },
-        new comp.title("h2", {}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+        new comp.image({src: `${messageObj.user.profilePic}`, alt: "Profile Pic", className: "messagePic"}),
+        new comp.title("h2", {className:"messageAuthor"}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
         new comp.title("h1", {}, messageObj.messageContent)).render(".container--inner")
     }
   },
 
   messageMap() {
+    currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
+    console.log(currentUser)
+
     document.querySelector(".container--inner").innerHTML = ""
     API.getAllCategory("messages/?_expand=user")
       .then(messageObj => {
@@ -34,13 +39,12 @@ const buildMessages = {
         this.newMessage();
         this.submitMessage();
         this.editButtonClick();
-
       })
   },
   // builds new message entry field
   newMessage() {
     //wrapped this in a div instead of a section, to grab sections easier.
-    const newMessageField = new comp.div({
+    new comp.div({
         className: "new--message",
         id: "newMessage"
       },
@@ -51,6 +55,7 @@ const buildMessages = {
       }),
       new comp.btn("Submit")).render(".container--inner")
   },
+
 
   submitMessage() {
     $("#newMessage > button").click(function (e) {
@@ -70,7 +75,8 @@ const buildMessages = {
           messageContent: $("#newMessage > textarea").val(),
           timeStamp: dateArray[4], //TODO: make it non military time
           date: `${month}/${dateArray[2]}/${dateArray[3]}`,
-          userId: currentUser
+          userId: currentUser.id
+
         }
         // send to API
         API.saveItem("messages", submitMessageObj)
