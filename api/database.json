@@ -131,16 +131,16 @@
   "events": [
     {
       "id": 1,
-      "name": "Class",
-      "date": "11/09/2018",
-      "location": "Nashville Software School",
-      "time": "09:00",
-      "userId": 1
+      "name": "Math Class",
+      "date": "2018-11-15",
+      "location": "Internet",
+      "time": "10:00",
+      "userId": 2
     },
     {
       "id": 2,
       "name": "Tech Meet Up",
-      "date": "11/25/2018",
+      "date": "2018-11-8",
       "location": "Emma",
       "time": "15:00",
       "userId": 3
