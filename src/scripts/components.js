@@ -104,5 +104,19 @@ export default Object.create(null, {
         super("label", attributes, ...children)
       }
     }
+  },
+  textarea: {
+    value: class textarea extends DOMComponent {
+      constructor(attributes, ...children) {
+        super("textarea", attributes, ...children)
+      }
+    }
+  },
+  par: {
+    value: class par extends DOMComponent {
+      constructor(attributes, ...children) {
+        super("p", attributes, ...children)
+      }
+    }
   }
 })

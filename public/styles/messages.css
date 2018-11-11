@@ -11,6 +11,7 @@
 .message {
   /* layout */
   flex-basis: 75%;
+  padding: 15px;
   /* material design */
   background-color: var(--theme-sub-light);
   border: 1px solid var(--theme-main-dark);
@@ -51,7 +52,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.new--message > input {
+.new--message > textarea {
   /* layout */
   height: 60px;
   width: 75%;

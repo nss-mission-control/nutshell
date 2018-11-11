@@ -6,7 +6,7 @@ const buildNews = {
   printNews(newsObj) {
     new comp.section ({className: "news", id: `${newsObj.id}`},
     new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
-    new comp.title( "h2", {}, `${newsObj.articleName}`),
+    new comp.title("h2", {}, `${newsObj.articleName}`),
     new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${newsObj.dateSaved}`),
     new comp.title("h1", {}, newsObj.about)).render(".container--inner")
   },

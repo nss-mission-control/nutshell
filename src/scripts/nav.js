@@ -3,6 +3,7 @@ import logInFuncs from "./login"
 import buildMessages from "./messages";
 import buildNews from "./news";
 import buildMissionControl from "./missionControl";
+import buildTasks from "./tasks"
 
 
 const navBar = {
@@ -31,7 +32,7 @@ const navBar = {
           console.log("Not logged in.");
           logInFuncs.loadLogIn();
         } else {
-        console.log("Task function called.")
+          buildTasks.buildContainers();
         }
       } else if (event.target.textContent == "Events") {
         if (sessionStorage.getItem("currentUser") === null){
