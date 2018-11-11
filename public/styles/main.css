@@ -24,7 +24,16 @@
 
 html, body {
   min-height: 100vh;
-  background-color: var(--theme-sub-dark);
+}
+
+body {
+  /* background-color: var(--theme-sub-dark); */
+  /* background: url(../images/minimalist-planets.jpg) no-repeat center center fixed; */
+  background-image: url(../images/Art-Planet-Minimalism-Backgrounds-large.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-origin: center center; */
+  background-attachment: fixed;
 }
 
 #abort {
@@ -60,7 +69,7 @@ html, body {
   align-items: center;
   position: relative;
   /* design */
-  background-color: var(--theme-main-dark);
+  /* background-color: var(--theme-main-dark); */
 }
 
 .container--inner {
@@ -73,7 +82,7 @@ html, body {
   justify-content: space-around;
   align-items: center;
   /* design */
-  background-color: var(--theme-sub-primary);
+  /* background-color: var(--theme-sub-primary); */
   overflow-y: auto;
   position: relative;
 }
