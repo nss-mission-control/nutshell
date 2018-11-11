@@ -6,6 +6,7 @@
   --theme-sub-primary: #f5f5f5;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
+  --font-family-title: 'Ubuntu', 'Arial', sans-serif;
 }
 
 nav {
@@ -20,7 +21,7 @@ nav {
   align-items: center;
   /* material design */
   background-color: var(--theme-main-primary);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-title);
 }
 
 nav > ul {
