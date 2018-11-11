@@ -63,7 +63,7 @@
       "messageContent": "This makes a better message",
       "timeStamp": "13:24:21",
       "date": "11/10/2018",
-      "userId": 3,
+      "userId": 4,
       "id": 4
     },
     {
@@ -179,7 +179,7 @@
       "task": "Here is a new task",
       "complete": true,
       "dueDate": "2018-11-29",
-      "userId": 3,
+      "userId": 4,
       "id": 5
     },
     {

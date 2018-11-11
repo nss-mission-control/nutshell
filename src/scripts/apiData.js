@@ -11,7 +11,7 @@ const API = {
       .then(inputs => inputs.json())
   },
 
-  saveItem(category, item){
+  saveItem(category, item) {
     return fetch(`${URL}${category}`, {
       method: "POST",
       headers: {
@@ -22,14 +22,13 @@ const API = {
     ).then(jsonData => jsonData.json())
   },
 
-  deleteItem(category, id){
+  deleteItem(category, id) {
     return fetch(`${URL}${category}?id=${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
       }
-    }
-    )
+    })
   },
 
   updateItem(category, id, item){
@@ -41,6 +40,7 @@ const API = {
       body: JSON.stringify(item)
     }
     )
+
   }
 };
 
