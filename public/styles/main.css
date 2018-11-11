@@ -52,7 +52,7 @@ html, body {
 .container--outer {
   /* layout */
   max-width: 960px;
-  height: calc(100vh - 85px); /* viewport height minus abort and nav height */
+  height: calc(100vh - 90px); /* viewport height minus abort and nav height */
   margin: 0 auto;
   /* position children */
   display: flex;
@@ -75,6 +75,7 @@ html, body {
   /* design */
   background-color: var(--theme-sub-primary);
   overflow-y: auto;
+  position: relative;
 }
 
 /* overlay */

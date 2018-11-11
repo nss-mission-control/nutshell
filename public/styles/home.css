@@ -22,6 +22,8 @@
   /* design */
   background: -webkit-linear-gradient(left top, crimson 0%, #f90 100%);
   border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 /* cover background of container--sub to create border effect */
@@ -36,12 +38,14 @@
 /* size ghost elements to place real elements closer together in flex parent */
 .ghost-2, .ghost-4, .ghost-6, .ghost-8 {
   width: 100%;
-  max-width: 250px;
+  max-width: 195px;
   height: 0px;
   background: none;
+  box-shadow: none;
   border-radius: none;
 }
 
+/* order circles for proper position of ghost elements and user items */
 .ghost-2 {
   order: 2;
 }
@@ -78,8 +82,62 @@
   order: 9;
 }
 
-/* single-column circle layout won't have placeholder containers */
+/* add background image element */
+.visible-1 > span {
+  background-image: url(../images/animat-checkmark-color.gif);
+  background-size: cover;
+}
+
+.visible-3 > span {
+  background-image: url(../images/animat-pencil-color.gif);
+  background-size: cover;
+}
+
+.visible-5 > span {
+  background-image: url(../images/animat-linechart-color.gif);
+  background-size: cover;
+}
+
+.visible-7 > span {
+  background-image: url(../images/animat-rocket-color.gif);
+  background-size: cover;
+}
+
+.visible-9 > span {
+  background-image: url(../images/animat-image-color.gif);
+  background-size: cover;
+}
+
+@media only screen and (min-width: 850px) {
+  /* animations */
+  .visible-1:hover {
+    transform: scale(1.1) translate(5%, 5%);
+    transition: all .2s ease-in-out;
+  }
+
+  .visible-3:hover {
+    transform: scale(1.1) translate(-10%, 10%);
+    transition: all .2s ease-in-out;
+  }
+
+  .visible-5:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+  }
+
+  .visible-7:hover {
+    transform: scale(1.1) translate(10%, -10%);
+    transition: all .2s ease-in-out;
+  }
+
+  .visible-9:hover {
+    transform: scale(1.1) translate(-10%, -10%);
+    transition: all .2s ease-in-out;
+  }
+}
+
 @media only screen and (max-width: 850px) {
+  /* single-column circle layout won't have placeholder containers */
   .ghost-2, .ghost-4, .ghost-6, .ghost-8 {
     display: none;
   }
