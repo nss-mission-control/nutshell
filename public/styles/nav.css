@@ -38,6 +38,7 @@ nav > ul > li {
   /* material design */
   color: var(--theme-text-light);
   cursor: pointer;
+  border-bottom: 1px solid var(--theme-main-primary);
 }
 
 nav > ul > li:hover {

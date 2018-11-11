@@ -28,17 +28,24 @@
 
 /* cover background of container--sub to create border effect */
 .container--sub2 {
+  /* layout */
   height: 100%;
   width: 100%;
   border-radius: 50%;
+  /* design */
   background-color: var(--theme-sub-primary);
-  text-align: center;
+  /* position text */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 15px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* size ghost elements to place real elements closer together in flex parent */
 .ghost-2, .ghost-4, .ghost-6, .ghost-8 {
   width: 100%;
-  max-width: 195px;
+  max-width: 195px; /* this is the critical component */
   height: 0px;
   background: none;
   box-shadow: none;
@@ -108,6 +115,7 @@
   background-size: cover;
 }
 
+/* animate background image on hover */
 .visible-1 > span:hover {
   background-image: url(../images/animat-checkmark-color.gif);
   background-size: cover;
@@ -134,7 +142,7 @@
 }
 
 @media only screen and (min-width: 850px) {
-  /* animations */
+  /* allow scale and translate if screen width large enough */
   .visible-1:hover {
     transform: scale(1.1) translate(5%, 5%);
     transition: all .2s ease-in-out;
@@ -162,7 +170,8 @@
 }
 
 @media only screen and (max-width: 850px) {
-  /* single-column circle layout won't have placeholder containers */
+  /* single-column circle layout won't have placeholder containers
+  when screen is too small */
   .ghost-2, .ghost-4, .ghost-6, .ghost-8 {
     display: none;
   }
