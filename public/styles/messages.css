@@ -6,7 +6,20 @@
   --theme-sub-primary: #f5f5f5;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
+  --font-family-title: 'Ubuntu', 'Arial', sans-serif;
+  --font-family-form: 'Exo 2', 'Arial', sans-serif;
+  --planet-yellow: #FBD281;
+  --planet-dark-yellow: #FFB881;
+  --planet-bright-green: #24FFDD;
+  --planet-dark-green: #04DFD5;
+  --planet-bright-red: #FF1C76;
+  --planet-dark-red: #E30773;
+  --planet-orange: #FE5671;
+  --planet-dark-purple: #382B56;
+  --planet-light-purple: #7B3E80;
+  --planet-purple-space: #3F3363;
 }
+
 .messagePic {
   display:inline-block;
   border-radius: 8px;

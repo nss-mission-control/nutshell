@@ -20,21 +20,32 @@
   --planet-purple-space: #3F3363;
 }
 
-
-.btn {
+/* landing page login register */
+.welcome {
   /* layout */
+  flex-basis: 30%;
+  height: 40%;
   padding: 7.5px;
-  /* material design */
-  cursor: pointer;
-  background-color: var(--planet-dark-purple);
-  color: var(--theme-text-light);
-  border: none;
-  border-radius: 5px;
-  /* animation */
-  transition-duration: 0.3s;
+  /* position children */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  /* design */
+  background-color: var(--theme-sub-primary);
+  border: 7.5px solid var(--planet-dark-green);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -4px -4px 16px 0 rgba(0,0,0,0.2);
 }
 
-.btn:hover {
-  background-color: var(--planet-light-purple);
-  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.1);
+.welcome > h1 {
+  text-align: center;
+  color: var(--planet-dark-purple);
+  font-family: var(--font-family-form);
+}
+
+.welcome > .btn {
+  flex-basis: 40%;
+  height: 40px;
+  font-size: 1.1em;
 }
