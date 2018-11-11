@@ -10,7 +10,8 @@ const buildMessages = {
           className: "message",
           id: `${messageObj.id}`
         },
-        new comp.title("h2", {}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+        new comp.image({src: `${messageObj.user.profilePic}`, className: "messagePic", alt: "Profile Pic"}),
+        new comp.title("h2", {className: "messageAuthor"}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
         new comp.title("h1", {}, messageObj.messageContent),
         new comp.btn("Edit")).render(".container--inner")
     } else {
@@ -18,7 +19,8 @@ const buildMessages = {
           className: "message",
           id: `${messageObj.id}`
         },
-        new comp.title("h2", {}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+        new comp.image({src: `${messageObj.user.profilePic}`, alt: "Profile Pic", className: "messagePic"}),
+        new comp.title("h2", {className:"messageAuthor"}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
         new comp.title("h1", {}, messageObj.messageContent)).render(".container--inner")
     }
   },
