@@ -1,8 +1,8 @@
 src/lib/node_modules
+bundle.js
 api/
    .DS_Store
    dist/
-   public/*.js
    bower_components
    __pycache__
    *.pyc
