@@ -20,21 +20,26 @@
   --planet-purple-space: #3F3363;
 }
 
-
-.btn {
-  /* layout */
+.news {
+  flex-basis: 75%;
   padding: 7.5px;
-  /* material design */
-  cursor: pointer;
-  background-color: var(--planet-dark-purple);
-  color: var(--theme-text-light);
-  border: none;
-  border-radius: 5px;
-  /* animation */
-  transition-duration: 0.3s;
+  margin-bottom: 5px;
+  /* position children */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  /* design */
+  border: 2px solid var(--planet-dark-green);
 }
 
-.btn:hover {
-  background-color: var(--planet-light-purple);
-  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.1);
+.news > a {
+}
+
+.news > h4 {
+}
+
+.news > h2 {
+}
+
+.news > h1 {
 }

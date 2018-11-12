@@ -6,21 +6,50 @@
   --theme-sub-primary: #f5f5f5;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
+  --font-family-title: 'Ubuntu', 'Arial', sans-serif;
+  --planet-yellow: #FBD281;
+  --planet-dark-yellow: #FFB881;
+  --planet-bright-green: #24FFDD;
+  --planet-dark-green: #04DFD5;
+  --planet-bright-red: #FF1C76;
+  --planet-dark-red: #E30773;
+  --planet-orange: #FE5671;
+  --planet-dark-purple: #382B56;
+  --planet-light-purple: #3B3466;
+  --planet-purple-space: #3F3363;
+}
+
+#abort {
+  /* layout */
+  height: 25px;
+  max-width: 960px;
+  margin: 0 auto;
+  padding-right: 5px;
+  /* position children */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  /* design */
+  background-color: var(--planet-dark-green);
+  color: var(--planet-dark-purple);
+  font-size: 14px;
 }
 
 nav {
   /* layout */
-  height: 60px;
+  height: 65px;
   max-width: 960px;
   margin: 0 auto;
   /* position children */
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  /* material design */
-  background-color: var(--theme-main-dark);
-  font-family: Arial, Helvetica, sans-serif;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  /* design */
+  background-color: var(--planet-bright-green);
+  font-family: var(--font-family-title);
+  -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 0);
+  clip-path: polygon(100% 0, 100% 50%, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 0);
 }
 
 nav > ul {
@@ -35,11 +64,12 @@ nav > ul > li {
   /* layout */
   display: inline-block;
   padding: 1px;
-  /* material design */
-  color: var(--theme-text-light);
+  /* design */
+  color: var(--planet-dark-purple);
   cursor: pointer;
+  border-bottom: 1px solid var(--planet-bright-green);
 }
 
 nav > ul > li:hover {
-  border-bottom: 1px solid var(--theme-sub-light);
+  border-bottom: 1px solid var(--planet-dark-purple);
 }

@@ -21,7 +21,7 @@ const logInFuncs = {
         if (currentUser !== undefined) {
           console.log("Build Mission Login")
           sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
-          buildMissionControl.printPlaceholder();
+          buildMissionControl.printPlanets();
         }
 
       })

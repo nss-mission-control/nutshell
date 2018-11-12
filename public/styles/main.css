@@ -1,9 +1,11 @@
+@import "login.css";
 @import "nav.css";
 @import "home.css";
 @import "form.css";
 @import "interactive.css";
 @import "messages.css";
 @import "tasks.css";
+@import "news.css";
 @import "events.css";
 
 
@@ -15,7 +17,20 @@
   --theme-sub-primary: #f5f5f5;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
+  --font-family-title: 'Ubuntu', 'Arial', sans-serif;
+  --font-family-form: 'Exo 2', 'Arial', sans-serif;
+  --planet-yellow: #FBD281;
+  --planet-dark-yellow: #FFB881;
+  --planet-bright-green: #24FFDD;
+  --planet-dark-green: #04DFD5;
+  --planet-bright-red: #FF1C76;
+  --planet-dark-red: #E30773;
+  --planet-orange: #FE5671;
+  --planet-dark-purple: #382B56;
+  --planet-light-purple: #7B3E80;
+  --planet-purple-space: #3F3363;
 }
+
 
 * {
   margin: 0;
@@ -25,23 +40,28 @@
 
 html, body {
   min-height: 100vh;
-  background-color: var(--theme-sub-dark);
+}
+
+body {
+  /* background-color: var(--theme-sub-dark); */
+  /* background: url(../images/minimalist-planets.jpg) no-repeat center center fixed; */
+  background-image: url(../images/Art-Planet-Minimalism-Backgrounds-large.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container--outer {
   /* layout */
   max-width: 960px;
-  height: calc(100vh - 60px); /* viewport height minus nav height */
+  height: calc(100vh - 90px); /* viewport height minus abort and nav height */
   margin: 0 auto;
   /* position children */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  /* material design */
-  background-color: var(--theme-sub-dark);
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
+  /* design */
 }
 
 .container--inner {
@@ -53,15 +73,15 @@ html, body {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  /* material design */
-  background-color: var(--theme-sub-primary);
-  overflow-y: auto;
-
-  /* Jase - I did this but don't know if it changes anything with the rest of the site */
   position: relative;
+  /* design */
+  overflow-y: auto;
+  overflow-x: none;
+  background-color: var(--theme-sub-primary);
 }
 
-/* overlay */
+/*
+overlay
 .modal {
   position: absolute;
   width: 100%;
@@ -70,40 +90,25 @@ html, body {
   opacity: 0.8;
 }
 
-/* landing page login register */
-.welcome {
-  background-color: var(--theme-sub-dark);
-  flex-basis: 50%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
+scrollbar styling
+::-webkit-scrollbar {
+  width: 12px;
 }
 
-.LogIn{
-  height: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+Track
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
 }
 
-.WelcomeNav{
-  display: flex;
-  flex-direction: row;
+Handle
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255,0,0,0.8);
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
-
-.WelcomeNav > h2{
-  margin: 10px;
-}
-
-.WelcomeNav > h2:hover{
-  cursor: pointer;
-  color: var(--theme-main-primary);
-  font-weight: bold;
-}
-
-.LogIn > label > input {
-  margin: 10px;
-}
+::-webkit-scrollbar-thumb:window-inactive {
+background: rgba(255,0,0,0.4);
+} */
