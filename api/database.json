@@ -207,8 +207,8 @@
     },
     {
       "name": "Soccer Practice",
-      "date": "2018-11-22",
-      "time": "4pm",
+      "date": "2018-11-02",
+      "time": "09:09",
       "location": "The Field",
       "userId": 2,
       "id": 3
@@ -223,8 +223,8 @@
     },
     {
       "name": "Concert",
-      "date": "2018-11-09",
-      "time": "The Past",
+      "date": "2018-11-02",
+      "time": "09:10",
       "location": "Narnia",
       "userId": 2,
       "id": 5
