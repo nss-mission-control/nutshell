@@ -27,7 +27,7 @@ const buildEvents = {
       id: "past"
     }).render(".container--inner")
     // this.newTask()
-    this.newEventButton();
+    // this.newEventButton();
     this.eventFetch()
     },
 
@@ -49,6 +49,38 @@ const buildEvents = {
       new comp.btn("Edit")).render(outputContainer)
   },
 
+  newEvent () {
+    new comp.section ({className: "new--event",id: "newEventBtnSection"},
+    new comp.btn ("+"),
+    new comp.title("h3", "New Event")).render("#upcoming")
+    buildEvents.newEventClickListener();
+  },
+
+  newEventClickListener () {
+    const button = document.querySelector("#newEventBtnSection > button")
+    button.addEventListener("click", (e) => {
+      console.log("click")
+      $("#upcoming").text("");
+      let upcomingContainer = document.getElementById("upcoming");
+      upcomingContainer.style.paddingTop = 0;
+      new comp.div({
+      classList: "newEventForm"},
+        new comp.label("Event Name"),
+        new comp.input({ type: "text"}),
+        new comp.label("Date"),
+        new comp.input({type: "date"}),
+        new comp.label("Time"),
+        new comp.input({type: "time"}),
+        new comp.label("Location"),
+        new comp.input({ type: "text"}),
+        new comp.div({},
+        new comp.btn("Save"),
+        new comp.btn("Back"))).render("#upcoming")
+
+    })
+    },
+
+
   nextEvent() {
     console.log(document.getElementById("upcoming").firstChild)
     document.getElementById("upcoming").firstChild.classList.add("nextEvent");
@@ -57,68 +89,69 @@ const buildEvents = {
   eventFetch() {
     API.getAllCategory(`events/?userId=${activeUser.info().id}&_sort=date,time&_order=asc`) //check if user is same as session storage
       .then(eventObj => {
+        buildEvents.newEvent();
         eventObj.forEach(event => {
           this.printEvents(event)
         })
         buildEvents.nextEvent();
-        buildEvents.editBtnListen()
+        // buildEvents.editBtnListen()
       })
   },
 
-  newEventButton() {
-    // when clicked it clears the dom and calls the function to build the form
-    $("#newEventBtn").click(
-      function (e) {
-        $(".container--inner").text("")
-        buildEvents.newEventPopUp();
-      }
-    )
-  },
+  // newEventButton() {
+  //   // when clicked it clears the dom and calls the function to build the form
+  //   $("#newEventBtn").click(
+  //     function (e) {
+  //       $(".container--inner").text("")
+  //       buildEvents.newEventPopUp();
+  //     }
+  //   )
+  // },
 
-  newEventPopUp() {
-    // Builds new event entry form
-    let div2 = new comp.div({
-        classList: "newEventForm"
-      },
-      new comp.title("h1", { className: "title"}, "Add A New Event"),
-      new comp.label("Event Name"),
-      new comp.input({ type: "text"}),
-      new comp.label("Date"),
-      new comp.input({type: "date"}),
-      new comp.label("Time"),
-      new comp.input({type: "time"}),
-      new comp.label("Location"),
-      new comp.input({ type: "text"}),
-      new comp.btn("Save"),
-      new comp.btn("Back"))
-    div2.render(".container--inner")
-    buildEvents.newEventPopUpBtnClicks();
-  },
+  // newEventPopUp() {
+  //   // Builds new event entry form
+  //   let div2 = new comp.div({
+  //       classList: "newEventForm"
+  //     },
+  //     new comp.title("h1", { className: "title"}, "Add A New Event"),
+  //     new comp.label("Event Name"),
+  //     new comp.input({ type: "text"}),
+  //     new comp.label("Date"),
+  //     new comp.input({type: "date"}),
+  //     new comp.label("Time"),
+  //     new comp.input({type: "time"}),
+  //     new comp.label("Location"),
+  //     new comp.input({ type: "text"}),
+  //     new comp.btn("Save"),
+  //     new comp.btn("Back"))
+  //   div2.render(".container--inner")
+  //   buildEvents.newEventPopUpBtnClicks();
+  // },
 
-  newEventPopUpBtnClicks() {
-    // grabs the two buttons on the page and adds a click listener based on index
-    const popUpBtns = document.querySelectorAll("button");
-    popUpBtns[0].addEventListener("click", () => {
-      // Save Button
-      const inputArray = document.querySelectorAll("input");
-      // builds object to send to api
-      const newEventObj = {
-        name: inputArray[0].value,
-        date: inputArray[1].value,
-        time: inputArray[2].value,
-        location: inputArray[3].value,
-        userId: activeUser.info().id
-      }
-      // saves new event to API
-      API.saveItem("events", newEventObj).then(() => {
-      buildEvents.buildContainers();
-     }) })
+  // newEventPopUpBtnClicks() {
+  //   // grabs the two buttons on the page and adds a click listener based on index
+  //   const popUpBtns = document.querySelectorAll("button");
+  //   popUpBtns[0].addEventListener("click", () => {
+  //     // Save Button
+  //     const inputArray = document.querySelectorAll("input");
+  //     // builds object to send to api
+  //     const newEventObj = {
+  //       name: inputArray[0].value,
+  //       date: inputArray[1].value,
+  //       time: inputArray[2].value,
+  //       location: inputArray[3].value,
+  //       userId: activeUser.info().id
+  //     }
+  //     // saves new event to API
+  //     API.saveItem("events", newEventObj).then(() => {
+  //     buildEvents.buildContainers();
+  //    }) })
 
-    // Back Button Returns to Event Page
-    popUpBtns[1].addEventListener("click", () => {
-      buildEvents.buildContainers();
-    })
-  },
+  //   // Back Button Returns to Event Page
+  //   popUpBtns[1].addEventListener("click", () => {
+  //     buildEvents.buildContainers();
+  //   })
+  // },
   editBtnListen () {
     // listens for all the edit buttons on the page
     const allTheButtons = document.querySelectorAll("section > button");

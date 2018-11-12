@@ -353,6 +353,13 @@
       "dueDate": "2018-11-12",
       "userId": 3,
       "id": 12
+    },
+    {
+      "task": "New Task",
+      "complete": false,
+      "dueDate": "2018-11-14",
+      "userId": 2,
+      "id": 13
     }
   ],
   "friends": [
