@@ -46,6 +46,9 @@ const navBar = {
 
 
     document.querySelector("#navBar").addEventListener("click", (event) => {
+      if (event.target.textContent === "Log In") {
+        logInFuncs.loadLogIn();
+      }
       if (event.target.textContent === "Home") {
           buildMissionControl.printPlaceholder();
       } else if (event.target.textContent === "Tasks") {

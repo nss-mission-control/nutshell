@@ -6,19 +6,293 @@
   --theme-sub-primary: #f5f5f5;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
+  --font-family-title: 'Ubuntu', 'Arial', sans-serif;
+  --planet-yellow: #FBD281;
+  --planet-dark-yellow: #FFB881;
+  --planet-bright-green: #24FFDD;
+  --planet-dark-green: #04DFD5;
+  --planet-bright-red: #FF1C76;
+  --planet-dark-red: #E30773;
+  --planet-orange: #FE5671;
+  --planet-dark-purple: #382B56;
+  --planet-light-purple: #3B3466;
+  --planet-purple-space: #3F3363;
 }
 
 .container--sub {
   /* layout */
-  flex-basis: 45%;
-  width: 45%;
-  height: 175px;
-  /* material design */
-  background-color: var(--theme-main-light);
-  text-align: center;
+  width: 100%;
+  max-width: 225px;
+  height: 225px;
+  margin: 10px 10px;
+  padding: 7px;
+  /* position children */
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  /* design */
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  /* position rings */
+  position: relative;
 }
 
-.container--sub:nth-child(3) {
+/* cover background of container--sub to create border effect */
+.container--sub2 {
   /* layout */
-  flex-basis: 95%;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  /* design */
+  background-color: var(--theme-sub-primary);
+  /* position text */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 15px;
+  font-family: var(--font-family-title);
+}
+
+/* size ghost elements to place real elements closer together in flex parent */
+.ghost-2, .ghost-4, .ghost-6, .ghost-8 {
+  /* layout */
+  width: 100%;
+  max-width: 195px; /* this is the critical component */
+  height: 0px;
+  /* design */
+  background: none;
+  box-shadow: none;
+  border-radius: none;
+  cursor: initial;
+}
+
+/* add gradient to planets */
+.visible-1 {
+  background: -webkit-linear-gradient(left top, var(--planet-light-purple) 0%, var(--planet-bright-green) 100%);
+}
+.visible-3 {
+  background: -webkit-linear-gradient(left top, var(--planet-bright-red) 0%, var(--planet-dark-yellow) 100%);
+}
+.visible-5 {
+  background: -webkit-linear-gradient(left top,var(--planet-bright-green) 0%, var(--planet-yellow) 100%);
+}
+.visible-7 {
+  background: -webkit-linear-gradient(left top, var(--planet-dark-purple) 0%, var(--planet-light-purple) 100%);
+}
+.visible-9 {
+  background: -webkit-linear-gradient(left top, var(--planet-dark-yellow) 0%, var(--planet-orange) 100%);
+}
+
+/* add rings to planets */
+.visible-1 > .ring {
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  border: 2px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(50deg);
+  z-index: -1;
+}
+
+.visible-1 > .ring-2 {
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border: 1px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(50deg);
+  z-index: -1;
+}
+
+.visible-5 > .ring {
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  border: 2px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(-50deg);
+  z-index: -1;
+}
+
+.visible-7 > .ring {
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  border: 2px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(-50deg);
+  z-index: -1;
+}
+
+.visible-7 > .ring-2 {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 7.5%;
+  left: 7.5%;
+  border: 2px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(-50deg);
+  z-index: -1;
+}
+
+.visible-7 > .ring-3 {
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border: 2px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(-50deg);
+  z-index: -1;
+}
+
+/* remove remaining color from ghost elements */
+.ghost-2 > .container--sub2, .ghost-4 > .container--sub2,
+.ghost-6 > .container--sub2, .ghost-8 > .container--sub2 {
+  background-color: transparent;
+}
+
+/* order circles for proper position of ghost elements and user items */
+.ghost-2 {
+  order: 2;
+}
+
+.ghost-4 {
+  order: 4;
+}
+
+.ghost-6 {
+  order: 6;
+}
+
+.ghost-8 {
+  order: 8;
+}
+
+.visible-1 {
+  order: 1;
+}
+
+.visible-3 {
+  order: 3;
+}
+
+.visible-5 {
+  order: 5;
+}
+
+.visible-7 {
+  order: 7;
+}
+
+.visible-9 {
+  order: 9;
+}
+
+/* add background image element */
+.visible-1 > span {
+  background-image: url(../images/home-page/static-checkmark-color.png);
+  background-size: cover;
+}
+
+.visible-3 > span {
+  background-image: url(../images/home-page/static-pencil-color.png);
+  background-size: cover;
+}
+
+.visible-5 > span {
+  background-image: url(../images/home-page/static-friends.png);
+  background-size: cover;
+}
+.visible-7 > span {
+  background-image: url(../images/home-page/static-rocket-color.png);
+  background-size: cover;
+}
+.visible-9 > span {
+  background-image: url(../images/home-page/static-linechart-color.png);
+  background-size: cover;
+}
+
+/* animate background image on hover */
+.visible-1 > span:hover {
+  background-image: url(../images/home-page/animat-checkmark-color.gif);
+  background-size: cover;
+}
+
+.visible-3 > span:hover {
+  background-image: url(../images/home-page/animat-pencil-color.gif);
+  background-size: cover;
+}
+
+.visible-5 > span:hover {
+  background-image: url(../images/home-page/animat-friends-reordered.gif);
+  background-size: cover;
+}
+
+.visible-7 > span:hover {
+  background-image: url(../images/home-page/animat-rocket-color.gif);
+  background-size: cover;
+}
+
+.visible-9 > span:hover {
+  background-image: url(../images/home-page/animat-linechart-color.gif);
+  background-size: cover;
+}
+
+/* add ufo */
+.ufo {
+  width: 70px;
+  height: 70px;
+  background-image: url(../images/home-page/meme.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -20%;
+}
+
+@media only screen and (min-width: 850px) {
+  /* allow scale and translate if screen width large enough */
+  .visible-1:hover {
+    transform: scale(1.1) translate(5%, 5%);
+    transition: all .2s ease-in-out;
+  }
+
+  .visible-3:hover {
+    transform: scale(1.1) translate(-10%, 10%);
+    transition: all .2s ease-in-out;
+  }
+
+  .visible-5:hover {
+    transform: scale(1.1);
+    transition: all .2s ease-in-out;
+  }
+
+  .visible-7:hover {
+    transform: scale(1.1) translate(10%, -10%);
+    transition: all .2s ease-in-out;
+  }
+
+  .visible-9:hover {
+    transform: scale(1.1) translate(-10%, -10%);
+    transition: all .2s ease-in-out;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  /* single-column circle layout won't have placeholder containers
+  when screen is too small */
+  .ghost-2, .ghost-4, .ghost-6, .ghost-8 {
+    display: none;
+  }
 }

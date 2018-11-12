@@ -1,6 +1,6 @@
 src/lib/node_modules
-
 .DS_Store
+bundel.js
 dist/
 public/*.js
 bower_components
