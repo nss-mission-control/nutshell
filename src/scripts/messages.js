@@ -1,10 +1,12 @@
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"
+import friend from "./friends";
 
 
 const buildMessages = {
   printMessages(messageObj) {
+    friend.addFriendMessage();
     if (activeUser.info().id === messageObj.user.id) {
       new comp.section({
           className: "message",

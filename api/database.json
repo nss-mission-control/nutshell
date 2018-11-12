@@ -370,6 +370,16 @@
       "id": 3,
       "request_userId": 3,
       "recieved_userId": 2
+    },
+    {
+      "id": 4,
+      "request_userId": 1,
+      "recieved_userId": 2
+    },
+    {
+      "id": 5,
+      "request_userId": 1,
+      "recieved_userId": 4
     }
   ]
 }
