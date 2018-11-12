@@ -6,7 +6,20 @@
   --theme-sub-primary: #f5f5f5;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
+  --font-family-title: 'Ubuntu', 'Arial', sans-serif;
+  --font-family-form: 'Exo 2', 'Arial', sans-serif;
+  --planet-yellow: #FBD281;
+  --planet-dark-yellow: #FFB881;
+  --planet-bright-green: #24FFDD;
+  --planet-dark-green: #04DFD5;
+  --planet-bright-red: #FF1C76;
+  --planet-dark-red: #E30773;
+  --planet-orange: #FE5671;
+  --planet-dark-purple: #382B56;
+  --planet-light-purple: #7B3E80;
+  --planet-purple-space: #3F3363;
 }
+
 .messagePic {
   display:inline-block;
   border-radius: 8px;
@@ -19,6 +32,25 @@
   position: relative;
   bottom: 10px
 }
+
+.old--messages {
+  overflow-y: auto;
+  position: absolute;
+  top: 40px;
+  height: 60%;
+  border-radius: 10px;
+  width: 90%;
+  border: 1px solid black;
+  background-color: var(--theme-main-dark);
+}
+#messageName {
+  position: absolute;
+  top: 0px;
+  padding-top: 6px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .message {
   /* layout */
   flex-basis: 75%;
@@ -29,9 +61,10 @@
   border-radius: 5px;
 }
 
-.message:last-of-type {
-  margin-bottom: 100px; /* matches height of .new--message */
-}
+  /* matches height of .new--message */
+/* .message:last-of-type {
+  margin-bottom: 100px;
+} */
 
 /* message username and timestamp */
 .message > h2 {
@@ -49,25 +82,36 @@
 
 /* container to create new message */
 .new--message {
-  /* layout */
-  width: 75%;
-  height: 100px; /* pay attention to last message */
+  width: 80%;
+  height: 25%;
+  padding-top: 5px;
   position: absolute;
-  bottom: 0;
-  left: calc(50% - 37.5%); /* 50% - half of flex-basis */
+  bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: var(--theme-sub-light);
 }
 
 .new--message > h1 {
   height: 30px;
+  font-size: 25px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .new--message > textarea {
-  /* layout */
+  display: block;
+  width: 85%;
   height: 60px;
-  width: 75%;
+  text-align: center;
+  padding-top: 20px;
   margin: 0 auto;
-  /* design */
+  margin-top: 10px;
   font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+.new--message > button {
+  width: 10%;
+  margin-left: 45%;
+  margin-top: 5px;
 }

@@ -118,6 +118,13 @@ export default Object.create(null, {
         super("p", attributes, ...children)
       }
     }
+  },
+  span: {
+    value: class span extends DOMComponent {
+      constructor(attributes, ...children) {
+        super("span", attributes, ...children)
+      }
+    }
   }
 })
 

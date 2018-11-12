@@ -35,6 +35,15 @@
       "password": "12345NSS",
       "email": "braddavistech@gmail.com",
       "profilePic": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/35884762_10211693141659337_7630947963367325696_n.jpg?_nc_cat=103&_nc_ht=scontent-atl3-1.xx&oh=ffc0c07db4711096066f9a4612ebff3c&oe=5C7CD0B2"
+    },
+    {
+      "firstName": "Kelly",
+      "lastName": "Morin",
+      "email": "test@test.com",
+      "username": "testing",
+      "password": "1234",
+      "profilePic": "https://hyha.xyz/wp-content/themes/fashion/images/no_image_available.jpg",
+      "id": 5
     }
   ],
   "messages": [
@@ -159,6 +168,15 @@
       "userId": 2,
       "dateSaved": "2018-11-12T17:39:44.307Z",
       "id": 7
+    },
+    {
+      "articleName": "FIRE FIRE",
+      "url": "https://www.newschannel5.com/news/tennessee-american-red-cross-volunteers-help-wildfire-victims",
+      "articleImage": "https://mediaassets.newschannel5.com/photo/2018/11/12/RedCrosslocal_1542050078840_102998400_ver1.0_640_480.jpg",
+      "about": "WE DIDN'T START THE FIYAAAA",
+      "userId": 3,
+      "dateSaved": "2018-11-12T19:35:56.249Z",
+      "id": 8
     }
   ],
   "events": [
@@ -241,6 +259,14 @@
       "location": "test",
       "userId": 2,
       "id": 10
+    },
+    {
+      "name": "whatup yo dog diggity",
+      "date": "2018-11-14",
+      "time": "03:11",
+      "location": "Bdan's house",
+      "userId": 3,
+      "id": 11
     }
   ],
   "tasks": [
@@ -320,6 +346,13 @@
       "dueDate": "2018-11-15",
       "userId": 4,
       "id": 11
+    },
+    {
+      "task": "Brendand's new task",
+      "complete": false,
+      "dueDate": "2018-11-12",
+      "userId": 3,
+      "id": 12
     }
   ],
   "friends": [

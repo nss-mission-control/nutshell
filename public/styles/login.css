@@ -20,21 +20,40 @@
   --planet-purple-space: #3F3363;
 }
 
-
-.btn {
-  /* layout */
-  padding: 7.5px;
-  /* material design */
-  cursor: pointer;
-  background-color: var(--planet-dark-purple);
-  color: var(--theme-text-light);
-  border: none;
-  border-radius: 5px;
-  /* animation */
-  transition-duration: 0.3s;
+/* landing page login register */
+.welcome {
+  background-color: var(--theme-sub-dark);
+  flex-basis: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.btn:hover {
-  background-color: var(--planet-light-purple);
-  box-shadow: 0 8px 8px 0 rgba(0,0,0,0.1);
+.LogIn{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.WelcomeNav{
+  display: flex;
+  flex-direction: row;
+}
+
+.WelcomeNav > h2{
+  margin: 10px;
+}
+
+.WelcomeNav > h2:hover{
+  cursor: pointer;
+  color: var(--theme-main-primary);
+  font-weight: bold;
+}
+
+.LogIn > label > input {
+  margin: 10px;
 }

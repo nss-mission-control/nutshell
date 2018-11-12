@@ -14,7 +14,7 @@ const buildMessages = {
         new comp.image({src: `${messageObj.user.profilePic}`, className: "messagePic", alt: "Profile Pic"}),
         new comp.title("h2", {className: "messageAuthor"}, `${messageObj.user.firstName} - ${formatDate.correctDateAndTime(messageObj.timeStamp)}`),
         new comp.title("h1", {}, messageObj.messageContent),
-        new comp.btn("Edit")).render(".container--inner")
+        new comp.btn("Edit")).render(".old--messages")
     } else {
       new comp.section({
           className: "message",
@@ -22,12 +22,14 @@ const buildMessages = {
         },
         new comp.image({src: `${messageObj.user.profilePic}`, alt: "Profile Pic", className: "messagePic"}),
         new comp.title("h2", {className:"messageAuthor"}, `${messageObj.user.firstName} - ${formatDate.correctDateAndTime(messageObj.timeStamp)}`),
-        new comp.title("h1", {}, messageObj.messageContent)).render(".container--inner")
+        new comp.title("h1", {}, messageObj.messageContent)).render(".old--messages")
     }
   },
 
   messageMap() {
-    document.querySelector(".container--inner").innerHTML = ""
+    document.querySelector(".container--inner").innerHTML = "";
+    new comp.title("h1", {id: "messageName"}, "Messages").render(".container--inner");
+    new comp.div({className: "old--messages"}).render(".container--inner");
     API.getAllCategory("messages/?_expand=user")
       .then(messageObj => {
 
@@ -37,8 +39,16 @@ const buildMessages = {
         this.newMessage();
         this.submitMessage();
         this.editButtonClick();
-      })
+      }).then(() => this.scrollWindowButtom());
   },
+
+  // sets scroll window to bottom of old--messages container
+  scrollWindowButtom() {
+    let messageWindow = document.querySelector(".old--messages");
+    messageWindow.scrollTop = messageWindow.scrollHeight;
+  },
+
+
   // builds new message entry field
   newMessage() {
     //wrapped this in a div instead of a section, to grab sections easier.
