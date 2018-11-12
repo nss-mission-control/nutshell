@@ -73,10 +73,37 @@ html, body {
 /* landing page login register */
 .welcome {
   background-color: var(--theme-sub-dark);
-  flex-basis: 25%;
-  height: 25%;
+  flex-basis: 50%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+}
+
+.LogIn{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.WelcomeNav{
+  display: flex;
+  flex-direction: row;
+}
+
+.WelcomeNav > h2{
+  margin: 10px;
+}
+
+.WelcomeNav > h2:hover{
+  cursor: pointer;
+  color: var(--theme-main-primary);
+  font-weight: bold;
+}
+
+.LogIn > label > input {
+  margin: 10px;
 }

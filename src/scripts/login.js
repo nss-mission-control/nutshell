@@ -28,15 +28,10 @@ const logInFuncs = {
     }
   },
   loadLogIn() {
-    document.querySelector(".container--inner").innerHTML = ""
-    new comp.form(
-      new comp.label({}, "Username"),
-      new comp.input({ name: "username", id: "username", placeholder: "username" }),
-      new comp.label({ for: "password" }, "Password"),
-      new comp.input({ name: "password", id: "password", placeholder: "Password" }),
-      new comp.btn("Login Now"),
-      new comp.btn("Not a user? Create new account.")
-    ).render(".container--inner")
+    document.querySelector(".LogIn").innerHTML = ""
+      new comp.label({}, "Username", new comp.input({ name: "username", id: "username", placeholder: "username" })).render(".LogIn")
+      new comp.label({ for: "password" }, "Password", new comp.input({ name: "password", id: "password", placeholder: "Password" })).render(".LogIn")
+      new comp.btn("Login Now").render(".LogIn")
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", (e) => {
         if (e.target.textContent === "Login Now") {
