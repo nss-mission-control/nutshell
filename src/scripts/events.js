@@ -49,7 +49,7 @@ const buildEvents = {
   },
 
   eventFetch() {
-    API.getAllCategory(`events/?userId=${activeUser.info().id}`) //check if user is same as session storage
+    API.getAllCategory(`events/?userId=${activeUser.info().id}&_sort=date,time&_order=asc`) //check if user is same as session storage
       .then(eventObj => {
         eventObj.forEach(event => {
           this.printEvents(event)

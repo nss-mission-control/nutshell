@@ -34,7 +34,7 @@ const buildTasks = {
 
   //fetch all tasks from database, call create/append and call add listeners
   tasksFetch ()  {
-    API.getAllCategory("tasks") //check if user is same as session storage
+    API.getAllCategory(`tasks/?userId=${activeUser.info().id}&_sort=dueDate&_order=asc`) //check if user is same as session storage
     .then(tasksObj =>  {
       tasksObj.forEach(task => {
       this.printTasks(task)})

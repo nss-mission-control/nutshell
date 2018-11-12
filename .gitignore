@@ -11,3 +11,4 @@ obj
 *.sqlite3
 .vscode
 api/
+public/bundle.js
