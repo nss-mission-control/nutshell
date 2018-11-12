@@ -14,16 +14,16 @@ const buildEvents = {
       new comp.btn("+")).render(".container--inner")
 
     // containers
-    const title1 = new comp.title("h1", {
+    new comp.title("h1", {
       className: "title--upcoming"
     }, "Upcoming Event").render(".container--inner")
-    const upcoming = new comp.div({
+    new comp.div({
       id: "upcoming"
     }).render(".container--inner")
-    const title2 = new comp.title("h1", {
+    new comp.title("h1", {
       className: "title--past"
     }, "Past Event").render(".container--inner")
-    const past = new comp.div({
+    new comp.div({
       id: "past"
     }).render(".container--inner")
     // this.newTask()
@@ -79,7 +79,7 @@ const buildEvents = {
       new comp.label("Date"),
       new comp.input({type: "date"}),
       new comp.label("Time"),
-      new comp.input({type: "text"}),
+      new comp.input({type: "time"}),
       new comp.label("Location"),
       new comp.input({ type: "text"}),
       new comp.btn("Save"),
@@ -139,7 +139,7 @@ const buildEvents = {
     new comp.label("Date"),
     new comp.input({type: "date", value: `${singleEventObj.date}`}),
     new comp.label("Time"),
-    new comp.input({type: "text", value: `${singleEventObj.time}`}),
+    new comp.input({type: "time", value: `${singleEventObj.time}`}),
     new comp.label("Location"),
     new comp.input({ type: "text", value: `${singleEventObj.location}`}),
     new comp.btn("Save"),
