@@ -23,7 +23,7 @@ const API = {
   },
 
   deleteItem(category, id) {
-    return fetch(`${URL}${category}?id=${id}`, {
+    return fetch(`${URL}${category}/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
