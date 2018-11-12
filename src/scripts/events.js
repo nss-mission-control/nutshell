@@ -42,9 +42,10 @@ const buildEvents = {
         className: "event",
         id: `${eventObj.id}`
       },
+      new comp.div ( {},
       new comp.title("h3", `${eventObj.name}`),
       new comp.par(`${eventObj.date} ${eventObj.time}`),
-      new comp.par(`${eventObj.location}`),
+      new comp.par(`${eventObj.location}`)),
       new comp.btn("Edit")).render(outputContainer)
   },
 
