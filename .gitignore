@@ -11,3 +11,4 @@ api/
    *.db
    *.sqlite3
    .vscode
+public/bundle.js
