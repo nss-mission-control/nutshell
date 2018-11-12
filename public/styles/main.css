@@ -79,7 +79,8 @@ body {
   overflow-x: none;
 }
 
-/* overlay */
+/*
+overlay
 .modal {
   position: absolute;
   width: 100%;
@@ -88,7 +89,7 @@ body {
   opacity: 0.8;
 }
 
-/* scrollbar styling
+scrollbar styling
 ::-webkit-scrollbar {
   width: 12px;
 }
@@ -109,5 +110,4 @@ Handle
 }
 ::-webkit-scrollbar-thumb:window-inactive {
 background: rgba(255,0,0,0.4);
-}
-*/
+} */

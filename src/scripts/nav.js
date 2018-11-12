@@ -26,7 +26,7 @@ const navBar = {
           console.log("Not logged in.");
           logInFuncs.loadLogIn();
         } else {
-          buildMissionControl.printPlaceholder();
+          buildMissionControl.printPlanets();
         }
       } else if (event.target.textContent == "Tasks") {
         if (sessionStorage.getItem("currentUser") === null){
