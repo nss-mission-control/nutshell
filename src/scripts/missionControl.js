@@ -18,30 +18,30 @@ const buildMissionControl = {
   printPlanets () {
     document.querySelector(".container--inner").innerHTML = null;
     // make planets - each section is a planet
-    new comp.section ({className: "container--sub visible-1 planet-task"},
+    new comp.section ({className: "container--sub visible-1"},
     new comp.div({className: "ring"}),
     new comp.div({className: "ring-2"}),
     new comp.span({className: "container--sub2 planet-task"}, "Tasks")
     ).render(".container--inner")
 
-    new comp.section ({className: "container--sub visible-3 planet-message"},
+    new comp.section ({className: "container--sub visible-3"},
     new comp.div({className: "ufo"}),
     new comp.span({className: "container--sub2 planet-message"}, "Messages")
     ).render(".container--inner")
 
-    new comp.section ({className: "container--sub visible-5 planet-friends"},
+    new comp.section ({className: "container--sub visible-5"},
     new comp.div({className: "ring"}),
     new comp.span({className: "container--sub2 planet-friends"}, "Friends")
     ).render(".container--inner")
 
-    new comp.section ({className: "container--sub visible-7 planet-events"},
+    new comp.section ({className: "container--sub visible-7"},
     new comp.div({className: "ring"}),
     new comp.div({className: "ring-2"}),
     new comp.div({className: "ring-3"}),
     new comp.span({className: "container--sub2 planet-events"}, "Events")
     ).render(".container--inner")
 
-    new comp.section ({className: "container--sub visible-9 planet-news"},
+    new comp.section ({className: "container--sub visible-9"},
     new comp.span({className: "container--sub2 planet-news"}, "News")
     ).render(".container--inner")
 
@@ -63,7 +63,6 @@ const buildMissionControl = {
 
   clickPlanets() {
     document.querySelector(".container--inner").addEventListener("click", (e) => {
-      console.log(e)
       if (e.target.classList.contains("planet-task")) {
         buildTasks.buildContainers()
       } else if (e.target.classList.contains("planet-message")) {
@@ -73,6 +72,7 @@ const buildMissionControl = {
       } else if (e.target.classList.contains("planet-events")) {
         buildEvents.buildContainers()
       } else if (e.target.classList.contains("planet-news")) {
+        console.log(e)
         buildNews.newsMap();
       }
     })
