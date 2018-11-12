@@ -2,6 +2,7 @@ import comp from "./components"
 import registerFuncs from "./register"
 import API from "./apiData";
 import buildMissionControl from "./missionControl";
+import navBar from "./nav";
 
 const logInFuncs = {
   checkUser(username, password) {
@@ -21,6 +22,8 @@ const logInFuncs = {
         if (currentUser !== undefined) {
           console.log("Build Mission Login")
           sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+          document.querySelector("#navBar").innerHTML = "";
+          navBar.loadNavBar();
           buildMissionControl.printPlaceholder();
         }
 

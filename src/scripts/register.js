@@ -2,6 +2,7 @@ import comp from "./components";
 import logInFuncs from "./login";
 import API from "./apiData";
 import buildMissionControl from "./missionControl";
+import navBar from "./nav";
 
 const registerFuncs = {
 
@@ -72,6 +73,8 @@ const registerFuncs = {
   loadMission(user) {
     console.log(user)
     sessionStorage.setItem("currentUser", JSON.stringify(user));
+    document.querySelector("#navBar").innerHTML = "";
+    navBar.loadNavBar();
     buildMissionControl.printPlaceholder();
   }
 

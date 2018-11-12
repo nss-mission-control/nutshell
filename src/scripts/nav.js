@@ -19,7 +19,7 @@ const navBar = {
         new comp.li({}, "Messages"),
         new comp.li({}, "News"),
         new comp.li({}, "Friends"),
-        new comp.li({}, "Log Out")
+        new comp.li({}, "Log In")
       ).render("#navBar")
     } else {
     new comp.ul(
