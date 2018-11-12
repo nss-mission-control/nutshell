@@ -134,33 +134,6 @@
   ],
   "articles": [
     {
-      "articleName": "SEN. MARK WARNER ON BREAKING UP FACEBOOK AND CONGRESS’ PLAN TO REGULATE TECH",
-      "url": "https://www.theverge.com/2018/11/5/18056610/facebook-mark-warner-congress-cambridge-analytica",
-      "articleImage": "https://cdn.vox-cdn.com/thumbor/QjyUSJT76lCgiIXDy_hDdLunnkg=/0x0:2040x1360/2070x1164/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/62169879/eschaff_181023_3061_0001.0.jpg",
-      "dateSaved": "2018-09-09T21:18:52.339Z",
-      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "articleName": "SEN. MARK WARNER ON BREAKING UP FACEBOOK AND CONGRESS’ PLAN TO REGULATE TECH",
-      "url": "https://www.theverge.com/2018/11/5/18056610/facebook-mark-warner-congress-cambridge-analytica",
-      "articleImage": "https://cdn.vox-cdn.com/thumbor/QjyUSJT76lCgiIXDy_hDdLunnkg=/0x0:2040x1360/2070x1164/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/62169879/eschaff_181023_3061_0001.0.jpg",
-      "dateSaved": "2017-09-09T21:18:52.339Z",
-      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
-      "userId": 1,
-      "id": 1
-    },
-    {
-      "articleName": "THE CLEVER TECH KEEPING AMERICA'S (MANY) DISABLED FARMERS ON THE JOB",
-      "url": "https://www.wired.com/story/farmer-disabilities-tools-agrability-breaking-new-ground/",
-      "articleImage": "https://media.wired.com/photos/5be36d45ea738f3bb11c870a/master/w_825,c_limit/Farming-Mobility-1006208112.jpg",
-      "dateSaved": "2018-11-01T21:18:52.339Z",
-      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
-      "userId": 2,
-      "id": 2
-    },
-    {
       "articleName": "In East Palo Alto, the influx of tech companies pushes residents to a breaking point over gentrification",
       "url": "https://www.mercurynews.com/2018/11/05/in-east-palo-alto-the-influx-of-tech-companies-pushes-residents-to-a-breaking-point-over-gentrification/",
       "articleImage": "https://www.mercurynews.com/wp-content/uploads/2018/11/In_East_Palo_Alto_the_influx_of_tech_companies_pushes_residents_to_a_breaking_point_over_gentrification1.jpg?w=863",
@@ -179,13 +152,22 @@
       "id": 4
     },
     {
-      "articleName": "McConnell: 'The Mueller investigation is not under threat', this is extra text to see if the article re-aligns",
-      "url": "https://abcnews.go.com/Politics/wireStory/mcconnell-mueller-investigation-threat-59089515",
-      "articleImage": "https://images.outbrainimg.com/transform/v3/eyJpdSI6IjJjNDU4MjZhODk5YzVhOGYyZTM1NmY5MWEyYWRiNzgyOTU4YWRmZDYyMjE1ZmU0ZWU4MjVkMjVkY2VjYTZjM2QiLCJ3IjoyNTAsImgiOjI0MCwiZCI6MS41LCJjcyI6MCwiZiI6MH0.webp",
-      "about": "Something else",
+      "articleName": "Testing the articles function",
+      "url": "www.google.com",
+      "articleImage": "data:image/jpeg;base64,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",
+      "about": "Testing a new functionality with event listeners",
+      "userId": 1,
+      "dateSaved": "2018-11-12T17:04:48.842Z",
+      "id": 6
+    },
+    {
+      "articleName": "test",
+      "url": "test",
+      "articleImage": "https://beebom-redkapmedia.netdna-ssl.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg",
+      "about": "test",
       "userId": 2,
-      "dateSaved": "2018-11-09T21:18:52.339Z",
-      "id": 5
+      "dateSaved": "2018-11-12T17:39:44.307Z",
+      "id": 7
     }
   ],
   "events": [
@@ -207,8 +189,8 @@
     },
     {
       "name": "Soccer Practice",
-      "date": "2018-11-22",
-      "time": "4pm",
+      "date": "2018-11-02",
+      "time": "09:11",
       "location": "The Field",
       "userId": 2,
       "id": 3
@@ -223,8 +205,8 @@
     },
     {
       "name": "Concert",
-      "date": "2018-11-09",
-      "time": "The Past",
+      "date": "2018-11-02",
+      "time": "09:10",
       "location": "Narnia",
       "userId": 2,
       "id": 5
@@ -314,11 +296,39 @@
       "id": 6
     },
     {
-      "task": "New Task By Jase",
+      "task": "test new",
       "complete": false,
       "dueDate": "2018-11-06",
       "userId": 2,
       "id": 7
+    },
+    {
+      "task": "test new",
+      "complete": false,
+      "dueDate": "2018-11-02",
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "task": "Test",
+      "complete": false,
+      "dueDate": "2018-11-17",
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "task": "Brendan's new task",
+      "complete": false,
+      "dueDate": "2018-11-08",
+      "userId": 3,
+      "id": 10
+    },
+    {
+      "task": "Brad's Task",
+      "complete": false,
+      "dueDate": "2018-11-15",
+      "userId": 4,
+      "id": 11
     }
   ],
   "friends": [

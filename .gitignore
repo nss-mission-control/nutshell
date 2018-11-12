@@ -1,14 +1,15 @@
 src/lib/node_modules
+
+.DS_Store
+dist/
+public/*.js
+bower_components
+__pycache__
+*.pyc
+bin
+obj
+*.db
+*.sqlite3
+.vscode
 api/
-bundle.js
-   .DS_Store
-   dist/
-   public/*.js
-   bower_components
-   __pycache__
-   *.pyc
-   bin
-   obj
-   *.db
-   *.sqlite3
-   .vscode
+public/bundle.js
