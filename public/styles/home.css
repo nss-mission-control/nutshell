@@ -121,6 +121,42 @@
   z-index: -1;
 }
 
+.visible-7 > .ring {
+  width: 190px;
+  height: 190px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  border: 2px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(-50deg);
+  z-index: -1;
+}
+
+.visible-7 > .ring-2 {
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  top: 7.5%;
+  left: 7.5%;
+  border: 2px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(-50deg);
+  z-index: -1;
+}
+
+.visible-7 > .ring-3 {
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  border: 2px solid var(--theme-sub-primary);
+  border-radius: 50%;
+  transform: skew(-50deg);
+  z-index: -1;
+}
+
 /* remove remaining color from ghost elements */
 .ghost-2 > .container--sub2, .ghost-4 > .container--sub2,
 .ghost-6 > .container--sub2, .ghost-8 > .container--sub2 {
@@ -212,6 +248,17 @@
 .visible-9 > span:hover {
   background-image: url(../images/home-page/animat-linechart-color.gif);
   background-size: cover;
+}
+
+/* add ufo */
+.ufo {
+  width: 70px;
+  height: 70px;
+  background-image: url(../images/home-page/meme.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: -20%;
 }
 
 @media only screen and (min-width: 850px) {

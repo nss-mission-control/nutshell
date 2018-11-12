@@ -22,6 +22,7 @@ const buildMissionControl = {
     ).render(".container--inner")
 
     new comp.section ({className: "container--sub visible-3"},
+    new comp.div({className: "ufo"}),
     new comp.span({className: "container--sub2"}, "Messages")
     ).render(".container--inner")
 
@@ -31,6 +32,9 @@ const buildMissionControl = {
     ).render(".container--inner")
 
     new comp.section ({className: "container--sub visible-7"},
+    new comp.div({className: "ring"}),
+    new comp.div({className: "ring-2"}),
+    new comp.div({className: "ring-3"}),
     new comp.span({className: "container--sub2"}, "Events")
     ).render(".container--inner")
 
