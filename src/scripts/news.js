@@ -1,5 +1,6 @@
 import comp from "./components"
 import API from "./apiData"
+import activeUser from "./sessionStorage"
 
 
 const buildNews = {
@@ -12,10 +13,8 @@ const buildNews = {
   },
 
   newsMap ()  {
-    const user = JSON.parse(sessionStorage.getItem("currentUser"));
-    console.log(user);
     document.querySelector(".container--inner").innerHTML = ""
-    API.getAllCategory("articles/?_expand=user&_sort=dateSaved&_order=desc")
+    API.getAllCategory("articles/?_expand=user&userid=_sort=dateSaved&_order=desc")
     .then(newsObj => newsObj.forEach(news => {
       this.printNews(news)}))
       .then(() => this.newNews())
@@ -47,7 +46,7 @@ const buildNews = {
         /*
         NEED TO UPDATE USER ID TO SAVE SESSION ASSIGNED ID
         */
-        userId: 2,
+        userId: activeUser.info.id(),
         dateSaved: new Date()
       }
       buildNews.addNews(story)
