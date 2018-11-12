@@ -43,3 +43,11 @@ nav > ul > li {
 nav > ul > li:hover {
   border-bottom: 1px solid var(--theme-sub-light);
 }
+
+.messagePic {
+  display:inline-block;
+  border-radius: 8px;
+  margin: 4px;
+  height: 25px;
+  width: 25px
+}

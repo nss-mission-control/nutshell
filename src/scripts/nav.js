@@ -3,12 +3,25 @@ import logInFuncs from "./login"
 import buildMessages from "./messages";
 import buildNews from "./news";
 import buildMissionControl from "./missionControl";
-import buildTasks from "./tasks"
-import buildEvents from "./events"
+import buildTasks from "./tasks";
+import buildEvents from "./events";
+import activeUser from "./sessionStorage";
 
 
 const navBar = {
   loadNavBar() {
+    if (sessionStorage.getItem("currentUser") === null){
+      new comp.ul(
+        {},
+        new comp.li({}, "Home"),
+        new comp.li({}, "Tasks"),
+        new comp.li({}, "Events"),
+        new comp.li({}, "Messages"),
+        new comp.li({}, "News"),
+        new comp.li({}, "Friends"),
+        new comp.li({}, "Log Out")
+      ).render("#navBar")
+    } else {
     new comp.ul(
       {},
       new comp.li({}, "Home"),
@@ -17,8 +30,9 @@ const navBar = {
       new comp.li({}, "Messages"),
       new comp.li({}, "News"),
       new comp.li({}, "Friends"),
-      new comp.li({}, "Log Out")
+      new comp.image({src: `${activeUser.info().profilePic}`, alt: "Profile Pic", className: "messagePic"})
     ).render("#navBar")
+    }
 
     document.querySelector("#navBar").addEventListener("click", (event) => {
       if (event.target.textContent === "Home") {
