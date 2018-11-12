@@ -12,6 +12,7 @@ const buildTasks = {
     new comp.div ({id: "incomplete"}).render(".container--inner")
     new comp.title ("h1", {className: "title--complete"}, "Complete Tasks").render(".container--inner")
     new comp.div ({id: "complete"}).render(".container--inner")
+    new comp.div ({className: "new--task", id: "new--task"}).render("#incomplete")
     this.newTask()
     this.tasksFetch()
   },
@@ -119,12 +120,24 @@ const buildTasks = {
 
   },
 
-  //creates new task input field with append button inside first section of INCOMPLETE container
+  //creates button that, on click, will create inputs for a new task and a "+" button
   newTask () {
-    new comp.section ({className: "new--task"},
-    new comp.btn ("+"),
-    new comp.input({id: "input--task", type: "text", placeholder: "type new task here"}),
-    new comp.input({id: "input--date", type: "date"})).render("#incomplete")
+    new comp.btn ("Create New Task").render("#new--task")
+
+    const button = document.querySelector("button")
+
+    //button click posts new task to database and resets new task input strings
+    button.addEventListener("click", () => {
+      document.getElementById("new--task").innerHTML = null;
+      this.createNewTask();
+    })
+  },
+
+  // validate new task inputs and then save new task to database before reloading container
+  createNewTask () {
+    new comp.btn ("+").render("#new--task")
+    new comp.input({id: "input--task", type: "text", placeholder: "type new task here"}).render("#new--task")
+    new comp.input({id: "input--date", type: "date"}).render("#new--task")
 
     const button = document.querySelector("button")
     const input_task = document.querySelector("#input--task")
@@ -139,21 +152,19 @@ const buildTasks = {
           task: input_task.value,
           complete: false,
           dueDate: input_date.value,
-          /*
-          NEED TO UPDATE USER ID TO SAVE SESSION ASSIGNED ID
-          */
           userId: activeUser.info().id,
         }
         API.saveItem("tasks", taskItem).then(data => {
           this.printTasks(data)
           this.cbListener()
           this.parListener()
+          document.getElementById("new--task").innerHTML = null;
+          this.newTask()
         })
-        input_task.value = ""
-        input_date.value = ""
       }
     })
   }
+
 }
 
 export default buildTasks

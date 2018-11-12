@@ -292,8 +292,8 @@
       "id": 3
     },
     {
-      "task": "New item test",
-      "complete": true,
+      "task": "Whoa?",
+      "complete": false,
       "dueDate": "2018-11-09",
       "userId": 3,
       "id": 4
@@ -307,7 +307,7 @@
     },
     {
       "task": "Hello",
-      "complete": true,
+      "complete": false,
       "dueDate": "2018-11-21",
       "userId": 3,
       "id": 6
@@ -335,7 +335,7 @@
     },
     {
       "task": "Brendan's new task",
-      "complete": false,
+      "complete": true,
       "dueDate": "2018-11-08",
       "userId": 3,
       "id": 10
@@ -349,10 +349,24 @@
     },
     {
       "task": "Brendand's new task",
-      "complete": false,
+      "complete": true,
       "dueDate": "2018-11-12",
       "userId": 3,
       "id": 12
+    },
+    {
+      "task": "fixed it!",
+      "complete": true,
+      "dueDate": "2018-11-13",
+      "userId": 3,
+      "id": 13
+    },
+    {
+      "task": "Whoa?",
+      "complete": false,
+      "dueDate": "2018-11-06",
+      "userId": 3,
+      "id": 14
     }
   ],
   "friends": [
