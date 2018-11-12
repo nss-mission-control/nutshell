@@ -22,30 +22,38 @@
 
 /* landing page login register */
 .welcome {
-  /* layout */
-  flex-basis: 30%;
-  height: 40%;
-  padding: 7.5px;
-  /* position children */
+  background-color: var(--theme-sub-dark);
+  flex-basis: 50%;
+  height: 50%;
   display: flex;
-  flex-flow: row wrap;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  /* design */
-  background-color: var(--theme-sub-primary);
-  border: 7.5px solid var(--planet-dark-green);
-  border-radius: 10px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), -4px -4px 16px 0 rgba(0,0,0,0.2);
 }
 
-.welcome > h1 {
-  text-align: center;
-  color: var(--planet-dark-purple);
-  font-family: var(--font-family-form);
+.LogIn{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.welcome > .btn {
-  flex-basis: 40%;
-  height: 40px;
-  font-size: 1.1em;
+.WelcomeNav{
+  display: flex;
+  flex-direction: row;
+}
+
+.WelcomeNav > h2{
+  margin: 10px;
+}
+
+.WelcomeNav > h2:hover{
+  cursor: pointer;
+  color: var(--theme-main-primary);
+  font-weight: bold;
+}
+
+.LogIn > label > input {
+  margin: 10px;
 }
