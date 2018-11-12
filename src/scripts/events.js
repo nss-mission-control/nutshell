@@ -35,7 +35,7 @@ const buildEvents = {
     // takes the objects from the api and prints them to the dom
     let outputContainer;
 
-    // need to test if date is in the future or the past
+    // TODO:need to test if date is in the future or the past
 
     outputContainer = "#upcoming"
     const task = new comp.section({
@@ -48,12 +48,18 @@ const buildEvents = {
       new comp.btn("Edit")).render(outputContainer)
   },
 
+  nextEvent() {
+    console.log(document.getElementById("upcoming").firstChild)
+    document.getElementById("upcoming").firstChild.classList.add("nextEvent");
+  },
+
   eventFetch() {
     API.getAllCategory(`events/?userId=${activeUser.info().id}&_sort=date,time&_order=asc`) //check if user is same as session storage
       .then(eventObj => {
         eventObj.forEach(event => {
           this.printEvents(event)
         })
+        buildEvents.nextEvent();
         buildEvents.editBtnListen()
       })
   },
