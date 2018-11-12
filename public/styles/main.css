@@ -6,6 +6,8 @@
 @import "messages.css";
 @import "tasks.css";
 @import "news.css";
+@import "events.css";
+
 
 :root {
   --theme-main-primary: #42a5f4;
@@ -71,9 +73,9 @@ body {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
+  position: relative;
   /* design */
   overflow-y: auto;
-  position: relative;
   overflow-x: none;
 }
 

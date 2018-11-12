@@ -7,71 +7,58 @@
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
 }
-
-.title--incomplete, .title--complete {
+.title--upcoming, .title--past {
   flex-basis: 100%;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#incomplete {
+#upcoming {
   flex-basis: 75%;
   height: 250px;
   border: 1px solid black;
   overflow-y: auto;
+
+
   /* padding to keep new task from hiding first section */
-  padding-top: 75px;
-  position: relative;
+  /* padding-top: 75px;
+  position: relative; */
 }
 
-#complete {
+#past {
   flex-basis: 75%;
   height: 250px;
   border: 1px solid black;
   overflow-y: auto;
 }
 
-#complete > .task > p {
-  text-decoration: line-through;
+.event > h3 {
+  font-weight: 700;
 }
 
-.task {
+.event {
   width: 100%;
   padding: 15px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 
-/* task description */
-.task > p:first-of-type {
-  display: inline-block;
-  width: 75%;
-  margin-left: 5px;
-}
-
-/* task due date */
-.task > p:last-of-type {
-  display: inline-block;
-  width: 15%;
-  margin-left: 15px;
-}
-
-.new--task {
-  height: 75px; /* fixed height for abs positioning */
-  padding: 10px;
+#newEventBtn {
   position: absolute;
-  width: 100%;
   top: 0;
-  left: 0;
+  right: 0;
+  padding: 15px;
+  display: flex;
+
 }
 
-.new--task > input:first-of-type {
-  width: 60%;
-  margin-left: 5px;
+.newEventForm {
+  background-color: var(--theme-sub-dark);
+  flex-basis: 40%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-.new--task > input:last-of-type {
-  width: 30%;
-  margin-left: 15px;
-}
-

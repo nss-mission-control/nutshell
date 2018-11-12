@@ -1,11 +1,11 @@
 import comp from "./components"
 import API from "./apiData"
+import activeUser from "./sessionStorage"
 
-let currentUser = {};
 
 const buildMessages = {
   printMessages(messageObj) {
-    if (currentUser.id === messageObj.user.id) {
+    if (activeUser.info().id === messageObj.user.id) {
       new comp.section({
           className: "message",
           id: `${messageObj.id}`
@@ -26,9 +26,6 @@ const buildMessages = {
   },
 
   messageMap() {
-    currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-    console.log(currentUser)
-
     document.querySelector(".container--inner").innerHTML = ""
     API.getAllCategory("messages/?_expand=user")
       .then(messageObj => {
@@ -75,7 +72,7 @@ const buildMessages = {
           messageContent: $("#newMessage > textarea").val(),
           timeStamp: dateArray[4], //TODO: make it non military time
           date: `${month}/${dateArray[2]}/${dateArray[3]}`,
-          userId: currentUser.id
+          userId: activeUser.info().id
 
         }
         // send to API

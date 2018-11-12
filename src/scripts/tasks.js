@@ -1,15 +1,12 @@
 import comp from "./components"
 import API from "./apiData"
-
-let currentUser = {}
+import activeUser from "./sessionStorage"
 
 
 const buildTasks = {
 
   //function run first in order to clear HTML, create parent containers, then add new task input and call fetch
   buildContainers () {
-    currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
-    console.log(currentUser);
     document.querySelector(".container--inner").innerHTML = ""
     new comp.title ("h1", {className: "title--incomplete"}, "Incomplete Tasks").render(".container--inner")
     new comp.div ({id: "incomplete"}).render(".container--inner")
@@ -145,7 +142,7 @@ const buildTasks = {
           /*
           NEED TO UPDATE USER ID TO SAVE SESSION ASSIGNED ID
           */
-          userId: 3,
+          userId: activeUser.info().id,
         }
         API.saveItem("tasks", taskItem).then(data => {
           this.printTasks(data)
