@@ -11,4 +11,3 @@ const activeUser = {
 
 
 export default activeUser;
-

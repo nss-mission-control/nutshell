@@ -107,6 +107,20 @@
       "date": "11/12/2018",
       "userId": 2,
       "id": 10
+    },
+    {
+      "messageContent": "TEST",
+      "timeStamp": "09:44:11",
+      "date": "11/12/2018",
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "messageContent": "I am testing",
+      "timeStamp": "09:45:10",
+      "date": "11/12/2018",
+      "userId": 2,
+      "id": 12
     }
   ],
   "articles": [
@@ -115,6 +129,15 @@
       "url": "https://www.theverge.com/2018/11/5/18056610/facebook-mark-warner-congress-cambridge-analytica",
       "articleImage": "https://cdn.vox-cdn.com/thumbor/QjyUSJT76lCgiIXDy_hDdLunnkg=/0x0:2040x1360/2070x1164/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/62169879/eschaff_181023_3061_0001.0.jpg",
       "dateSaved": "2018-09-09T21:18:52.339Z",
+      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "articleName": "SEN. MARK WARNER ON BREAKING UP FACEBOOK AND CONGRESS’ PLAN TO REGULATE TECH",
+      "url": "https://www.theverge.com/2018/11/5/18056610/facebook-mark-warner-congress-cambridge-analytica",
+      "articleImage": "https://cdn.vox-cdn.com/thumbor/QjyUSJT76lCgiIXDy_hDdLunnkg=/0x0:2040x1360/2070x1164/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/62169879/eschaff_181023_3061_0001.0.jpg",
+      "dateSaved": "2017-09-09T21:18:52.339Z",
       "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
       "userId": 1,
       "id": 1
@@ -159,7 +182,7 @@
   "events": [
     {
       "id": 1,
-      "name": "Math Class",
+      "name": "English Class",
       "date": "2018-11-15",
       "location": "Internet",
       "time": "10:00",
@@ -228,6 +251,14 @@
       "location": "Here",
       "userId": 2,
       "id": 9
+    },
+    {
+      "name": "test",
+      "date": "2018-11-14",
+      "time": "10:10",
+      "location": "test",
+      "userId": 2,
+      "id": 10
     }
   ],
   "tasks": [
@@ -272,6 +303,13 @@
       "dueDate": "2018-11-21",
       "userId": 3,
       "id": 6
+    },
+    {
+      "task": "New Task By Jase",
+      "complete": false,
+      "dueDate": "2018-11-06",
+      "userId": 2,
+      "id": 7
     }
   ],
   "friends": [
