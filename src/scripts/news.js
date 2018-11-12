@@ -9,7 +9,8 @@ const buildNews = {
     new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
     new comp.title("h2", {}, `${newsObj.articleName}`),
     new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${newsObj.dateSaved}`),
-    new comp.title("h1", {}, newsObj.about)).render(".container--inner")
+    new comp.par({}, newsObj.about),
+    new comp.btn("Delete Article")).render(".container--inner")
   },
 
   newsMap ()  {
@@ -18,6 +19,7 @@ const buildNews = {
     .then(newsObj => newsObj.forEach(news => {
       this.printNews(news)}))
       .then(() => this.newNews())
+      .then(()=> this.eventListener())
 
   },
 
@@ -36,28 +38,35 @@ const buildNews = {
       new comp.btn("Save New Article")
     ),
     ).render(".container--inner")
-
-    document.querySelector("button").addEventListener("click", ()=>{
-      let story = {
-        articleName: document.querySelector("#articleName").value,
-        url: document.querySelector("#articleLink").value,
-        articleImage: document.querySelector("#articleImage").value,
-        about: document.querySelector("#articleDescription").value,
-        /*
-        NEED TO UPDATE USER ID TO SAVE SESSION ASSIGNED ID
-        */
-        userId: activeUser.info.id(),
-        dateSaved: new Date()
-      }
-      buildNews.addNews(story)
-    })
   },
+
+  eventListener(){
+    document.querySelectorAll("button").forEach((button)=> {
+      button.addEventListener("click", (e)=>{
+        if(e.target.textContent === "Save New Article"){
+          let story = {
+            articleName: document.querySelector("#articleName").value,
+            url: document.querySelector("#articleLink").value,
+            articleImage: document.querySelector("#articleImage").value,
+            about: document.querySelector("#articleDescription").value,
+            userId: activeUser.info().id,
+            dateSaved: new Date()
+          }
+          buildNews.addNews(story)
+        } else if(e.target.textContent === "Delete Article"){
+          let articleId = e.target.parentNode.id
+          API.deleteItem("articles", articleId).then(()=> buildNews.newsMap())
+        }
+        })
+      })
+    },
+
 
   addNews(story){
     API.saveItem("articles", story).then(()=> this.newsMap())
   }
 
-};
+}
 
 
 export default buildNews
