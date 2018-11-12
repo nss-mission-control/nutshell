@@ -1,5 +1,6 @@
 src/lib/node_modules
 api/
+bundle.js
    .DS_Store
    dist/
    public/*.js

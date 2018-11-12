@@ -7,9 +7,11 @@ const landingPageFuncs = {
     new comp.div(
       { classList: "welcome" },
       new comp.title("h1", { className: "title" }, "Welcome to Mission Control"),
-      new comp.btn("Login"),
-      new comp.btn("Register")).render(".container--inner")
-    let buttons = document.querySelectorAll("button")
+      new comp.title("h2", {}, "LogIn"),
+      new comp.title("h2", {}, "Register"),
+      new comp.div({className: "LogIn"})).render(".container--inner")
+
+    // let buttons = document.querySelectorAll("button")
 
     buttons.forEach((button) => {
       button.addEventListener("click", (e) => {

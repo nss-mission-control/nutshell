@@ -36,7 +36,7 @@ const logInFuncs = {
       new comp.input({ name: "password", id: "password", placeholder: "Password" }),
       new comp.btn("Login Now"),
       new comp.btn("Not a user? Create new account.")
-    ).render(".container--inner")
+    ).render(".LogIn")
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", (e) => {
         if (e.target.textContent === "Login Now") {
