@@ -177,6 +177,15 @@
       "userId": 2,
       "dateSaved": "2018-11-09T21:18:52.339Z",
       "id": 5
+    },
+    {
+      "articleName": "Cats",
+      "url": "Cat.com",
+      "articleImage": "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fbeebom-redkapmedia.netdna-ssl.com%2Fwp-content%2Fuploads%2F2016%2F01%2FReverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg&f=1",
+      "about": "cats cats cats",
+      "userId": 2,
+      "dateSaved": "2018-11-12T16:50:22.788Z",
+      "id": 6
     }
   ],
   "events": [

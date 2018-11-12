@@ -14,7 +14,7 @@ const buildNews = {
 
   newsMap ()  {
     document.querySelector(".container--inner").innerHTML = ""
-    API.getAllCategory("articles/?_expand=user&userid=_sort=dateSaved&_order=desc")
+    API.getAllCategory(`articles/?userId=${activeUser.info().id}&_expand=user&_sort=dateSaved&_order=desc`)
     .then(newsObj => newsObj.forEach(news => {
       this.printNews(news)}))
       .then(() => this.newNews())
@@ -46,7 +46,7 @@ const buildNews = {
         /*
         NEED TO UPDATE USER ID TO SAVE SESSION ASSIGNED ID
         */
-        userId: activeUser.info.id(),
+        userId: activeUser.info().id,
         dateSaved: new Date()
       }
       buildNews.addNews(story)
