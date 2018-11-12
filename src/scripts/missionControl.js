@@ -1,6 +1,9 @@
 import comp from "./components"
 import activeUser from "./sessionStorage"
-
+import buildMessages from "./messages";
+import buildNews from "./news";
+import buildTasks from "./tasks"
+import buildEvents from "./events"
 
 
 const buildMissionControl = {
@@ -15,31 +18,31 @@ const buildMissionControl = {
   printPlanets () {
     document.querySelector(".container--inner").innerHTML = null;
     // make planets - each section is a planet
-    new comp.section ({className: "container--sub visible-1"},
+    new comp.section ({className: "container--sub visible-1 planet-task"},
     new comp.div({className: "ring"}),
     new comp.div({className: "ring-2"}),
-    new comp.span({className: "container--sub2"}, "Tasks")
+    new comp.span({className: "container--sub2 planet-task"}, "Tasks")
     ).render(".container--inner")
 
-    new comp.section ({className: "container--sub visible-3"},
+    new comp.section ({className: "container--sub visible-3 planet-message"},
     new comp.div({className: "ufo"}),
-    new comp.span({className: "container--sub2"}, "Messages")
+    new comp.span({className: "container--sub2 planet-message"}, "Messages")
     ).render(".container--inner")
 
-    new comp.section ({className: "container--sub visible-5"},
+    new comp.section ({className: "container--sub visible-5 planet-friends"},
     new comp.div({className: "ring"}),
-    new comp.span({className: "container--sub2"}, "Friends")
+    new comp.span({className: "container--sub2 planet-friends"}, "Friends")
     ).render(".container--inner")
 
-    new comp.section ({className: "container--sub visible-7"},
+    new comp.section ({className: "container--sub visible-7 planet-events"},
     new comp.div({className: "ring"}),
     new comp.div({className: "ring-2"}),
     new comp.div({className: "ring-3"}),
-    new comp.span({className: "container--sub2"}, "Events")
+    new comp.span({className: "container--sub2 planet-events"}, "Events")
     ).render(".container--inner")
 
-    new comp.section ({className: "container--sub visible-9"},
-    new comp.span({className: "container--sub2"}, "News")
+    new comp.section ({className: "container--sub visible-9 planet-news"},
+    new comp.span({className: "container--sub2 planet-news"}, "News")
     ).render(".container--inner")
 
     new comp.section ({className: "container--sub ghost-2"},
@@ -53,21 +56,27 @@ const buildMissionControl = {
 
     new comp.section ({className: "container--sub ghost-8"},
     ).render(".container--inner")
+
+    // assign click listeners
+    this.clickPlanets();
+  },
+
+  clickPlanets() {
+    document.querySelector(".container--inner").addEventListener("click", (e) => {
+      console.log(e)
+      if (e.target.classList.contains("planet-task")) {
+        buildTasks.buildContainers()
+      } else if (e.target.classList.contains("planet-message")) {
+        buildMessages.messageMap();
+      } else if (e.target.classList.contains("planet-friends")) {
+        console.log("Friends function called.")
+      } else if (e.target.classList.contains("planet-events")) {
+        buildEvents.buildContainers()
+      } else if (e.target.classList.contains("planet-news")) {
+        buildNews.newsMap();
+      }
+    })
   }
-
-
-  /* DO NOT DELETE COMMENTED HTML CONTENT SO ADVANCED STYLING IS EASIER LATER */
-  /* DELETE BEFORE END OF PROJECT */
-
-  // <section class="container--sub visible-1"><div class="ring"></div><div class="ring-2"></div><span class="container--sub2">Tasks</span></section>
-  // <section class="container--sub visible-3"><span class="container--sub2">Messages</span></section>
-  // <section class="container--sub visible-5"><div class="ring"></div><span class="container--sub2">Friends</span></section>
-  // <section class="container--sub visible-7"><span class="container--sub2">Events</span></section>
-  // <section class="container--sub visible-9"><span class="container--sub2">News</span></section>
-  // <section class="container--sub ghost-2"><span class="container--sub2"></span></section>
-  // <section class="container--sub ghost-4"><span class="container--sub2"></span></section>
-  // <section class="container--sub ghost-6"><span class="container--sub2"></span></section>
-  // <section class="container--sub ghost-8"><span class="container--sub2"></span></section>
 
 }
 
