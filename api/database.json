@@ -81,11 +81,46 @@
       "id": 6
     },
     {
-      "messageContent": "Here is a TEst",
-      "timeStamp": "17:52:59",
+      "messageContent": "Test",
+      "timeStamp": "15:44:57",
+      "date": "11/11/2018",
+      "userId": 2,
+      "id": 7
+    },
+    {
+      "messageContent": "Test",
+      "timeStamp": "15:45:02",
+      "date": "11/11/2018",
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "messageContent": "Testing message as Kelly",
+      "timeStamp": "17:15:39",
       "date": "11/11/2018",
       "userId": 1,
-      "id": 7
+      "id": 9
+    },
+    {
+      "messageContent": "hello",
+      "timeStamp": "09:03:50",
+      "date": "11/12/2018",
+      "userId": 2,
+      "id": 10
+    },
+    {
+      "messageContent": "TEST",
+      "timeStamp": "09:44:11",
+      "date": "11/12/2018",
+      "userId": 2,
+      "id": 11
+    },
+    {
+      "messageContent": "I am testing",
+      "timeStamp": "09:45:10",
+      "date": "11/12/2018",
+      "userId": 2,
+      "id": 12
     }
   ],
   "articles": [
@@ -147,19 +182,83 @@
   "events": [
     {
       "id": 1,
-      "name": "Class",
-      "date": "11/09/2018",
-      "location": "Nashville Software School",
-      "time": "09:00",
-      "userId": 1
+      "name": "English Class",
+      "date": "2018-11-15",
+      "location": "Internet",
+      "time": "10:00",
+      "userId": 2
     },
     {
       "id": 2,
       "name": "Tech Meet Up",
-      "date": "11/25/2018",
-      "location": "Emma",
+      "date": "2018-11-14",
+      "location": "The Moon",
       "time": "15:00",
       "userId": 3
+    },
+    {
+      "name": "Soccer Practice",
+      "date": "2018-11-22",
+      "time": "4pm",
+      "location": "The Field",
+      "userId": 2,
+      "id": 3
+    },
+    {
+      "name": "Sleep",
+      "date": "2018-11-11",
+      "time": "Now",
+      "location": "My Bed",
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "name": "Concert",
+      "date": "2018-11-09",
+      "time": "The Past",
+      "location": "Narnia",
+      "userId": 2,
+      "id": 5
+    },
+    {
+      "name": "Testing SessionStorage",
+      "date": "2018-11-23",
+      "time": "Right Now",
+      "location": "My computer",
+      "userId": 2,
+      "id": 6
+    },
+    {
+      "name": "Class",
+      "date": "2018-11-12",
+      "time": "9:05am",
+      "location": "NSS",
+      "userId": 1,
+      "id": 7
+    },
+    {
+      "name": "New",
+      "date": "2018-11-14",
+      "time": "Now",
+      "location": "Here",
+      "userId": 2,
+      "id": 8
+    },
+    {
+      "name": "This moment",
+      "date": "2018-11-21",
+      "time": "09:12",
+      "location": "Here",
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "name": "test",
+      "date": "2018-11-14",
+      "time": "10:10",
+      "location": "test",
+      "userId": 2,
+      "id": 10
     }
   ],
   "tasks": [

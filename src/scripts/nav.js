@@ -4,6 +4,7 @@ import buildMessages from "./messages";
 import buildNews from "./news";
 import buildMissionControl from "./missionControl";
 import buildTasks from "./tasks"
+import buildEvents from "./events"
 
 
 const navBar = {
@@ -39,7 +40,7 @@ const navBar = {
           console.log("Not logged in.");
           logInFuncs.loadLogIn();
         } else {
-        console.log("Events function called.")
+          buildEvents.buildContainers()
         }
       } else if (event.target.textContent == "Messages") {
         if (sessionStorage.getItem("currentUser") === null){

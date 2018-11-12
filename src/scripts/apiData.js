@@ -7,7 +7,7 @@ const API = {
   },
 
   getOneFromCategory(category, id) {
-    return fetch(`${URL}${category}?id=${id}`)
+    return fetch(`${URL}${category}/${id}`)
       .then(inputs => inputs.json())
   },
 
