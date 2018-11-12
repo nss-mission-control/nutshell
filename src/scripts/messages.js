@@ -38,8 +38,16 @@ const buildMessages = {
         this.newMessage();
         this.submitMessage();
         this.editButtonClick();
-      })
+      }).then(() => this.scrollWindowButtom());
   },
+
+  // sets scroll window to bottom of old--messages container
+  scrollWindowButtom() {
+    let messageWindow = document.querySelector(".old--messages");
+    messageWindow.scrollTop = messageWindow.scrollHeight;
+  },
+
+
   // builds new message entry field
   newMessage() {
     //wrapped this in a div instead of a section, to grab sections easier.
