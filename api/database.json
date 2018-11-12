@@ -79,6 +79,13 @@
       "date": "11/10/2018",
       "userId": 3,
       "id": 6
+    },
+    {
+      "messageContent": "Here is a TEst",
+      "timeStamp": "17:52:59",
+      "date": "11/11/2018",
+      "userId": 1,
+      "id": 7
     }
   ],
   "articles": [
@@ -87,6 +94,15 @@
       "url": "https://www.theverge.com/2018/11/5/18056610/facebook-mark-warner-congress-cambridge-analytica",
       "articleImage": "https://cdn.vox-cdn.com/thumbor/QjyUSJT76lCgiIXDy_hDdLunnkg=/0x0:2040x1360/2070x1164/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/62169879/eschaff_181023_3061_0001.0.jpg",
       "dateSaved": "2018-09-09T21:18:52.339Z",
+      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "articleName": "SEN. MARK WARNER ON BREAKING UP FACEBOOK AND CONGRESS’ PLAN TO REGULATE TECH",
+      "url": "https://www.theverge.com/2018/11/5/18056610/facebook-mark-warner-congress-cambridge-analytica",
+      "articleImage": "https://cdn.vox-cdn.com/thumbor/QjyUSJT76lCgiIXDy_hDdLunnkg=/0x0:2040x1360/2070x1164/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/62169879/eschaff_181023_3061_0001.0.jpg",
+      "dateSaved": "2017-09-09T21:18:52.339Z",
       "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
       "userId": 1,
       "id": 1
@@ -188,6 +204,13 @@
       "dueDate": "2018-11-21",
       "userId": 3,
       "id": 6
+    },
+    {
+      "task": "New Task By Jase",
+      "complete": false,
+      "dueDate": "2018-11-06",
+      "userId": 2,
+      "id": 7
     }
   ],
   "friends": [
