@@ -1,6 +1,7 @@
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"
+import formatDate from "./format"
 
 
 const buildEvents = {
@@ -43,7 +44,7 @@ const buildEvents = {
         id: `${eventObj.id}`
       },
       new comp.title("h3", `${eventObj.name}`),
-      new comp.par(`${eventObj.date} ${eventObj.time}`),
+      new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${eventObj.time}`),
       new comp.par(`${eventObj.location}`),
       new comp.btn("Edit")).render(outputContainer)
   },

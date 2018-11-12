@@ -1,10 +1,9 @@
 
-
-export default Object.create(null, {
+const formatDate = {
   getCorrectDate (eventDate){
     let datearr =`${eventDate}`.substring(0,10).split("-");
     [datearr[0], datearr[1], datearr[2]] = [datearr[1], datearr[2], datearr[0]];
-    dateFormatted = datearr.join("/");
+    let dateFormatted = datearr.join("/");
     return dateFormatted;
   },
 
@@ -19,10 +18,13 @@ export default Object.create(null, {
     }else{
       timeArr[0] = timeArr[0].substring(1);
     }
-    updatedTime = timeArr.join(":");
+    let updatedTime = timeArr.join(":");
     timeArr = [];
     timeArr.unshift(updatedTime, morningEvening);
-    timeFormatted = timeArr.join(" ");
+    let timeFormatted = timeArr.join(" ");
     return timeFormatted;
   }
-})
+}
+
+export default formatDate
+
