@@ -30,7 +30,7 @@ const logInFuncs = {
   loadLogIn() {
     document.querySelector(".LogIn").innerHTML = ""
       new comp.label({}, "Username", new comp.input({ name: "username", id: "username", placeholder: "username" })).render(".LogIn")
-      new comp.label({ for: "password" }, "Password", new comp.input({ name: "password", id: "password", placeholder: "Password" })).render(".LogIn")
+      new comp.label({ for: "password" }, "Password", new comp.input({ type: "password",name: "password", id: "password", placeholder: "Password" })).render(".LogIn")
       new comp.btn("Login Now").render(".LogIn")
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", (e) => {
