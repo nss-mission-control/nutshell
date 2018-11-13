@@ -179,7 +179,7 @@
       "name": "English Class",
       "date": "2018-11-15",
       "location": "Internet",
-      "time": "10:00",
+      "time": "15:00",
       "userId": 2
     },
     {
@@ -225,10 +225,18 @@
     {
       "name": "Class",
       "date": "2018-11-12",
-      "time": "9:05am",
+      "time": "09:05",
       "location": "NSS",
       "userId": 1,
       "id": 7
+    },
+    {
+      "name": "This Moment",
+      "date": "2018-11-13",
+      "time": "12:30",
+      "location": "Here",
+      "userId": 2,
+      "id": 8
     }
   ],
   "tasks": [
@@ -307,17 +315,17 @@
     {
       "id": 1,
       "request_userId": 2,
-      "recieved_userId": 1
+      "userId": 1
     },
     {
       "id": 2,
       "request_userId": 4,
-      "recieved_userId": 3
+      "userId": 3
     },
     {
       "id": 3,
       "request_userId": 3,
-      "recieved_userId": 2
+      "userId": 2
     }
   ]
 }

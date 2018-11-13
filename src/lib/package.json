@@ -22,5 +22,8 @@
         "grunt-http-server": "^2.1.0",
         "load-grunt-config": "^0.19.2",
         "nss-domcomponent": "^0.1.2"
+    },
+    "dependencies": {
+        "moment": "^2.22.2"
     }
 }

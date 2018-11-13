@@ -2,6 +2,9 @@ import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"
 import formatDate from "./format"
+import moment from "moment"
+
+window.moment = moment
 
 
 const buildEvents = {
@@ -27,13 +30,31 @@ const buildEvents = {
     this.eventFetch()
     },
 
+
+
   printEvents(eventObj) {
     // takes the objects from the api and prints them to the dom
     let outputContainer;
 
+    if (moment(eventObj.date).isBefore(moment().format("YYYY-MM-DD"))){
+      outputContainer = "#past"
+      console.log(moment().hour())
+    } else if (moment(eventObj.date).isSame((moment().format("YYYY-MM-DD")))) {
+      console.log(moment().minute())
+      if(moment().hour() >= Number(eventObj.time.substr(0,2))){
+        if(moment().minute() >= Number(eventObj.time.substr(3,2))) {
+        outputContainer = "#past"
+      } else {outputContainer = "#upcoming"}
+    }
+   }
+    else {
+      outputContainer = "#upcoming"
+    }
+
+    console.log("Moment test" ,moment().format("YYYY-MM-DD"));
     // TODO:need to test if date is in the future or the past
 
-    outputContainer = "#upcoming"
+
     new comp.section({
         className: "event",
         id: `${eventObj.id}`
@@ -43,7 +64,8 @@ const buildEvents = {
       new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${eventObj.time}`),
       new comp.par(`${eventObj.location}`),
       new comp.btn("Edit"))).render(outputContainer)
-    },
+
+  },
 
   newEvent () {
     new comp.div ({className: "new--event",id: "newEventBtnSection"},
@@ -94,8 +116,6 @@ const buildEvents = {
         buildEvents.editBtnListen()
       })
   },
-
-
 
   newEventPopUpBtnClicks() {
     // grabs the two buttons on the page and adds a click listener based on index
