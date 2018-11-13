@@ -135,6 +135,7 @@ const buildEvents = {
       const inputArray = document.querySelectorAll("input");
       // builds object to send to api
       $("#alert").text("");
+      //checks if any field is blank
       if(inputArray[0].value === "" || inputArray[1].value === "" || inputArray[2].value === "" ||inputArray[3].value === "" ) {
           new comp.par({classList: "alert newEventForm"}, "All fields are required.").render("#alert");
           return;
@@ -200,7 +201,7 @@ const buildEvents = {
       // Save Button
       const inputArray = document.querySelectorAll("input");
 
-
+      //check to see if any input is empty and if it is the old info is repopulated
       if (inputArray[0].value === ""){
         inputArray[0].value = singleEventObj.name
       } else if (inputArray[1].value === ""){
