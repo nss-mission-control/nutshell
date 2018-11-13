@@ -4,9 +4,11 @@
   --theme-main-dark: #0077c1;
   --theme-text-light: white;
   --theme-sub-primary: #f5f5f5;
+  --theme-sub-primary2: #eee;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
   --font-family-title: 'Ubuntu', 'Arial', sans-serif;
+  --font-family-form: 'Exo 2', 'Arial', sans-serif;
   --planet-yellow: #FBD281;
   --planet-dark-yellow: #FFB881;
   --planet-bright-green: #24FFDD;
@@ -15,7 +17,7 @@
   --planet-dark-red: #E30773;
   --planet-orange: #FE5671;
   --planet-dark-purple: #382B56;
-  --planet-light-purple: #3B3466;
+  --planet-light-purple: #7B3E80;
   --planet-purple-space: #3F3363;
 }
 
@@ -46,8 +48,8 @@ nav {
   justify-content: center;
   align-items: center;
   /* design */
+  font-family: var(--font-family-form);
   background-color: var(--planet-bright-green);
-  font-family: var(--font-family-title);
   /* -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 0);
   clip-path: polygon(100% 0, 100% 50%, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 0); */
 }

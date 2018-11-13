@@ -7,12 +7,12 @@ const registerFuncs = {
 
   loadRegister() {
     document.querySelector(".LogIn").innerHTML = ""
-      new comp.label({}, "First Name", new comp.input({ name: "firstName", id: "firstName", placeholder: "First Name" }))   .render(".LogIn")
-      new comp.label({}, "Last Name", new comp.input({ name: "lastName", id: "lastName", placeholder: "Last Name" })).render(".LogIn")
-      new comp.label({}, "Email", new comp.input({ type: "email", id: "email", name: "email", placeholder: "email" })).render(".LogIn")
-      new comp.label({}, "Username", new comp.input({ name: "username", id: "username", placeholder: "username" })).render(".LogIn")
-      new comp.label({ for: "password" }, "Password", new comp.input({ type: "password",name: "password", id: "password", placeholder: "Password" })).render(".LogIn")
-      new comp.label({ for: "confirmPassword" }, "Confirm Password",   new comp.input({ type: "password", name: "confirmPassword", id: "confirmPassword", placeholder: "Confirm Password" })).render(".LogIn")
+      new comp.input({ name: "firstName", id: "firstName", placeholder: "first name" })   .render(".LogIn")
+      new comp.input({ name: "lastName", id: "lastName", placeholder: "last name" }).render(".LogIn")
+      new comp.input({ type: "email", id: "email", name: "email", placeholder: "email" }).render(".LogIn")
+      new comp.input({ name: "username", id: "username", placeholder: "username" }).render(".LogIn")
+      new comp.input({ type: "password",name: "password", id: "password", placeholder: "password" }).render(".LogIn")
+      new comp.input({ type: "password", name: "confirmPassword", id: "confirmPassword", placeholder: "confirm password" }).render(".LogIn")
       new comp.btn("Register Account").render(".LogIn")
 
 

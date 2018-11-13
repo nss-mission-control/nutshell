@@ -344,17 +344,17 @@
     {
       "id": 1,
       "request_userId": 2,
-      "recieved_userId": 1
+      "userId": 1
     },
     {
       "id": 2,
       "request_userId": 4,
-      "recieved_userId": 3
+      "userId": 3
     },
     {
       "id": 3,
       "request_userId": 3,
-      "recieved_userId": 2
+      "userId": 2
     }
   ]
 }

@@ -4,6 +4,7 @@
   --theme-main-dark: #0077c1;
   --theme-text-light: white;
   --theme-sub-primary: #f5f5f5;
+  --theme-sub-primary2: #eee;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
   --font-family-title: 'Ubuntu', 'Arial', sans-serif;
@@ -22,13 +23,30 @@
 
 /* landing page login register */
 .welcome {
-  background-color: var(--theme-sub-dark);
-  flex-basis: 50%;
-  height: 50%;
+  background-color: var(--planet-purple-space);
+  flex-basis: 35%;
+  height: 75%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  color: var(--theme-sub-primary);
+  font-family: var(--font-family-form);
+  border: 5px solid var(--planet-dark-green);
+  border-radius: 5px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  overflow-y: auto;
+}
+
+.WelcomeNav {
+  background-color: var(--planet-light-purple);
+  border: 1px solid var(--planet-dark-green);
+  border-radius: 5px;
+}
+
+.LogIn > input {
+  padding: 7.5px;
+  border: 1px solid var(--planet-bright-green);
 }
 
 .LogIn{
@@ -50,10 +68,10 @@
 
 .WelcomeNav > h2:hover{
   cursor: pointer;
-  color: var(--theme-main-primary);
+  color: var(--planet-bright-green);
   font-weight: bold;
 }
 
-.LogIn > label > input {
+.LogIn > input {
   margin: 10px;
 }

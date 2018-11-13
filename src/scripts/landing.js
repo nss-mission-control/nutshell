@@ -6,7 +6,7 @@ const landingPageFuncs = {
   loadLandingPage() {
     new comp.div(
       { classList: "welcome" },
-      new comp.title("h1", { className: "title" }, "Welcome to Mission Control"),
+      new comp.title("h1", { className: "title" }),
       new comp.div({className: "WelcomeNav"},
         new comp.title("h2", {className: "logInNav"}, "Log In"),
         new comp.title("h2", {className: "logInNav"}, "Register")),
