@@ -22,7 +22,7 @@
       "id": 3,
       "firstName": "Brendan",
       "lastName": " McCray",
-      "username": "BilliantBrendan",
+      "username": "BrilliantBrendan",
       "password": "CodeWhiz",
       "email": "brendanMc@gmail.com",
       "profilePic": "https://avatars0.githubusercontent.com/u/43763999?s=400&v=4"
@@ -33,7 +33,7 @@
       "lastName": "Davis",
       "username": "braddavistech",
       "password": "12345NSS",
-      "email": "braddavistech@gmail.com",
+      "email": "brad@braddavistech.com",
       "profilePic": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/35884762_10211693141659337_7630947963367325696_n.jpg?_nc_cat=103&_nc_ht=scontent-atl3-1.xx&oh=ffc0c07db4711096066f9a4612ebff3c&oe=5C7CD0B2"
     },
     {
@@ -136,6 +136,12 @@
       "timeStamp": "2018-03-01T03:16:34.489Z",
       "userId": 1,
       "id": 13
+    },
+    {
+      "messageContent": "duz this werk?",
+      "timeStamp": "2018-11-13T17:34:27.102Z",
+      "userId": 3,
+      "id": 14
     }
   ],
   "articles": [
@@ -180,7 +186,7 @@
       "url": "https://www.newschannel5.com/news/tennessee-american-red-cross-volunteers-help-wildfire-victims",
       "articleImage": "https://mediaassets.newschannel5.com/photo/2018/11/12/RedCrosslocal_1542050078840_102998400_ver1.0_640_480.jpg",
       "about": "WE DIDN'T START THE FIYAAAA",
-      "userId": 3,
+      "userId": 4,
       "dateSaved": "2018-11-12T19:35:56.249Z",
       "id": 8
     }
@@ -273,6 +279,14 @@
       "location": "Bdan's house",
       "userId": 3,
       "id": 11
+    },
+    {
+      "name": "test",
+      "date": "2018-11-14",
+      "time": "18:00",
+      "location": "here",
+      "userId": 4,
+      "id": 12
     }
   ],
   "tasks": [
