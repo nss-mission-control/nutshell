@@ -237,6 +237,14 @@
       "location": "NSS",
       "userId": 2,
       "id": 12
+    },
+    {
+      "name": "Jase's Party",
+      "date": "2018-11-20",
+      "time": "10:10",
+      "location": "The Moon",
+      "userId": 2,
+      "id": 13
     }
   ],
   "tasks": [

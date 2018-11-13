@@ -58,7 +58,6 @@ const buildEvents = {
       //after noon
     } else if(Number(eventObj.time.substr(0,2)) > 12) {
       theTime = (Number(eventObj.time.substr(0,2)) - 12) + `${eventObj.time.substr(2,3)}PM`;
-      console.log(eventObj.time)
       //before noon
     } else {
       theTime = eventObj.time + "AM";
@@ -87,7 +86,6 @@ const buildEvents = {
   newEventClickListener () {
     const button = document.querySelector("#newEventBtnSection > button")
     button.addEventListener("click", (e) => {
-      console.log("click")
       $("#upcoming").text("");
       let upcomingContainer = document.getElementById("upcoming");
       upcomingContainer.style.paddingTop = 0;
@@ -165,7 +163,6 @@ const buildEvents = {
       currentBtn.addEventListener("click", () => {
         // takes the id of the event that was clicks, fetches from the api with that id and passes on to the Edit Element form
         const currentBtnId = currentBtn.parentElement.id;
-        console.log(currentBtnId);
         API.getOneFromCategory("events", currentBtnId)
           .then(singleEvent => {
                buildEvents.eventEditForm(singleEvent, currentBtnId)
@@ -214,7 +211,6 @@ const buildEvents = {
         inputArray[3].value = singleEventObj.location
       }
       // builds object to send to api
-      console.log(inputArray);
       const editEventObj = {
         name: inputArray[0].value,
         date: inputArray[1].value,
@@ -222,7 +218,6 @@ const buildEvents = {
         location: inputArray[3].value,
         userId: activeUser.info().id
       }
-      console.log(editEventObj);
       // saves new event to API
       API.updateItem("events", id, editEventObj).then(() => {
       buildEvents.buildContainers();
