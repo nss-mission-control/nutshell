@@ -1,6 +1,7 @@
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"
+import formatDate from "./format"
 
 
 const buildMessages = {
@@ -11,7 +12,7 @@ const buildMessages = {
           id: `${messageObj.id}`
         },
         new comp.image({src: `${messageObj.user.profilePic}`, className: "messagePic", alt: "Profile Pic"}),
-        new comp.title("h2", {className: "messageAuthor"}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+        new comp.title("h2", {className: "messageAuthor"}, `${messageObj.user.firstName} - ${formatDate.correctDateAndTime(messageObj.timeStamp)}`),
         new comp.title("h1", {}, messageObj.messageContent),
         new comp.btn("Edit")).render(".old--messages")
     } else {
@@ -20,7 +21,7 @@ const buildMessages = {
           id: `${messageObj.id}`
         },
         new comp.image({src: `${messageObj.user.profilePic}`, alt: "Profile Pic", className: "messagePic"}),
-        new comp.title("h2", {className:"messageAuthor"}, `${messageObj.user.firstName} - ${messageObj.date} ${messageObj.timeStamp}`),
+        new comp.title("h2", {className:"messageAuthor"}, `${messageObj.user.firstName} - ${formatDate.correctDateAndTime(messageObj.timeStamp)}`),
         new comp.title("h1", {}, messageObj.messageContent)).render(".old--messages")
     }
   },
@@ -71,17 +72,13 @@ const buildMessages = {
         alert("Please enter your message")
       } else {
         e.preventDefault()
-        //creates object of current moment
-        let dateAndTime = new Date();
-        //converts it into a string and then an array to grab specific values
-        let dateArray = dateAndTime.toString().split(" ");
-        //getMonth() method returns a number between 0-11. Added 1 to get current month
-        let month = dateAndTime.getMonth() + 1;
+
         //builds object to pass into fetch
         let submitMessageObj = {
           messageContent: $("#newMessage > textarea").val(),
-          timeStamp: dateArray[4], //TODO: make it non military time
-          date: `${month}/${dateArray[2]}/${dateArray[3]}`,
+          timeStamp: new Date(),
+          // dateArray[4], //TODO: make it non military time
+          // date: `${month}/${dateArray[2]}/${dateArray[3]}`,
           userId: activeUser.info().id
 
         }
