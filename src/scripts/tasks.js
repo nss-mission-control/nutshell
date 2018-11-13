@@ -47,32 +47,60 @@ const buildTasks = {
       })
   },
 
-  //checkbox listener will move tasks between complete and incomplete containers
-  //database "complete" property will be patched accordingly and DOM updated
-  cbListener() {
-    const checkboxes = document.querySelectorAll("input[type=checkbox]")
-
-    //if the id of the grandparent container is #complete, then check the box
-    checkboxes.forEach((checkbox) => {
-      if (checkbox.parentNode.parentNode.id === "complete") {
-        checkbox.checked = true
-      }
-      checkbox.addEventListener("change", (e) => {
+  // checkbox listener will move tasks between complete and incomplete containers
+  // database "complete" property will be patched accordingly and DOM updated
+  cbListener(singleCheckbox, newTaskData) {
+    // if a single checkbox is true, prevent change listeners from being stacked
+    // by targeting the single new checkbox
+    if (singleCheckbox) {
+      //identify checkbox that was just appended
+      const cbParent = document.getElementById(`_${newTaskData.id}`)
+      const cb = cbParent.getElementsByClassName("cb")[0]
+      cb.addEventListener("change", (e) => {
         let patchProperty;
-        //if false -> true
+        // if false -> true
         if (e.target.checked) {
+          globalEditTrackingVariable = null //reset edit tracking var
           patchProperty = { complete: true }
-          //patch "complete" property of database object using parentNode (section) ID to TRUE
+          // patch "complete" property of database object using parentNode (section) ID to TRUE
           API.updateItem("tasks", `${e.target.parentNode.id.slice(1)}`, patchProperty)
             .then(() => this.buildContainers())
         } else {
-          //if checkbox is unchecked...
+          globalEditTrackingVariable = null //reset edit tracking var
+          // if checkbox is unchecked...
           patchProperty = { complete: false }
           API.updateItem("tasks", `${e.target.parentNode.id.slice(1)}`, patchProperty)
             .then(() => this.buildContainers())
         }
       })
-    })
+    } else {
+      const checkboxes = document.querySelectorAll("input[type=checkbox]")
+
+      //if the id of the grandparent container is #complete, then check the box
+      checkboxes.forEach((checkbox) => {
+        if (checkbox.parentNode.parentNode.id === "complete") {
+          checkbox.checked = true
+        }
+        checkbox.addEventListener("change", (e) => {
+          let patchProperty;
+          // if false -> true
+          if (e.target.checked) {
+            globalEditTrackingVariable = null //reset edit tracking var
+            patchProperty = { complete: true }
+            // patch "complete" property of database object using parentNode (section) ID to TRUE
+            API.updateItem("tasks", `${e.target.parentNode.id.slice(1)}`, patchProperty)
+              .then(() => this.buildContainers())
+          } else {
+            // if checkbox is unchecked...
+            globalEditTrackingVariable = null //reset edit tracking var
+            patchProperty = { complete: false }
+            API.updateItem("tasks", `${e.target.parentNode.id.slice(1)}`, patchProperty)
+              .then(() => this.buildContainers())
+          }
+        })
+      })
+    }
+
   },
 
   //function used to edit tasks in DOM and patch new info to database task description and date
@@ -190,7 +218,7 @@ const buildTasks = {
         }
         API.saveItem("tasks", taskItem).then(data => {
           this.printTasks(data)
-          this.cbListener()
+          this.cbListener(true, data) //true means single checkbox appended
           this.editTaskListener()
           document.getElementById("new--task").innerHTML = null;
           this.newTask()
