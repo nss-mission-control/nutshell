@@ -6,6 +6,10 @@ import formatDate from "./format"
 
 const buildNews = {
   printNews(newsObj) {
+    new comp.section({className:"new--news"},
+      new comp.btn("+"),
+      new comp.title("h2", {}, "Save New Article")
+    ).render("container--inner")
     new comp.section ({className: "news", id: `${newsObj.id}`},
     new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
     new comp.title("h2", {}, `${newsObj.articleName}`),
@@ -19,7 +23,7 @@ const buildNews = {
     API.getAllCategory(`articles/?userId=${activeUser.info().id}&_expand=user&_sort=dateSaved&_order=desc`)
     .then(newsObj => newsObj.forEach(news => {
       this.printNews(news)}))
-      .then(() => this.newNews())
+      // .then(() => this.newNews())
       .then(()=> this.eventListener())
 
   },
