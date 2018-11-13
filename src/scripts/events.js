@@ -35,7 +35,6 @@ const buildEvents = {
   printEvents(eventObj) {
     // takes the objects from the api and prints them to the dom
     let outputContainer;
-    console.log(eventObj);
     // Logic to determin if the event is upcoming or in the past
     if (moment(eventObj.date).isBefore(moment().format("YYYY-MM-DD"))){
       outputContainer = "#past"
@@ -49,6 +48,22 @@ const buildEvents = {
     else {
       outputContainer = "#upcoming"
     }
+    let theTime;
+    // for midnight
+    if (eventObj.time.substr(0,2) === "00"){
+      theTime = (Number(eventObj.time.substr(0,2))) + 12 + `${eventObj.time.substr(2,3)}AM`
+      //noon
+    } else if (Number(eventObj.time.substr(0,2)) === 12) {
+      theTime = `${eventObj.time}PM`
+      //after noon
+    } else if(Number(eventObj.time.substr(0,2)) > 12) {
+      theTime = (Number(eventObj.time.substr(0,2)) - 12) + `${eventObj.time.substr(2,3)}PM`;
+      console.log(eventObj.time)
+      //before noon
+    } else {
+      theTime = eventObj.time + "AM";
+    }
+
     // builds each event and renders to the DOM
     new comp.section({
         className: "event",
@@ -56,7 +71,7 @@ const buildEvents = {
       },
       new comp.div ( {},
       new comp.title("h3", `${eventObj.name}`),
-      new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${eventObj.time}`),
+      new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${theTime}`),
       new comp.par(`${eventObj.location}`)),
       new comp.btn("Edit")).render(outputContainer)
 
@@ -146,11 +161,11 @@ const buildEvents = {
   editBtnListen () {
     // listens for all the edit buttons on the page
     const allTheButtons = document.querySelectorAll("section > button");
-    console.log(allTheButtons);
     allTheButtons.forEach(currentBtn => {
       currentBtn.addEventListener("click", () => {
         // takes the id of the event that was clicks, fetches from the api with that id and passes on to the Edit Element form
         const currentBtnId = currentBtn.parentElement.id;
+        console.log(currentBtnId);
         API.getOneFromCategory("events", currentBtnId)
           .then(singleEvent => {
                buildEvents.eventEditForm(singleEvent, currentBtnId)
@@ -187,7 +202,7 @@ const buildEvents = {
     popUpBtns[0].addEventListener("click", () => {
       // Save Button
       const inputArray = document.querySelectorAll("input");
-      // builds object to send to api
+
 
       if (inputArray[0].value === ""){
         inputArray[0].value = singleEventObj.name
@@ -198,7 +213,7 @@ const buildEvents = {
       } else if (inputArray[3].value === ""){
         inputArray[3].value = singleEventObj.location
       }
-
+      // builds object to send to api
       console.log(inputArray);
       const editEventObj = {
         name: inputArray[0].value,
@@ -207,7 +222,7 @@ const buildEvents = {
         location: inputArray[3].value,
         userId: activeUser.info().id
       }
-
+      console.log(editEventObj);
       // saves new event to API
       API.updateItem("events", id, editEventObj).then(() => {
       buildEvents.buildContainers();

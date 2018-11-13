@@ -176,16 +176,16 @@
   "events": [
     {
       "id": 2,
-      "name": "Test",
+      "name": "Fancy",
       "date": "2014-09-09",
       "location": "Here",
-      "time": "01:02",
+      "time": "03:02",
       "userId": 2
     },
     {
-      "name": "Soccer Practice",
+      "name": "Soccer Practice Today",
       "date": "2018-11-02",
-      "time": "09:11",
+      "time": "22:11",
       "location": "The Field",
       "userId": 2,
       "id": 3
@@ -215,9 +215,9 @@
       "id": 9
     },
     {
-      "name": "Test",
+      "name": "Super Test",
       "date": "1989-03-03",
-      "time": "00:12",
+      "time": "12:12",
       "location": "Jere",
       "userId": 2,
       "id": 10
@@ -229,6 +229,14 @@
       "location": "Here",
       "userId": 2,
       "id": 11
+    },
+    {
+      "name": "Today",
+      "date": "2018-11-13",
+      "time": "05:23",
+      "location": "NSS",
+      "userId": 2,
+      "id": 12
     }
   ],
   "tasks": [
