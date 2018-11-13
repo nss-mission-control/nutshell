@@ -120,7 +120,7 @@
 .new--message > h1 {
   /* layout */
   height: 40px;
-  padding: 7px 0;
+  padding: 4px 0;
   /* design */
   background-color: var(--planet-orange);
   font-family: var(--font-family-exo);
@@ -129,7 +129,7 @@
   text-align: center;
   font-size: 25px;
   text-align: center;
-  font-family: var(--font-family-plain);
+  font-family: var(--font-family-exo);
   border-radius: 5px;
 }
 
