@@ -80,14 +80,6 @@
   justify-content: space-evenly;
   padding-left: 2%;
   align-items: center;
-
-
-  /* flex-basis: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center; */
 }
 
 .newEventForm > input{
@@ -107,10 +99,6 @@
 .newEventForm > input[type=date]::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
   display: none;
-}
-
-.newEventForm > input[type=time]::-webkit-input-placeholder {
-  text-align: center;
 }
 
 .newEventForm > div {
@@ -134,13 +122,13 @@
 
 
 
-.event>button {
+.event > button {
   height: 35px;
   margin: 10px;
   text-align: right;
 }
 
-.event>div {
+.event > div {
   width: 90%;
 }
 

@@ -35,7 +35,7 @@ const buildEvents = {
   printEvents(eventObj) {
     // takes the objects from the api and prints them to the dom
     let outputContainer;
-
+    console.log(eventObj);
     // Logic to determin if the event is upcoming or in the past
     if (moment(eventObj.date).isBefore(moment().format("YYYY-MM-DD"))){
       outputContainer = "#past"
@@ -44,7 +44,7 @@ const buildEvents = {
         if(moment().minute() >= Number(eventObj.time.substr(3,2))) {
         outputContainer = "#past"
       } else {outputContainer = "#upcoming"}
-    }
+    } else {outputContainer = "#upcoming"}
    }
     else {
       outputContainer = "#upcoming"
@@ -57,8 +57,8 @@ const buildEvents = {
       new comp.div ( {},
       new comp.title("h3", `${eventObj.name}`),
       new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${eventObj.time}`),
-      new comp.par(`${eventObj.location}`),
-      new comp.btn("Edit"))).render(outputContainer)
+      new comp.par(`${eventObj.location}`)),
+      new comp.btn("Edit")).render(outputContainer)
 
   },
 
@@ -97,7 +97,9 @@ const buildEvents = {
 
 
   nextEvent() {
-    document.getElementById("upcoming").firstChild.classList.add("nextEvent");
+    if (document.getElementById("upcoming").firstChild.nextSibling) {
+    document.getElementById("upcoming").firstChild.nextSibling.classList.add("nextEvent");
+    }
   },
 
   eventFetch() {
@@ -143,14 +145,12 @@ const buildEvents = {
   },
   editBtnListen () {
     // listens for all the edit buttons on the page
-    const allTheButtons = document.querySelectorAll("section > div > button");
+    const allTheButtons = document.querySelectorAll("section > button");
     console.log(allTheButtons);
     allTheButtons.forEach(currentBtn => {
       currentBtn.addEventListener("click", () => {
-        console.log("I am an edit button")
         // takes the id of the event that was clicks, fetches from the api with that id and passes on to the Edit Element form
-        const currentBtnId = currentBtn.parentElement.parentElement.id;
-        console.log(currentBtnId);
+        const currentBtnId = currentBtn.parentElement.id;
         API.getOneFromCategory("events", currentBtnId)
           .then(singleEvent => {
                buildEvents.eventEditForm(singleEvent, currentBtnId)
@@ -176,10 +176,11 @@ const buildEvents = {
         new comp.input({ type: "text", value: `${singleEventObj.location}`}),
         new comp.div({},
         new comp.btn("Save"),
-        new comp.btn("Back"))).render("#upcoming")
-        buildEvents.editEventPopUpBtnClicks(singleEventObj, id);
+        new comp.btn("Back"),
+        new comp.btn("Delete"))).render("#upcoming")
+        buildEvents.editEventBtnClicks(singleEventObj, id);
   },
-  editEventPopUpBtnClicks(singleEventObj, id) {
+  editEventBtnClicks(singleEventObj, id) {
     // grabs the two buttons on the page and adds a click listener based on index
     // takes the event id so it can be passed on with the PATCH
     const popUpBtns = document.querySelectorAll("button");
@@ -215,6 +216,10 @@ const buildEvents = {
     // Back Button Returns to Event Page
     popUpBtns[1].addEventListener("click", () => {
       buildEvents.buildContainers();
+    })
+    // Delete Button
+    popUpBtns[2].addEventListener("click", () => {
+      API.deleteItem("events", id).then(() => buildEvents.buildContainers())
     })
   },
 

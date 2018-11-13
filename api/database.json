@@ -175,14 +175,6 @@
   ],
   "events": [
     {
-      "id": 1,
-      "name": "English Class",
-      "date": "2018-11-15",
-      "location": "Internet",
-      "time": "15:00",
-      "userId": 2
-    },
-    {
       "id": 2,
       "name": "Test",
       "date": "2014-09-09",
@@ -207,36 +199,12 @@
       "id": 4
     },
     {
-      "name": "New Concert",
-      "date": "2018-11-02",
-      "time": "09:10",
-      "location": "Narnia",
-      "userId": 2,
-      "id": 5
-    },
-    {
-      "name": "It Works",
-      "date": "2018-11-23",
-      "time": "21:23",
-      "location": "My computer",
-      "userId": 2,
-      "id": 6
-    },
-    {
       "name": "Class",
       "date": "2018-11-12",
       "time": "09:05",
       "location": "NSS",
       "userId": 1,
       "id": 7
-    },
-    {
-      "name": "This Moment",
-      "date": "2018-11-13",
-      "time": "12:30",
-      "location": "",
-      "userId": 2,
-      "id": 8
     },
     {
       "name": "Test",
@@ -253,6 +221,14 @@
       "location": "Jere",
       "userId": 2,
       "id": 10
+    },
+    {
+      "name": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "date": "2018-11-13",
+      "time": "15:00",
+      "location": "Here",
+      "userId": 2,
+      "id": 11
     }
   ],
   "tasks": [
