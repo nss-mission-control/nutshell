@@ -122,35 +122,38 @@ const buildMessages = {
 
   confirmFriend(userObj, friendObj){
     document.querySelector(".old--messages").innerHTML="",
-    new comp.div({},
+    new comp.div({id: "friendConfirmation"},
       new comp.image({src: userObj.user.profilePic}),
       new comp.title("h2", {}, `${userObj.user.firstName} ${userObj.user.lastName}`),
       new comp.par({}, "Are you sure you want to add this person as a friend "),
-      new comp.btn({className: "confirmButton", onclick: this.postFriendship(friendObj)}, "Yes"),
-      new comp.btn({className: "confirmButton"}, "No")
+      new comp.btn("Yes"),
+      new comp.btn("No")
       ).render(".old--messages")
+      this.addEventListener(friendObj)
   },
 
-  // checkFriendships(friendObj){
-  //   API.getAllCategory("friends")
-  //   .then(info => console.log(info))
-  //     .then(data => {
-  //       if(data.request_userId === friendObj.request_userId && data.userId === friendObj.userId){
-  //         console.log("You are already friends with this person")
-  //         return
-  //       } else{
-  //         this.postFriendship(friendObj)
-  //       }
-  //     })
-  // },
+  addEventListener(friendObj){
+    let buttons = document.querySelectorAll("button")
+    buttons.forEach(button => {
+      if(button.textContent === "Submit"){
+        return
+      } else {
+        button.addEventListener("click", ()=>{
+          if(button.textContent === "Yes"){
+            this.postFriendship(friendObj)
+          }
+        })
+      }
+    })
+  },
+
+
 
   addFriend(){
     document.querySelectorAll(".messageAuthor").forEach(message =>{
       let friendObj = " ";
       let returnObj = ""
-      // console.log(message.parentNode.childNodes[3])
       if(message.parentNode.childNodes[3]){
-        // console.log("You cant add yourself as a friend")
         // If there is a button, the event listener does not attach
         return
       } else{
@@ -165,30 +168,31 @@ const buildMessages = {
               userId: data.user.id
             }
             return(returnObj, friendObj)
-            // this.confirmFriend(data, friendObj)
             })
-            console.log("outside the 1st fetch")
 
-            API.getAllCategory("friends")
-            .then((info)=>{
-              console.log("inside the 2nd fetch")
-              console.log(info)
-              if((info.userId === friendObj.userId)){
-                alert("This person has friends")
-              }
-              // } else if((info.request_userId !== friendObj.request_userId) && (info.userId !== friendObj.userId)){
-              //   this.confirmFriend(returnObj, friendObj)
-                // this.postFriendship(friendObj)
-              }
+            .then(()=>{
+              API.getAllCategory(`friends/?request_userId=${activeUser.info().id}`)
+              .then((info)=>{
+                let itemStatus = false
+                info.forEach(item => {
+                  if((item.request_userId === friendObj.request_userId) && (item.userId === friendObj.userId)){
+                    itemStatus = true
+                  }
+                  })
+                  if(itemStatus === false){
+                    this.confirmFriend(returnObj, friendObj)
+                  }
+                })
+              })
             })
-          } )
-        }
-      })
-    },
+          }
+        })
+      },
+
 
   postFriendship(friendObj){
     API.saveItem(`friends`,friendObj)
-
+    this.messageMap()
   }
 }
 
