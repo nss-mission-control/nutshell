@@ -1,4 +1,6 @@
-import DOMComponent from "../lib/node_modules/nss-domcomponent"
+import DOMComponent from "../lib/node_modules/nss-domcomponent";
+import comp from "./components";
+
 
 export default Object.create(null, {
 
@@ -12,11 +14,6 @@ export default Object.create(null, {
         this.password = tempInfo.password;
         this.email = tempInfo.email;
         this.profilePic = tempInfo.profilePic;
-    }
-    //TODO: this is just a test function. we would have the ability to call for saving
-    // messages,articles, events be referencing a function defined here
-      test() {
-        return `Welcome ${this.firstName}! Let's see what's going on.`;
       }
     }
   },
