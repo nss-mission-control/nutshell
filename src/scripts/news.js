@@ -1,6 +1,7 @@
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"
+import formatDate from "./format"
 
 
 const buildNews = {
@@ -8,7 +9,7 @@ const buildNews = {
     new comp.section ({className: "news", id: `${newsObj.id}`},
     new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
     new comp.title("h2", {}, `${newsObj.articleName}`),
-    new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${newsObj.dateSaved}`),
+    new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${formatDate.getCorrectDate(newsObj.dateSaved)}`),
     new comp.par({}, newsObj.about),
     new comp.btn("Delete Article")).render(".container--inner")
   },

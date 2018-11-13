@@ -1,6 +1,7 @@
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"
+import formatDate from "./format"
 
 
 const buildEvents = {
@@ -38,16 +39,16 @@ const buildEvents = {
     // TODO:need to test if date is in the future or the past
 
     outputContainer = "#upcoming"
-    const task = new comp.section({
+    new comp.section({
         className: "event",
         id: `${eventObj.id}`
       },
       new comp.div ( {},
       new comp.title("h3", `${eventObj.name}`),
-      new comp.par(`${eventObj.date} ${eventObj.time}`),
-      new comp.par(`${eventObj.location}`)),
-      new comp.btn("Edit")).render(outputContainer)
-  },
+      new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${eventObj.time}`),
+      new comp.par(`${eventObj.location}`),
+      new comp.btn("Edit"))).render(outputContainer)
+    },
 
   nextEvent() {
     console.log(document.getElementById("upcoming").firstChild)
