@@ -130,6 +130,12 @@
       "date": "11/12/2018",
       "userId": 2,
       "id": 12
+    },
+    {
+      "messageContent": "Testing a new message, hoping the timestamp functionality is still working",
+      "timeStamp": "2018-11-13T14:16:34.489Z",
+      "userId": 1,
+      "id": 13
     }
   ],
   "articles": [
