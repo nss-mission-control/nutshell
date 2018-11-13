@@ -22,7 +22,7 @@
       "id": 3,
       "firstName": "Brendan",
       "lastName": " McCray",
-      "username": "BilliantBrendan",
+      "username": "BrilliantBrendan",
       "password": "CodeWhiz",
       "email": "brendanMc@gmail.com",
       "profilePic": "https://avatars0.githubusercontent.com/u/43763999?s=400&v=4"
@@ -33,7 +33,7 @@
       "lastName": "Davis",
       "username": "braddavistech",
       "password": "12345NSS",
-      "email": "braddavistech@gmail.com",
+      "email": "brad@braddavistech.com",
       "profilePic": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/35884762_10211693141659337_7630947963367325696_n.jpg?_nc_cat=103&_nc_ht=scontent-atl3-1.xx&oh=ffc0c07db4711096066f9a4612ebff3c&oe=5C7CD0B2"
     },
     {
@@ -50,96 +50,96 @@
     {
       "id": 1,
       "messageContent": "Hi, first message.",
-      "timeStamp": "07:30:29",
-      "date": "11/07/2018",
+      "timeStamp": "2018-11-08T14:07:21.489Z",
       "userId": 1
     },
     {
       "id": 2,
       "messageContent": "I changed the message.",
-      "timeStamp": "10:45:29",
-      "date": "11/07/2018",
+      "timeStamp": "2018-11-09T12:10:34.489Z",
       "userId": 3
     },
     {
       "id": 3,
       "messageContent": "You get the idea.",
-      "timeStamp": "08:30:29",
-      "date": "11/08/2018",
+      "timeStamp": "2018-11-07T21:16:34.489Z",
       "userId": 2
     },
     {
       "messageContent": "This makes a better message",
-      "timeStamp": "13:24:21",
-      "date": "11/10/2018",
+      "timeStamp": "2018-11-10T09:16:34.489Z",
       "userId": 4,
       "id": 4
     },
     {
       "messageContent": "Final Edit",
-      "timeStamp": "14:06:16",
-      "date": "11/10/2018",
+      "timeStamp": "2018-11-08T06:16:34.489Z",
       "userId": 3,
       "id": 5
     },
     {
       "messageContent": "New Message",
-      "timeStamp": "14:06:48",
-      "date": "11/10/2018",
+      "timeStamp": "2018-11-08T20:16:34.489Z",
       "userId": 3,
       "id": 6
     },
     {
       "messageContent": "Test",
-      "timeStamp": "15:44:57",
-      "date": "11/11/2018",
+      "timeStamp": "2018-11-10T14:16:34.489Z",
       "userId": 2,
       "id": 7
     },
     {
       "messageContent": "Test",
-      "timeStamp": "15:45:02",
-      "date": "11/11/2018",
+      "timeStamp": "2018-11-09T15:45:34.489Z",
       "userId": 2,
       "id": 8
     },
     {
       "messageContent": "Testing message as Kelly",
-      "timeStamp": "17:15:39",
-      "date": "11/11/2018",
+      "date": "2018-11-10T17:15:34.489Z",
       "userId": 1,
       "id": 9
     },
     {
       "messageContent": "hello",
-      "timeStamp": "09:03:50",
-      "date": "11/12/2018",
+      "timeStamp": "2018-11-11T10:16:34.489Z",
       "userId": 2,
       "id": 10
     },
     {
       "messageContent": "TEST",
-      "timeStamp": "09:44:11",
-      "date": "11/12/2018",
+      "timeStamp": "2018-11-13T14:23:34.489Z",
       "userId": 2,
       "id": 11
     },
     {
       "messageContent": "I am testing",
-      "timeStamp": "09:45:10",
-      "date": "11/12/2018",
+      "timeStamp": "2018-11-12T14:16:34.489Z",
       "userId": 2,
       "id": 12
     },
     {
       "messageContent": "Testing a new message, hoping the timestamp functionality is still working",
-      "timeStamp": "2018-11-13T14:16:34.489Z",
+      "timeStamp": "2018-11-01T03:16:34.489Z",
       "userId": 1,
       "id": 13
     },
     {
-      "messageContent": "Test message at 3:32 pm on tuesday.",
-      "timeStamp": "2018-11-13T21:32:35.398Z",
+      "messageContent": "Testing for month",
+      "timeStamp": "2018-10-01T03:16:34.489Z",
+      "userId": 1,
+      "id": 13
+    },
+    {
+      "messageContent": "Testing for February",
+      "timeStamp": "2018-03-01T03:16:34.489Z",
+      "userId": 1,
+      "id": 13
+    },
+    {
+      "messageContent": "duz this werk?",
+      "timeStamp": "2018-11-13T17:34:27.102Z",
       "userId": 3,
       "id": 14
     }
@@ -186,32 +186,24 @@
       "url": "https://www.newschannel5.com/news/tennessee-american-red-cross-volunteers-help-wildfire-victims",
       "articleImage": "https://mediaassets.newschannel5.com/photo/2018/11/12/RedCrosslocal_1542050078840_102998400_ver1.0_640_480.jpg",
       "about": "WE DIDN'T START THE FIYAAAA",
-      "userId": 3,
+      "userId": 4,
       "dateSaved": "2018-11-12T19:35:56.249Z",
       "id": 8
     }
   ],
   "events": [
     {
-      "id": 1,
-      "name": "English Class",
-      "date": "2018-11-15",
-      "location": "Internet",
-      "time": "10:00",
+      "id": 2,
+      "name": "Fancy",
+      "date": "2014-09-09",
+      "location": "Here",
+      "time": "03:02",
       "userId": 2
     },
     {
-      "id": 2,
-      "name": "Tech Meet Up",
-      "date": "2018-11-14",
-      "location": "The Moon",
-      "time": "15:00",
-      "userId": 3
-    },
-    {
-      "name": "Soccer Practice",
+      "name": "Soccer Practice Today",
       "date": "2018-11-02",
-      "time": "09:11",
+      "time": "22:11",
       "location": "The Field",
       "userId": 2,
       "id": 3
@@ -225,60 +217,52 @@
       "id": 4
     },
     {
-      "name": "Concert",
-      "date": "2018-11-02",
-      "time": "09:10",
-      "location": "Narnia",
-      "userId": 2,
-      "id": 5
-    },
-    {
-      "name": "Testing SessionStorage",
-      "date": "2018-11-23",
-      "time": "Right Now",
-      "location": "My computer",
-      "userId": 2,
-      "id": 6
-    },
-    {
       "name": "Class",
       "date": "2018-11-12",
-      "time": "9:05am",
+      "time": "09:05",
       "location": "NSS",
       "userId": 1,
       "id": 7
     },
     {
-      "name": "New",
-      "date": "2018-11-14",
-      "time": "Now",
-      "location": "Here",
-      "userId": 2,
-      "id": 8
-    },
-    {
-      "name": "This moment",
-      "date": "2018-11-21",
-      "time": "09:12",
+      "name": "Test",
+      "date": "2014-09-09",
+      "time": "01:02",
       "location": "Here",
       "userId": 2,
       "id": 9
     },
     {
-      "name": "test",
-      "date": "2018-11-14",
-      "time": "10:10",
-      "location": "test",
+      "name": "Super Test",
+      "date": "1989-03-03",
+      "time": "12:12",
+      "location": "Jere",
       "userId": 2,
       "id": 10
     },
     {
-      "name": "whatup yo dog diggity",
-      "date": "2018-11-14",
-      "time": "03:11",
-      "location": "Bdan's house",
-      "userId": 3,
+      "name": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "date": "2018-11-13",
+      "time": "15:00",
+      "location": "Here",
+      "userId": 2,
       "id": 11
+    },
+    {
+      "name": "Today",
+      "date": "2018-11-13",
+      "time": "05:23",
+      "location": "NSS",
+      "userId": 2,
+      "id": 12
+    },
+    {
+      "name": "Jase's Party",
+      "date": "2018-11-20",
+      "time": "10:10",
+      "location": "The Moon",
+      "userId": 2,
+      "id": 13
     }
   ],
   "tasks": [
@@ -343,6 +327,13 @@
       "complete": true,
       "dueDate": "2018-11-12",
       "userId": 3,
+      "id": 12
+    },
+    {
+      "task": "New Task",
+      "complete": false,
+      "dueDate": "2018-11-14",
+      "userId": 2,
       "id": 13
     }
   ],

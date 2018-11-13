@@ -2,6 +2,7 @@ import comp from "./components"
 import registerFuncs from "./register"
 import API from "./apiData";
 import buildMissionControl from "./missionControl";
+import navBar from "./nav";
 
 const logInFuncs = {
   checkUser(username, password) {
@@ -14,13 +15,14 @@ const logInFuncs = {
           return;
         } else if (password === data[0].password) {
           let currentUser = new comp.user (data[0]);
+          currentUser.id = data[0].id;
           return currentUser;
         } else ( alert("You entered the wrong password. Try again."))
       }).then(currentUser => {
-        console.log(currentUser)
         if (currentUser !== undefined) {
-          console.log("Build Mission Login")
           sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
+          document.querySelector("#navBar").innerHTML = "";
+          navBar.loadNavBar();
           buildMissionControl.printPlanets();
         }
 

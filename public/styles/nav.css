@@ -29,15 +29,8 @@
   height: 25px;
   max-width: 960px;
   margin: 0 auto;
-  padding-right: 5px;
-  /* position children */
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
   /* design */
   background-color: var(--planet-dark-green);
-  color: var(--planet-dark-purple);
-  font-size: 14px;
 }
 
 nav {
@@ -81,4 +74,90 @@ nav > ul > li {
 
 nav > ul > li:hover {
   border-bottom: 1px solid var(--planet-dark-purple);
+}
+
+#logIn {
+  padding-bottom: 0px;
+  display: flex;
+  border-bottom: none;
+}
+#subNav{
+  position: fixed;
+  flex-direction: column;
+  padding: 6px;
+  border-radius: 5px;
+  top: 10.5%;
+  color: var(--theme-text-light);
+  cursor: pointer;
+  z-index: 1;
+  background-color: var(--theme-main-dark);
+  font-family: var(--font-family-plain);
+  text-align: center;
+}
+.subNavItem{
+  cursor: pointer;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: inherit;
+  padding: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: var(--theme-main-dark);
+  text-align: center;
+}
+
+.subNavItem:hover {
+  background-color: var(--theme-main-light);
+  color: var(--theme-main-dark);
+  border-radius: 3px;
+}
+
+.messagePic {
+  display:inline-block;
+  border-radius: 8px;
+  margin: 4px;
+  min-height: 25px;
+  min-width: 25px;
+}
+
+#currentLogin {
+  color: black;
+  z-index: 2;
+  font-weight: inherit;
+  font-family: var(--font-family-plain);
+  font-size: 15px;
+  margin-left: 5%;
+  padding-top: 5%;
+}
+#editForm {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+#editForm > label {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 2%;
+  position: relative;
+  width: 55vw;
+}
+#editForm > label > input {
+  text-align: center;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  height: 3vw;
+  font-size: 15px;
+}
+#editForm > button {
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-bottom: 3.5%;
+  font-weight: bold;
+  font-size: 15px;
+  width: 35%;
 }
