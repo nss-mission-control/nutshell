@@ -99,11 +99,6 @@ const navBar = {
   },
 
   eventListenerHandler(event) {
-    // let tempHolder = document.querySelector("#navBar");
-    // console.log(tempHolder)
-    // tempHolder.removeEventListener("click", function());
-    // sets navigation values for all other navbar links
-    // tempHolder.addEventListener("click", (event) => {
       if (event.target.textContent === "Home") {
         $("#subNav").hide();
         buildMissionControl.printPlanets();
