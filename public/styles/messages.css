@@ -8,7 +8,9 @@
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
   --font-family-title: 'Ubuntu', 'Arial', sans-serif;
-  --font-family-form: 'Exo 2', 'Arial', sans-serif;
+  --font-family-exo: 'Exo 2', 'Arial', sans-serif;
+  --font-family-text: Georgia, Times, 'Times New Roman', serif;
+  --font-family-plain: Arial, Helvetica, sans-serif;
   --planet-yellow: #FBD281;
   --planet-dark-yellow: #FFB881;
   --planet-bright-green: #24FFDD;
@@ -19,8 +21,7 @@
   --planet-dark-purple: #382B56;
   --planet-light-purple: #7B3E80;
   --planet-purple-space: #3F3363;
-  --box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-
+  --box-shadow-1: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #messageName {
@@ -36,21 +37,21 @@
   background-color: var(--planet-orange);
   border-radius: 5px;
   font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
-  box-shadow: var(--box-shadow);
+  font-family: var(--font-family-exo);
+  box-shadow: var(--box-shadow-1);
 }
 
 /* container that holds posted messages */
 .old--messages {
   /* layout */
   width: 90%;
-  height: 60%;
+  height: 65%;
   position: absolute;
   top: 60px;
   padding: 5px 10px 10px 10px;
   /* style */
   overflow-y: auto;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-1);
   border-radius: 5px;
 }
 
@@ -84,15 +85,22 @@
   bottom: 30px;
   /* design */
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-exo);
   font-weight: bold;
 }
 
 /* message content */
 .message > h1 {
   font-size: 16px;
-  font-family: Georgia, Times, 'Times New Roman', serif;
+  font-family: var(--font-family-text);
   font-weight: normal;
+}
+
+/* edit button */
+.message > .btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
 }
 
 /* container to create new message */
@@ -100,37 +108,44 @@
   /* layout */
   position: absolute;
   bottom: 10px;
-  width: 40%;
-  height: 25%;
+  width: 90%;
+  height: 17.5%;
   padding-top: 5px;
   /* design */
   border-radius: 5px;
-  background-color: var(--planet-orange);
+  /* background-color: var(--planet-orange); */
+  box-shadow: var(--box-shadow-1);
 }
 
 .new--message > h1 {
-  height: 30px;
+  /* layout */
+  height: 40px;
+  padding: 7px 0;
+  /* design */
+  background-color: var(--planet-orange);
+  font-family: var(--font-family-exo);
+  color: var(--theme-sub-primary);
+  text-shadow: 1px 1px 2px #000000;
+  text-align: center;
   font-size: 25px;
   text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-family-plain);
+  border-radius: 5px;
 }
 
 .new--message > textarea {
-  display: block;
-  width: 85%;
-  height: 60px;
-  text-align: center;
-  padding-top: 20px;
-  margin: 0 auto;
-  margin-top: 10px;
-  font-family: Georgia, Times, 'Times New Roman', serif;
+  /* layout */
+  width: 87%;
+  height: 55%;
+  padding: 12.5px;
+  margin: 10px;
+  /* design */
+  background-color: var(--theme-sub-primary);
+  font-family: var(--font-family-text);
 }
 
 .new--message > .btn {
   position: absolute;
-  top: 50%;
-  right: 10px;
-  /* width: 10%;
-  margin-left: 45%;
-  margin-top: 5px; */
+  top: 55%;
+  right: 15px;
 }

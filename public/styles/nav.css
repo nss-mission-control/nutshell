@@ -50,6 +50,7 @@ nav {
   /* design */
   font-family: var(--font-family-form);
   background-color: var(--planet-bright-green);
+  border-radius: 0 0 5px 5px;
   /* -webkit-clip-path: polygon(100% 0, 100% 50%, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 0);
   clip-path: polygon(100% 0, 100% 50%, 100% 70%, 85% 100%, 15% 100%, 0 70%, 0 0); */
 }

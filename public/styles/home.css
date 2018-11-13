@@ -4,9 +4,11 @@
   --theme-main-dark: #0077c1;
   --theme-text-light: white;
   --theme-sub-primary: #f5f5f5;
+  --theme-sub-primary2: #eee;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
   --font-family-title: 'Ubuntu', 'Arial', sans-serif;
+  --font-family-exo: 'Exo 2', 'Arial', sans-serif;
   --planet-yellow: #FBD281;
   --planet-dark-yellow: #FFB881;
   --planet-bright-green: #24FFDD;
@@ -15,8 +17,9 @@
   --planet-dark-red: #E30773;
   --planet-orange: #FE5671;
   --planet-dark-purple: #382B56;
-  --planet-light-purple: #3B3466;
+  --planet-light-purple: #7B3E80;
   --planet-purple-space: #3F3363;
+  --box-shadow-1: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .container--sub {
