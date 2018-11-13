@@ -11,12 +11,14 @@ import API from "./apiData";
 
 const navBar = {
   loadNavBar() {
+    // checks if someone is logged in
     if (sessionStorage.getItem("currentUser") === null) {
       new comp.ul(
         {},
         new comp.title("h1", {}, "Welcome To Mission Control")
       ).render("#navBar")
     } else {
+      // there is a user logged in so display the navbar
       new comp.ul(
         {},
         new comp.li({}, "Home"),
@@ -46,7 +48,7 @@ const navBar = {
           new comp.btn("Edit Profile"),
           new comp.btn("Abort Changes")).render(".container--inner");
 
-
+        // set event listeners for navbar edit buttons
         document.querySelectorAll("button").forEach((button) => {
           button.addEventListener("click", () => {
             if (event.target.textContent === "Edit Profile") {
@@ -59,26 +61,32 @@ const navBar = {
                 email: document.getElementById("email").value,
                 profilePic: document.getElementById("profilePic").value
               }
+              // if first name is blank, populates with recent data on user
               if (tempUser.firstName === "") {
                 tempUser.firstName = currentUser.firstName;
               }
+              // if last name is blank, populates with recent data
               if (tempUser.lastName === "") {
                 tempUser.lastName = currentUser.lastName;
               }
+              // if password is blank, populates with recent data
               if (tempUser.password === "") {
                 tempUser.password = currentUser.password;
               }
+              // if profile pic is blank, populates with recent image
               if (tempUser.profilePic === "") {
                 tempUser.profilePic = currentUser.profilePic;
               }
+              // calls function to check email and username uniqueness
               navBar.checkEmail(tempUser, currentUser)
             } else {
-              $("#subNav").hide();
-              buildMissionControl.printPlanets()
+              $("#subNav").hide();//sets status of edit and log out buttons to hide
+              buildMissionControl.printPlanets(); //prints main mission control page
             }
           })
         })
       });
+      // log out function
       $("#logOut").click(function () {
         $("#navBar").html("");
         $(".container--inner").html("");
@@ -88,7 +96,7 @@ const navBar = {
       });
     }
 
-
+    // sets navigation values for all other navbar links
     document.querySelector("#navBar").addEventListener("click", (event) => {
       if (event.target.textContent === "Home") {
         $("#subNav").hide();
@@ -107,28 +115,34 @@ const navBar = {
         buildNews.newsMap();
       } else if (event.target.textContent === "Friends") {
         $("#subNav").hide();
+        // need to add function call here for friends
         console.log("Friends function calles.")
       }
     })
   },
 
   checkEmail(tempUser, currentUser) {
+    // sets email to previous if deleted
     if (tempUser.email === "") {
       tempUser.email = currentUser.email;
       document.getElementById("email").value = currentUser.email;
+      // checks if an @ is in email to validate
     } else if (tempUser.email.indexOf("@") === -1) {
       tempUser.email = currentUser.email;
       document.getElementById("email").value = currentUser.email;
       alert("Please enter a valid email address.");
     }
+    // sets username to previous value if blank
     if (tempUser.username === "") {
       tempUser.username = currentUser.username;
       document.getElementById("username").value = currentUser.username;
+      // checks that no @ is present in username
     } else if (tempUser.username.indexOf("@") !== -1) {
       tempUser.username = currentUser.username;
       document.getElementById("username").value = currentUser.username;
       alert("@ is not an allowed character in usernames.")
     }
+    // grab email based on what user input
     API.getOneFromCategory("users", `?email=${tempUser.email}`).then(emailResults => {
       return emailResults[0];
     })
