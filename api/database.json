@@ -130,6 +130,12 @@
       "date": "11/12/2018",
       "userId": 2,
       "id": 12
+    },
+    {
+      "messageContent": "Testing a new message, hoping the timestamp functionality is still working",
+      "timeStamp": "2018-11-13T14:16:34.489Z",
+      "userId": 1,
+      "id": 13
     }
   ],
   "articles": [
@@ -279,7 +285,7 @@
   ],
   "tasks": [
     {
-      "task": "Make ERD2",
+      "task": "test again",
       "complete": true,
       "dueDate": "2018-11-12",
       "userId": 2,
@@ -300,25 +306,11 @@
       "id": 3
     },
     {
-      "task": "New item test",
-      "complete": true,
-      "dueDate": "2018-11-09",
-      "userId": 3,
-      "id": 4
-    },
-    {
       "task": "Here is a new task",
       "complete": true,
       "dueDate": "2018-11-29",
       "userId": 4,
       "id": 5
-    },
-    {
-      "task": "Hello",
-      "complete": true,
-      "dueDate": "2018-11-21",
-      "userId": 3,
-      "id": 6
     },
     {
       "task": "test new",
@@ -342,13 +334,6 @@
       "id": 9
     },
     {
-      "task": "Brendan's new task",
-      "complete": false,
-      "dueDate": "2018-11-08",
-      "userId": 3,
-      "id": 10
-    },
-    {
       "task": "Brad's Task",
       "complete": false,
       "dueDate": "2018-11-15",
@@ -356,11 +341,11 @@
       "id": 11
     },
     {
-      "task": "Brendand's new task",
-      "complete": false,
+      "task": "I fixed all of the issues with the task list!",
+      "complete": true,
       "dueDate": "2018-11-12",
       "userId": 3,
-      "id": 12
+      "id": 13
     }
   ],
   "friends": [
