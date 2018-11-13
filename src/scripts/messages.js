@@ -41,6 +41,7 @@ const buildMessages = {
         this.newMessage();
         this.submitMessage();
         this.editButtonClick();
+        this.addFriend();
       }).then(() => this.scrollWindowButtom());
   },
 
@@ -117,6 +118,77 @@ const buildMessages = {
           .then(() => buildMessages.messageMap())
       })
     })
+  },
+
+  confirmFriend(userObj, friendObj){
+    document.querySelector(".old--messages").innerHTML="",
+    new comp.div({},
+      new comp.image({src: userObj.user.profilePic}),
+      new comp.title("h2", {}, `${userObj.user.firstName} ${userObj.user.lastName}`),
+      new comp.par({}, "Are you sure you want to add this person as a friend "),
+      new comp.btn({className: "confirmButton", onclick: this.postFriendship(friendObj)}, "Yes"),
+      new comp.btn({className: "confirmButton"}, "No")
+      ).render(".old--messages")
+  },
+
+  // checkFriendships(friendObj){
+  //   API.getAllCategory("friends")
+  //   .then(info => console.log(info))
+  //     .then(data => {
+  //       if(data.request_userId === friendObj.request_userId && data.userId === friendObj.userId){
+  //         console.log("You are already friends with this person")
+  //         return
+  //       } else{
+  //         this.postFriendship(friendObj)
+  //       }
+  //     })
+  // },
+
+  addFriend(){
+    document.querySelectorAll(".messageAuthor").forEach(message =>{
+      let friendObj = " ";
+      let returnObj = ""
+      // console.log(message.parentNode.childNodes[3])
+      if(message.parentNode.childNodes[3]){
+        // console.log("You cant add yourself as a friend")
+        // If there is a button, the event listener does not attach
+        return
+      } else{
+        message.addEventListener("click", ()=>{
+
+          let messageId = event.target.parentNode.id
+          API.getAllCategory(`messages/${messageId}/?_expand=user`)
+          .then(data=> {
+            returnObj = data
+            friendObj = {
+              request_userId: activeUser.info().id,
+              userId: data.user.id
+            }
+            return(returnObj, friendObj)
+            // this.confirmFriend(data, friendObj)
+            })
+            console.log("outside the 1st fetch")
+
+            API.getAllCategory("friends")
+            .then((info)=>{
+              console.log("inside the 2nd fetch")
+              console.log(info)
+              if((info.userId === friendObj.userId)){
+                alert("This person has friends")
+              }
+              // } else if((info.request_userId !== friendObj.request_userId) && (info.userId !== friendObj.userId)){
+              //   this.confirmFriend(returnObj, friendObj)
+                // this.postFriendship(friendObj)
+              }
+            })
+          } )
+        }
+      })
+    },
+
+  postFriendship(friendObj){
+    API.saveItem(`friends`,friendObj)
+
   }
 }
 
