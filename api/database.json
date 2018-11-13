@@ -292,9 +292,9 @@
       "id": 3
     },
     {
-      "task": "Whoa?",
+      "task": "Edit1",
       "complete": false,
-      "dueDate": "2018-11-09",
+      "dueDate": "2018-12-09",
       "userId": 3,
       "id": 4
     },
@@ -306,9 +306,9 @@
       "id": 5
     },
     {
-      "task": "Hello",
+      "task": "Hello testing",
       "complete": false,
-      "dueDate": "2018-11-21",
+      "dueDate": "2018-10-21",
       "userId": 3,
       "id": 6
     },
@@ -335,8 +335,8 @@
     },
     {
       "task": "Brendan's new task",
-      "complete": true,
-      "dueDate": "2018-11-08",
+      "complete": false,
+      "dueDate": "2018-12-08",
       "userId": 3,
       "id": 10
     },
@@ -348,23 +348,23 @@
       "id": 11
     },
     {
-      "task": "Brendand's new task",
-      "complete": true,
+      "task": "Brendan's new task",
+      "complete": false,
       "dueDate": "2018-11-12",
       "userId": 3,
       "id": 12
     },
     {
-      "task": "fixed it!",
+      "task": "fixed it!...",
       "complete": true,
-      "dueDate": "2018-11-13",
+      "dueDate": "2018-11-12",
       "userId": 3,
       "id": 13
     },
     {
-      "task": "Whoa?",
+      "task": "Whoa!",
       "complete": false,
-      "dueDate": "2018-11-06",
+      "dueDate": "2018-12-06",
       "userId": 3,
       "id": 14
     }
