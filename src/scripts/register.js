@@ -71,7 +71,6 @@ const registerFuncs = {
 
   //TODO: this function can go away when the function to load mission page is replaced in checkRegister function above
   loadMission(user) {
-    console.log(user)
     sessionStorage.setItem("currentUser", JSON.stringify(user));
     document.querySelector("#navBar").innerHTML = "";
     navBar.loadNavBar();
