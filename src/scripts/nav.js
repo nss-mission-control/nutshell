@@ -68,34 +68,10 @@ const navBar = {
               if (tempUser.password === "") {
                 tempUser.password = currentUser.password;
               }
+              if (tempUser.profilePic === "") {
+                tempUser.profilePic = currentUser.profilePic;
+              }
               navBar.checkEmail(tempUser, currentUser)
-
-              // }).then(() => {
-              //   if (canSave) {
-              //     API.getOneFromCategory("users", `?username=${tempUser.username}`).then(usernameResults => {
-              //       if(usernameResults.length !== 0) {
-              //         if (usernameResults[0].id !== currentUser.id) {
-              //           tempUser.username = currentUser.username;
-              //           console.log(tempUser)
-              //           alert("This username is in use by another account.")
-              //           return tempUser.username;
-              //         } else {
-              //           return usernameResults[0];
-              //         }
-              //       }
-              //     })
-              //   }
-              // }).then(() => {
-              //     console.log(tempUser)
-              //     sessionStorage.removeItem("currentUser");
-              //     sessionStorage.setItem("currentUser", JSON.stringify(tempUser));
-              //     API.updateItem("users", currentUser.id, tempUser).then(() => {
-              //       $("#subNav").hide();
-              //       $("#navBar").html("");
-              //       navBar.loadNavBar();
-              //       buildMissionControl.printPlanets();
-              //     })
-              // });
             } else {
               $("#subNav").hide();
               buildMissionControl.printPlanets()

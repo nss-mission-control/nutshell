@@ -19,7 +19,6 @@ const logInFuncs = {
           return currentUser;
         } else ( alert("You entered the wrong password. Try again."))
       }).then(currentUser => {
-        console.log(currentUser)
         if (currentUser !== undefined) {
           sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
           document.querySelector("#navBar").innerHTML = "";
