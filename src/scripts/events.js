@@ -36,11 +36,10 @@ const buildEvents = {
     // takes the objects from the api and prints them to the dom
     let outputContainer;
 
+    // Logic to determin if the event is upcoming or in the past
     if (moment(eventObj.date).isBefore(moment().format("YYYY-MM-DD"))){
       outputContainer = "#past"
-      console.log(moment().hour())
     } else if (moment(eventObj.date).isSame((moment().format("YYYY-MM-DD")))) {
-      console.log(moment().minute())
       if(moment().hour() >= Number(eventObj.time.substr(0,2))){
         if(moment().minute() >= Number(eventObj.time.substr(3,2))) {
         outputContainer = "#past"
@@ -50,11 +49,7 @@ const buildEvents = {
     else {
       outputContainer = "#upcoming"
     }
-
-    console.log("Moment test" ,moment().format("YYYY-MM-DD"));
-    // TODO:need to test if date is in the future or the past
-
-
+    // builds each event and renders to the DOM
     new comp.section({
         className: "event",
         id: `${eventObj.id}`
@@ -94,14 +89,13 @@ const buildEvents = {
         new comp.div({},
         new comp.btn("Save"),
         new comp.btn("Back"))).render("#upcoming")
-      buildEvents.newEventPopUpBtnClicks();
+      buildEvents.newEventBtnClicks();
 
     })
     },
 
 
   nextEvent() {
-    console.log(document.getElementById("upcoming").firstChild)
     document.getElementById("upcoming").firstChild.classList.add("nextEvent");
   },
 
@@ -117,13 +111,17 @@ const buildEvents = {
       })
   },
 
-  newEventPopUpBtnClicks() {
+  newEventBtnClicks() {
     // grabs the two buttons on the page and adds a click listener based on index
     const popUpBtns = document.querySelectorAll("button");
     popUpBtns[0].addEventListener("click", () => {
       // Save Button
       const inputArray = document.querySelectorAll("input");
       // builds object to send to api
+      if(inputArray[0].value === "" || inputArray[1].value === "" || inputArray[2].value === "" ||inputArray[3].value === "" ) {
+          alert("All fields required.")
+          return;
+        }
       const newEventObj = {
         name: inputArray[0].value,
         date: inputArray[1].value,
@@ -158,7 +156,7 @@ const buildEvents = {
       })
     })
   },
-  eventEditForm(singleEventObj) {
+  eventEditForm(singleEventObj, id) {
     // builds Edit form
     // takes the return from the fetch
     $("#upcoming").text("");
@@ -177,9 +175,9 @@ const buildEvents = {
         new comp.div({},
         new comp.btn("Save"),
         new comp.btn("Back"))).render("#upcoming")
-        buildEvents.editEventPopUpBtnClicks(singleEventObj.id);
+        buildEvents.editEventPopUpBtnClicks(singleEventObj, id);
   },
-  editEventPopUpBtnClicks(id) {
+  editEventPopUpBtnClicks(singleEventObj, id) {
     // grabs the two buttons on the page and adds a click listener based on index
     // takes the event id so it can be passed on with the PATCH
     const popUpBtns = document.querySelectorAll("button");
@@ -187,6 +185,18 @@ const buildEvents = {
       // Save Button
       const inputArray = document.querySelectorAll("input");
       // builds object to send to api
+
+      if (inputArray[0].value === ""){
+        inputArray[0].value = singleEventObj.name
+      } else if (inputArray[1].value === ""){
+        inputArray[1].value = singleEventObj.date
+      }else if (inputArray[2].value === ""){
+        inputArray[2].value = singleEventObj.time
+      } else if (inputArray[3].value === ""){
+        inputArray[3].value = singleEventObj.location
+      }
+
+      console.log(inputArray);
       const editEventObj = {
         name: inputArray[0].value,
         date: inputArray[1].value,
@@ -194,6 +204,7 @@ const buildEvents = {
         location: inputArray[3].value,
         userId: activeUser.info().id
       }
+
       // saves new event to API
       API.updateItem("events", id, editEventObj).then(() => {
       buildEvents.buildContainers();

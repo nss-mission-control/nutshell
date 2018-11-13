@@ -184,11 +184,11 @@
     },
     {
       "id": 2,
-      "name": "Tech Meet Up",
-      "date": "2018-11-14",
-      "location": "The Moon",
-      "time": "15:00",
-      "userId": 3
+      "name": "Test",
+      "date": "2014-09-09",
+      "location": "Here",
+      "time": "01:02",
+      "userId": 2
     },
     {
       "name": "Soccer Practice",
@@ -234,9 +234,17 @@
       "name": "This Moment",
       "date": "2018-11-13",
       "time": "12:30",
-      "location": "Here",
+      "location": "",
       "userId": 2,
       "id": 8
+    },
+    {
+      "name": "Test",
+      "date": "2014-09-09",
+      "time": "01:02",
+      "location": "Here",
+      "userId": 2,
+      "id": 9
     }
   ],
   "tasks": [
