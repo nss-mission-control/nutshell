@@ -5,11 +5,13 @@ import formatDate from "./format"
 
 
 const buildNews = {
-  printNews(newsObj) {
+  createContainer(){
     new comp.section({className:"new--news"},
       new comp.btn("+"),
       new comp.title("h2", {}, "Save New Article")
-    ).render("container--inner")
+    ).render(".container--inner")
+  },
+  printNews(newsObj) {
     new comp.section ({className: "news", id: `${newsObj.id}`},
     new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
     new comp.title("h2", {}, `${newsObj.articleName}`),
@@ -20,35 +22,31 @@ const buildNews = {
 
   newsMap ()  {
     document.querySelector(".container--inner").innerHTML = ""
+    this.createContainer()
     API.getAllCategory(`articles/?userId=${activeUser.info().id}&_expand=user&_sort=dateSaved&_order=desc`)
     .then(newsObj => newsObj.forEach(news => {
       this.printNews(news)}))
-      // .then(() => this.newNews())
       .then(()=> this.eventListener())
 
   },
 
   newNews () {
-    new comp.section ({className: "new--news"},
-    new comp.title ("h1", {}, "Save News Article"),
-    new comp.form(
-      new comp.label({for: "articleName"}, "Article Name"),
-      new comp.input({name: "articleName", placeholder: "Article Name", id: "articleName" }),
-      new comp.label({for: "articleUrl"}, "Article Link"),
-      new comp.input({name: "articleUrl", placeholder: "Article Link", id: "articleLink"}),
-      new comp.label({for: "articleImageUrl"}, "Article Image Link"),
-      new comp.input({name: "articleImageUrl", placeholder: "Article Image Link", id: "articleImage"}),
-      new comp.label({for: "articleDescription"}, "Article Description"),
-      new comp.input({name: "articleDescription", placeholder: "Article Description", id: "articleDescription"}),
-      new comp.btn("Save New Article")
-    ),
-    ).render(".container--inner")
+      new comp.input({name: "articleName", placeholder: "Article Name", id: "articleName" }).render(".new--news")
+      new comp.input({name: "articleUrl", placeholder: "Article Link", id: "articleLink"}).render(".new--news")
+      new comp.input({name: "articleImageUrl", placeholder: "Article Image Link", id: "articleImage"}).render(".new--news")
+      new comp.input({name: "articleDescription", placeholder: "Article Description", id: "articleDescription"}).render(".new--news")
+      new comp.btn("Save New Article").render(".new--news")
+      this.eventListener()
   },
 
   eventListener(){
     document.querySelectorAll("button").forEach((button)=> {
       button.addEventListener("click", (e)=>{
-        if(e.target.textContent === "Save New Article"){
+        if(e.target.textContent === "+"){
+          this.newNews()
+          $(".new--news button:first-child").remove()
+        }
+        else if(e.target.textContent === "Save New Article"){
           let story = {
             articleName: document.querySelector("#articleName").value,
             url: document.querySelector("#articleLink").value,

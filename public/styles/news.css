@@ -43,3 +43,22 @@
 
 .news > h1 {
 }
+
+
+.new--news{
+  height: 150px;
+  padding: 10px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.new--news > button{
+  position: absolute;
+  bottom: 5px;
+  left: calc(50% - 52px);
+}
+.new--news > input{
+  width: 40%;
+}
