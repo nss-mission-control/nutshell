@@ -22,7 +22,7 @@
       "id": 3,
       "firstName": "Brendan",
       "lastName": " McCray",
-      "username": "BilliantBrendan",
+      "username": "BrilliantBrendan",
       "password": "CodeWhiz",
       "email": "brendanMc@gmail.com",
       "profilePic": "https://avatars0.githubusercontent.com/u/43763999?s=400&v=4"
@@ -50,84 +50,72 @@
     {
       "id": 1,
       "messageContent": "Hi, first message.",
-      "timeStamp": "07:30:29",
-      "date": "11/07/2018",
+      "timeStamp": "2018-11-08T14:07:21.489Z",
       "userId": 1
     },
     {
       "id": 2,
       "messageContent": "I changed the message.",
-      "timeStamp": "10:45:29",
-      "date": "11/07/2018",
+      "timeStamp": "2018-11-09T12:10:34.489Z",
       "userId": 3
     },
     {
       "id": 3,
       "messageContent": "You get the idea.",
-      "timeStamp": "08:30:29",
-      "date": "11/08/2018",
+      "timeStamp": "2018-11-07T21:16:34.489Z",
       "userId": 2
     },
     {
       "messageContent": "This makes a better message",
-      "timeStamp": "13:24:21",
-      "date": "11/10/2018",
+      "timeStamp": "2018-11-10T09:16:34.489Z",
       "userId": 4,
       "id": 4
     },
     {
       "messageContent": "Final Edit",
-      "timeStamp": "14:06:16",
-      "date": "11/10/2018",
+      "timeStamp": "2018-11-08T06:16:34.489Z",
       "userId": 3,
       "id": 5
     },
     {
       "messageContent": "New Message",
-      "timeStamp": "14:06:48",
-      "date": "11/10/2018",
+      "timeStamp": "2018-11-08T20:16:34.489Z",
       "userId": 3,
       "id": 6
     },
     {
       "messageContent": "Test",
-      "timeStamp": "15:44:57",
-      "date": "11/11/2018",
+      "timeStamp": "2018-11-10T14:16:34.489Z",
       "userId": 2,
       "id": 7
     },
     {
       "messageContent": "Test",
-      "timeStamp": "15:45:02",
-      "date": "11/11/2018",
+      "timeStamp": "2018-11-09T15:45:34.489Z",
       "userId": 2,
       "id": 8
     },
     {
       "messageContent": "Testing message as Kelly",
-      "timeStamp": "17:15:39",
-      "date": "11/11/2018",
+      "date": "2018-11-10T17:15:34.489Z",
       "userId": 1,
       "id": 9
     },
     {
       "messageContent": "hello",
-      "timeStamp": "09:03:50",
-      "date": "11/12/2018",
+      "timeStamp": "2018-11-11T10:16:34.489Z",
       "userId": 2,
       "id": 10
     },
     {
       "messageContent": "TEST",
-      "timeStamp": "09:44:11",
-      "date": "11/12/2018",
+      "timeStamp": "2018-11-13T14:23:34.489Z",
       "userId": 2,
       "id": 11
     },
     {
       "messageContent": "I am testing",
-      "timeStamp": "09:45:10",
-      "date": "11/12/2018",
+      "timeStamp": "2018-11-12T14:16:34.489Z",
       "userId": 2,
       "id": 12
     },
@@ -136,6 +124,12 @@
       "timeStamp": "2018-11-13T14:16:34.489Z",
       "userId": 1,
       "id": 13
+    },
+    {
+      "messageContent": "duz this werk?",
+      "timeStamp": "2018-11-13T17:34:27.102Z",
+      "userId": 3,
+      "id": 14
     }
   ],
   "articles": [
@@ -180,7 +174,7 @@
       "url": "https://www.newschannel5.com/news/tennessee-american-red-cross-volunteers-help-wildfire-victims",
       "articleImage": "https://mediaassets.newschannel5.com/photo/2018/11/12/RedCrosslocal_1542050078840_102998400_ver1.0_640_480.jpg",
       "about": "WE DIDN'T START THE FIYAAAA",
-      "userId": 3,
+      "userId": 4,
       "dateSaved": "2018-11-12T19:35:56.249Z",
       "id": 8
     }

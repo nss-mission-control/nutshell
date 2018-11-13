@@ -1,5 +1,4 @@
-import comp from "./components"
-import logInFuncs from "./login"
+import comp from "./components";
 import buildMessages from "./messages";
 import buildNews from "./news";
 import buildMissionControl from "./missionControl";
@@ -18,6 +17,7 @@ const navBar = {
         new comp.title("h1", {}, "Welcome To Mission Control")
       ).render("#navBar")
     } else {
+      $("#navBar").html(null);
       // there is a user logged in so display the navbar
       new comp.ul(
         {},
@@ -32,10 +32,11 @@ const navBar = {
           new comp.section({ id: "subNav" }, new comp.title("h3", { className: "subNavItem", id: "edit" }, "Edit Profile"),
             new comp.title("h3", { className: "subNavItem", id: "logOut" }, "Log Out"))
         )
-      ).render("#navBar")
+      ).render("#navBar");
       $("#subNav").hide();
       $("#loginPic").click(function () { $("#subNav").toggle() });
       $("#currentLogin").click(function () { $("#subNav").toggle() });
+      navBar.eventListenerNav();
       $("#edit").click(function () {
         let currentUser = JSON.parse(sessionStorage.currentUser);
         $(".container--inner").html("");
@@ -45,13 +46,13 @@ const navBar = {
           new comp.label({}, "Username", new comp.input({ name: "username", id: "username", placeholder: "username", value: `${currentUser.username}` })),
           new comp.label({ for: "password" }, "Password", new comp.input({ name: "password", id: "password", placeholder: "Password", value: `${currentUser.password}` })),
           new comp.label({ for: "profilePic" }, "Profile Picture", new comp.input({ name: "profilePic", id: "profilePic", placeholder: "Profile Picture URL", value: `${currentUser.profilePic}` })),
-          new comp.btn("Edit Profile"),
+          new comp.btn("Save Changes"),
           new comp.btn("Abort Changes")).render(".container--inner");
 
         // set event listeners for navbar edit buttons
-        document.querySelectorAll("button").forEach((button) => {
+        document.querySelectorAll(".btn").forEach((button) => {
           button.addEventListener("click", () => {
-            if (event.target.textContent === "Edit Profile") {
+            if (event.target.textContent === "Save Changes") {
               let tempUser = {
                 id: currentUser.id,
                 firstName: document.getElementById("firstName").value,
@@ -95,9 +96,14 @@ const navBar = {
         landingPageFuncs.loadLandingPage();
       });
     }
+  },
 
+  eventListenerHandler(event) {
+    // let tempHolder = document.querySelector("#navBar");
+    // console.log(tempHolder)
+    // tempHolder.removeEventListener("click", function());
     // sets navigation values for all other navbar links
-    document.querySelector("#navBar").addEventListener("click", (event) => {
+    // tempHolder.addEventListener("click", (event) => {
       if (event.target.textContent === "Home") {
         $("#subNav").hide();
         buildMissionControl.printPlanets();
@@ -118,7 +124,11 @@ const navBar = {
         // need to add function call here for friends
         console.log("Friends function calles.")
       }
-    })
+  },
+
+  eventListenerNav() {
+    let tempHolder = document.querySelector("#navBar");
+    tempHolder.addEventListener("click", navBar.eventListenerHandler);
   },
 
   checkEmail(tempUser, currentUser) {
@@ -175,6 +185,7 @@ const navBar = {
             $("#subNav").hide();
             $("#navBar").html("");
             navBar.loadNavBar();
+
             buildMissionControl.printPlanets();
           });
         })
