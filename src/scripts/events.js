@@ -78,6 +78,7 @@ const buildEvents = {
       upcomingContainer.style.paddingTop = 0;
       new comp.div({
       classList: "newEventForm"},
+        new comp.div({id: "alert"}),
         new comp.label("Event Name"),
         new comp.input({ type: "text"}),
         new comp.label("Date"),
@@ -118,8 +119,9 @@ const buildEvents = {
       // Save Button
       const inputArray = document.querySelectorAll("input");
       // builds object to send to api
+      $("#alert").text("");
       if(inputArray[0].value === "" || inputArray[1].value === "" || inputArray[2].value === "" ||inputArray[3].value === "" ) {
-          alert("All fields required.")
+          new comp.par({classList: "alert newEventForm"}, "All fields are required.").render("#alert");
           return;
         }
       const newEventObj = {

@@ -158,3 +158,7 @@
 .new--event > button, .new--event > h3  {
   margin-left: 1vw;
 }
+
+.alert {
+  color: red;
+}
