@@ -29,6 +29,27 @@ const formatDate = {
         timeArr[0] = (timeArr[0]-12)
         morningEvening = "pm"
         datearr[2] = (datearr[2]-1)
+        if (datearr[2]=== 0){
+          datearr[1] = (datearr[1]-1)
+          let longMonth = [1,3,5,7,8,10,12]
+          longMonth.forEach(month => {
+            if (datearr[1] === month){
+              datearr[2] = 31
+            }
+          })
+          let shortMonth = [4,6,9,11]
+          shortMonth.forEach(month => {
+            if(datearr[1]=== month){
+              datearr[2] = 30
+            }
+          })
+          let february = [2]
+          february.forEach(month =>{
+            if(datearr[1]=== month){
+              datearr[2] = 28
+            }
+          })
+        }
       }
     }
     [datearr[0], datearr[1], datearr[2]] = [datearr[1], datearr[2], datearr[0]];
