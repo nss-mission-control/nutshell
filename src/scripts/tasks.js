@@ -125,10 +125,14 @@ const buildTasks = {
           const tempInput = document.querySelector("#temp1");
           tempInput.addEventListener("keydown", (event) => {
             if (event.keyCode === 13) { // activate on ENTER key
-              globalEditTrackingVariable = null // reset edit tracking var
-              const patchTask = { task: tempInput.value }
-              API.updateItem("tasks", numId, patchTask) // pass new description object and section id
-                .then(() => this.buildContainers())
+              if (tempInput.value === "") { //prevent user from adding blank field
+                tempInput.value = `${taskName}`
+              } else {
+                globalEditTrackingVariable = null // reset edit tracking var
+                const patchTask = { task: tempInput.value }
+                API.updateItem("tasks", numId, patchTask) // pass new description object and section id
+                  .then(() => this.buildContainers())
+              }
             }
           }) // OR... edit task date and update database
         } else if (target.classList.contains("editable--date")) {
@@ -136,11 +140,17 @@ const buildTasks = {
           let tempTaskDate = `<input id="temp2" type="date" value="${taskDate}">`
           $(target).replaceWith(tempTaskDate)
           const tempDateInput = document.querySelector("#temp2");
-          tempDateInput.addEventListener("change", () => { //activate on change
-            globalEditTrackingVariable = null //reset edit tracking var
-            const patchDate = { dueDate: tempDateInput.value }
-            API.updateItem("tasks", numId, patchDate) // pass new date object and section id
-              .then(() => this.buildContainers())
+          tempDateInput.addEventListener("blur", () => { //activate on change
+            if (tempDateInput.value === "") { //prevent user from adding blank field
+              tempDateInput.value = `${taskDate}`
+              globalEditTrackingVariable = null //reset edit tracking var
+              this.buildContainers()
+            } else {
+              globalEditTrackingVariable = null //reset edit tracking var
+              const patchDate = { dueDate: tempDateInput.value }
+              API.updateItem("tasks", numId, patchDate) // pass new date object and section id
+                .then(() => this.buildContainers())
+            }
           })
         }
       })
