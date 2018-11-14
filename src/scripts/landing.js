@@ -16,6 +16,7 @@ const landingPageFuncs = {
             if(e.target.textContent === "Log In"){
               logInFuncs.loadLogIn()
             } else if(e.target.textContent === "Register"){
+              document.querySelector(".welcome").removeAttribute("id");
               registerFuncs.loadRegister()
             }
           })

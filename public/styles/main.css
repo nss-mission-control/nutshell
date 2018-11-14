@@ -8,6 +8,7 @@
 @import "tasks.css";
 @import "news.css";
 @import "events.css";
+@import "register.css";
 
 :root {
   --theme-main-primary: #42a5f4;
