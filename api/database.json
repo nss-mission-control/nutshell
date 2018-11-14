@@ -398,6 +398,20 @@
       "dueDate": "2018-11-06",
       "userId": 3,
       "id": 17
+    },
+    {
+      "task": "Testing new function",
+      "complete": false,
+      "dueDate": "2018-11-20",
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "task": "testing again",
+      "complete": false,
+      "dueDate": "2018-10-31",
+      "userId": 1,
+      "id": 19
     }
   ],
   "friends": [

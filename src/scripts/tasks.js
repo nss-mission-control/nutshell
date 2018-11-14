@@ -226,13 +226,7 @@ const buildTasks = {
           dueDate: input_date.value,
           userId: activeUser.info().id,
         }
-        API.saveItem("tasks", taskItem).then(data => {
-          this.printTasks(data)
-          this.cbListener(true, data) //true means single checkbox appended
-          this.editTaskListener()
-          document.getElementById("new--task").innerHTML = null;
-          this.newTask()
-        })
+        API.saveItem("tasks", taskItem).then(() => this.buildContainers())
       }
     })
   }

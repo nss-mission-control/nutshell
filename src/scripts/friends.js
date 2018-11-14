@@ -1,7 +1,3 @@
-
-// Given an active user wants to add another user to their friends list, but has no chat messages from that user
-// When the active user performs a gesture on the Add a friend affordance
-// Then the active user will be presented with an input field in which the other user's name can be entered
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"
@@ -13,6 +9,13 @@ const buildFriends = {
     new comp.title("h3", {}, "Add New Friend")).render(".container--inner")
     new comp.section({className: "display--friends"},
       ).render(".container--inner")
+    document.querySelectorAll("button").forEach(button =>{
+      if(button.textContent === "+"){
+        button.addEventListener("click", ()=>{
+          this.friendsSearch()
+        })
+      }
+    })
   },
   printFriends(friendObj){
     if(activeUser.info().id === friendObj.request_userId){
@@ -45,9 +48,6 @@ const buildFriends = {
         if(event.target.textContent === "Delete Friend"){
           let id = event.target.parentNode.id
           this.confirmDelete(id)
-        } else if(event.target.textContent === "Yes"){
-
-
         }
       })
     })
@@ -76,5 +76,57 @@ const buildFriends = {
     API.deleteItem("friends", id)
     .then(()=> this.friendMap())
   },
+  friendsSearch() {
+    document.querySelector(".new--friends").innerHTML = null
+    new comp.input({ type: "text", id: "friendsSearch", placeholder: "search for new friends here" }).render(".new--friends")
+    new comp.div({ id: "searchResults", style: "border:1px solid black" }).render(".new--friends")
+    const searchInput = document.getElementById("friendsSearch")
+    const searchResults = document.getElementById("searchResults")
+    let sneaker = [];
+    let allUsers = [];
+    let taco = [];
+    let unfriendedId;
+
+    API.getAllCategory(`friends/?request_userId=${activeUser.info().id}&_expand=user`)
+    .then(friends => {
+      friends.forEach(friend =>
+        sneaker.push(friend.userId)
+        )
+        sneaker.push(activeUser.info().id)
+    })
+
+    API.getAllCategory(`users`)
+    .then(people => {
+      people.forEach(person => {
+        allUsers.push(person.id)
+      })
+
+    })
+    .then(()=>{
+      allUsers = allUsers.filter(val => !sneaker.includes(val))
+      allUsers.forEach(user =>{
+        let includeId = `id=${user}`
+        taco.push(includeId)
+      })
+      unfriendedId = taco.join("&")
+      searchInput.addEventListener("keyup", (e)=> {
+        if (searchInput.value === "") {
+          return
+        } else {
+          document.querySelector("#searchResults").innerHTML=""
+          API.getAllCategory(`users/?q=${searchInput.value}&${unfriendedId}`)
+          .then((data)=> {
+            data.forEach(person => this.showSearchResults(person))
+          })
+        }
+      })
+    })
+},
+  showSearchResults(unfriendedPerson) {
+    new comp.div({class: "notFriended"},
+      new comp.image({class: "profilePicResult", src: `${unfriendedPerson.profilePic}`, width: "150", height: "150"}),
+      new comp.div({class: "nameResult"}, `${unfriendedPerson.firstName} ${unfriendedPerson.lastName}`)
+    ).render("#searchResults")
+  }
 }
 export default buildFriends
