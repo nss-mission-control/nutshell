@@ -20,7 +20,7 @@
            "no-unused-vars": "warn",
            "constructor-super": "warn",
            "valid-typeof": "warn",
-           "quotes": ["error", "double"],
+           "quotes": ["warn", "double"],
            "no-trailing-spaces": 2
        },
        "globals": {
