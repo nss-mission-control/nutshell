@@ -44,6 +44,15 @@
       "password": "1234",
       "profilePic": "https://hyha.xyz/wp-content/themes/fashion/images/no_image_available.jpg",
       "id": 5
+    },
+    {
+      "firstName": "Brad",
+      "lastName": "Davis",
+      "email": "davisthedad@hotmail.com",
+      "username": "testing2",
+      "password": "test",
+      "profilePic": "./images/option7edit.jpg",
+      "id": 6
     }
   ],
   "messages": [
