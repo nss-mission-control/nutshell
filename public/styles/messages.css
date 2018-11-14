@@ -22,6 +22,7 @@
   --planet-light-purple: #7B3E80;
   --planet-purple-space: #3F3363;
   --box-shadow-1: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  --box-shadow-2: 0px 2px 30px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #messageName {
@@ -38,7 +39,7 @@
   border-radius: 5px;
   font-size: 25px;
   font-family: var(--font-family-exo);
-  box-shadow: var(--box-shadow-1);
+  box-shadow: var(--box-shadow-2);
 }
 
 /* container that holds posted messages */
@@ -51,7 +52,7 @@
   padding: 5px 10px 10px 10px;
   /* style */
   overflow-y: auto;
-  box-shadow: var(--box-shadow-1);
+  box-shadow: var(--box-shadow-2);
   border-radius: 5px;
 }
 
@@ -110,11 +111,10 @@
   bottom: 10px;
   width: 90%;
   height: 17.5%;
-  padding-top: 5px;
   /* design */
   border-radius: 5px;
   /* background-color: var(--planet-orange); */
-  box-shadow: var(--box-shadow-1);
+  box-shadow: var(--box-shadow-2);
 }
 
 .new--message > h1 {

@@ -22,6 +22,7 @@
   --planet-light-purple: #7B3E80;
   --planet-purple-space: #3F3363;
   --box-shadow-1: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  --box-shadow-2: 0px 2px 30px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 #abort {
@@ -80,21 +81,32 @@ nav > ul > li:hover {
 #logIn {
   padding-bottom: 0px;
   display: flex;
+  align-items: center;
   border-bottom: none;
 }
+
+.messagePic {
+  display:inline-block;
+  border-radius: 5px;
+  margin: 4px;
+  min-height: 25px;
+  min-width: 25px;
+}
+
 #subNav{
   position: fixed;
   flex-direction: column;
   padding: 6px;
   border-radius: 5px;
   top: 10.5%;
-  color: var(--theme-text-light);
+  color: var(--planet-dark-purple);
   cursor: pointer;
   z-index: 1;
-  background-color: var(--theme-main-dark);
+  background-color: var(--planet-bright-green);
   font-family: var(--font-family-plain);
   text-align: center;
 }
+
 .subNavItem{
   cursor: pointer;
   z-index: 1;
@@ -103,22 +115,15 @@ nav > ul > li:hover {
   padding: 5px;
   margin-top: 2%;
   margin-bottom: 2%;
-  background-color: var(--theme-main-dark);
+  background-color: var(--planet-dark-green);
+  border-radius: 5px;
   text-align: center;
 }
 
 .subNavItem:hover {
-  background-color: var(--theme-main-light);
-  color: var(--theme-main-dark);
+  background-color: var(--planet-bright-green);
+  color: var(--planet-bright-red);
   border-radius: 3px;
-}
-
-.messagePic {
-  /* display:inline-block; */
-  border-radius: 5px;
-  margin: 4px;
-  min-height: 25px;
-  min-width: 25px;
 }
 
 #currentLogin {

@@ -210,8 +210,8 @@
     },
     {
       "name": "Sleep",
-      "date": "2018-11-11",
-      "time": "Now",
+      "date": "2018-11-15",
+      "time": "",
       "location": "My Bed",
       "userId": 3,
       "id": 4
@@ -266,11 +266,27 @@
     },
     {
       "name": "Brendan's new event",
-      "date": "2018-11-13",
+      "date": "2017-11-14",
       "time": "20:16",
       "location": "Nashville, TN",
       "userId": 3,
       "id": 14
+    },
+    {
+      "name": "test",
+      "date": "2017-11-11",
+      "time": "11:11",
+      "location": "aaaaa",
+      "userId": 3,
+      "id": 15
+    },
+    {
+      "name": "aaaaaaa",
+      "date": "2011-11-11",
+      "time": "11:11",
+      "location": "aaaaa",
+      "userId": 3,
+      "id": 16
     }
   ],
   "tasks": [
@@ -346,7 +362,7 @@
     },
     {
       "task": "Major styling changes to this page",
-      "complete": true,
+      "complete": false,
       "dueDate": "2018-11-13",
       "userId": 3,
       "id": 15
@@ -357,6 +373,13 @@
       "dueDate": "2018-11-15",
       "userId": 3,
       "id": 16
+    },
+    {
+      "task": "aaaaa",
+      "complete": true,
+      "dueDate": "2018-11-06",
+      "userId": 3,
+      "id": 17
     }
   ],
   "friends": [
