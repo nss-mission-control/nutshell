@@ -165,3 +165,8 @@
 .alert {
   color: red;
 }
+
+.friendEvent {
+  font-style: italic;
+  opacity: .85;
+}

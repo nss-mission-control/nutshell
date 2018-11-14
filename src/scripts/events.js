@@ -7,7 +7,28 @@ import moment from "moment"
 window.moment = moment
 
 
+
+
 const buildEvents = {
+
+  friendsFinder() {
+    API.getAllCategory(`friends/?request_userId=${activeUser.info().id}`)
+      .then(friendsArray => {
+        let friendsSearchString = ""
+        friendsArray.forEach(currentFriend => {
+          friendsSearchString += `&userId=${currentFriend.userId}`
+        })
+        API.getAllCategory(`events/?_expand=user&userId=${activeUser.info().id}${friendsSearchString}&_sort=date,time&_order=asc`)
+          .then(friendsEvents => {
+            friendsEvents.forEach(singleEvent => {
+            this.printEvents(singleEvent)
+            })
+            buildEvents.nextEvent();
+            buildEvents.editBtnListen()
+          })
+      })
+
+  },
 
   buildContainers() {
     // builds the two containers to hold everything
@@ -25,14 +46,15 @@ const buildEvents = {
     new comp.div({
       id: "past"
     }).render(".container--inner")
-    // this.newTask()
-    // this.newEventButton();
-    this.eventFetch()
+    this.newEvent()
+
+    buildEvents.friendsFinder()
     },
 
 
 
   printEvents(eventObj) {
+
     // takes the objects from the api and prints them to the dom
     let outputContainer;
     // Logic to determin if the event is upcoming or in the past
@@ -64,6 +86,8 @@ const buildEvents = {
     }
 
     // builds each event and renders to the DOM
+
+    if (eventObj.userId===activeUser.info().id){
     new comp.section({
         className: "event",
         id: `${eventObj.id}`
@@ -73,7 +97,19 @@ const buildEvents = {
       new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${theTime}`),
       new comp.par(`${eventObj.location}`)),
       new comp.btn("Edit")).render(outputContainer)
-
+    }
+    else {
+      new comp.section({
+        className: "event friendEvent",
+        id: `${eventObj.id}`
+      },
+      new comp.div ( {},
+        new comp.image({src: `${eventObj.user.profilePic}`, alt: "Profile Pic", className: "messagePic"}),
+        new comp.title("h2", {className:"messageAuthor"}, `${eventObj.user.firstName}`),
+        new comp.title("h3", `${eventObj.name}`),
+        new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${theTime}`),
+      new comp.par(`${eventObj.location}`))).render(outputContainer)
+    }
   },
 
   newEvent () {
@@ -114,17 +150,6 @@ const buildEvents = {
     }
   },
 
-  eventFetch() {
-    API.getAllCategory(`events/?userId=${activeUser.info().id}&_sort=date,time&_order=asc`) //check if user is same as session storage
-      .then(eventObj => {
-        buildEvents.newEvent();
-        eventObj.forEach(event => {
-          this.printEvents(event)
-        })
-        buildEvents.nextEvent();
-        buildEvents.editBtnListen()
-      })
-  },
 
   newEventBtnClicks() {
     // grabs the two buttons on the page and adds a click listener based on index

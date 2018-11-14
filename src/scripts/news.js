@@ -5,45 +5,71 @@ import formatDate from "./format"
 
 
 const buildNews = {
+
+  friendsFinder() {
+    document.querySelector(".container--inner").innerHTML = ""
+    this.createContainer()
+    document.querySelector(".display--news").innerHTML = ""
+    API.getAllCategory(`friends/?request_userId=${activeUser.info().id}`)
+      .then(friendsArray => {
+        let friendsSearchString = ""
+        friendsArray.forEach(currentFriend => {
+          friendsSearchString += `&userId=${currentFriend.userId}`
+        })
+        API.getAllCategory(`articles/?_expand=user&userId=${activeUser.info().id}${friendsSearchString}&_sort=date,time&_order=asc`)
+          .then(friendsNews => {
+            friendsNews.forEach(singleNews => {
+              console.log("singleNewS:",singleNews);
+
+            buildNews.printNews(singleNews)
+            })
+            buildNews.eventListener()
+
+          })
+      })
+
+  },
+
   //Build the containers on the news page to hold the articles
   createContainer(){
     new comp.section({className:"new--news"},
-      new comp.btn("+"),
-      new comp.title("h2", {}, "Save New Article")
+      new comp.btn("New Article"),
     ).render(".container--inner")
+    new comp.section({className: "news--title"},
+    new comp.title("h1","News Articles")).render(".container--inner")
     new comp.section({className: "display--news"}).render(".container--inner")
+
   },
   //Create each section used to display the article in the DOM
   printNews(newsObj) {
-    new comp.section ({className: "news", id: `${newsObj.id}`},
+    if (newsObj.userId === activeUser.info().id){
+    new comp.section({className: "news", id: `${newsObj.id}`},
     new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
     new comp.div({className: "news-info"},
     new comp.title("h2", {}, `${newsObj.articleName}`),
     new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${formatDate.getCorrectDate(newsObj.dateSaved)}`),
     new comp.par({}, newsObj.about)),
     new comp.btn("Delete Article")).render(".display--news")
-  },
+    } else {
+      console.log("newsObj", newsObj)
+      new comp.section({className: "news friendsNews", id: `${newsObj.id}`},
+      new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
+      new comp.div({className: "news-info"},
+      new comp.title("h2", {}, `${newsObj.articleName}`),
+      new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${formatDate.getCorrectDate(newsObj.dateSaved)}`),
+      new comp.par({}, newsObj.about))).render(".display--news")
 
-  //Call the API, get all relevant news articles, loop over them and create the section to be displayed in the DOM, then attach the event listeners
-  newsMap ()  {
-    document.querySelector(".container--inner").innerHTML = ""
-    this.createContainer()
-    document.querySelector(".display--news").innerHTML = ""
-    API.getAllCategory(`articles/?userId=${activeUser.info().id}&_expand=user&_sort=dateSaved&_order=desc`)
-    .then(newsObj => newsObj.forEach(news => {
-      this.printNews(news)}))
-      .then(()=> this.eventListener())
-
-  },
+  }},
 
   //builds the form to add a new article and calls the event listener function
   newNews () {
-      new comp.div({id: "alert"}).render(".new--news")
-      new comp.input({name: "articleName", placeholder: "Article Name", id: "articleName" }).render(".new--news")
-      new comp.input({name: "articleUrl", placeholder: "Article Link", id: "articleLink"}).render(".new--news")
-      new comp.input({name: "articleImageUrl", placeholder: "Article Image Link", id: "articleImage"}).render(".new--news")
-      new comp.input({name: "articleDescription", placeholder: "Article Description", id: "articleDescription"}).render(".new--news")
-      new comp.btn("Save New Article").render(".new--news")
+      new comp.div({className: "newsForum"},
+      new comp.div({id: "alert"}),
+      new comp.input({name: "articleName", placeholder: "Article Name", id: "articleName" }),
+      new comp.input({name: "articleUrl", placeholder: "Article Link", id: "articleLink"}),
+      new comp.input({name: "articleImageUrl", placeholder: "Article Image Link", id: "articleImage"}),
+      new comp.input({name: "articleDescription", placeholder: "Article Description", id: "articleDescription"}),
+      new comp.btn("Save New Article")).render(".new--news")
       this.eventListener()
   },
 
@@ -52,7 +78,7 @@ const buildNews = {
       //Grabs all buttons on the page and adds an event listener to them
       button.addEventListener("click", (e)=>{
         //if button is "+", call the function to build the new article form
-        if(e.target.textContent === "+"){
+        if(e.target.textContent === "New Article"){
           this.newNews()
           $(".new--news button:first-child").remove()
         }
@@ -77,7 +103,7 @@ const buildNews = {
           //If the button is "Delete", select the parent node ID and call the API delete function, then re-render the articles section.
         } else if(e.target.textContent === "Delete Article"){
           let articleId = e.target.parentNode.id
-          API.deleteItem("articles", articleId).then(()=> buildNews.newsMap())
+          API.deleteItem("articles", articleId).then(()=> buildNews.friendsFinder())
         }
         })
       })
@@ -85,7 +111,7 @@ const buildNews = {
 
 
   addNews(story){
-    API.saveItem("articles", story).then(()=> this.newsMap())
+    API.saveItem("articles", story).then(()=> this.friendsFinder())
   }
 
 }
