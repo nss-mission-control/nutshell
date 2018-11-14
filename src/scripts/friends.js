@@ -12,7 +12,6 @@ const buildFriends = {
     new comp.btn("+"),
     new comp.title("h3", {}, "Add New Friend")).render(".container--inner")
     new comp.section({className: "display--friends"},
-      // new comp.div({className: "deleteAlert"})
       ).render(".container--inner")
   },
   printFriends(friendObj){
@@ -32,13 +31,10 @@ const buildFriends = {
   friendMap(){
     document.querySelector(".container--inner").innerHTML = "";
     this.createContainer();
-    // document.querySelector(".display--friends").innerHTML = ""
     API.getAllCategory(`friends/?request_userId=${activeUser.info().id}&_expand=user`)
-    // .then(data => console.log(data))
     .then((friendObj) => {
       friendObj.forEach(friend => {
         this.printFriends(friend)
-        // this.friendDelete()
       })})
       .then(()=> this.friendDelete())
   },
@@ -48,7 +44,6 @@ const buildFriends = {
       button.addEventListener("click", ()=>{
         if(event.target.textContent === "Delete Friend"){
           let id = event.target.parentNode.id
-          console.log(id)
           this.confirmDelete(id)
         } else if(event.target.textContent === "Yes"){
 
@@ -65,11 +60,12 @@ const buildFriends = {
     ).render(`#deleteAlert-${id}`)
     document.querySelectorAll("button").forEach(button =>{
       if(button.textContent === "Yes" || button.textContent === "No"){
-        console.log(button)
         button.addEventListener("click", (event)=>{
           if(event.target.textContent=== "Yes"){
             let friendId = event.target.parentNode.parentNode.parentNode.id
            this.deleteFriend(friendId)
+          } else if(event.target.textContent === "No"){
+            this.friendMap()
           }
         })
       }
