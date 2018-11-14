@@ -2,6 +2,9 @@ import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"
 import formatDate from "./format"
+import moment from "moment"
+
+window.moment = moment
 
 
 const buildEvents = {
@@ -9,11 +12,6 @@ const buildEvents = {
   buildContainers() {
     // builds the two containers to hold everything
     document.querySelector(".container--inner").innerHTML = ""
-    // button for new event
-    const newBtn = new comp.div({ id: "newEventBtn"},
-      new comp.title("h3", "New Event!"),
-      new comp.btn("+")).render(".container--inner")
-
     // containers
     new comp.title("h1", {
       className: "title--upcoming"
@@ -28,36 +26,99 @@ const buildEvents = {
       id: "past"
     }).render(".container--inner")
     // this.newTask()
-    this.newEventButton();
+    // this.newEventButton();
     this.eventFetch()
     },
+
+
 
   printEvents(eventObj) {
     // takes the objects from the api and prints them to the dom
     let outputContainer;
+    // Logic to determin if the event is upcoming or in the past
+    if (moment(eventObj.date).isBefore(moment().format("YYYY-MM-DD"))){
+      outputContainer = "#past"
+    } else if (moment(eventObj.date).isSame((moment().format("YYYY-MM-DD")))) {
+      if(moment().hour() >= Number(eventObj.time.substr(0,2))){
+        if(moment().minute() >= Number(eventObj.time.substr(3,2))) {
+        outputContainer = "#past"
+      } else {outputContainer = "#upcoming"}
+    } else {outputContainer = "#upcoming"}
+   }
+    else {
+      outputContainer = "#upcoming"
+    }
+    let theTime;
+    // for midnight
+    if (eventObj.time.substr(0,2) === "00"){
+      theTime = (Number(eventObj.time.substr(0,2))) + 12 + `${eventObj.time.substr(2,3)}AM`
+      //noon
+    } else if (Number(eventObj.time.substr(0,2)) === 12) {
+      theTime = `${eventObj.time}PM`
+      //after noon
+    } else if(Number(eventObj.time.substr(0,2)) > 12) {
+      theTime = (Number(eventObj.time.substr(0,2)) - 12) + `${eventObj.time.substr(2,3)}PM`;
+      //before noon
+    } else {
+      theTime = eventObj.time + "AM";
+    }
 
-    // TODO:need to test if date is in the future or the past
-
-    outputContainer = "#upcoming"
+    // builds each event and renders to the DOM
     new comp.section({
         className: "event",
         id: `${eventObj.id}`
       },
       new comp.div ( {},
       new comp.title("h3", `${eventObj.name}`),
-      new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${eventObj.time}`),
-      new comp.par(`${eventObj.location}`),
-      new comp.btn("Edit"))).render(outputContainer)
+      new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${theTime}`),
+      new comp.par(`${eventObj.location}`)),
+      new comp.btn("Edit")).render(outputContainer)
+
+  },
+
+  newEvent () {
+    new comp.div ({className: "new--event",id: "newEventBtnSection"},
+    new comp.btn ("+"),
+    new comp.title("h3", "New Event")).render("#upcoming")
+    buildEvents.newEventClickListener();
+  },
+
+  newEventClickListener () {
+    const button = document.querySelector("#newEventBtnSection > button")
+    button.addEventListener("click", (e) => {
+      $("#upcoming").text("");
+      let upcomingContainer = document.getElementById("upcoming");
+      upcomingContainer.style.paddingTop = 0;
+      new comp.div({
+      classList: "newEventForm"},
+        new comp.div({id: "alert"}),
+        new comp.label("Event Name"),
+        new comp.input({ type: "text"}),
+        new comp.label("Date"),
+        new comp.input({type: "date"}),
+        new comp.label("Time"),
+        new comp.input({type: "time"}),
+        new comp.label("Location"),
+        new comp.input({ type: "text"}),
+        new comp.div({},
+        new comp.btn("Save"),
+        new comp.btn("Back"))).render("#upcoming")
+      buildEvents.newEventBtnClicks();
+
+    })
     },
 
+
   nextEvent() {
-    console.log(document.getElementById("upcoming").firstChild)
-    document.getElementById("upcoming").firstChild.classList.add("nextEvent");
+    if (document.getElementById("upcoming").firstChild.nextSibling) {
+    document.getElementById("upcoming").firstChild.nextSibling.classList.add("nextEvent");
+    }
   },
 
   eventFetch() {
     API.getAllCategory(`events/?userId=${activeUser.info().id}&_sort=date,time&_order=asc`) //check if user is same as session storage
       .then(eventObj => {
+        buildEvents.newEvent();
         eventObj.forEach(event => {
           this.printEvents(event)
         })
@@ -66,43 +127,19 @@ const buildEvents = {
       })
   },
 
-  newEventButton() {
-    // when clicked it clears the dom and calls the function to build the form
-    $("#newEventBtn").click(
-      function (e) {
-        $(".container--inner").text("")
-        buildEvents.newEventPopUp();
-      }
-    )
-  },
-
-  newEventPopUp() {
-    // Builds new event entry form
-    let div2 = new comp.div({
-        classList: "newEventForm"
-      },
-      new comp.title("h1", { className: "title"}, "Add A New Event"),
-      new comp.label("Event Name"),
-      new comp.input({ type: "text"}),
-      new comp.label("Date"),
-      new comp.input({type: "date"}),
-      new comp.label("Time"),
-      new comp.input({type: "time"}),
-      new comp.label("Location"),
-      new comp.input({ type: "text"}),
-      new comp.btn("Save"),
-      new comp.btn("Back"))
-    div2.render(".container--inner")
-    buildEvents.newEventPopUpBtnClicks();
-  },
-
-  newEventPopUpBtnClicks() {
+  newEventBtnClicks() {
     // grabs the two buttons on the page and adds a click listener based on index
     const popUpBtns = document.querySelectorAll("button");
     popUpBtns[0].addEventListener("click", () => {
       // Save Button
       const inputArray = document.querySelectorAll("input");
       // builds object to send to api
+      $("#alert").text("");
+      //checks if any field is blank
+      if(inputArray[0].value === "" || inputArray[1].value === "" || inputArray[2].value === "" ||inputArray[3].value === "" ) {
+          new comp.par({classList: "alert newEventForm"}, "All fields are required.").render("#alert");
+          return;
+        }
       const newEventObj = {
         name: inputArray[0].value,
         date: inputArray[1].value,
@@ -129,39 +166,51 @@ const buildEvents = {
         const currentBtnId = currentBtn.parentElement.id;
         API.getOneFromCategory("events", currentBtnId)
           .then(singleEvent => {
-            $(".container--inner").text("")
-            buildEvents.eventEditForm(singleEvent, currentBtnId)
+               buildEvents.eventEditForm(singleEvent, currentBtnId)
           })
       })
     })
   },
-  eventEditForm(singleEventObj) {
+  eventEditForm(singleEventObj, id) {
     // builds Edit form
     // takes the return from the fetch
-    let div2 = new comp.div({
-      classList: "newEventForm"
-    },
-    new comp.title("h1", { className: "title"}, "Edit Your Event"),
-    new comp.label("Event Name"),
-    new comp.input({ type: "text", value: `${singleEventObj.name}`}),
-    new comp.label("Date"),
-    new comp.input({type: "date", value: `${singleEventObj.date}`}),
-    new comp.label("Time"),
-    new comp.input({type: "time", value: `${singleEventObj.time}`}),
-    new comp.label("Location"),
-    new comp.input({ type: "text", value: `${singleEventObj.location}`}),
-    new comp.btn("Save"),
-    new comp.btn("Back"))
-  div2.render(".container--inner")
-  buildEvents.editEventPopUpBtnClicks(singleEventObj.id);
+    $("#upcoming").text("");
+      let upcomingContainer = document.getElementById("upcoming");
+      upcomingContainer.style.paddingTop = 0;
+      new comp.div({
+      classList: "newEventForm"},
+        new comp.label("Event Name"),
+        new comp.input({ type: "text", value: `${singleEventObj.name}`}),
+        new comp.label("Date"),
+        new comp.input({type: "date", value: `${singleEventObj.date}`}),
+        new comp.label("Time"),
+        new comp.input({type: "time", value: `${singleEventObj.time}`}),
+        new comp.label("Location"),
+        new comp.input({ type: "text", value: `${singleEventObj.location}`}),
+        new comp.div({},
+        new comp.btn("Save"),
+        new comp.btn("Back"),
+        new comp.btn("Delete"))).render("#upcoming")
+        buildEvents.editEventBtnClicks(singleEventObj, id);
   },
-  editEventPopUpBtnClicks(id) {
+  editEventBtnClicks(singleEventObj, id) {
     // grabs the two buttons on the page and adds a click listener based on index
     // takes the event id so it can be passed on with the PATCH
     const popUpBtns = document.querySelectorAll("button");
     popUpBtns[0].addEventListener("click", () => {
       // Save Button
       const inputArray = document.querySelectorAll("input");
+
+      //check to see if any input is empty and if it is the old info is repopulated
+      if (inputArray[0].value === ""){
+        inputArray[0].value = singleEventObj.name
+      } else if (inputArray[1].value === ""){
+        inputArray[1].value = singleEventObj.date
+      }else if (inputArray[2].value === ""){
+        inputArray[2].value = singleEventObj.time
+      } else if (inputArray[3].value === ""){
+        inputArray[3].value = singleEventObj.location
+      }
       // builds object to send to api
       const editEventObj = {
         name: inputArray[0].value,
@@ -178,6 +227,10 @@ const buildEvents = {
     // Back Button Returns to Event Page
     popUpBtns[1].addEventListener("click", () => {
       buildEvents.buildContainers();
+    })
+    // Delete Button
+    popUpBtns[2].addEventListener("click", () => {
+      API.deleteItem("events", id).then(() => buildEvents.buildContainers())
     })
   },
 
