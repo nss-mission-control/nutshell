@@ -140,16 +140,16 @@ const buildTasks = {
           let tempTaskDate = `<input id="temp2" type="date" value="${taskDate}">`
           $(target).replaceWith(tempTaskDate)
           const tempDateInput = document.querySelector("#temp2");
-          tempDateInput.addEventListener("blur", () => { //activate on change
+          tempDateInput.addEventListener("change", () => { //activate on change
             if (tempDateInput.value === "") { //prevent user from adding blank field
               tempDateInput.value = `${taskDate}`
-              globalEditTrackingVariable = null //reset edit tracking var
               this.buildContainers()
-            } else {
               globalEditTrackingVariable = null //reset edit tracking var
+            } else {
               const patchDate = { dueDate: tempDateInput.value }
               API.updateItem("tasks", numId, patchDate) // pass new date object and section id
                 .then(() => this.buildContainers())
+              globalEditTrackingVariable = null //reset edit tracking var
             }
           })
         }
