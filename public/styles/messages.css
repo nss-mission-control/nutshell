@@ -90,6 +90,11 @@
   font-weight: bold;
 }
 
+.addFriend:hover{
+  cursor: pointer;
+  color: var(--planet-orange);
+}
+
 /* message content */
 .message > h1 {
   font-size: 16px;

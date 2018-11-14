@@ -434,9 +434,19 @@
       "userId": 2
     },
     {
-      "id": 4,
+      "request_userId": 1,
+      "userId": 3,
+      "id": 4
+    },
+    {
+      "request_userId": 1,
+      "userId": 2,
+      "id": 5
+    },
+    {
       "request_userId": 2,
-      "userId": 3
+      "userId": 3,
+      "id": 6
     }
   ]
 }

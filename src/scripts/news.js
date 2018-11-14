@@ -24,8 +24,7 @@ const buildNews = {
             buildNews.printNews(singleNews)
             })
             buildNews.eventListener()
-            // buildNews.nextEvent();
-            // buildNews.editBtnListen()
+
           })
       })
 
@@ -61,18 +60,6 @@ const buildNews = {
       new comp.par({}, newsObj.about))).render(".display--news")
 
   }},
-
-  //Call the API, get all relevant news articles, loop over them and create the section to be displayed in the DOM, then attach the event listeners
-  newsMap ()  {
-    document.querySelector(".container--inner").innerHTML = ""
-    this.createContainer()
-    document.querySelector(".display--news").innerHTML = ""
-    API.getAllCategory(`articles/?userId=${activeUser.info().id}&_expand=user&_sort=dateSaved&_order=desc`)
-    .then(newsObj => newsObj.forEach(news => {
-      this.printNews(news)}))
-      .then(()=> this.eventListener())
-
-  },
 
   //builds the form to add a new article and calls the event listener function
   newNews () {

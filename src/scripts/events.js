@@ -7,8 +7,7 @@ import moment from "moment"
 window.moment = moment
 
 
-// http://localhost:8088/events/?_expand=user&userId=1&userId=2
-//http://localhost:8088/friends/?request_userId=4
+
 
 const buildEvents = {
 
@@ -48,8 +47,7 @@ const buildEvents = {
       id: "past"
     }).render(".container--inner")
     this.newEvent()
-    // this.newEventButton();
-    // this.eventFetch()
+
     buildEvents.friendsFinder()
     },
 
@@ -152,17 +150,6 @@ const buildEvents = {
     }
   },
 
-  // eventFetch() {
-  //   API.getAllCategory(`events/?userId=${activeUser.info().id}&_sort=date,time&_order=asc`) //check if user is same as session storage
-  //     .then(eventObj => {
-  //       buildEvents.newEvent();
-  //       eventObj.forEach(event => {
-  //         this.printEvents(event)
-  //       })
-  //       buildEvents.nextEvent();
-  //       buildEvents.editBtnListen()
-  //     })
-  // },
 
   newEventBtnClicks() {
     // grabs the two buttons on the page and adds a click listener based on index
