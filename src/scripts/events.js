@@ -15,14 +15,17 @@ const buildEvents = {
   friendsFinder() {
     API.getAllCategory(`friends/?request_userId=${activeUser.info().id}`)
       .then(friendsArray => {
-        console.log(friendsArray)
         let friendsSearchString = ""
         friendsArray.forEach(currentFriend => {
           friendsSearchString += `&userId=${currentFriend.userId}`
         })
-        API.getAllCategory(`events/?_expand=user&userId${activeUser.info().id}${friendsSearchString}`)
+        API.getAllCategory(`events/?_expand=user&userId=${activeUser.info().id}${friendsSearchString}`)
           .then(friendsEvents => {
-            console.log(friendsEvents);
+            friendsEvents.forEach(singleEvent => {
+            this.printEvents(singleEvent)
+            })
+            buildEvents.nextEvent();
+            buildEvents.editBtnListen()
           })
       })
 
@@ -44,10 +47,10 @@ const buildEvents = {
     new comp.div({
       id: "past"
     }).render(".container--inner")
-    // this.newTask()
+    this.newEvent()
     // this.newEventButton();
-    this.eventFetch()
-    buildEvents.friendsFinder();
+    // this.eventFetch()
+    buildEvents.friendsFinder()
     },
 
 
@@ -85,6 +88,10 @@ const buildEvents = {
     }
 
     // builds each event and renders to the DOM
+    console.log(
+     eventObj.userId, activeUser.info().id
+    )
+    if (eventObj.userId===activeUser.info().id){
     new comp.section({
         className: "event",
         id: `${eventObj.id}`
@@ -94,7 +101,17 @@ const buildEvents = {
       new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${theTime}`),
       new comp.par(`${eventObj.location}`)),
       new comp.btn("Edit")).render(outputContainer)
-
+    }
+    else {
+      new comp.section({
+        className: "event friendEvent",
+        id: `${eventObj.id}`
+      },
+      new comp.div ( {},
+      new comp.title("h3", `${eventObj.name}`),
+      new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${theTime}`),
+      new comp.par(`${eventObj.location}`))).render(outputContainer)
+    }
   },
 
   newEvent () {
@@ -135,17 +152,17 @@ const buildEvents = {
     }
   },
 
-  eventFetch() {
-    API.getAllCategory(`events/?userId=${activeUser.info().id}&_sort=date,time&_order=asc`) //check if user is same as session storage
-      .then(eventObj => {
-        buildEvents.newEvent();
-        eventObj.forEach(event => {
-          this.printEvents(event)
-        })
-        buildEvents.nextEvent();
-        buildEvents.editBtnListen()
-      })
-  },
+  // eventFetch() {
+  //   API.getAllCategory(`events/?userId=${activeUser.info().id}&_sort=date,time&_order=asc`) //check if user is same as session storage
+  //     .then(eventObj => {
+  //       buildEvents.newEvent();
+  //       eventObj.forEach(event => {
+  //         this.printEvents(event)
+  //       })
+  //       buildEvents.nextEvent();
+  //       buildEvents.editBtnListen()
+  //     })
+  // },
 
   newEventBtnClicks() {
     // grabs the two buttons on the page and adds a click listener based on index
