@@ -77,9 +77,12 @@ const navBar = {
               new comp.image({ className: "selectPic", src: "./images/option6edit.jpg" })),
             new comp.section({},
               new comp.input({ type: "radio", name: "picRadio", value: "./images/option0edit.jpg", className: "radio" }),
-              new comp.image({ className: "selectPic", src: "./images/option0edit.jpg" }))
+              new comp.image({ className: "selectPic", src: "./images/option0edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", value: "addPhotoUrl", name: "picRadio", className: "registerPicRadio" }),
+              new comp.image({ className: "selectPic", src: "./images/addPhoto.jpg" }))
           ),
-          new comp.label({ for: "profilePicText" }, "Or Add The Web Address of Your Own",
+          new comp.label({ for: "profilePicText", id: "picUrlContainer"}, "Add Web Address of Your Own Image",
             new comp.input({ name: "profilePicText", id: "profilePicText", placeholder: "Enter The URL Of Your Profile Pic" })),
           //
           new comp.label({}, "First Name",
@@ -101,6 +104,18 @@ const navBar = {
 
         $(".alert").toggle();
         $(".alert").hide();
+        $("#picUrlContainer").toggle();
+        $("#picUrlContainer").hide();
+
+        $("#profilePicSection").click(function () {
+          let tempValue = $("input[name='picRadio']:checked").val();
+          console.log(tempValue);
+          if (tempValue === "addPhotoUrl") {
+            $("#picUrlContainer").show();
+          } else {
+            $("#picUrlContainer").hide()
+          }
+        });
 
         // set event listeners for navbar edit buttons
         document.querySelectorAll(".btn").forEach((button) => {
@@ -177,8 +192,6 @@ const navBar = {
       } else if (event.target.textContent === "Friends") {
         $("#subNav").hide();
         buildFriends.friendMap();
-        // need to add function call here for friends
-        console.log("Friends function called.")
       }
   },
 

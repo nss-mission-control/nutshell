@@ -39,6 +39,7 @@ const logInFuncs = {
 
   loadLogIn() {
     document.querySelector(".Log_In").innerHTML = "";
+    document.querySelector(".welcome").setAttribute("id", "login")
     new comp.title("p", { className: "alert", id: "noInfoLogin" }, "You must enter your username and password to log in.").render(".Log_In");
     new comp.title("p", { className: "alert", id: "noUsernameLogin" }, "You must enter your username to log in.").render(".Log_In");
     new comp.title("p", { className: "alert", id: "nameNotFoundLogin" }, "There is not an account with that username.").render(".Log_In");
@@ -47,7 +48,7 @@ const logInFuncs = {
     new comp.title("p", { className: "alert", id: "noPasswordLogin" }, "You must enter your password to log in.").render(".Log_In");
     new comp.title("p", { className: "alert", id: "badPasswordLogin" }, "The password you entered is incorrect.").render(".Log_In");
     new comp.label({ for: "password" }, "Password",
-      new comp.input({name: "password", id: "password", placeholder: "Enter Password Here" })).render(".Log_In")
+      new comp.input({type: "password", name: "password", id: "password", placeholder: "Enter Password Here" })).render(".Log_In")
     new comp.btn("Login Now").render(".Log_In")
     $(".alert").toggle();
     $(".alert").hide();
