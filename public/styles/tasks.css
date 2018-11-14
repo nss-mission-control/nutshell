@@ -26,7 +26,7 @@
 
 .title--incomplete, .title--complete {
   /* layout */
-  width: 90%;
+  flex-basis: 90%;
   padding: 7px 0;
   /* design */
   color: var(--theme-sub-primary);
@@ -40,20 +40,30 @@
 }
 
 #incomplete {
-  flex-basis: 75%;
-  height: 300px;
-  border: 1px solid black;
-  overflow-y: auto;
-  /* padding to keep new task from hiding first section */
-  padding-top: 75px;
+  /* layout */
+  flex-basis: 90%;
+  height: 280px;
+  padding: 10px;
+  padding-top: 50px;
+  /* position children */
   position: relative;
+  /* design */
+  overflow-y: auto;
+  border-radius: 5px;
+  font-family: var(--font-family-exo);
+  box-shadow: var(--box-shadow-1);
 }
 
 #complete {
-  flex-basis: 75%;
-  height: 300px;
-  border: 1px solid black;
+  /* layout */
+  flex-basis: 90%;
+  height: 280px;
+  padding: 10px;
+  /* design */
   overflow-y: auto;
+  border-radius: 5px;
+  font-family: var(--font-family-exo);
+  box-shadow: var(--box-shadow-1);
 }
 
 #complete > .task > p {
@@ -61,10 +71,16 @@
 }
 
 .task {
+  /* layout */
   width: 100%;
+  margin: 5px;
   padding: 15px;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  /* position children */
+  position: relative;
+  /* design */
+  background-color: var(--theme-sub-primary);
+  border: 3px solid var(--planet-purple-space);
+  border-radius: 5px;
 }
 
 /* task description */
@@ -72,18 +88,22 @@
   display: inline-block;
   width: 75%;
   margin-left: 5px;
+  word-wrap: break-word;
 }
 
 /* task due date */
 .task > p:last-of-type {
+  position: absolute;
+  top: calc(50% - 9.5px); /* 50% - half of par height */
+  right: 5px;
   display: inline-block;
   width: 15%;
   margin-left: 15px;
 }
 
 .new--task {
-  height: 75px; /* fixed height for abs positioning */
-  padding: 10px;
+  height: 40px; /* fixed height for abs positioning */
+  padding: 15px;
   position: absolute;
   width: 100%;
   top: 0;
@@ -91,12 +111,13 @@
 }
 
 .new--task > input:first-of-type {
-  width: 60%;
-  margin-left: 5px;
+  width: 65%;
+  height: 30px;
+  margin-left: 10px;
 }
 
 .new--task > input:last-of-type {
-  width: 30%;
+  width: 20%;
+  height: 30px;
   margin-left: 15px;
 }
-

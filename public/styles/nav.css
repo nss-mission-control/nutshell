@@ -60,9 +60,10 @@ nav > ul {
   /* position children */
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
-nav > ul > li {
+nav > ul > li, nav > ul > img {
   /* layout */
   display: inline-block;
   padding: 1px;
@@ -129,11 +130,13 @@ nav > ul > li:hover {
   margin-left: 5%;
   padding-top: 5%;
 }
+
 #editForm {
   height: 80%;
   display: flex;
   flex-direction: column;
 }
+
 #editForm > label {
   display: flex;
   flex-direction: column;
@@ -145,6 +148,7 @@ nav > ul > li:hover {
   position: relative;
   width: 55vw;
 }
+
 #editForm > label > input {
   text-align: center;
   margin-top: 1%;
@@ -152,6 +156,7 @@ nav > ul > li:hover {
   height: 3vw;
   font-size: 15px;
 }
+
 #editForm > button {
   margin: auto;
   margin-top: 2%;

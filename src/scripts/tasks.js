@@ -197,7 +197,7 @@ const buildTasks = {
 
   // validate new task inputs and then save new task to database before reloading container
   createNewTask() {
-    new comp.btn("+").render("#new--task")
+    new comp.btn("Add Task").render("#new--task")
     new comp.input({ id: "input--task", type: "text", placeholder: "type new task here" }).render("#new--task")
     new comp.input({ id: "input--date", type: "date" }).render("#new--task")
 
