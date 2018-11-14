@@ -263,6 +263,14 @@
       "location": "The Moon",
       "userId": 2,
       "id": 13
+    },
+    {
+      "name": "Brendan's new event",
+      "date": "2018-11-13",
+      "time": "20:16",
+      "location": "Nashville, TN",
+      "userId": 3,
+      "id": 14
     }
   ],
   "tasks": [
@@ -323,9 +331,9 @@
       "id": 11
     },
     {
-      "task": "I fixed all of the issues with the task list!",
+      "task": "I fixed all of the issues with the task list",
       "complete": false,
-      "dueDate": "2018-11-12",
+      "dueDate": "2018-11-13",
       "userId": 3,
       "id": 12
     },
@@ -342,6 +350,13 @@
       "dueDate": "2018-11-13",
       "userId": 3,
       "id": 15
+    },
+    {
+      "task": "second task",
+      "complete": false,
+      "dueDate": "2018-11-15",
+      "userId": 3,
+      "id": 16
     }
   ],
   "friends": [

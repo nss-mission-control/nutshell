@@ -39,29 +39,26 @@
 }
 
 #upcoming {
-  flex-basis: 75%;
-  height: 250px;
-  border: 1px solid black;
+  flex-basis: 90%;
+  height: 280px;
   overflow-y: auto;
   padding-top: 40px;
   position: relative;
-
-
-  /* padding to keep new task from hiding first section */
-  /* padding-top: 75px;
-  position: relative; */
+  /* design */
+  overflow-y: auto;
+  border-radius: 5px;
+  font-family: var(--font-family-exo);
+  box-shadow: var(--box-shadow-1);
 }
 
 #past {
-  flex-basis: 75%;
-  height: 250px;
-  border: 1px solid black;
+  flex-basis: 90%;
+  height: 280px;
+  /* design */
   overflow-y: auto;
-}
-
-.event>h3 {
-  font-weight: 700;
-
+  border-radius: 5px;
+  font-family: var(--font-family-exo);
+  box-shadow: var(--box-shadow-1);
 }
 
 .event {
@@ -79,11 +76,10 @@
   right: 0;
   padding: 15px;
   display: flex;
-
 }
 
 .newEventForm {
-  background: var(--planet-bright-green);
+  background: var(--planet-orange);
   height: 100%;
   width: 100%;
   display: flex;
@@ -131,8 +127,6 @@
   font-weight: 600;
 }
 
-
-
 .event > button {
   height: 35px;
   margin: 10px;
@@ -147,7 +141,6 @@
   display: flex;
   position: absolute;
   height: 40px;
-  background: var(--planet-bright-green);
   top: 0;
   left: 0;
   align-items: center;

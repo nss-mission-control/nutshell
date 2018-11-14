@@ -114,8 +114,8 @@ nav > ul > li:hover {
 }
 
 .messagePic {
-  display:inline-block;
-  border-radius: 8px;
+  /* display:inline-block; */
+  border-radius: 5px;
   margin: 4px;
   min-height: 25px;
   min-width: 25px;

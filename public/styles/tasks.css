@@ -101,6 +101,19 @@
   margin-left: 15px;
 }
 
+/* modify edit fields */
+.task > input[type="text"] {
+  width: 65%;
+  height: 30px;
+  margin: 0 5px;
+}
+
+.task > input[type="date"] {
+  width: 20%;
+  height: 30px;
+  margin-left: 15px;
+}
+
 .new--task {
   height: 40px; /* fixed height for abs positioning */
   padding: 15px;
