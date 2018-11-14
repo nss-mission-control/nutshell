@@ -11,26 +11,26 @@ const registerFuncs = {
     document.querySelector(".Log_In").setAttribute("id", "registerLogin")
     new comp.title("p", { className: "alertRegister", id: "firstNameRegister" }, "You must enter your first name to register.").render(".Log_In");
     new comp.label({}, "First Name",
-      new comp.input({ name: "firstName", id: "firstName", placeholder: "First Name" })).render(".Log_In");
+      new comp.input({ name: "firstName", id: "firstName", placeholder: "Enter First Name" })).render(".Log_In");
     new comp.title("p", { className: "alertRegister", id: "lastNameRegister" }, "You must enter your last name to register.").render(".Log_In");
     new comp.label({}, "Last Name",
-      new comp.input({ name: "lastName", id: "lastName", placeholder: "Last Name" })).render(".Log_In");
+      new comp.input({ name: "lastName", id: "lastName", placeholder: "Enter Last Name" })).render(".Log_In");
     new comp.title("p", { className: "alertRegister", id: "emailBlankRegister" }, "You must enter your email to register.").render(".Log_In");
     new comp.title("p", { className: "alertRegister", id: "notValidEmailRegister" }, "You must enter a valid email to register.").render(".Log_In");
     new comp.title("p", { className: "alertRegister", id: "emailExistsRegister" }, "There is already an account registered to this email.").render(".Log_In");
     new comp.label({}, "Email",
-      new comp.input({ type: "email", id: "email", name: "email", placeholder: "email" })).render(".Log_In")
+      new comp.input({ type: "email", id: "email", name: "email", placeholder: "Enter Email Address" })).render(".Log_In")
     new comp.title("p", { className: "alertRegister", id: "usernameBlankRegister" }, "You must enter a username to register.").render(".Log_In");
     new comp.title("p", { className: "alertRegister", id: "notValidUsernameRegister" }, "@ symbol is not allowed in your username.").render(".Log_In");
     new comp.title("p", { className: "alertRegister", id: "usernameExistsRegister" }, "There is already an account registered to this username.").render(".Log_In");
     new comp.label({}, "Username",
-      new comp.input({ name: "username", id: "username", placeholder: "username" })).render(".Log_In")
+      new comp.input({ name: "username", id: "username", placeholder: "Enter Username (@ is prohibited)" })).render(".Log_In")
     new comp.title("p", { className: "alertRegister", id: "passwordBlankRegister" }, "You must enter and confirm your password.").render(".Log_In");
     new comp.label({ for: "password" }, "Password",
-      new comp.input({ type: "password", name: "password", id: "password", placeholder: "Password" })).render(".Log_In")
+      new comp.input({ name: "password", id: "password", placeholder: "Enter Password" })).render(".Log_In")
     new comp.title("p", { className: "alertRegister", id: "badConfirmPasswordRegister" }, "The passwords entered do not match.").render(".Log_In");
     new comp.label({ for: "confirmPassword" }, "Confirm Password",
-      new comp.input({ type: "password", name: "confirmPassword", id: "confirmPassword", placeholder: "Confirm Password" })).render(".Log_In");
+      new comp.input({ name: "confirmPassword", id: "confirmPassword", placeholder: "Confirm Password" })).render(".Log_In");
     new comp.label({ for: "profilePic", id: "registerRadioLabel" }, "Select Profile Pic").render(".Log_In");
     new comp.div({ name: "profilePic", id: "registerProfilePicSection" },
       new comp.section({},
@@ -86,14 +86,9 @@ const registerFuncs = {
 
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", (e) => {
-        $("#picUrlContainer").hide();
         $(".alertRegister").hide();
         if (e.target.textContent === "Register Account") {
           registerFuncs.checkUserFields();
-        }
-        else {
-          document.querySelector(".Log_In").removeAttribute("id", "registerLogin");
-          logInFuncs.loadLogIn();
         }
       })
     })

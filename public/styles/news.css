@@ -25,53 +25,57 @@
   height: 150px;
   padding: 7.5px;
   margin-bottom: 5px;
-  /* position children */
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  /* design */
+  width: 100%;
+  display: inline-flex;
   border: 2px solid var(--planet-dark-green);
-}
-
-.news > a {
-}
-
-.news > h4 {
-}
-
-.news > h2 {
-}
-
-.news > h1 {
-}
-
-.news > p  {
+  background-color: rgb(254, 254, 255, .9);
 }
 
 .news > button {
   height: 50px;
+  width: 50px;
+  right: 1vw;
+  position: absolute;
 }
 
 
 .new--news{
-  height: 150px;
-  padding: 10px;
+  height: 6.5vw;
+  padding: 1vw;
+  border-radius: 8px;
   position: absolute;
-  width: 100%;
+  display: inline-flex;
+  background-color: var(--planet-purple-space);
+  border: 2px solid var(--planet-dark-green);
   top: 0;
-  left: 0;
+}
+.new--news > h2 {
+  position: relative;
+  margin-left: 2vw;
+  font-weight: bold;
+  color: var(--planet-dark-green);
 }
 
 .new--news > button{
-  position: absolute;
-  bottom: 5px;
-  left: calc(50% - 52px);
+  position: relative;
+  margin: 0px;
+  width: 4vw;
+  height: 4vw;
+  background-color: var(--planet-dark-red);
 }
 .new--news > input{
   width: 40%;
 }
 
 .display--news{
-  position:absolute;
-  top: 150px;
+  position: absolute;
+  top: 7vw;
+  width: 90%;
+  left: 5%;
+  background-color: rgba(63, 50, 101, .4);
+
+}
+.news-info {
+  width: 72%;
+  margin-left: 1%;
 }

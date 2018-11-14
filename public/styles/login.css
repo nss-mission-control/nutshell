@@ -24,8 +24,8 @@
 
 /* landing page login register */
 .welcome {
-  background-color: var(--planet-dark-green);
-  flex-basis: 50%;
+  background-color: rgba(63, 50, 101, .9);
+  flex-basis: 60%;
   height: 95%;
   display: flex;
   flex-direction: column;
@@ -42,6 +42,7 @@
 .WelcomeNav {
   background-color: var(--planet-light-purple);
   border: 1px solid var(--planet-dark-green);
+  display: inline-flex;
   border-radius: 5px;
 }
 
@@ -51,23 +52,28 @@
 }
 
 .Log_In{
-  height: 95%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
-.WelcomeNav{
-  display: inline-flex;
+#activeDir {
+  color: var(--planet-bright-green);
 }
+
 
 .WelcomeNav > h2{
-  margin: 10px;
+  padding: 1vw;
+  padding-bottom: 2vw;
+  font-size: 2.5vw;
+  position: relative;
+  height: 20%;
 }
 
 #login {
-  background-color: var(--planet-dark-green);
+  background-color: rgba(63, 50, 101, .9);
   flex-basis: 30%;
   height: 40%;
   display: flex;
@@ -84,15 +90,19 @@
 }
 .Log_In > label {
   display: flex;
-  height: 4%;
-  margin-bottom: 4%;
+  height: 25%;
+  padding-bottom: 5vw;
+  margin-bottom: .25vw;
   flex-direction: column;
   text-align: center;
+  font-size: 2.5vw;
   font-weight: bold;
+  align-items: center;
 }
 
 .Log_In > label > input {
   text-align: center;
+  margin-top: .25vw;
 }
 #radioLabel {
   margin-bottom: 0px;

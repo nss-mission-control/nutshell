@@ -88,8 +88,8 @@ nav > ul > li:hover {
 
 #logIn {
   padding-bottom: 0px;
+  padding-top: 2%;
   display: flex;
-  align-items: center;
   border-bottom: none;
 }
 
@@ -106,7 +106,7 @@ nav > ul > li:hover {
   flex-direction: column;
   padding: 6px;
   border-radius: 5px;
-  top: 10.5%;
+  top: 82px;
   color: var(--planet-dark-purple);
   cursor: pointer;
   z-index: 1;
@@ -152,31 +152,33 @@ nav > ul > li:hover {
   border-radius: 5px;
   font-family: var(--font-family-exo);
   box-shadow: var(--box-shadow-2);
-  background-color: var(--planet-dark-purple);
+  background-color: rgba(70, 50, 129, 0.4);
 }
 #editPagePic {
   display: flex;
+  margin: auto;
   align-self: center;
-  height: calc(90vh - 400px);
+  height: calc(90vh - 200px);
   border: 2px solid var(--theme-main-dark);
   border-radius: 10px;
   margin-bottom: 0px;
-  width: calc(55vh - 300px);
+  width: calc(55vh - 250px);
 }
 #editForm > label {
   flex-direction: column;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  padding: 5px;
-  color: var(--theme-sub-primary);
-  text-shadow: 1px 1px 2px #000000;
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  display: flex;
-  margin-bottom: 2%;
-  position: relative;
-  border-radius: 5px;
+    margin-top: 2%;
+    position: relative;
+    margin-bottom: 2%;
+    padding: 5px;
+    color: var(--theme-sub-primary);
+    text-shadow: 1px 1px 2px #000000;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    margin-bottom: 2%;
+    position: relative;
+    border-radius: 5px;
 }
 
 #editForm > label > input {
@@ -190,17 +192,17 @@ nav > ul > li:hover {
 
 #editForm > button {
   margin: auto;
-  margin-top: 2.5%;
-  margin-bottom: 1%;
+  margin-top: 3.5%;
   padding-bottom: 3.5%;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 12px;
   width: 35%;
 }
 #radioLabel {
   display: flex !important;
   height: 0% !important;
   margin-bottom: 8% !important;
+  padding-bottom: 3% !important;
 }
 #profilePicSection {
   margin: auto;

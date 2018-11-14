@@ -52,6 +52,7 @@
   overflow-y: auto;
   border-radius: 5px;
   font-family: var(--font-family-exo);
+  background-color: rgba(63, 50, 101, .9);
   box-shadow: var(--box-shadow-2);
 }
 
@@ -64,6 +65,7 @@
   overflow-y: auto;
   border-radius: 5px;
   font-family: var(--font-family-exo);
+  background-color: rgba(63, 50, 101, .9);
   box-shadow: var(--box-shadow-2);
 }
 

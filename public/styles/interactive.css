@@ -27,12 +27,14 @@
 .btn {
   /* layout */
   padding: 7.5px;
+  margin-top: .5vw;
   /* material design */
   cursor: pointer;
   background-color: var(--planet-dark-purple);
   color: var(--theme-text-light);
   border: none;
   border-radius: 5px;
+  font-size: 1.5vw;
   /* animation */
   transition-duration: 0.3s;
 }

@@ -12,10 +12,13 @@ const landingPageFuncs = {
 
       logInFuncs.loadLogIn()
         document.querySelectorAll(".logInNav").forEach((element)=>{
-          element.addEventListener("click", (e)=>{
-            if(e.target.textContent === "Log In"){
+          element.addEventListener("click", (event)=>{
+            document.querySelectorAll(".logInNav").forEach((element)=>{
+            element.removeAttribute("id", "activeDir")})
+            if(event.target.textContent === "Log In"){
+              document.querySelector(".Log_In").removeAttribute("id", "registerLogin");
               logInFuncs.loadLogIn()
-            } else if(e.target.textContent === "Register"){
+            } else if(event.target.textContent === "Register"){
               document.querySelector(".welcome").removeAttribute("id");
               registerFuncs.loadRegister()
             }
