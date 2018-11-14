@@ -88,9 +88,7 @@ const buildEvents = {
     }
 
     // builds each event and renders to the DOM
-    console.log(
-     eventObj.userId, activeUser.info().id
-    )
+
     if (eventObj.userId===activeUser.info().id){
     new comp.section({
         className: "event",

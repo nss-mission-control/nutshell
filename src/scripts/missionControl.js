@@ -67,7 +67,7 @@ const buildMissionControl = {
     document.getElementById("planet-messages").addEventListener("click", () => {buildMessages.messageMap()})
     document.getElementById("planet-friends").addEventListener("click", () => {console.log("Friends function called.")})
     document.getElementById("planet-events").addEventListener("click", () => {buildEvents.buildContainers()})
-    document.getElementById("planet-news").addEventListener("click", () => {buildNews.newsMap()})
+    document.getElementById("planet-news").addEventListener("click", () => {buildNews.friendsFinder()})
   }
 }
 

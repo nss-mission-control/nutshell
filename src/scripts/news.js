@@ -5,6 +5,32 @@ import formatDate from "./format"
 
 
 const buildNews = {
+
+  friendsFinder() {
+    document.querySelector(".container--inner").innerHTML = ""
+    this.createContainer()
+    document.querySelector(".display--news").innerHTML = ""
+    API.getAllCategory(`friends/?request_userId=${activeUser.info().id}`)
+      .then(friendsArray => {
+        let friendsSearchString = ""
+        friendsArray.forEach(currentFriend => {
+          friendsSearchString += `&userId=${currentFriend.userId}`
+        })
+        API.getAllCategory(`articles/?_expand=user&userId=${activeUser.info().id}${friendsSearchString}&_sort=date,time&_order=asc`)
+          .then(friendsNews => {
+            friendsNews.forEach(singleNews => {
+              console.log("singleNewS:",singleNews);
+
+            buildNews.printNews(singleNews)
+            })
+            buildNews.eventListener()
+            // buildNews.nextEvent();
+            // buildNews.editBtnListen()
+          })
+      })
+
+  },
+
   //Build the containers on the news page to hold the articles
   createContainer(){
     new comp.section({className:"new--news"},
@@ -15,14 +41,24 @@ const buildNews = {
   },
   //Create each section used to display the article in the DOM
   printNews(newsObj) {
-    new comp.section ({className: "news", id: `${newsObj.id}`},
+    if (newsObj.userId === activeUser.info().id){
+    new comp.section({className: "news", id: `${newsObj.id}`},
     new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
     new comp.div({className: "news-info"},
     new comp.title("h2", {}, `${newsObj.articleName}`),
     new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${formatDate.getCorrectDate(newsObj.dateSaved)}`),
     new comp.par({}, newsObj.about)),
     new comp.btn("Delete Article")).render(".display--news")
-  },
+    } else {
+      console.log("newsObj", newsObj)
+      new comp.section({className: "news friendsNews", id: `${newsObj.id}`},
+      new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
+      new comp.div({className: "news-info"},
+      new comp.title("h2", {}, `${newsObj.articleName}`),
+      new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${formatDate.getCorrectDate(newsObj.dateSaved)}`),
+      new comp.par({}, newsObj.about))).render(".display--news")
+
+  }},
 
   //Call the API, get all relevant news articles, loop over them and create the section to be displayed in the DOM, then attach the event listeners
   newsMap ()  {
@@ -77,7 +113,7 @@ const buildNews = {
           //If the button is "Delete", select the parent node ID and call the API delete function, then re-render the articles section.
         } else if(e.target.textContent === "Delete Article"){
           let articleId = e.target.parentNode.id
-          API.deleteItem("articles", articleId).then(()=> buildNews.newsMap())
+          API.deleteItem("articles", articleId).then(()=> buildNews.friendsFinder())
         }
         })
       })
@@ -85,7 +121,7 @@ const buildNews = {
 
 
   addNews(story){
-    API.saveItem("articles", story).then(()=> this.newsMap())
+    API.saveItem("articles", story).then(()=> this.friendsFinder())
   }
 
 }

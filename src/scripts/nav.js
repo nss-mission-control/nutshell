@@ -172,7 +172,7 @@ const navBar = {
       buildMessages.messageMap();
     } else if (event.target.textContent === "News") {
       $("#subNav").hide();
-      buildNews.newsMap();
+      buildNews.friendsFinder();
     } else if (event.target.textContent === "Friends") {
       $("#subNav").hide();
       // need to add function call here for friends

@@ -75,3 +75,8 @@
   position:absolute;
   top: 150px;
 }
+
+.friendNews {
+  font-style: italic;
+  opacity: .85;
+}
