@@ -207,6 +207,15 @@
       "userId": 1,
       "dateSaved": "2018-11-14T14:03:05.137Z",
       "id": 9
+    },
+    {
+      "articleName": "Test",
+      "url": "Test",
+      "articleImage": "Test",
+      "about": "Test",
+      "userId": 2,
+      "dateSaved": "2018-11-14T20:35:19.248Z",
+      "id": 10
     }
   ],
   "events": [

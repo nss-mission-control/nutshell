@@ -34,8 +34,7 @@ const buildNews = {
   //Build the containers on the news page to hold the articles
   createContainer(){
     new comp.section({className:"new--news"},
-      new comp.btn("+"),
-      new comp.title("h2", {}, "Save New Article")
+      new comp.btn("New Article"),
     ).render(".container--inner")
     new comp.section({className: "display--news"}).render(".container--inner")
   },
@@ -74,12 +73,13 @@ const buildNews = {
 
   //builds the form to add a new article and calls the event listener function
   newNews () {
-      new comp.div({id: "alert"}).render(".new--news")
-      new comp.input({name: "articleName", placeholder: "Article Name", id: "articleName" }).render(".new--news")
-      new comp.input({name: "articleUrl", placeholder: "Article Link", id: "articleLink"}).render(".new--news")
-      new comp.input({name: "articleImageUrl", placeholder: "Article Image Link", id: "articleImage"}).render(".new--news")
-      new comp.input({name: "articleDescription", placeholder: "Article Description", id: "articleDescription"}).render(".new--news")
-      new comp.btn("Save New Article").render(".new--news")
+      new comp.div({className: "newsForum"},
+      new comp.div({id: "alert"}),
+      new comp.input({name: "articleName", placeholder: "Article Name", id: "articleName" }),
+      new comp.input({name: "articleUrl", placeholder: "Article Link", id: "articleLink"}),
+      new comp.input({name: "articleImageUrl", placeholder: "Article Image Link", id: "articleImage"}),
+      new comp.input({name: "articleDescription", placeholder: "Article Description", id: "articleDescription"}),
+      new comp.btn("Save New Article")).render(".new--news")
       this.eventListener()
   },
 
@@ -88,7 +88,7 @@ const buildNews = {
       //Grabs all buttons on the page and adds an event listener to them
       button.addEventListener("click", (e)=>{
         //if button is "+", call the function to build the new article form
-        if(e.target.textContent === "+"){
+        if(e.target.textContent === "New Article"){
           this.newNews()
           $(".new--news button:first-child").remove()
         }
