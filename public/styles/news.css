@@ -21,7 +21,8 @@
 }
 
 .news {
-  flex-basis: 75%;
+  flex-basis: 90%;
+  height: 150px;
   padding: 7.5px;
   margin-bottom: 5px;
   /* position children */
@@ -42,6 +43,13 @@
 }
 
 .news > h1 {
+}
+
+.news > p  {
+}
+
+.news > button {
+  height: 50px;
 }
 
 
