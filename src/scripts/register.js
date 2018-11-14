@@ -8,74 +8,92 @@ const registerFuncs = {
 
   loadRegister() {
     document.querySelector(".Log_In").innerHTML = "";
-    new comp.title("p", { className: "alert", id: "firstNameRegister" }, "You must enter your first name to register.").render(".Log_In");
+    document.querySelector(".Log_In").setAttribute("id", "registerLogin")
+    new comp.title("p", { className: "alertRegister", id: "firstNameRegister" }, "You must enter your first name to register.").render(".Log_In");
     new comp.label({}, "First Name",
       new comp.input({ name: "firstName", id: "firstName", placeholder: "First Name" })).render(".Log_In");
-    new comp.title("p", { className: "alert", id: "lastNameRegister" }, "You must enter your last name to register.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "lastNameRegister" }, "You must enter your last name to register.").render(".Log_In");
     new comp.label({}, "Last Name",
       new comp.input({ name: "lastName", id: "lastName", placeholder: "Last Name" })).render(".Log_In");
-    new comp.title("p", { className: "alert", id: "emailBlankRegister" }, "You must enter your email to register.").render(".Log_In");
-    new comp.title("p", { className: "alert", id: "notValidEmailRegister" }, "You must enter a valid email to register.").render(".Log_In");
-    new comp.title("p", { className: "alert", id: "emailExistsRegister" }, "There is already an account registered to this email.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "emailBlankRegister" }, "You must enter your email to register.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "notValidEmailRegister" }, "You must enter a valid email to register.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "emailExistsRegister" }, "There is already an account registered to this email.").render(".Log_In");
     new comp.label({}, "Email",
       new comp.input({ type: "email", id: "email", name: "email", placeholder: "email" })).render(".Log_In")
-    new comp.title("p", { className: "alert", id: "usernameBlankRegister" }, "You must enter a username to register.").render(".Log_In");
-    new comp.title("p", { className: "alert", id: "notValidUsernameRegister" }, "@ symbol is not allowed in your username.").render(".Log_In");
-    new comp.title("p", { className: "alert", id: "usernameExistsRegister" }, "There is already an account registered to this username.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "usernameBlankRegister" }, "You must enter a username to register.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "notValidUsernameRegister" }, "@ symbol is not allowed in your username.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "usernameExistsRegister" }, "There is already an account registered to this username.").render(".Log_In");
     new comp.label({}, "Username",
       new comp.input({ name: "username", id: "username", placeholder: "username" })).render(".Log_In")
-    new comp.title("p", { className: "alert", id: "passwordBlankRegister" }, "You must enter and confirm your password.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "passwordBlankRegister" }, "You must enter and confirm your password.").render(".Log_In");
     new comp.label({ for: "password" }, "Password",
       new comp.input({ name: "password", id: "password", placeholder: "Password" })).render(".Log_In")
-    new comp.title("p", { className: "alert", id: "badConfirmPasswordRegister" }, "The passwords entered do not match.").render(".Log_In");
+    new comp.title("p", { className: "alertRegister", id: "badConfirmPasswordRegister" }, "The passwords entered do not match.").render(".Log_In");
     new comp.label({ for: "confirmPassword" }, "Confirm Password",
       new comp.input({ name: "confirmPassword", id: "confirmPassword", placeholder: "Confirm Password" })).render(".Log_In");
-    new comp.label({ for: "profilePic", id: "radioLabel" }, "Select Profile Pic").render(".Log_In");
-    new comp.div({ name: "profilePic", id: "profilePicSection" },
-    new comp.section({},
-      new comp.input({ type: "radio", name: "picRadio", checked: "checked", value: "./images/option7edit.jpg", className: "radio" }),
-      new comp.image({ className: "selectPic", src: "./images/option7edit.jpg" })),
-    new comp.section({},
-      new comp.input({ type: "radio", name: "picRadio", value: "./images/option8edit.jpg", className: "radio" }),
-      new comp.image({ className: "selectPic", src: "./images/option8edit.jpg" })),
+    new comp.label({ for: "profilePic", id: "registerRadioLabel" }, "Select Profile Pic").render(".Log_In");
+    new comp.div({ name: "profilePic", id: "registerProfilePicSection" },
       new comp.section({},
-        new comp.input({ type: "radio", name: "picRadio", value: "./images/option1edit.jpg", className: "radio" }),
+        new comp.input({ type: "radio", name: "picRadio", checked: "checked", value: "./images/option7edit.jpg", className: "registerPicRadio" }),
+        new comp.image({ className: "selectPic", src: "./images/option7edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option8edit.jpg", className: "registerPicRadio" }),
+        new comp.image({ className: "selectPic", src: "./images/option8edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option1edit.jpg", className: "registerPicRadio" }),
         new comp.image({ className: "selectPic", src: "./images/option1edit.jpg" })),
       new comp.section({},
-        new comp.input({ type: "radio", name: "picRadio", value: "./images/option2edit.jpg", className: "radio" }),
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option2edit.jpg", className: "registerPicRadio" }),
         new comp.image({ className: "selectPic", src: "./images/option2edit.jpg" })),
       new comp.section({},
-        new comp.input({ type: "radio", name: "picRadio", value: "./images/option3edit.jpg", className: "radio" }),
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option3edit.jpg", className: "registerPicRadio" }),
         new comp.image({ className: "selectPic", src: "./images/option3edit.jpg" })),
       new comp.section({},
-        new comp.input({ type: "radio", name: "picRadio", value: "./images/option4edit.jpg", className: "radio" }),
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option4edit.jpg", className: "registerPicRadio" }),
         new comp.image({ className: "selectPic", src: "./images/option4edit.jpg" })),
       new comp.section({},
-        new comp.input({ type: "radio", name: "picRadio", value: "./images/option5edit.jpg", className: "radio" }),
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option5edit.jpg", className: "registerPicRadio" }),
         new comp.image({ className: "selectPic", src: "./images/option5edit.jpg" })),
       new comp.section({},
-        new comp.input({ type: "radio", name: "picRadio", value: "./images/option6edit.jpg", className: "radio" }),
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option6edit.jpg", className: "registerPicRadio" }),
         new comp.image({ className: "selectPic", src: "./images/option6edit.jpg" })),
       new comp.section({},
-        new comp.input({ type: "radio", name: "picRadio", value: "./images/option0edit.jpg", className: "radio" }),
-        new comp.image({ className: "selectPic", src: "./images/option0edit.jpg" }))
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option0edit.jpg", className: "registerPicRadio" }),
+        new comp.image({ className: "selectPic", src: "./images/option0edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", value: "addPhotoUrl", name: "picRadio",  className: "registerPicRadio" }),
+        new comp.image({ className: "selectPic", src: "./images/addPhoto.jpg" }))
     ).render(".Log_In");
-    new comp.label({ for: "profilePicText" }, "Or Add The Web Address of Your Own",
+    new comp.label({ for: "profilePicText", id: "picUrlContainer" }, "Or Add The Web Address of Your Own",
       new comp.input({ name: "profilePicText", id: "profilePicText", placeholder: "Enter The URL Of Your Profile Pic" })).render(".Log_In")
     new comp.btn("Register Account").render(".Log_In")
 
 
-    $(".alert").toggle();
-    $(".alert").hide();
+    $(".alertRegister").toggle();
+    $(".alertRegister").hide();
+    $("#picUrlContainer").toggle();
+    $("#picUrlContainer").hide();
+
+    $("#registerProfilePicSection").click(function () {
+      let tempValue = $("input[name='picRadio']:checked").val();
+      console.log(tempValue);
+      if(tempValue === "addPhotoUrl"){
+        $("#picUrlContainer").show();
+      } else {
+        $("#picUrlContainer").hide()
+      }
+    });
 
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", (e) => {
-        $(".alert").hide();
+        $("#picUrlContainer").hide();
+        $(".alertRegister").hide();
         if (e.target.textContent === "Register Account") {
           registerFuncs.checkUserFields();
         }
         else {
-          logInFuncs.loadLogIn()
+          document.querySelector(".Log_In").removeAttribute("id", "registerLogin");
+          logInFuncs.loadLogIn();
         }
       })
     })

@@ -1,0 +1,60 @@
+.WelcomeNav{
+  display: inline-flex;
+}
+
+.WelcomeNav > h2{
+  margin: 10px;
+}
+
+.WelcomeNav > h2:hover{
+  cursor: pointer;
+  color: var(--theme-main-primary);
+  font-weight: bold;
+}
+
+.alertRegister {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 1.65vw;
+  height: 1.8vw;
+  color: red;
+}
+
+#registerLogin > label {
+  display: flex;
+  height: 4%;
+  margin-bottom: 4%;
+  flex-direction: column;
+  text-align: center;
+  font-weight: bold;
+}
+
+#registerLogin > label > input {
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+#registerRadioLabel {
+  margin-bottom: 0px;
+}
+#registerProfilePicSection {
+  align-items: center;
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  flex-direction: row;
+}
+#registerProfilePicSection > section {
+  margin-left: .5vw;
+  margin-right: .5vw;
+  padding: 0px;
+}
+.registerPicRadio {
+  display: flex;
+  margin: auto;
+}
+.selectPic {
+  width: 4vw;
+  height: 4vw;
+  margin-top: .5vw;
+}

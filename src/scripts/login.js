@@ -39,6 +39,7 @@ const logInFuncs = {
 
   loadLogIn() {
     document.querySelector(".Log_In").innerHTML = "";
+    document.querySelector(".welcome").setAttribute("id", "login")
     new comp.title("p", { className: "alert", id: "noInfoLogin" }, "You must enter your username and password to log in.").render(".Log_In");
     new comp.title("p", { className: "alert", id: "noUsernameLogin" }, "You must enter your username to log in.").render(".Log_In");
     new comp.title("p", { className: "alert", id: "nameNotFoundLogin" }, "There is not an account with that username.").render(".Log_In");

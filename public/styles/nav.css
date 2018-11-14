@@ -139,6 +139,8 @@ nav > ul > li:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  background-color: var(--planet-dark-green);
 }
 #editPagePic {
   display: flex;
