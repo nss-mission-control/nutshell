@@ -157,10 +157,7 @@ const buildMessages = {
     document.querySelectorAll(".messageAuthor").forEach(message =>{
       let friendObj = " ";
       let returnObj = ""
-      if(message.parentNode.childNodes[4]){
-        // If there is a button, the event listener does not attach
-        return
-      } else{
+      if(message.classList[1]){
         message.addEventListener("click", ()=>{
 
           let messageId = event.target.parentNode.id
@@ -175,16 +172,17 @@ const buildMessages = {
             }
             return(returnObj, friendObj)
             })
-
             .then(()=>{
               //Get all instances of friends from the database where the active user is the "friend requester"
               API.getAllCategory(`friends/?request_userId=${activeUser.info().id}`)
               .then((info)=>{
                 let itemStatus = false
+
                 //For each relationship found in the fetch, check and make sure that friendship does not already exist
                 info.forEach(item => {
                   if((item.request_userId === friendObj.request_userId) && (item.userId === friendObj.userId)){
                     //If the relationship does exist, display an alert inline with the friend
+                    $(`#friendAlert-${messageId}`).empty()
                     new comp.par({className: "alert"}, "You are already friends with this person").render(`#friendAlert-${messageId}`)
                     itemStatus = true
                     return
@@ -194,12 +192,13 @@ const buildMessages = {
                   if(itemStatus === false){
                     this.confirmFriend(returnObj, friendObj)
                   }
-                })
+                  }
+                )
               })
-            })
-          }
-        })
-      },
+      })
+    }
+  })
+},
 
 //Call the API and post the new friend relationship, then re-populate the DOM with messages
   postFriendship(friendObj){
