@@ -20,8 +20,9 @@ const buildMessages = {
           className: "message",
           id: `${messageObj.id}`
         },
+        new comp.div({id: `friendAlert-${messageObj.id}`}),
         new comp.image({src: `${messageObj.user.profilePic}`, alt: "Profile Pic", className: "messagePic"}),
-        new comp.title("h2", {className:"messageAuthor"}, `${messageObj.user.firstName} - ${formatDate.correctDateAndTime(messageObj.timeStamp)}`),
+        new comp.title("h2", {className:"messageAuthor addFriend"}, `${messageObj.user.firstName} - ${formatDate.correctDateAndTime(messageObj.timeStamp)}`),
         new comp.title("h1", {}, messageObj.messageContent)).render(".old--messages")
     }
   },
@@ -39,6 +40,7 @@ const buildMessages = {
         this.newMessage();
         this.submitMessage();
         this.editButtonClick();
+        this.addFriend();
       }).then(() => this.scrollWindowButtom());
   },
 
@@ -116,6 +118,92 @@ const buildMessages = {
           .then(() => buildMessages.messageMap())
       })
     })
+  },
+
+  //Builds display to confirm if you'd like to add someone as a friend
+  confirmFriend(userObj, friendObj){
+    document.querySelector(".old--messages").innerHTML="",
+    new comp.div({id: "friendConfirmation"},
+      new comp.image({src: userObj.user.profilePic, alt: "Profile Picture", height: "120", width: "120"}),
+      new comp.title("h2", {}, `${userObj.user.firstName} ${userObj.user.lastName}`),
+      new comp.par({}, "Are you sure you want to add this person as a friend "),
+      new comp.btn("Yes"),
+      new comp.btn("No")
+      ).render(".old--messages")
+      //Calls function that adds event listeners to "Yes" and "No" buttons
+      this.addEventListener(friendObj)
+  },
+
+  addEventListener(friendObj){
+    let buttons = document.querySelectorAll("button")
+    buttons.forEach(button => {
+      //Do not attach event listener if the button is "submit"
+      if(button.textContent === "Submit"){
+        return
+      } else {
+        button.addEventListener("click", ()=>{
+          //if the user confirms adding a friend, call the function that posts to the API
+          if(button.textContent === "Yes"){
+            this.postFriendship(friendObj)
+          //if the user declines adding a friend, call the function that reloads the messages page
+          } else if(button.textContent === "No"){
+            this.messageMap()
+          }
+        })
+      }
+    })
+  },
+  addFriend(){
+    document.querySelectorAll(".messageAuthor").forEach(message =>{
+      let friendObj = " ";
+      let returnObj = ""
+      if(message.classList[1]){
+        message.addEventListener("click", ()=>{
+
+          let messageId = event.target.parentNode.id
+          //API call to get the userId of the person you select
+          API.getAllCategory(`messages/${messageId}/?_expand=user`)
+          .then(data=> {
+            returnObj = data
+            //Create friend Object that will be posted to the DOM upon confirmation of adding a friend
+            friendObj = {
+              request_userId: activeUser.info().id,
+              userId: data.user.id
+            }
+            return(returnObj, friendObj)
+            })
+            .then(()=>{
+              //Get all instances of friends from the database where the active user is the "friend requester"
+              API.getAllCategory(`friends/?request_userId=${activeUser.info().id}`)
+              .then((info)=>{
+                let itemStatus = false
+
+                //For each relationship found in the fetch, check and make sure that friendship does not already exist
+                info.forEach(item => {
+                  if((item.request_userId === friendObj.request_userId) && (item.userId === friendObj.userId)){
+                    //If the relationship does exist, display an alert inline with the friend
+                    $(`#friendAlert-${messageId}`).empty()
+                    new comp.par({className: "alert"}, "You are already friends with this person").render(`#friendAlert-${messageId}`)
+                    itemStatus = true
+                    return
+                  }
+                  })
+                  //if the match does not exist, create the confirmation page
+                  if(itemStatus === false){
+                    this.confirmFriend(returnObj, friendObj)
+                  }
+                  }
+                )
+              })
+      })
+    }
+  })
+},
+
+//Call the API and post the new friend relationship, then re-populate the DOM with messages
+  postFriendship(friendObj){
+    API.saveItem(`friends`,friendObj)
+    this.messageMap()
   }
 }
 
