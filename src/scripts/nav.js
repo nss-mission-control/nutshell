@@ -7,6 +7,7 @@ import buildEvents from "./events";
 import activeUser from "./sessionStorage";
 import landingPageFuncs from "./landing";
 import API from "./apiData";
+import buildFriends from "./friends";
 
 const navBar = {
   loadNavBar() {
@@ -116,6 +117,7 @@ const navBar = {
         buildNews.newsMap();
       } else if (event.target.textContent === "Friends") {
         $("#subNav").hide();
+        buildFriends.friendMap();
         // need to add function call here for friends
         console.log("Friends function calles.")
       }
