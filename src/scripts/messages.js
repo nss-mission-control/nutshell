@@ -60,7 +60,8 @@ const buildMessages = {
       new comp.title("h1", {}, "New Message"),
       new comp.textarea({
         placeholder: "type your message here",
-        wrap: "hard"
+        wrap: "hard",
+        style: "resize: none"
       }),
       new comp.btn("Submit")).render(".container--inner")
   },

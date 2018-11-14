@@ -1,5 +1,10 @@
-import landingPageFuncs from "./landing"
-import navBar from "./nav"
+import landingPageFuncs from "./landing";
+import navBar from "./nav";
+import buildMissionControl from "./missionControl";
 
 navBar.loadNavBar();
-landingPageFuncs.loadLandingPage();
+if (sessionStorage.getItem("currentUser") === null) {
+  landingPageFuncs.loadLandingPage()
+} else {
+  buildMissionControl.printPlanets();
+}

@@ -1,54 +1,142 @@
 import comp from "./components";
+import buildMissionControl from "./missionControl";
 import logInFuncs from "./login";
 import API from "./apiData";
-import buildMissionControl from "./missionControl";
+import navBar from "./nav";
 
 const registerFuncs = {
 
   loadRegister() {
-    document.querySelector(".LogIn").innerHTML = ""
-      new comp.label({}, "First Name", new comp.input({ name: "firstName", id: "firstName", placeholder: "First Name" }))   .render(".LogIn")
-      new comp.label({}, "Last Name", new comp.input({ name: "lastName", id: "lastName", placeholder: "Last Name" })).render(".LogIn")
-      new comp.label({}, "Email", new comp.input({ type: "email", id: "email", name: "email", placeholder: "email" })).render(".LogIn")
-      new comp.label({}, "Username", new comp.input({ name: "username", id: "username", placeholder: "username" })).render(".LogIn")
-      new comp.label({ for: "password" }, "Password", new comp.input({ type: "password",name: "password", id: "password", placeholder: "Password" })).render(".LogIn")
-      new comp.label({ for: "confirmPassword" }, "Confirm Password",   new comp.input({ type: "password", name: "confirmPassword", id: "confirmPassword", placeholder: "Confirm Password" })).render(".LogIn")
-      new comp.btn("Register Account").render(".LogIn")
+    document.querySelector(".Log_In").innerHTML = "";
+    new comp.title("p", { className: "alert", id: "firstNameRegister" }, "You must enter your first name to register.").render(".Log_In");
+    new comp.label({}, "First Name",
+      new comp.input({ name: "firstName", id: "firstName", placeholder: "First Name" })).render(".Log_In");
+    new comp.title("p", { className: "alert", id: "lastNameRegister" }, "You must enter your last name to register.").render(".Log_In");
+    new comp.label({}, "Last Name",
+      new comp.input({ name: "lastName", id: "lastName", placeholder: "Last Name" })).render(".Log_In");
+    new comp.title("p", { className: "alert", id: "emailBlankRegister" }, "You must enter your email to register.").render(".Log_In");
+    new comp.title("p", { className: "alert", id: "notValidEmailRegister" }, "You must enter a valid email to register.").render(".Log_In");
+    new comp.title("p", { className: "alert", id: "emailExistsRegister" }, "There is already an account registered to this email.").render(".Log_In");
+    new comp.label({}, "Email",
+      new comp.input({ type: "email", id: "email", name: "email", placeholder: "email" })).render(".Log_In")
+    new comp.title("p", { className: "alert", id: "usernameBlankRegister" }, "You must enter a username to register.").render(".Log_In");
+    new comp.title("p", { className: "alert", id: "notValidUsernameRegister" }, "@ symbol is not allowed in your username.").render(".Log_In");
+    new comp.title("p", { className: "alert", id: "usernameExistsRegister" }, "There is already an account registered to this username.").render(".Log_In");
+    new comp.label({}, "Username",
+      new comp.input({ name: "username", id: "username", placeholder: "username" })).render(".Log_In")
+    new comp.title("p", { className: "alert", id: "passwordBlankRegister" }, "You must enter and confirm your password.").render(".Log_In");
+    new comp.label({ for: "password" }, "Password",
+      new comp.input({ name: "password", id: "password", placeholder: "Password" })).render(".Log_In")
+    new comp.title("p", { className: "alert", id: "badConfirmPasswordRegister" }, "The passwords entered do not match.").render(".Log_In");
+    new comp.label({ for: "confirmPassword" }, "Confirm Password",
+      new comp.input({ name: "confirmPassword", id: "confirmPassword", placeholder: "Confirm Password" })).render(".Log_In");
+    new comp.label({ for: "profilePic", id: "radioLabel" }, "Select Profile Pic").render(".Log_In");
+    new comp.div({ name: "profilePic", id: "profilePicSection" },
+    new comp.section({},
+      new comp.input({ type: "radio", name: "picRadio", checked: "checked", value: "./images/option7edit.jpg", className: "radio" }),
+      new comp.image({ className: "selectPic", src: "./images/option7edit.jpg" })),
+    new comp.section({},
+      new comp.input({ type: "radio", name: "picRadio", value: "./images/option8edit.jpg", className: "radio" }),
+      new comp.image({ className: "selectPic", src: "./images/option8edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option1edit.jpg", className: "radio" }),
+        new comp.image({ className: "selectPic", src: "./images/option1edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option2edit.jpg", className: "radio" }),
+        new comp.image({ className: "selectPic", src: "./images/option2edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option3edit.jpg", className: "radio" }),
+        new comp.image({ className: "selectPic", src: "./images/option3edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option4edit.jpg", className: "radio" }),
+        new comp.image({ className: "selectPic", src: "./images/option4edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option5edit.jpg", className: "radio" }),
+        new comp.image({ className: "selectPic", src: "./images/option5edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option6edit.jpg", className: "radio" }),
+        new comp.image({ className: "selectPic", src: "./images/option6edit.jpg" })),
+      new comp.section({},
+        new comp.input({ type: "radio", name: "picRadio", value: "./images/option0edit.jpg", className: "radio" }),
+        new comp.image({ className: "selectPic", src: "./images/option0edit.jpg" }))
+    ).render(".Log_In");
+    new comp.label({ for: "profilePicText" }, "Or Add The Web Address of Your Own",
+      new comp.input({ name: "profilePicText", id: "profilePicText", placeholder: "Enter The URL Of Your Profile Pic" })).render(".Log_In")
+    new comp.btn("Register Account").render(".Log_In")
 
+
+    $(".alert").toggle();
+    $(".alert").hide();
 
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", (e) => {
+        $(".alert").hide();
         if (e.target.textContent === "Register Account") {
-          if (document.querySelector("#firstName").value === "" || document.querySelector("#lastName").value === "" || document.querySelector("#email").value === "" || document.querySelector("#username").value === "" || document.querySelector("#password").value === "" || document.querySelector("#confirmPassword").value === "") {
-            //This is the check to ensure all fields are complete.
-            alert("All fields must be complete to create an account.")
-          } else if (document.querySelector("#email").value.indexOf("@") === -1) {
-            //This is a check on the email field to make sure there is an @ present
-            alert("Please enter a valid email address.")
-          } else if (document.querySelector("#password").value === document.querySelector("#confirmPassword").value) {
-            //This is the check to make sure passwords are the same.
-            e.preventDefault()
-            let tempUser = {
-              firstName: document.querySelector("#firstName").value,
-              lastName: document.querySelector("#lastName").value,
-              email: document.querySelector("#email").value,
-              username: document.querySelector("#username").value,
-              password: document.querySelector("#password").value,
-              //This is a placeholder to a stock "no image available" image that we can use later for actual user images
-              profilePic: "https://hyha.xyz/wp-content/themes/fashion/images/no_image_available.jpg"
-            }
-            API.getAllCategory(`users/?email=${tempUser.email}`).then(thisData => {
-              if (thisData.length === 0) {
-                this.checkRegister(tempUser);
-              } else {
-                alert("This email is already registered.")
-              }
-            })
-          } else { alert("Your passwords did not match. Please try again.") }
-        } else {
+          registerFuncs.checkUserFields();
+        }
+        else {
           logInFuncs.loadLogIn()
         }
       })
+    })
+  },
+
+  checkUserFields() {
+    let picProfile = "";
+    if ($("#profilePicText").val() === "") {
+      picProfile = $("input[name='picRadio']:checked").val();
+    } else {
+      picProfile = $("#profilePicText").val();
+    }
+    if (document.querySelector("#firstName").value === "") {
+      $("#firstNameRegister").toggle();
+      return;
+    }
+    if (document.querySelector("#lastName").value === "") {
+      $("#lastNameRegister").toggle();
+      return;
+    }
+    if (document.querySelector("#email").value === "") {
+      $("#emailBlankRegister").toggle();
+      return;
+    }
+    if (document.querySelector("#username").value === "") {
+      $("#usernameBlankRegister").toggle();
+      return;
+    }
+    if (document.querySelector("#password").value === "" || document.querySelector("#confirmPassword").value === "") {
+      $("#passwordBlankRegister").toggle();
+      return;
+    } else if (document.querySelector("#password").value !== document.querySelector("#confirmPassword").value) {
+      $("#badConfirmPasswordRegister").toggle();
+      return;
+    }
+    if (document.querySelector("#email").value.indexOf("@") === -1) {
+      $("#notValidEmailRegister").toggle();
+      return;
+    }
+    if (document.querySelector("#username").value.indexOf("@") !== -1) {
+      $("#notValidUsernameRegister").toggle();
+      return;
+    }
+    let tempUser = {
+      firstName: document.querySelector("#firstName").value,
+      lastName: document.querySelector("#lastName").value,
+      email: document.querySelector("#email").value,
+      username: document.querySelector("#username").value,
+      password: document.querySelector("#password").value,
+      profilePic: picProfile
+    }
+    this.checkUserData(tempUser);
+  },
+
+  checkUserData(tempUser) {
+    API.getAllCategory(`users/?email=${tempUser.email}`).then(thisData => {
+      if (thisData.length === 0) {
+        this.checkRegister(tempUser);
+      } else {
+        $("#emailExistsRegister").toggle();
+      }
     })
   },
 
@@ -57,23 +145,19 @@ const registerFuncs = {
       if (data.length === 0) {
         API.saveItem("users", user).then(newUser => {
           let currentUser = new comp.user(newUser);
+          sessionStorage.setItem("currentUser", JSON.stringify(newUser));
           console.log("Username checkRegister: ", currentUser)
-          //TODO:the function below needs to be the call to load mission control page.
-          // Right now it is just sending to a function to console.log user
-          this.loadMission(currentUser);
+          navBar.loadNavBar();
+          buildMissionControl.printPlanets();
         })
       } else if (data.length === 1) {
-        alert(`Username, ${data[0].username}, is already being used. Please choose another.`)
+        $("#usernameExistsRegister").toggle();
       }
     })
   },
 
   //TODO: this function can go away when the function to load mission page is replaced in checkRegister function above
-  loadMission(user) {
-    console.log(user)
-    sessionStorage.setItem("currentUser", JSON.stringify(user));
-    buildMissionControl.printPlaceholder();
-  }
+
 
 }
 export default registerFuncs
