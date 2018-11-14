@@ -88,7 +88,7 @@
   top: 150px;
 }
 
-.friendNews {
+.friendsNews {
   font-style: italic;
   opacity: .85;
 }
@@ -97,10 +97,29 @@
   padding-right: 2vw;
 }
 
+.news > button {
+  right: 3vw;
+  position: absolute;
+}
+
 .newsForum {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   flex-basis: 100%;
+}
+
+.newsForum > input {
+  margin: .25vw;
+}
+
+.news--title {
+  position: absolute;
+  top: 5vw;
+  /* height: 5vw;
+  width: 15vw; */
+  background-color: var(--theme-sub-primary);
+  border: 3px solid var(--planet-purple-space);
+  padding: 1vw;
 }

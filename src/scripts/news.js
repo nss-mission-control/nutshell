@@ -36,7 +36,10 @@ const buildNews = {
     new comp.section({className:"new--news"},
       new comp.btn("New Article"),
     ).render(".container--inner")
+    new comp.section({className: "news--title"},
+    new comp.title("h1","News Articles")).render(".container--inner")
     new comp.section({className: "display--news"}).render(".container--inner")
+
   },
   //Create each section used to display the article in the DOM
   printNews(newsObj) {
