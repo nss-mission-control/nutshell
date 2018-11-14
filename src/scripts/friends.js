@@ -13,7 +13,9 @@ const buildFriends = {
     new comp.section({className: "new--friends"},
     new comp.btn("+"),
     new comp.title("h3", {}, "Add New Friend")).render(".container--inner")
-    new comp.section({className: "display--friends"}).render(".container--inner")
+    new comp.section({className: "display--friends"},
+      // new comp.div({className: "deleteAlert"})
+      ).render(".container--inner")
   },
   printFriends(friendObj){
     if(activeUser.info().id === friendObj.request_userId){
@@ -21,6 +23,7 @@ const buildFriends = {
         className: "friend",
         id: `${friendObj.id}`
       },
+      new comp.div({id: `deleteAlert-${friendObj.id}`}),
       new comp.image({src: `${friendObj.user.profilePic}`, className: "friendPic", alt: "Profile Pic", height: "120", width: "120"}),
       new comp.title("h2", {}, `${friendObj.user.firstName} ${friendObj.user.lastName}`),
       new comp.btn("Delete Friend")
@@ -31,13 +34,53 @@ const buildFriends = {
   friendMap(){
     document.querySelector(".container--inner").innerHTML = "";
     this.createContainer();
-    document.querySelector(".display--friends").innerHTML = ""
+    // document.querySelector(".display--friends").innerHTML = ""
     API.getAllCategory(`friends/?request_userId=${activeUser.info().id}&_expand=user`)
     // .then(data => console.log(data))
     .then((friendObj) => {
       friendObj.forEach(friend => {
         this.printFriends(friend)
+        // this.friendDelete()
       })})
-  }
+      .then(()=> this.friendDelete())
+  },
+
+  friendDelete(){
+    document.querySelectorAll("button").forEach(button => {
+      button.addEventListener("click", ()=>{
+        if(event.target.textContent === "Delete Friend"){
+          let id = event.target.parentNode.id
+          console.log(id)
+          this.confirmDelete(id)
+        } else if(event.target.textContent === "Yes"){
+
+
+        }
+      })
+    })
+  },
+
+  confirmDelete(id){
+    new comp.par({className: "alert"},"Are you sure you want to delete this friend?",
+      new comp.btn("Yes"),
+      new comp.btn("No")
+    ).render(`#deleteAlert-${id}`)
+    document.querySelectorAll("button").forEach(button =>{
+      if(button.textContent === "Yes" || button.textContent === "No"){
+        console.log(button)
+        button.addEventListener("click", (event)=>{
+          if(event.target.textContent=== "Yes"){
+            let friendId = event.target.parentNode.parentNode.parentNode.id
+           this.deleteFriend(friendId)
+          }
+        })
+      }
+    })
+  },
+
+  deleteFriend(id){
+    API.deleteItem("friends", id)
+    .then(()=> this.friendMap())
+  },
 }
 export default buildFriends

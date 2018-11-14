@@ -357,11 +357,6 @@
       "id": 4,
       "request_userId": 1,
       "userId": 2
-    },
-    {
-      "id": 5,
-      "request_userId": 1,
-      "userId": 3
     }
   ]
 }
