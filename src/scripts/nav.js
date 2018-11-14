@@ -37,22 +37,81 @@ const navBar = {
       $("#loginPic").click(function () { $("#subNav").toggle() });
       $("#currentLogin").click(function () { $("#subNav").toggle() });
       navBar.eventListenerNav();
+
+
       $("#edit").click(function () {
         let currentUser = JSON.parse(sessionStorage.currentUser);
         $(".container--inner").html("");
-        new comp.div({ id: "editForm" }, new comp.label({}, "First Name", new comp.input({ name: "firstName", id: "firstName", placeholder: "First Name", value: `${currentUser.firstName}` })),
-          new comp.label({}, "Last Name", new comp.input({ name: "lastName", id: "lastName", placeholder: "Last Name", value: `${currentUser.lastName}` })),
-          new comp.label({}, "Email", new comp.input({ type: "email", id: "email", name: "email", placeholder: "email", value: `${currentUser.email}` })),
-          new comp.label({}, "Username", new comp.input({ name: "username", id: "username", placeholder: "username", value: `${currentUser.username}` })),
-          new comp.label({ for: "password" }, "Password", new comp.input({ name: "password", id: "password", placeholder: "Password", value: `${currentUser.password}` })),
-          new comp.label({ for: "profilePic" }, "Profile Picture", new comp.input({ name: "profilePic", id: "profilePic", placeholder: "Profile Picture URL", value: `${currentUser.profilePic}` })),
+        new comp.div({ id: "editForm" },
+          new comp.image({ id: "editPagePic", src: `${activeUser.info().profilePic}`, alt: "Profile Pic", className: "messagePic" }),
+          //
+          new comp.label({ for: "profilePic", id: "radioLabel" }, "Select Profile Pic"),
+          new comp.div({ name: "profilePic", id: "profilePicSection" },
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", checked: "checked", value: `${currentUser.profilePic}`, className: "radio" }),
+              new comp.image({ className: "selectPic", src: `${currentUser.profilePic}` })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option7edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option7edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option8edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option8edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option1edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option1edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option2edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option2edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option3edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option3edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option4edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option4edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option5edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option5edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option6edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option6edit.jpg" })),
+            new comp.section({},
+              new comp.input({ type: "radio", name: "picRadio", value: "./images/option0edit.jpg", className: "radio" }),
+              new comp.image({ className: "selectPic", src: "./images/option0edit.jpg" }))
+          ),
+          new comp.label({ for: "profilePicText" }, "Or Add The Web Address of Your Own",
+            new comp.input({ name: "profilePicText", id: "profilePicText", placeholder: "Enter The URL Of Your Profile Pic" })),
+          //
+          new comp.label({}, "First Name",
+            new comp.input({ name: "firstName", id: "firstName", placeholder: "First Name", value: `${currentUser.firstName}` })),
+          new comp.label({}, "Last Name",
+            new comp.input({ name: "lastName", id: "lastName", placeholder: "Last Name", value: `${currentUser.lastName}` })),
+          new comp.label({}, "Email",
+            new comp.title("p", { className: "alert", id: "emailValidAlert" }, "Please enter a valid email address."),
+            new comp.title("p", { className: "alert", id: "emailTakenAlert" }, "This email is registered to another account."),
+            new comp.input({ type: "email", id: "email", name: "email", placeholder: "email", value: `${currentUser.email}` })),
+          new comp.label({}, "Username",
+            new comp.title("p", { className: "alert", id: "usernameValidAlert" }, "@ is not allowed in usernames."),
+            new comp.title("p", { className: "alert", id: "usernameTakenAlert" }, "This username is registered to another account."),
+            new comp.input({ name: "username", id: "username", placeholder: "username", value: `${currentUser.username}` })),
+          new comp.label({ for: "password" }, "Password",
+            new comp.input({ name: "password", id: "password", placeholder: "Password", value: `${currentUser.password}` })),
           new comp.btn("Save Changes"),
           new comp.btn("Abort Changes")).render(".container--inner");
+
+        $(".alert").toggle();
+        $(".alert").hide();
 
         // set event listeners for navbar edit buttons
         document.querySelectorAll(".btn").forEach((button) => {
           button.addEventListener("click", () => {
             if (event.target.textContent === "Save Changes") {
+              let picProfile = "";
+              if ($("#profilePicText").val() === "") {
+                picProfile = $("input[name='picRadio']:checked").val();
+              } else {
+                picProfile = $("#profilePicText").val();
+              }
+              $(".alert").hide()
               let tempUser = {
                 id: currentUser.id,
                 firstName: document.getElementById("firstName").value,
@@ -60,7 +119,7 @@ const navBar = {
                 username: document.getElementById("username").value,
                 password: document.getElementById("password").value,
                 email: document.getElementById("email").value,
-                profilePic: document.getElementById("profilePic").value
+                profilePic: picProfile
               }
               // if first name is blank, populates with recent data on user
               if (tempUser.firstName === "") {
@@ -99,26 +158,26 @@ const navBar = {
   },
 
   eventListenerHandler(event) {
-      if (event.target.textContent === "Home") {
-        $("#subNav").hide();
-        buildMissionControl.printPlanets();
-      } else if (event.target.textContent === "Tasks") {
-        $("#subNav").hide();
-        buildTasks.buildContainers();
-      } else if (event.target.textContent === "Events") {
-        $("#subNav").hide();
-        buildEvents.buildContainers()
-      } else if (event.target.textContent === "Messages") {
-        $("#subNav").hide();
-        buildMessages.messageMap();
-      } else if (event.target.textContent === "News") {
-        $("#subNav").hide();
-        buildNews.newsMap();
-      } else if (event.target.textContent === "Friends") {
-        $("#subNav").hide();
-        // need to add function call here for friends
-        console.log("Friends function calles.")
-      }
+    if (event.target.textContent === "Home") {
+      $("#subNav").hide();
+      buildMissionControl.printPlanets();
+    } else if (event.target.textContent === "Tasks") {
+      $("#subNav").hide();
+      buildTasks.buildContainers();
+    } else if (event.target.textContent === "Events") {
+      $("#subNav").hide();
+      buildEvents.buildContainers()
+    } else if (event.target.textContent === "Messages") {
+      $("#subNav").hide();
+      buildMessages.messageMap();
+    } else if (event.target.textContent === "News") {
+      $("#subNav").hide();
+      buildNews.newsMap();
+    } else if (event.target.textContent === "Friends") {
+      $("#subNav").hide();
+      // need to add function call here for friends
+      console.log("Friends function calles.")
+    }
   },
 
   eventListenerNav() {
@@ -135,7 +194,7 @@ const navBar = {
     } else if (tempUser.email.indexOf("@") === -1) {
       tempUser.email = currentUser.email;
       document.getElementById("email").value = currentUser.email;
-      alert("Please enter a valid email address.");
+      $("#emailValidAlert").toggle();
     }
     // sets username to previous value if blank
     if (tempUser.username === "") {
@@ -145,18 +204,19 @@ const navBar = {
     } else if (tempUser.username.indexOf("@") !== -1) {
       tempUser.username = currentUser.username;
       document.getElementById("username").value = currentUser.username;
-      alert("@ is not an allowed character in usernames.")
+      $("#usernameValidAlert").toggle();
     }
     // grab email based on what user input
     API.getOneFromCategory("users", `?email=${tempUser.email}`).then(emailResults => {
       return emailResults[0];
     })
+      // checks email against database to ensure it is unique
       .then(emailResults => {
         if (emailResults !== undefined) {
           if (emailResults.id !== currentUser.id) {
-            alert("This email is in use by another account.")
             tempUser.email = currentUser.email;
             document.getElementById("email").value = currentUser.email;
+            $("#emailTakenAlert").toggle();
             return tempUser;
           } else {
             return tempUser;
@@ -165,27 +225,31 @@ const navBar = {
           return tempUser;
         }
       }).then(user => {
+        // checks username against database to ensure it is unique
         API.getOneFromCategory("users", `?username=${tempUser.username}`).then(usernameResults => {
           if (usernameResults.length !== 0) {
             if (usernameResults[0].id !== user.id) {
               tempUser.username = currentUser.username;
-              alert("This username is in use by another account.")
+              document.getElementById("username").value = currentUser.username;
+              $("#usernameTakenAlert").toggle();
             }
           }
           return user;
         }).then(thisResult => {
-          sessionStorage.removeItem("currentUser");
-          sessionStorage.setItem("currentUser", JSON.stringify(thisResult));
-          API.updateItem("users", currentUser.id, thisResult).then(() => {
-            $("#subNav").hide();
-            $("#navBar").html("");
-            navBar.loadNavBar();
-
-            buildMissionControl.printPlanets();
-          });
+          // checks to make sure all alerts are invisible
+          let alertMess = $(".alert:visible");
+          if (alertMess.length === 0) {
+            sessionStorage.removeItem("currentUser");
+            sessionStorage.setItem("currentUser", JSON.stringify(thisResult));
+            API.updateItem("users", currentUser.id, thisResult).then(() => {
+              $("#subNav").hide();
+              $("#navBar").html("");
+              navBar.loadNavBar();
+              buildMissionControl.printPlanets();
+            });
+          }
         })
       })
-
   }
 }
 
