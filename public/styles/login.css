@@ -24,7 +24,7 @@
 
 /* landing page login register */
 .welcome {
-  background-color: var(--theme-sub-dark);
+  background-color: var(--planet-dark-green);
   flex-basis: 50%;
   height: 95%;
   display: flex;
@@ -64,6 +64,17 @@
 
 .WelcomeNav > h2{
   margin: 10px;
+}
+
+#login {
+  background-color: var(--planet-dark-green);
+  flex-basis: 30%;
+  height: 40%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .WelcomeNav > h2:hover{
