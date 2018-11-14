@@ -22,7 +22,7 @@
       "id": 3,
       "firstName": "Brendan",
       "lastName": " McCray",
-      "username": "BrilliantBrendan",
+      "username": "Brendan",
       "password": "CodeWhiz",
       "email": "brendanMc@gmail.com",
       "profilePic": "https://avatars0.githubusercontent.com/u/43763999?s=400&v=4"
@@ -198,6 +198,15 @@
       "userId": 4,
       "dateSaved": "2018-11-12T19:35:56.249Z",
       "id": 8
+    },
+    {
+      "articleName": "UFOs spotted off Irish coast under investigation",
+      "url": "https://www.bbc.com/news/world-europe-46181662",
+      "articleImage": "https://ichef.bbci.co.uk/news/660/cpsprodpb/12E80/production/_104304477_pilot.jpg",
+      "about": "The Irish Aviation Authority is investigating reports of bright lights and UFOs off the south-west coast of Ireland.",
+      "userId": 1,
+      "dateSaved": "2018-11-14T14:03:05.137Z",
+      "id": 9
     }
   ],
   "events": [
@@ -219,8 +228,8 @@
     },
     {
       "name": "Sleep",
-      "date": "2018-11-11",
-      "time": "Now",
+      "date": "2018-11-15",
+      "time": "",
       "location": "My Bed",
       "userId": 3,
       "id": 4
@@ -272,6 +281,30 @@
       "location": "The Moon",
       "userId": 2,
       "id": 13
+    },
+    {
+      "name": "Brendan's new event",
+      "date": "2017-11-14",
+      "time": "20:16",
+      "location": "Nashville, TN",
+      "userId": 3,
+      "id": 14
+    },
+    {
+      "name": "test",
+      "date": "2017-11-11",
+      "time": "11:11",
+      "location": "aaaaa",
+      "userId": 3,
+      "id": 15
+    },
+    {
+      "name": "aaaaaaa",
+      "date": "2011-11-11",
+      "time": "11:11",
+      "location": "aaaaa",
+      "userId": 3,
+      "id": 16
     }
   ],
   "tasks": [
@@ -332,9 +365,9 @@
       "id": 11
     },
     {
-      "task": "I fixed all of the issues with the task list!",
+      "task": "I fixed all of the issuez with the task list!",
       "complete": true,
-      "dueDate": "2018-11-12",
+      "dueDate": "2018-10-11",
       "userId": 3,
       "id": 12
     },
@@ -344,6 +377,27 @@
       "dueDate": "2018-11-14",
       "userId": 2,
       "id": 13
+    },
+    {
+      "task": "Major styling changes to this page",
+      "complete": false,
+      "dueDate": "2019-12-13",
+      "userId": 3,
+      "id": 15
+    },
+    {
+      "task": "second task",
+      "complete": false,
+      "dueDate": "2018-11-15",
+      "userId": 3,
+      "id": 16
+    },
+    {
+      "task": "aaaaa",
+      "complete": true,
+      "dueDate": "2018-11-06",
+      "userId": 3,
+      "id": 17
     }
   ],
   "friends": [
