@@ -71,5 +71,133 @@ nav > ul > li {
 }
 
 nav > ul > li:hover {
-  border-bottom: 1px solid var(--planet-dark-purple);
+  border-bottom: 1px solid var(--theme-sub-light);
+}
+
+.alert {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 1.65vw;
+  height: 1.8vw;
+  color: red;
+}
+
+#logIn {
+  padding-bottom: 0px;
+  display: flex;
+  border-bottom: none;
+}
+#subNav{
+  position: fixed;
+  flex-direction: column;
+  padding: 6px;
+  border-radius: 5px;
+  top: 10.5%;
+  color: var(--theme-text-light);
+  cursor: pointer;
+  z-index: 1;
+  background-color: var(--theme-main-dark);
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.subNavItem{
+  cursor: pointer;
+  z-index: 1;
+  font-size: 16px;
+  font-weight: inherit;
+  padding: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  background-color: var(--theme-main-dark);
+  text-align: center;
+}
+
+.subNavItem:hover {
+  background-color: var(--theme-main-light);
+  color: var(--theme-main-dark);
+  border-radius: 3px;
+}
+
+.messagePic {
+  display:inline-block;
+  border-radius: 8px;
+  margin: 4px;
+  min-height: 25px;
+  min-width: 25px;
+}
+
+#currentLogin {
+  color: black;
+  z-index: 2;
+  font-weight: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-left: 5%;
+  padding-top: 5%;
+}
+#editForm {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#editPagePic {
+  display: flex;
+  align-self: center;
+  height: calc(90vh - 400px);
+  border: 2px solid var(--theme-main-dark);
+  border-radius: 10px;
+  margin-bottom: 0px;
+  width: calc(55vh - 300px);
+}
+#editForm > label {
+  flex-direction: column;
+  margin-top: 2%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 2%;
+  position: relative;
+  width: 55vw;
+}
+#editForm > label > input {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5%;
+  height: 3vw;
+  font-size: 15px;
+}
+#editForm > button {
+  margin: auto;
+  margin-top: 2.5%;
+  margin-bottom: 1%;
+  padding-bottom: 3.5%;
+  font-weight: bold;
+  font-size: 15px;
+  width: 35%;
+}
+#radioLabel {
+  display: flex !important;
+  height: 0% !important;
+  margin-bottom: 8% !important;
+}
+#profilePicSection {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+#profilePicSection > section {
+  margin-left: .5vw;
+  margin-right: .5vw;
+  padding-bottom: 4%;
+  padding-top: 2%;
+}
+.radio {
+  display: flex;
+  margin: auto;
+}
+.selectPic {
+  width: 4vw;
+  height: 4vw;
+  margin-top: .5vw;
 }
