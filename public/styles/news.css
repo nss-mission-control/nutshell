@@ -70,3 +70,8 @@
 .new--news > input{
   width: 40%;
 }
+
+.display--news{
+  position:absolute;
+  top: 150px;
+}
