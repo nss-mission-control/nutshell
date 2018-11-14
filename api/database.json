@@ -415,6 +415,11 @@
       "id": 3,
       "request_userId": 3,
       "userId": 2
+    },
+    {
+      "id": 4,
+      "request_userId": 2,
+      "userId": 3
     }
   ]
 }

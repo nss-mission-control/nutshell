@@ -7,7 +7,26 @@ import moment from "moment"
 window.moment = moment
 
 
+// http://localhost:8088/events/?_expand=user&userId=1&userId=2
+//http://localhost:8088/friends/?request_userId=4
+
 const buildEvents = {
+
+  friendsFinder() {
+    API.getAllCategory(`friends/?request_userId=${activeUser.info().id}`)
+      .then(friendsArray => {
+        console.log(friendsArray)
+        let friendsSearchString = ""
+        friendsArray.forEach(currentFriend => {
+          friendsSearchString += `&userId=${currentFriend.userId}`
+        })
+        API.getAllCategory(`events/?_expand=user&userId${activeUser.info().id}${friendsSearchString}`)
+          .then(friendsEvents => {
+            console.log(friendsEvents);
+          })
+      })
+
+  },
 
   buildContainers() {
     // builds the two containers to hold everything
@@ -28,11 +47,13 @@ const buildEvents = {
     // this.newTask()
     // this.newEventButton();
     this.eventFetch()
+    buildEvents.friendsFinder();
     },
 
 
 
   printEvents(eventObj) {
+
     // takes the objects from the api and prints them to the dom
     let outputContainer;
     // Logic to determin if the event is upcoming or in the past
