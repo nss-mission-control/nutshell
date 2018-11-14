@@ -20,6 +20,7 @@ const buildMessages = {
           className: "message",
           id: `${messageObj.id}`
         },
+        new comp.div({id: `friendAlert-${messageObj.id}`}),
         new comp.image({src: `${messageObj.user.profilePic}`, alt: "Profile Pic", className: "messagePic"}),
         new comp.title("h2", {className:"messageAuthor"}, `${messageObj.user.firstName} - ${formatDate.correctDateAndTime(messageObj.timeStamp)}`),
         new comp.title("h1", {}, messageObj.messageContent)).render(".old--messages")
@@ -140,19 +141,18 @@ const buildMessages = {
         button.addEventListener("click", ()=>{
           if(button.textContent === "Yes"){
             this.postFriendship(friendObj)
+          } else if(button.textContent === "No"){
+            this.messageMap()
           }
         })
       }
     })
   },
-
-
-
   addFriend(){
     document.querySelectorAll(".messageAuthor").forEach(message =>{
       let friendObj = " ";
       let returnObj = ""
-      if(message.parentNode.childNodes[3]){
+      if(message.parentNode.childNodes[4]){
         // If there is a button, the event listener does not attach
         return
       } else{
@@ -175,7 +175,9 @@ const buildMessages = {
                 let itemStatus = false
                 info.forEach(item => {
                   if((item.request_userId === friendObj.request_userId) && (item.userId === friendObj.userId)){
+                    new comp.par({className: "alert"}, "You are already friends with this person").render(`#friendAlert-${messageId}`)
                     itemStatus = true
+                    return
                   }
                   })
                   if(itemStatus === false){
