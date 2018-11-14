@@ -15,13 +15,13 @@ const buildEvents = {
     // containers
     new comp.title("h1", {
       className: "title--upcoming"
-    }, "Upcoming Event").render(".container--inner")
+    }, "Upcoming Events").render(".container--inner")
     new comp.div({
       id: "upcoming"
     }).render(".container--inner")
     new comp.title("h1", {
       className: "title--past"
-    }, "Past Event").render(".container--inner")
+    }, "Past Events").render(".container--inner")
     new comp.div({
       id: "past"
     }).render(".container--inner")
@@ -78,8 +78,7 @@ const buildEvents = {
 
   newEvent () {
     new comp.div ({className: "new--event",id: "newEventBtnSection"},
-    new comp.btn ("+"),
-    new comp.title("h3", "New Event")).render("#upcoming")
+    new comp.btn ("Create New Event")).render("#upcoming")
     buildEvents.newEventClickListener();
   },
 
