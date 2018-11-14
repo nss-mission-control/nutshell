@@ -110,6 +110,9 @@
 }
 
 .task > input[type="date"] {
+  position: absolute;
+  top: calc(50% - 9.5px); /* 50% - half of par height */
+  right: 5px;
   width: 20%;
   height: 30px;
   margin-left: 15px;

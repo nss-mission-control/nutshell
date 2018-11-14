@@ -137,21 +137,34 @@ nav > ul > li:hover {
 }
 
 #editForm {
+  /* layout */
+  flex-basis: 50%;
   height: 80%;
   display: flex;
   flex-direction: column;
+  padding: 15px;
+  /* design */
+  border-radius: 5px;
+  font-family: var(--font-family-exo);
+  box-shadow: var(--box-shadow-2);
+  background-color: var(--planet-dark-purple);
 }
 
 #editForm > label {
+  /* layout */
   display: flex;
   flex-direction: column;
   margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 5px;
+  /* design */
+  color: var(--theme-sub-primary);
+  text-shadow: 1px 1px 2px #000000;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 2%;
   position: relative;
-  width: 55vw;
+  border-radius: 5px;
 }
 
 #editForm > label > input {
@@ -160,6 +173,7 @@ nav > ul > li:hover {
   margin-bottom: 5%;
   height: 3vw;
   font-size: 15px;
+  border-radius: 5px;
 }
 
 #editForm > button {

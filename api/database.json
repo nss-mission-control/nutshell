@@ -347,13 +347,6 @@
       "id": 11
     },
     {
-      "task": "I fixed all of the issues with the task list",
-      "complete": false,
-      "dueDate": "2018-11-13",
-      "userId": 3,
-      "id": 12
-    },
-    {
       "task": "New Task",
       "complete": false,
       "dueDate": "2018-11-14",
@@ -363,7 +356,7 @@
     {
       "task": "Major styling changes to this page",
       "complete": false,
-      "dueDate": "2018-11-13",
+      "dueDate": "2019-12-13",
       "userId": 3,
       "id": 15
     },
