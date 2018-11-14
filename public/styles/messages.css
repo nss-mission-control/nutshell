@@ -28,7 +28,7 @@
   /* layout */
   width: 90%;
   position: absolute;
-  top: 5px;
+  top: 15px;
   padding: 7px 0;
   /* design */
   color: var(--theme-sub-primary);
@@ -45,9 +45,9 @@
 .old--messages {
   /* layout */
   width: 90%;
-  height: 65%;
+  height: 63%;
   position: absolute;
-  top: 60px;
+  top: 68px;
   padding: 5px 10px 10px 10px;
   /* style */
   overflow-y: auto;
