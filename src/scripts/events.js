@@ -19,7 +19,7 @@ const buildEvents = {
         friendsArray.forEach(currentFriend => {
           friendsSearchString += `&userId=${currentFriend.userId}`
         })
-        API.getAllCategory(`events/?_expand=user&userId=${activeUser.info().id}${friendsSearchString}`)
+        API.getAllCategory(`events/?_expand=user&userId=${activeUser.info().id}${friendsSearchString}&_sort=date,time&_order=asc`)
           .then(friendsEvents => {
             friendsEvents.forEach(singleEvent => {
             this.printEvents(singleEvent)
@@ -108,8 +108,10 @@ const buildEvents = {
         id: `${eventObj.id}`
       },
       new comp.div ( {},
-      new comp.title("h3", `${eventObj.name}`),
-      new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${theTime}`),
+        new comp.image({src: `${eventObj.user.profilePic}`, alt: "Profile Pic", className: "messagePic"}),
+        new comp.title("h2", {className:"messageAuthor"}, `${eventObj.user.firstName}`),
+        new comp.title("h3", `${eventObj.name}`),
+        new comp.par(`${formatDate.getCorrectDate(eventObj.date)} ${theTime}`),
       new comp.par(`${eventObj.location}`))).render(outputContainer)
     }
   },
