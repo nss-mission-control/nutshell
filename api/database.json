@@ -35,33 +35,6 @@
       "password": "12345NSS",
       "email": "brad@braddavistech.com",
       "profilePic": "https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/35884762_10211693141659337_7630947963367325696_n.jpg?_nc_cat=103&_nc_ht=scontent-atl3-1.xx&oh=ffc0c07db4711096066f9a4612ebff3c&oe=5C7CD0B2"
-    },
-    {
-      "firstName": "Kelly",
-      "lastName": "Morin",
-      "email": "test@test.com",
-      "username": "testing",
-      "password": "1234",
-      "profilePic": "https://hyha.xyz/wp-content/themes/fashion/images/no_image_available.jpg",
-      "id": 5
-    },
-    {
-      "firstName": "Brad",
-      "lastName": "Davis",
-      "email": "davisthedad@hotmail.com",
-      "username": "testing2",
-      "password": "test",
-      "profilePic": "./images/option7edit.jpg",
-      "id": 6
-    },
-    {
-      "firstName": "Test",
-      "lastName": "User",
-      "email": "thisiswrongemail@gmail.com",
-      "username": "This changes in real Time",
-      "password": "1",
-      "profilePic": "./images/option8edit.jpg",
-      "id": 7
     }
   ],
   "messages": [
@@ -138,6 +111,15 @@
       "about": "Bitcoin is at an all time HIGH! LOW! HIGH! LOW! HIGH!",
       "userId": 4,
       "id": 4
+    },
+    {
+      "articleName": "Report: Universe To End Next Friday",
+      "url": "https://www.theonion.com/report-universe-to-end-next-friday-1826534469",
+      "articleImage": "https://i.kinja-img.com/gawker-media/image/upload/s--0FPHZN4L--/c_scale,f_auto,fl_progressive,q_80,w_800/tbtklk0j98obm6zmqdfk.jpg",
+      "dateSaved": "2018-11-10T21:18:52.339Z",
+      "about": "A coalition of scientists at CERN announced this morning that the Universe, the accumulation of matter and energy that makes up everything that is, will end abruptly next Friday.",
+      "userId": 3,
+      "id": 5
     }
   ],
   "events": [

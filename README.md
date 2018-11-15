@@ -76,7 +76,7 @@ touch api/database.json
 ```
 
 
-#### In order to create and edit the require JSON file, you will need a text editor. For this project, we used VS Code. Visit [VS Code](https://code.visualstudio.com) to install a copy.
+#### In order to create and edit the required JSON file, you will need a text editor. For this project, we used VS Code. Visit [VS Code](https://code.visualstudio.com) to install a copy.
 
 #### Once you have a text editor installed, open the database.json file and paste the following test data.
 
