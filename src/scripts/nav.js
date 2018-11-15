@@ -1,4 +1,4 @@
-// Author(s): Brad Davis
+// Author(s): Brad Davis, Brendan McCray
 // Purpose: Creates navbar functionality and also sets functionality for editing current user and checking database for duplication
 
 import comp from "./components";

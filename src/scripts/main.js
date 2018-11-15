@@ -1,4 +1,4 @@
-// Author(s): Brad Davis
+// Author(s): Kelly Morin, Brendan McCray, Jase Hackman, Brad Davis
 // Purpose: Main file that checks sessionStorage and routes accordingly
 
 import landingPageFuncs from "./landing";

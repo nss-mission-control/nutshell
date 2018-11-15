@@ -1,4 +1,4 @@
-// Author(s): Brad Davis
+// Author(s): Brad Davis, Kelly Morin
 // Purpose: Creates login functionality and check for status
 
 import comp from "./components"

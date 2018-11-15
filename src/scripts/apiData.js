@@ -1,4 +1,4 @@
-// Author(s): Brad Davis
+// Author(s): Brad Davis, Kelly Morin, Jase Hackman
 // Purpose: Allows for database calls to JSON file
 
 const URL = "http://localhost:8088/"

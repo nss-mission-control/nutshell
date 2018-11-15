@@ -20,7 +20,7 @@ const buildMissionControl = {
     ).render(".container--inner")
   },
 
-  
+
   printPlanets() {
     document.querySelector(".container--inner").innerHTML = null;
     // make planets - each section is a planet
@@ -71,8 +71,8 @@ const buildMissionControl = {
   clickPlanets() {
     document.getElementById("planet-tasks").addEventListener("click", () => {buildTasks.buildContainers()})
     document.getElementById("planet-messages").addEventListener("click", () => {buildMessages.messageMap()})
-    document.getElementById("planet-friends").addEventListener("click", () => {console.log("Friends function called.")
-        buildFriends.friendMap()})
+    document.getElementById("planet-friends").addEventListener("click", () =>
+        buildFriends.friendMap())
     document.getElementById("planet-events").addEventListener("click", () => {buildEvents.buildContainers()})
     document.getElementById("planet-news").addEventListener("click", () => {buildNews.friendsFinder()})
   }
