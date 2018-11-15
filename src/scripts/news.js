@@ -9,6 +9,7 @@ import formatDate from "./format"
 
 const buildNews = {
 
+  // adds friend finder to news function
   friendsFinder() {
     document.querySelector(".container--inner").innerHTML = ""
     this.createContainer()
@@ -112,7 +113,7 @@ const buildNews = {
       })
     },
 
-
+    // saves news article and runs friend function
   addNews(story){
     API.saveItem("articles", story).then(()=> this.friendsFinder())
   }
