@@ -4,10 +4,13 @@
   --theme-main-dark: #0077c1;
   --theme-text-light: white;
   --theme-sub-primary: #f5f5f5;
+  --theme-sub-primary2: #eee;
   --theme-sub-light: white;
   --theme-sub-dark: #c2c2c2;
   --font-family-title: 'Ubuntu', 'Arial', sans-serif;
-  --font-family-form: 'Exo 2', 'Arial', sans-serif;
+  --font-family-exo: 'Exo 2', 'Arial', sans-serif;
+  --font-family-text: Georgia, Times, 'Times New Roman', serif;
+  --font-family-plain: Arial, Helvetica, sans-serif;
   --planet-yellow: #FBD281;
   --planet-dark-yellow: #FFB881;
   --planet-bright-green: #24FFDD;
@@ -18,19 +21,22 @@
   --planet-dark-purple: #382B56;
   --planet-light-purple: #7B3E80;
   --planet-purple-space: #3F3363;
+  --box-shadow-1: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  --box-shadow-2: 0px 2px 30px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .news {
-  flex-basis: 90%;
-  height: 150px;
-  padding: 7.5px;
-  margin-bottom: 5px;
-  /* position children */
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  /* design */
-  border: 2px solid var(--planet-dark-green);
+   /* layout */
+   width: 99%;
+   padding: 15px;
+   margin: 5px;
+   /* position children */
+   display: flex;
+   align-items: center;
+   /* design */
+   background-color: var(--theme-sub-primary);
+   border: 3px solid var(--planet-purple-space);
+   border-radius: 5px;
 }
 
 .news > a {
@@ -54,18 +60,24 @@
 
 
 .new--news{
-  height: 150px;
+  height: auto;
   padding: 10px;
   position: absolute;
-  width: 100%;
+  width: auto;
   top: 0;
   left: 0;
+  /* opacity: 0; */
+  background-color: var(--theme-sub-primary);
+  border: 3px solid var(--planet-purple-space);
+  border-radius: 5px;
 }
 
-.new--news > button{
+.new--news--button > button{
   position: absolute;
-  bottom: 5px;
-  left: calc(50% - 52px);
+  top: 0;
+  left: 0;
+  /* bottom: 5px;
+  left: calc(50% - 52px); */
 }
 .new--news > input{
   width: 40%;
@@ -74,4 +86,40 @@
 .display--news{
   position:absolute;
   top: 150px;
+}
+
+.friendsNews {
+  font-style: italic;
+  opacity: .85;
+}
+
+.news > a > img {
+  padding-right: 2vw;
+}
+
+.news > button {
+  right: 3vw;
+  position: absolute;
+}
+
+.newsForum {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  flex-basis: 100%;
+}
+
+.newsForum > input {
+  margin: .25vw;
+}
+
+.news--title {
+  position: absolute;
+  top: 5vw;
+  /* height: 5vw;
+  width: 15vw; */
+  background-color: var(--theme-sub-primary);
+  border: 3px solid var(--planet-purple-space);
+  padding: 1vw;
 }
