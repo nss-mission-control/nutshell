@@ -69,12 +69,12 @@ const buildMissionControl = {
 
   // the small circle of each planet (which are spans) have an id associated with them. A click listener is assigned to each one
   clickPlanets() {
-    document.getElementById("planet-tasks").addEventListener("click", () => {buildTasks.buildContainers()})
-    document.getElementById("planet-messages").addEventListener("click", () => {buildMessages.messageMap()})
+    document.getElementById("planet-tasks").addEventListener("click", () => { buildTasks.buildContainers() })
+    document.getElementById("planet-messages").addEventListener("click", () => { buildMessages.messageMap() })
     document.getElementById("planet-friends").addEventListener("click", () =>
-        buildFriends.friendMap())
-    document.getElementById("planet-events").addEventListener("click", () => {buildEvents.buildContainers()})
-    document.getElementById("planet-news").addEventListener("click", () => {buildNews.friendsFinder()})
+      buildFriends.friendMap())
+    document.getElementById("planet-events").addEventListener("click", () => { buildEvents.buildContainers() })
+    document.getElementById("planet-news").addEventListener("click", () => { buildNews.friendsFinder() })
   }
 }
 
