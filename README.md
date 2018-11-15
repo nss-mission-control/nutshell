@@ -1,48 +1,22 @@
-<h1 style="font-weight: bold; font-size: 8vw;text-align: center">Mission Control
-<h1 style="font-weight: bold; margin-top: 0px;padding-top:0px;text-align: center">Nutshell: The Information Dashboard
+<h1 style="font-weight: bold">Mission Control</h1>
 
-<h3 style="text-align: center">Nutshell is a new product offering that you have been tasked with building. It's a dashboard for people to use to organize their daily tasks, events, news article, friends, and chat messages.
+<h2 style="font-weight: bold">Nutshell: The Information Dashboard</h2>
 
-<h2 style="border-bottom: 1px solid white; text-align: center; font-weight: bold;"> Technologies Used
--
-<div style="width: 100%;text-align: center;font-weight:bold; font-size: 3vw; ">Development Languages and Libraries
+<h3>Nutshell is a new product offering that you have been tasked with building. It's a dashboard for people to use to organize their daily tasks, events, news article, friends, and chat messages.</h3>
 
-<section style="width:100%;display: flex; justify-content: center;flex-direction: row;">
-<h3 style="display:flex; margin-right: 2%; margin-left: 2%;positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">Node.js<img src="./public/images/readMeImages/nodeimage.jpg" style="width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">Javascript<img src="./public/images/readMeImages/jsimage.jpg" style="width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">jQuery<img src="./public/images/readMeImages/jQueryimage.jpg" style="width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">Moment.js<img src="./public/images/readMeImages/momentjs.jpg" style="width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">RESTful API<img src="./public/images/readMeImages/RESTfil-API.png" style="background-color: white;width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">HTML5<img src="./public/images/readMeImages/html5image.jpg" style="background-color: white;width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">CSS3<img src="./public/images/readMeImages/css3image.jpg" style="background-color: white;width:100%; height: 25%"/></div>
+<h2 style="font-weight: bold;"> Technologies Used
+<h3>Development Languages and Libraries</h3>
 
-<div style="width: 100%;text-align: center;font-weight:bold; font-size: 3vw; ">Development Tools
+<img src="./public/images/readMeImages/node.jpg"/>______<img src="./public/images/readMeImages/js.jpg"/>______<img src="./public/images/readMeImages/jQuery.jpg"/>______<img src="./public/images/readMeImages/moment.jpg"/>______<img src="./public/images/readMeImages/rest.png"/>______<img src="./public/images/readMeImages/html5.jpg"/>______<img src="./public/images/readMeImages/css3.jpg"/>
 
-<section style="width:100%;display: flex; justify-content: center;flex-direction: row;">
-<h3 style="display:flex; margin-right: 2%; margin-left: 2%;positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">ES Lint<img src="./public/images/readMeImages/eslint.png" style="width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">Grunt<img src="./public/images/readMeImages/gruntimage.jpg" style="width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">Browserify<img src="./public/images/readMeImages/browserifyimage.jpg" style="width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">VS Code<img src="./public/images/readMeImages/vsimage.jpg" style="width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">Lucid Chart<img src="./public/images/readMeImages/lucidchart.png" style="background-color: white;width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">Github<img src="./public/images/readMeImages/githubimage.jpg" style="background-color: white;width:100%; height: 25%"/>
-<h3 style="display:flex; margin-right: 2%;
-margin-left: 2%; positon: relative; font-size: 1.5vw;text-align: center; width:10%;flex-direction: column; height: 25%;">Slack<img src="./public/images/readMeImages/slackimage.jpg" style="background-color: white;width:100%; height: 25%"/></div>
+<h1></h1>
+<h3>Development Tools</h3>
+
+<img src="./public/images/readMeImages/eslint.png"/>______<img src="./public/images/readMeImages/grunt.jpg"/>______<img src="./public/images/readMeImages/browserify.jpg"/>______<img src="./public/images/readMeImages/vs.jpg"/>______<img src="./public/images/readMeImages/lucid.png"/>______<img src="./public/images/readMeImages/github.jpg"/>______<img src="./public/images/readMeImages/slack.jpg"/>
 
 
-<h2 style="border-bottom: 1px solid white; text-align: center; font-weight: bold;">
- Instructions for Installing Mission Control
--
+<h2>Instructions for Installing Mission Control</h2>
+
 <h4> You will need to have command line tools installed for your computer to use terminal commands.
 </h4>
 
@@ -101,7 +75,6 @@ mkdir api
 touch api/database.json
 ```
 
-### users
 
 #### In order to create and edit the require JSON file, you will need a text editor. For this project, we used VS Code. Visit [VS Code](https://code.visualstudio.com) to install a copy.
 
@@ -328,9 +301,9 @@ http://localhost:8088/
 1. Relational data
 
 
-<h2 style="text-align: center">Entity Relationship Diagrams
--
-<img src="./public/images/readMeImages/MissionControlERD.png" alt="ERD" style="margin-left: 10%" width="80%"/>
+<h2 style="text-align: center">Entity Relationship Diagrams</h2>
+
+<img src="./public/images/readMeImages/MissionControlERD.png" />
 
 <h2 style="font-weight:bold;text-align: center"> Professional Requirements</h2>
 
@@ -356,4 +329,4 @@ sessionStorage.removeItem("currentUser");
 
 <h3 style="text-align: center">To help you along, here is a visualization of the features, and behaviors of the application to get you started.</h3>
 
-![nutshell features](./Nutshell.png)
+____________________________![](./public/video/MissionControl.gif)____________________________

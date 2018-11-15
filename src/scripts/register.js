@@ -27,10 +27,10 @@ const registerFuncs = {
       new comp.input({ name: "username", id: "username", placeholder: "username" })).render(".Log_In")
     new comp.title("p", { className: "alertRegister", id: "passwordBlankRegister" }, "You must enter and confirm your password.").render(".Log_In");
     new comp.label({ for: "password" }, "Password",
-      new comp.input({ type: "password", name: "password", id: "password", placeholder: "Password" })).render(".Log_In")
+      new comp.input({  name: "password", id: "password", placeholder: "Password" })).render(".Log_In")
     new comp.title("p", { className: "alertRegister", id: "badConfirmPasswordRegister" }, "The passwords entered do not match.").render(".Log_In");
     new comp.label({ for: "confirmPassword" }, "Confirm Password",
-      new comp.input({ type: "password", name: "confirmPassword", id: "confirmPassword", placeholder: "Confirm Password" })).render(".Log_In");
+      new comp.input({  name: "confirmPassword", id: "confirmPassword", placeholder: "Confirm Password" })).render(".Log_In");
     new comp.label({ for: "profilePic", id: "registerRadioLabel" }, "Select Profile Pic").render(".Log_In");
     new comp.div({ name: "profilePic", id: "registerProfilePicSection" },
       new comp.section({},
