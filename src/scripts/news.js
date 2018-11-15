@@ -1,3 +1,6 @@
+// Author(s): Kelly Morin, Jase Hackman, Brendan McCray, Brad Davis
+// Purpose: Creates news components and allows for creation, deletion, and editing as well as friends functionality
+
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"

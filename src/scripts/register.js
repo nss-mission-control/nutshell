@@ -1,3 +1,6 @@
+// Author(s): Brad Davis
+// Purpose: Creates functionality for adding new users to application
+
 import comp from "./components";
 import buildMissionControl from "./missionControl";
 import logInFuncs from "./login";

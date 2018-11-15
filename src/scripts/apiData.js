@@ -1,3 +1,6 @@
+// Author(s): Brad Davis
+// Purpose: Allows for database calls to JSON file
+
 const URL = "http://localhost:8088/"
 
 const API = {

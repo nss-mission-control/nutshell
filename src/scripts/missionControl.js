@@ -1,3 +1,6 @@
+// Author(s): Brendan McCray
+// Purpose: Creates main landing page functionality and stylings and navigation links through planet images
+
 import comp from "./components"
 import activeUser from "./sessionStorage"
 import buildMessages from "./messages";

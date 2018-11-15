@@ -1,3 +1,6 @@
+// Author(s): Kelly Morin, Jase Hackman, Brendan McCray, Brad Davis
+// Purpose: Used to create navigation links on initial form
+
 import comp from "./components"
 import logInFuncs from "./login"
 import registerFuncs from "./register"

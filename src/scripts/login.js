@@ -1,3 +1,6 @@
+// Author(s): Brad Davis
+// Purpose: Creates login functionality and check for status
+
 import comp from "./components"
 import registerFuncs from "./register"
 import API from "./apiData";

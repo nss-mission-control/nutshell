@@ -1,3 +1,6 @@
+// Author(s): Kelly Morin, Brendan McCray
+// Purpose: Allows creation, viewing, editing, and deletion of messages
+
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"

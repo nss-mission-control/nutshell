@@ -1,4 +1,5 @@
-// scripts related to sessionStorage
+// Author(s): Jase Hackman
+// Purpose: Incorporation of sessionStorage to a call with json parsing due to object storage
 
 const activeUser = {
   info () {

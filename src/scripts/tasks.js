@@ -1,3 +1,6 @@
+// Author(s): Kelly Morin, Jase Hackman, Brendan McCray
+// Purpose: Creates ability to create, edit, and delete tasks displayed to user
+
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"

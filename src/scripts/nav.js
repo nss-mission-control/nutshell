@@ -1,3 +1,6 @@
+// Author(s): Brad Davis
+// Purpose: Creates navbar functionality and also sets functionality for editing current user and checking database for duplication
+
 import comp from "./components";
 import buildMessages from "./messages";
 import buildNews from "./news";

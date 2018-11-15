@@ -1,5 +1,8 @@
+// Author(s): Kelly Morin, Jase Hackman, Brendan McCray, Brad Davis
+// Purpose: Incorporates nss-domcomponent library and User class for use by other components
+
 import DOMComponent from "../lib/node_modules/nss-domcomponent";
-import comp from "./components";
+
 
 
 export default Object.create(null, {
