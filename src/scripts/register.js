@@ -9,6 +9,7 @@ import navBar from "./nav";
 
 const registerFuncs = {
 
+  // loads new user registration for with built in alert messages
   loadRegister() {
     document.querySelector(".Log_In").innerHTML = "";
     document.querySelector(".Log_In").setAttribute("id", "registerLogin")
@@ -71,12 +72,13 @@ const registerFuncs = {
       new comp.input({ name: "profilePicText", id: "profilePicText", placeholder: "Enter The URL Of Your Profile Pic" })).render(".Log_In")
     new comp.btn("Register Account").render(".Log_In")
 
-
+  // adds toggle to alerts and picUrlInput and sets to hide
     $(".alertRegister").toggle();
     $(".alertRegister").hide();
     $("#picUrlContainer").toggle();
     $("#picUrlContainer").hide();
 
+    // creates functional toggle for profilePic url input
     $("#registerProfilePicSection").click(function () {
       let tempValue = $("input[name='picRadio']:checked").val();
       console.log(tempValue);
@@ -87,6 +89,7 @@ const registerFuncs = {
       }
     });
 
+    // add event listeners to register and login buttons
     document.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", (e) => {
         $("#picUrlContainer").hide();
@@ -102,6 +105,7 @@ const registerFuncs = {
     })
   },
 
+    // checks input fields and toggles alerts
   checkUserFields() {
     let picProfile = "";
     if ($("#profilePicText").val() === "") {
@@ -151,6 +155,7 @@ const registerFuncs = {
     this.checkUserData(tempUser);
   },
 
+  // checks if email already exists and toggles alert
   checkUserData(tempUser) {
     API.getAllCategory(`users/?email=${tempUser.email}`).then(thisData => {
       if (thisData.length === 0) {
@@ -161,6 +166,7 @@ const registerFuncs = {
     })
   },
 
+  // checks username already exists and toggles alert
   checkRegister(user) {
     API.getAllCategory(`users/?username=${user.username}`).then(data => {
       if (data.length === 0) {
