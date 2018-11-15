@@ -10,6 +10,7 @@ import buildEvents from "./events"
 
 
 const buildMissionControl = {
+  // this function was a placeholder while the mission control functionality was created. it is not currently in use.
   printPlaceholder() {
     document.querySelector(".container--inner").innerHTML = null;
     new comp.section({ className: "message", id: `${activeUser.info().id}` },
@@ -18,6 +19,7 @@ const buildMissionControl = {
     ).render(".container--inner")
   },
 
+  
   printPlanets() {
     document.querySelector(".container--inner").innerHTML = null;
     // make planets - each section is a planet
