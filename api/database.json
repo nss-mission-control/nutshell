@@ -407,11 +407,6 @@
       "userId": 1
     },
     {
-      "id": 2,
-      "request_userId": 4,
-      "userId": 3
-    },
-    {
       "id": 3,
       "request_userId": 3,
       "userId": 2
