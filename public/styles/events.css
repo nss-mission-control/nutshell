@@ -167,3 +167,8 @@
 .alert {
   color: red;
 }
+
+.friendEvent {
+  font-style: italic;
+  color: var(--planet-light-purple);
+}

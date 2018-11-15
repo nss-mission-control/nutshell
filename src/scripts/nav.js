@@ -7,6 +7,7 @@ import buildEvents from "./events";
 import activeUser from "./sessionStorage";
 import landingPageFuncs from "./landing";
 import API from "./apiData";
+import buildFriends from "./friends";
 
 const navBar = {
   loadNavBar() {
@@ -173,27 +174,25 @@ const navBar = {
   },
 
   eventListenerHandler(event) {
-    if (event.target.textContent === "Home") {
-      $("#subNav").hide();
-      $("#picUrlContainer").hide();
-      buildMissionControl.printPlanets();
-    } else if (event.target.textContent === "Tasks") {
-      $("#subNav").hide();
-      buildTasks.buildContainers();
-    } else if (event.target.textContent === "Events") {
-      $("#subNav").hide();
-      buildEvents.buildContainers()
-    } else if (event.target.textContent === "Messages") {
-      $("#subNav").hide();
-      buildMessages.messageMap();
-    } else if (event.target.textContent === "News") {
-      $("#subNav").hide();
-      buildNews.newsMap();
-    } else if (event.target.textContent === "Friends") {
-      $("#subNav").hide();
-      // need to add function call here for friends
-      console.log("Friends function calles.")
-    }
+      if (event.target.textContent === "Home") {
+        $("#subNav").hide();
+        buildMissionControl.printPlanets();
+      } else if (event.target.textContent === "Tasks") {
+        $("#subNav").hide();
+        buildTasks.buildContainers();
+      } else if (event.target.textContent === "Events") {
+        $("#subNav").hide();
+        buildEvents.buildContainers()
+      } else if (event.target.textContent === "Messages") {
+        $("#subNav").hide();
+        buildMessages.messageMap();
+      } else if (event.target.textContent === "News") {
+        $("#subNav").hide();
+        buildNews.friendsFinder();
+      } else if (event.target.textContent === "Friends") {
+        $("#subNav").hide();
+        buildFriends.friendMap();
+      }
   },
 
   eventListenerNav() {
