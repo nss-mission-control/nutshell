@@ -168,5 +168,5 @@
 
 .friendEvent {
   font-style: italic;
-  opacity: .85;
+  color: var(--planet-light-purple);
 }
