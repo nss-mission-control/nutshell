@@ -195,7 +195,7 @@ touch api/database.json
     {
       "name": "Sleep",
       "date": "2018-11-15",
-      "time": "",
+      "time": "10:15",
       "location": "My Bed",
       "userId": 3,
       "id": 3
