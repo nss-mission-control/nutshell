@@ -6,6 +6,8 @@ import logInFuncs from "./login"
 import registerFuncs from "./register"
 
 const landingPageFuncs = {
+
+  // creates inital div with login and register text elements
   loadLandingPage() {
     new comp.div({ classList: "welcome" },
       new comp.div({className: "WelcomeNav"},
@@ -13,6 +15,7 @@ const landingPageFuncs = {
         new comp.title("h2", {className: "logInNav"}, "Register")),
       new comp.div({className: "Log_In"})).render(".container--inner")
 
+      // sets event listeners to text elements
       logInFuncs.loadLogIn()
         document.querySelectorAll(".logInNav").forEach((element)=>{
           element.addEventListener("click", (e)=>{
