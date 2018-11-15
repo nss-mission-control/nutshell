@@ -73,166 +73,79 @@
     },
     {
       "id": 2,
-      "messageContent": "I changed the message.",
+      "messageContent": "How is everyone doing today? ",
       "timeStamp": "2018-11-09T12:10:34.489Z",
       "userId": 3
     },
     {
       "id": 3,
-      "messageContent": "You get the idea.",
+      "messageContent": "I'm doing great! How are you? ",
       "timeStamp": "2018-11-07T21:16:34.489Z",
       "userId": 2
     },
     {
-      "messageContent": "Today is a good day. This makes a better message",
+      "messageContent": "I'm good, but I'm a little nervous about this presentation",
       "timeStamp": "2018-11-10T09:16:34.489Z",
       "userId": 4,
       "id": 4
     },
     {
-      "messageContent": "Final Edit",
-      "timeStamp": "2018-11-08T06:16:34.489Z",
-      "userId": 3,
-      "id": 5
+      "id": 5,
+      "messageContent": "Don't be nervous! You will be great!",
+      "timeStamp": "2018-11-08T14:07:21.489Z",
+      "userId": 1
     },
     {
-      "messageContent": "New Message",
-      "timeStamp": "2018-11-08T20:16:34.489Z",
-      "userId": 3,
-      "id": 6
-    },
-    {
-      "messageContent": "Test",
-      "timeStamp": "2018-11-10T14:16:34.489Z",
-      "userId": 2,
-      "id": 7
-    },
-    {
-      "messageContent": "Test",
-      "timeStamp": "2018-11-09T15:45:34.489Z",
-      "userId": 2,
-      "id": 8
-    },
-    {
-      "messageContent": "Testing message as Kelly",
-      "date": "2018-11-10T17:15:34.489Z",
-      "userId": 1,
-      "id": 9
-    },
-    {
-      "messageContent": "hello",
-      "timeStamp": "2018-11-11T10:16:34.489Z",
-      "userId": 2,
-      "id": 10
-    },
-    {
-      "messageContent": "TEST",
-      "timeStamp": "2018-11-13T14:23:34.489Z",
-      "userId": 2,
-      "id": 11
-    },
-    {
-      "messageContent": "I am testing",
-      "timeStamp": "2018-11-12T14:16:34.489Z",
-      "userId": 2,
-      "id": 12
-    },
-    {
-      "messageContent": "Testing a new message, hoping the timestamp functionality is still working",
-      "timeStamp": "2018-11-01T03:16:34.489Z",
-      "userId": 1,
-      "id": 13
-    },
-    {
-      "messageContent": "Testing for month",
-      "timeStamp": "2018-10-01T03:16:34.489Z",
-      "userId": 1,
-      "id": 13
-    },
-    {
-      "messageContent": "Testing for February",
-      "timeStamp": "2018-03-01T03:16:34.489Z",
-      "userId": 1,
-      "id": 13
-    },
-    {
-      "messageContent": "duz this werk?",
-      "timeStamp": "2018-11-13T17:34:27.102Z",
-      "userId": 3,
-      "id": 14
+      "id": 3,
+      "messageContent": "#besties ",
+      "timeStamp": "2018-11-07T21:16:34.489Z",
+      "userId": 2
     }
   ],
   "articles": [
     {
-      "articleName": "In East Palo Alto, the influx of tech companies pushes residents to a breaking point over gentrification",
-      "url": "https://www.mercurynews.com/2018/11/05/in-east-palo-alto-the-influx-of-tech-companies-pushes-residents-to-a-breaking-point-over-gentrification/",
-      "articleImage": "https://www.mercurynews.com/wp-content/uploads/2018/11/In_East_Palo_Alto_the_influx_of_tech_companies_pushes_residents_to_a_breaking_point_over_gentrification1.jpg?w=863",
-      "dateSaved": "2018-10-09T21:18:52.339Z",
-      "about": "kasjkhdiuahofajbe;kj[orebifjbqPEK",
-      "userId": 4,
+      "articleName": "Tearful Elon Musk Warns About Dangers Of AI After Having Heart Broken By Beautiful Robotrix",
+      "url": "https://www.theonion.com/tearful-elon-musk-warns-about-dangers-of-ai-after-havin-1822192554",
+      "articleImage": "https://i.kinja-img.com/gawker-media/image/upload/s--CJvX7MgP--/c_scale,f_auto,fl_progressive,q_80,w_800/tizlx79ig3cluhdkvwuh.jpg",
+      "dateSaved": "2018-11-14T21:18:52.339Z",
+      "about": "It was named Mark Zuckerberg",
+      "userId": 2,
+      "id": 1
+    },
+    {
+      "articleName": "Astronomers Confirm Moon Will Have Dozens Of New Phases In 2019",
+      "url": "https://www.theonion.com/astronomers-confirm-moon-will-have-dozens-of-new-phases-1830339439",
+      "articleImage": "https://i.kinja-img.com/gawker-media/image/upload/s---K0s5FLo--/c_scale,f_auto,fl_progressive,q_80,w_800/chmtxbc2yw9jzlv1bpxu.jpg",
+      "dateSaved": "2018-11-09T21:18:52.339Z",
+      "about": "Cheese phase activate",
+      "userId": 3,
+      "id": 2
+    },
+    {
+      "articleName": "Astronomers Confirm Moon Will Have Dozens Of New Phases In 2019",
+      "url": "https://www.trtworld.com/americas/five-things-you-need-to-know-about-trump-s-space-force-21667",
+      "articleImage": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8PEBIQEBAPEBAPEA8PDw8PDw8PDw8PFRUWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFw8QFS0dHR0uKy0tLS0rLSstLSstLS0tLS0rKy0rKystLS0vLS0tKystLSstKystKy0tKy0rLSsrLf/AABEIAKgBLAMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAABAgADBAYFB//EAD0QAAIBAgQDBgQCCAUFAAAAAAABAgMRBBIhMQVBUQYTIjJhcYGRocGx0RQjQlJicuHwBzOCsvEVQ1OSwv/EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMEBf/EACURAQEAAgICAQMFAQAAAAAAAAABAhEDMRIhQQQiUSNCYXGhE//aAAwDAQACEQMRAD8AykCQBSBsQAFciwSQARAkAUFhgAGIWGJGQI0Uy3LymW4V43E/MWLC1KcU5wlFSV45k1dehXxPzHucTxOejCOrSjGztotOpm10ww8pb+HNvcun5GVW1LpLwMOZcI/CWyK8NDwljKhqSLRKRYUUSQo8hRA1MdoWkOwquojPY01DOwAAJAFA0MQBQWGAArQGhmBgUz5nY9peFUFUhkpUop0Y5lGMaazZpLZJ8ktfw2OPns/Znd9racXVpXzp9xFfq5VYp+OeryO1+v5WLEqixAgABAkAUSRYVyAASBAVgGYAGiRkgFkUhVIuZVIqPIx0M01FbyaivduyOh4tgpwoLwNRULX9PUo4Twp1KrqycYqLtTc9s/OVuduXr7HvU8bkl3GIlGpGUJOM1Gyl1TXXVaepxyvt7OHD7b/L55zL5eQ3Yrhmeu4YdNxksyUnZQ11u3yMmJpOClGVrxdnZpr5m5dvNlhce1dBeEeSBQ8qHZWBpFpXSRYUUyFsWSECmpDsWkWMCqoZzTU2M4QADAClsSwSALYAwAFAxgMCmfP2O37S1ZqdJdzOyoRUVmoJRjnnaKUZtJLY4ma3Ou7QcZoSnTy1IytSt5nK3jm7baaNaCJVwAkKAAYAAK5FpXJAAhAgBgGYAGiRhgRkUh6HDOHwmnObVuUb/VmBmrh95QnFJScnJJueSMVd3TtF67brUxnbI7cOMt9pX4RWnUvDFQg/2Kag7WXLR6fIfjVbJRSrpRnHVONtWv3X6q6+JxfFcZi8FVtJu8dYvNmi4vmnY9HBdpo42Do4jVS8Kvo1fTMnyOenr85fRK3GI5ZQpJwcpJS18WVJb292Z63lZj/6ZKjVlFvOs2lRbVIuzT+uvrcvq1NH7m8Xm58rZF2G8o8hcN5UMzbzmpIsFpocoqkKNIABpjsWmOwiuoZzTUM4CkCAAAGAAAMYACsVjsVgVmbFbr2/M1GbE7r2/MsHdkCAAECQAFbLCuW4ACQICsAwAGgSQYEkRSspoV25d2mk7vknJK97mijDPJQW8ru38Ktd+yuvmi3jXDnCN4xnKNrtwm4xj/Nr9kc8/wAPRwT3a8PtbRjUjCMLydPVyerd2r3fyPC4dg4SnFvLTVle17O2/s/oexHGZYyik05rLJvV5eav66fI8+nSu9OT/v7EnTeXe2/iNdt3vdK+RdHp9NzBOm8tx6ju/RaIvnHwaGpNPPnn5UMP5UWWv6v01ZMPTtGOZ5U3pzlLrZHr4WikrpNPrK/2MZckjphwXJho4eb2i/bZ/UseFqfuM9ajNrfKx8VjW4pRbTW18uVfQk5a6X6bTxpcLxG/c1NdvC9fbqZ54acd4yXumbMVjcRs5PLfloJh8ZOW85a763uambleLTJTQ7DJa/kRnWXbjZpXUM5oqFDCFIEDAABgAKAYACsDGABUzNit17fmamZsVv8AD8ywruyEIBABABCplpW9wIiEQQAwBYAGgVYzEwpQc5u0Y/Nvkl6stTSTbdktW3sl1ZxHHeKPET00pwfgXX+J+r+i+Ik2Hw3aOtSxkMXGzcHbun5JUX5qb6prn1s+SPr+PwlOvh44vCOUqVSmqkUnaVNNXd1vpqnzTTufBps7LsF2ulhk8JWqOOGqZ2m/2JSXij1yy/Ft82auMrWGdxvpr4nQtLM7SfVKOr+Rgowsn15m/j/aDB5ZqNOcZa913cnrppnzt6c3axgw+zOXjZ23nyS9M1vEb6Mb6JXfoV8Pwqq1VFtqN/E1vb09Tp/0aEHanHwxtpHWTfVt/iZzuovFh5V59ClRoPvMRJd40rK18keSin9XzPawONoVU8ji7b+FaHny4biKubNVw8U1pQdKMklf/wAjvr/pZlwXAHCsn5YZbycH4ZO+lvTfRnHxndfRxt6e9icEraq3hu2rfD7nk47DtK6+f9UeV2inUVVQp1JKLTfmfK27+Ri4VjasJW7zOr2lC6bT9VuviTwLyaummpVkrpv/AIDTqx1vv1Rr4jZpNRtfdWs/c8uMdbN26XensaxceTXcaZb6fVEY0Y9f6gZ3weHPtVUM7NFQoNVgLAGAApAtAAUlhgFCtAYQMCtmbFbr2/M1My4rde33YHdgCQAECAAFciwrkBEEAQAwDM5rtRxa16FN6v8AzZLkv3F9/l1KjNx7jbqN0qT/AFS0nJf9x9F/D+J4UmBCTkaUk5PlrcqrVbL1GrStpflGT01Wm3o9f70Musn1b2RnY1YarOpJLWTtlXojtMKvD8DxsPw39Hspa1Grza2X8KPaw3lM27DUK/dy0u5N6Jbt8jqOGVLLx2zc+i9DjKVaSrJJXcm4LrFc2dXW4bVnSvCWXbNL92PN+55eWvo/TST29DivFMFFPerKEbzap+GH0Obp9uaXdv8AVrpmbske5gsNRjTdOFKU0147xT7x88zl5jn+M8Iwcp60p4WctL5MtFv5W+TGMjvl5fterwOvHES07uScbwbSbd94r1X1uejxLhsJxtKNNNLLGcYqE4ezS+mx4HDuDfokJShUz2cJxsrJZb31v0f0N2I425yuxvXRrc3WTFzTm05J5VaLS0bt9GXwwsJRVRtZYrM9rJq3/Bmr4iM5KUUr2Sl0f9TN2hx2SiqUHdzcXUls7L9k3i83It7xVM047XK2YODVvC1zbPQZ2xePPtVUKDRUKCsFIGwAAAYBQoGMABWBjMDAqM2L3Xt92amZcXuvb7sRK7sAQAQASAAqZaVvcKiCAlwM3EsWqNOU21dJ5E+c+S9T53Vm2227tttt7t82b+PcRderKSfgjeNNcsvX47/I8qcjUD96kLUlbW6u1JZX6q17dNfpy0KGyupUewoFSV9P7bPV7MYLvcRC6vGn+tl/p8q/9rHkRO97IYDuqPeNeKvaXtT/AGF9W/iZFXFP8004bymbif8AmmjDeUyPXoYGEaFPEWWaUpwfVu7d/aySPY4diJTWTZPQ4/F8SqQUYSl+rgk4Rts3zb+ZoxHHsmSceW6R5s8ba+nxZ4zGOmqYVOTjKpKNldOLS+rMeIjUheKnKtTd04VEmreqZ4FftLmkpReWT0v09z08DxqlFO8s0mrXVyzGyOtzxrTgcJHW+anC2tNOTi36J7fAw8VqU1J5VZtu49THyqPNHblHp6njVarlJ3M/LNyml+FnZq+19fYp4vONRvpeyCppLX8L/Qy1ISs5TTjeTUE9Go6LVHSOGU218Mp2T+Fn6G5mLh0rtq1rfLU3M7Y9PFn2qqFBfUKTTAACQKUAwGApAgCAKxhQqtmXF7r2+7NZlxe69vuwjuiEIUAhCAArZaVMghzva7iGWKoRl4pa1LPVQ5Rfv+C9ToZzUU5SdlFNtvZJbs+bY7EupUnUf7c3K3RPZfDb4Fis9SWpVOQZvUqmygSZUFsiIN3BsF39enTtdSks38i1l9E/mfTGj5xwnFVKEu8ptKVnHVJpxdm1r7L5HVYHtJCSXexyPnKN5R+W6+o0KuKL9aaML5TJxGvCU8ylFxa0aeh5mOxspLJG6jzezl/QzrdHscVhF07tu6UY29NXf++hzs53VjpuzHZqpjcFWrQrOrWo1MncJtzhRy3Unpdtu/XSOmuhz+Jwc6byyTT/ABM3Cz2745SzSmmrm3CysZYRNFEzXSPUji52snoCG9yqkaaRiukIp93UjUdnGFnlfPn+Rpxtd15ZrWcndq1kl7GaMe8q6+Sm/nI2whz5msZtz5OTU1DYamoqy+Pqy5iUx2dnkquoUF9QpCAAJAoAYQBAAwgYCsDGYrArZlxe69vuzUzLi917fdlg7ogSMBSBABCplpWyK5XtfxVprDx0TSlVf+2P3+RylaR6nbCGXFTd/PGnK3RZVH/5Z4ecoLZXJkbFFELKUbsrLaYg2QHi7MpdRPZlkHqaAq029VJr6r5Dwj1d/oCatqtua9Boge12V49U4diYV6d3HyVqSdlVpPzR9+afJrpc+q9oOzFLiVNYvCONSFeCqZfK27eaPSXVPmmfEas1FX/u59n/AMDOLKtgZ4dyWfDVp2jdZnSqeNO3TM5r4GpR8y4rwuphpOM4u17KTTWvR9GZKW59X/xE4/wuUqmHi4TxKWWtU81Gm/3Z2889Nk01zfI+f4XhdFuL7x93OWXPTmmk36SjpuubF+myym8Y1j9RjjdZMtNGmj0W/P0Orw3ZXDQ1kqlR/wAVSSXyjZC8boU6UIQpwjBNuVopK9lb7nHLhs7df+8+HgU6Siret2MFgEmnG3aymOyuCHuVlXUKS6oUgQAQAADCwAAAzAwFYGFgYFZkxe69vuzWZMX5l7fdlg7shCABkIQgBWywrYVwnbnCyjXjU/ZqU0l6Sho18mmcw0fT+0XDv0jDyilecfHT/mXL4q6+J8xmApERgAdAzETEQDo1YeoZUNFmkeq2rGKrVcXZPTkGNdbP5mWq7sWqeU293c6DsRxKtQxEo0ajpyr05Us63XPTo7Jq/qc5B3N3B8Z+j4ijXsmqNanUaaTUoxknJNPe6uviWXV2j6Hh+zlWUozz4WnSVR99UrU82WKSlpFeKTeqsvpuUdpJUJRpwowVNSnKrKpTThGrTe0lSd3CWisrvf0O47QYKFbFrD4aEUnCLlq+7WZZnOXSKi46fA57tLTwrqRwmHXed3TUp4hpZqklZPL6at/3c92M1jud3/I4XLeWvh7eAxff0KVZpJ1IeJLZTi3GX1Rw3bHjCjj6EE/DCm41On6ySt8sqZ1vZbDzWEqUndulUc6fV05q/wDuUz5f2vpyli5O26VvZaHlzn2u3y6hgR4HBeLvSlWfpCb/AAk/ue+cFWQC1qCAwFVQpLqhSBABABABAAABYAAKxmKwK2ZcX5l7fdmpmTF+Ze33ZYO8AQhACEIUBlbIQgKPm/a3h3cYhtK0K16kOibfij8Hr7SRCBXiMVgIBLhQCAOgohDSCK0QgCp2Zfk5dUQhIPoNPt1NwUFTVqkaf6RNNqrUcUllu9HFW20vr8fT7P1s/EsNWinKmpJzdtIwaazPpZtP4EIfUx9cV/p5rP1JX1LF8MUJwlSgkrKlOMbRtBzTzW9Ly+Z8k/xb4PTw2KpOndRrUpSyPaDjK1k+mpCHgvT1OCkjbw3ilWlaMvHDo/Ml/C/sQhhHT4TEQqRzRd19U+jReAhkV1SkhCCACQBSMhAABkIAGKyEArZkxe69vuyELB//2Q==",
+      "dateSaved": "2018-11-14T21:18:52.339Z",
+      "about": "The sun is bright",
+      "userId": 1,
       "id": 3
     },
     {
-      "articleName": "Tensions rising between Mueller, Manafort over level of cooperation: Sources",
-      "url": "https://abcnews.go.com/Politics/tensions-rising-mueller-manafort-level-cooperation-sources/story?id=59086047",
-      "articleImage": "https://s.abcnews.com/images/Politics/robert-mueller-ap-file-ps-180920_hpEmbed_4_22x15_992.jpg",
-      "dateSaved": "2018-11-09T21:07:05.773Z",
-      "about": "Something about politics",
-      "userId": 3,
-      "id": 4
-    },
-    {
-      "articleName": "Testing the articles function",
-      "url": "www.google.com",
-      "articleImage": "data:image/jpeg;base64,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",
-      "about": "Testing a new functionality with event listeners",
-      "userId": 1,
-      "dateSaved": "2018-11-12T17:04:48.842Z",
-      "id": 6
-    },
-    {
-      "articleName": "test",
-      "url": "test",
-      "articleImage": "https://beebom-redkapmedia.netdna-ssl.com/wp-content/uploads/2016/01/Reverse-Image-Search-Engines-Apps-And-Its-Uses-2016.jpg",
-      "about": "test",
-      "userId": 2,
-      "dateSaved": "2018-11-12T17:39:44.307Z",
-      "id": 7
-    },
-    {
-      "articleName": "UFOs spotted off Irish coast under investigation",
-      "url": "https://www.bbc.com/news/world-europe-46181662",
-      "articleImage": "https://ichef.bbci.co.uk/news/660/cpsprodpb/12E80/production/_104304477_pilot.jpg",
-      "about": "The Irish Aviation Authority is investigating reports of bright lights and UFOs off the south-west coast of Ireland.",
-      "userId": 1,
-      "dateSaved": "2018-11-14T14:03:05.137Z",
-      "id": 9
-    },
-    {
-      "articleName": "Test",
-      "url": "Test",
-      "articleImage": "Test",
-      "about": "Test",
-      "userId": 2,
-      "dateSaved": "2018-11-14T20:35:19.248Z",
-      "id": 10
-    },
-    {
-      "articleName": "Test Article",
-      "url": "http://google.com",
-      "articleImage": "this.image",
-      "about": "This is only a test.",
+      "articleName": "Scammers impersonate Elon Musk on Twitter, hack Target in bitcoin fraud",
+      "url": "https://www.usatoday.com/story/money/2018/11/13/twitter-bitcoin-scam-elon-musk-target/1986017002/",
+      "articleImage": "https://www.gannett-cdn.com/-mm-/a890a0b221257bbeacdf114031d88c89afd4f7cf/c=32-0-548-387/local/-/media/2018/10/27/USATODAY/usatsports/bitcoin-gettyimages-880534636_large.jpg?width=534&height=401&fit=crop",
+      "dateSaved": "2018-11-13T21:18:52.339Z",
+      "about": "Bitcoin is at an all time HIGH! LOW! HIGH! LOW! HIGH!",
       "userId": 4,
-      "dateSaved": "2018-11-15T03:04:56.638Z",
-      "id": 11
+      "id": 4
     }
   ],
   "events": [
     {
       "id": 2,
-      "name": "Fancy",
+      "name": "Fancy Party",
       "date": "2014-09-09",
-      "location": "Here",
+      "location": "My House",
       "time": "03:02",
       "userId": 2
     },
@@ -261,35 +174,35 @@
       "id": 7
     },
     {
-      "name": "Test",
-      "date": "2014-09-09",
+      "name": "First day of school",
+      "date": "2018-10-01",
       "time": "01:02",
-      "location": "Here",
+      "location": "NSS",
       "userId": 2,
       "id": 9
     },
     {
-      "name": "Super Test",
-      "date": "1989-03-03",
+      "name": "The Day I Was Born",
+      "date": "1989-05-15",
       "time": "12:12",
-      "location": "Jere",
+      "location": "Hospital",
       "userId": 2,
       "id": 10
     },
     {
-      "name": "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
+      "name": "Coffee with Jim",
       "date": "2018-11-13",
       "time": "15:00",
-      "location": "Here",
-      "userId": 2,
+      "location": "Starbucks",
+      "userId": 1,
       "id": 11
     },
     {
-      "name": "Today",
-      "date": "2018-11-13",
+      "name": "Lunch with Jill",
+      "date": "2018-11-15",
       "time": "05:23",
-      "location": "NSS",
-      "userId": 2,
+      "location": "Pizza Hut",
+      "userId": 3,
       "id": 12
     },
     {
@@ -301,34 +214,34 @@
       "id": 13
     },
     {
-      "name": "Brendan's new event",
-      "date": "2017-11-14",
+      "name": "Brendan's House Warming",
+      "date": "2018-11-17",
       "time": "20:16",
       "location": "Nashville, TN",
-      "userId": 3,
+      "userId": 4,
       "id": 14
     },
     {
-      "name": "test",
-      "date": "2017-11-11",
+      "name": "Dance Class",
+      "date": "2018-11-14",
       "time": "11:11",
-      "location": "aaaaa",
-      "userId": 3,
+      "location": "Roots",
+      "userId": 4,
       "id": 15
     },
     {
-      "name": "aaaaaaa",
+      "name": "Spelling Bee",
       "date": "2011-11-11",
       "time": "11:11",
-      "location": "aaaaa",
+      "location": "Highschool",
       "userId": 3,
       "id": 16
     },
     {
-      "name": "I am trying the new functionality",
-      "date": "2018-11-15",
+      "name": "Lunch with Mike",
+      "date": "2018-11-12",
       "time": "11:11",
-      "location": "NSS",
+      "location": "South",
       "userId": 2,
       "id": 17
     },
@@ -351,7 +264,7 @@
   ],
   "tasks": [
     {
-      "task": "test again",
+      "task": "Homework",
       "complete": true,
       "dueDate": "2018-11-12",
       "userId": 2,
@@ -365,42 +278,42 @@
       "id": 2
     },
     {
-      "task": "Finish project",
+      "task": "Plan project",
       "complete": true,
       "dueDate": "2018-11-09",
       "userId": 2,
       "id": 3
     },
     {
-      "task": "Here is a new task",
+      "task": "Take out the trash",
       "complete": true,
       "dueDate": "2018-11-29",
       "userId": 4,
       "id": 5
     },
     {
-      "task": "test new",
+      "task": "Balance checking account",
       "complete": false,
       "dueDate": "2018-11-06",
       "userId": 2,
       "id": 7
     },
     {
-      "task": "test new",
+      "task": "Buy milk",
       "complete": false,
       "dueDate": "2018-11-02",
       "userId": 2,
       "id": 8
     },
     {
-      "task": "Test",
+      "task": "Do homework",
       "complete": false,
       "dueDate": "2018-11-17",
       "userId": 2,
       "id": 9
     },
     {
-      "task": "Brad's Task Test",
+      "task": "Check email",
       "complete": false,
       "dueDate": "2018-11-01",
       "userId": 4,
@@ -414,42 +327,42 @@
       "id": 12
     },
     {
-      "task": "New Task",
+      "task": "Call mom",
       "complete": false,
       "dueDate": "2018-11-14",
       "userId": 2,
       "id": 13
     },
     {
-      "task": "Major styling changes to this page",
+      "task": "Videotape Santa",
       "complete": false,
-      "dueDate": "2019-12-13",
+      "dueDate": "2018-12-25",
       "userId": 3,
       "id": 15
     },
     {
-      "task": "second task",
+      "task": "Look at Alfonso's Good Morning gif",
       "complete": false,
       "dueDate": "2018-11-15",
       "userId": 3,
       "id": 16
     },
     {
-      "task": "aaaaa",
+      "task": "Tweet at Elon Musk and wait for response",
       "complete": true,
       "dueDate": "2018-11-06",
       "userId": 3,
       "id": 17
     },
     {
-      "task": "Testing new function",
+      "task": "Test new app",
       "complete": false,
       "dueDate": "2018-11-20",
       "userId": 1,
       "id": 18
     },
     {
-      "task": "testing again",
+      "task": "Get some sleep",
       "complete": false,
       "dueDate": "2018-10-31",
       "userId": 1,

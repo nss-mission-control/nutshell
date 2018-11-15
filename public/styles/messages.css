@@ -54,6 +54,7 @@
   overflow-y: auto;
   box-shadow: var(--box-shadow-2);
   border-radius: 5px;
+  background-color: rgba(63,50,101, .4);
 }
 
 /* individual message containers */
@@ -120,6 +121,7 @@
   border-radius: 5px;
   /* background-color: var(--planet-orange); */
   box-shadow: var(--box-shadow-2);
+  background-color: rgba(63,50,101, .4);
 }
 
 .new--message > h1 {

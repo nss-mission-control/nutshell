@@ -1,0 +1,11 @@
+#friendsSearch {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#searchResults {
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
