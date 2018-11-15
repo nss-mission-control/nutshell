@@ -1,3 +1,6 @@
+// Author(s): Brad Davis, Brendan McCray
+// Purpose: Creates navbar functionality and also sets functionality for editing current user and checking database for duplication
+
 import comp from "./components";
 import buildMessages from "./messages";
 import buildNews from "./news";
@@ -10,6 +13,8 @@ import API from "./apiData";
 import buildFriends from "./friends";
 
 const navBar = {
+
+  // loads main nav bar with links and user info
   loadNavBar() {
     // checks if someone is logged in
     if (sessionStorage.getItem("currentUser") === null) {
@@ -39,7 +44,7 @@ const navBar = {
       $("#currentLogin").click(function () { $("#subNav").toggle() });
       navBar.eventListenerNav();
 
-
+  // creates edit functionality for current user
       $("#edit").click(function () {
         let currentUser = JSON.parse(sessionStorage.currentUser);
         $(".container--inner").html("");
@@ -173,6 +178,7 @@ const navBar = {
     }
   },
 
+  // hides current user options in navbar and reroutes appropriately
   eventListenerHandler(event) {
       if (event.target.textContent === "Home") {
         $("#subNav").hide();
@@ -195,6 +201,7 @@ const navBar = {
       }
   },
 
+  //creates event listener for navbar
   eventListenerNav() {
     let tempHolder = document.querySelector("#navBar");
     tempHolder.addEventListener("click", navBar.eventListenerHandler);

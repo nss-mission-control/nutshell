@@ -53,6 +53,15 @@
       "password": "test",
       "profilePic": "./images/option7edit.jpg",
       "id": 6
+    },
+    {
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "thisiswrongemail@gmail.com",
+      "username": "This changes in real Time",
+      "password": "1",
+      "profilePic": "./images/option8edit.jpg",
+      "id": 7
     }
   ],
   "messages": [
@@ -75,7 +84,7 @@
       "userId": 2
     },
     {
-      "messageContent": "This makes a better message",
+      "messageContent": "Today is a good day. This makes a better message",
       "timeStamp": "2018-11-10T09:16:34.489Z",
       "userId": 4,
       "id": 4
@@ -191,15 +200,6 @@
       "id": 7
     },
     {
-      "articleName": "FIRE FIRE",
-      "url": "https://www.newschannel5.com/news/tennessee-american-red-cross-volunteers-help-wildfire-victims",
-      "articleImage": "https://mediaassets.newschannel5.com/photo/2018/11/12/RedCrosslocal_1542050078840_102998400_ver1.0_640_480.jpg",
-      "about": "WE DIDN'T START THE FIYAAAA",
-      "userId": 4,
-      "dateSaved": "2018-11-12T19:35:56.249Z",
-      "id": 8
-    },
-    {
       "articleName": "UFOs spotted off Irish coast under investigation",
       "url": "https://www.bbc.com/news/world-europe-46181662",
       "articleImage": "https://ichef.bbci.co.uk/news/660/cpsprodpb/12E80/production/_104304477_pilot.jpg",
@@ -216,6 +216,15 @@
       "userId": 2,
       "dateSaved": "2018-11-14T20:35:19.248Z",
       "id": 10
+    },
+    {
+      "articleName": "Test Article",
+      "url": "http://google.com",
+      "articleImage": "this.image",
+      "about": "This is only a test.",
+      "userId": 4,
+      "dateSaved": "2018-11-15T03:04:56.638Z",
+      "id": 11
     }
   ],
   "events": [
@@ -322,6 +331,22 @@
       "location": "NSS",
       "userId": 2,
       "id": 17
+    },
+    {
+      "name": "Start NSS",
+      "date": "2018-10-01",
+      "time": "09:00",
+      "location": "Nashville Software School",
+      "userId": 4,
+      "id": 19
+    },
+    {
+      "name": "Presentation of Mission Control Test",
+      "date": "2018-11-15",
+      "time": "09:00",
+      "location": "Nashville Software School",
+      "userId": 4,
+      "id": 20
     }
   ],
   "tasks": [
@@ -375,9 +400,9 @@
       "id": 9
     },
     {
-      "task": "Brad's Task",
+      "task": "Brad's Task Test",
       "complete": false,
-      "dueDate": "2018-11-15",
+      "dueDate": "2018-11-01",
       "userId": 4,
       "id": 11
     },
@@ -436,11 +461,6 @@
       "id": 1,
       "request_userId": 2,
       "userId": 1
-    },
-    {
-      "id": 2,
-      "request_userId": 4,
-      "userId": 3
     },
     {
       "id": 3,

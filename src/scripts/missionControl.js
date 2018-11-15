@@ -1,3 +1,6 @@
+// Author(s): Brendan McCray
+// Purpose: Creates main landing page functionality and stylings and navigation links through planet images
+
 import comp from "./components"
 import activeUser from "./sessionStorage"
 import buildMessages from "./messages";
@@ -8,6 +11,7 @@ import buildFriends from "./friends";
 
 
 const buildMissionControl = {
+  // this function was a placeholder while the mission control functionality was created. it is not currently in use.
   printPlaceholder() {
     document.querySelector(".container--inner").innerHTML = null;
     new comp.section({ className: "message", id: `${activeUser.info().id}` },
@@ -15,6 +19,7 @@ const buildMissionControl = {
       new comp.title("h2", { style: "display: inline-block; position: relative; bottom: 10px" }, `${activeUser.info().firstName} - ${activeUser.info().lastName} ${activeUser.info().username}`),
     ).render(".container--inner")
   },
+
 
   printPlanets() {
     document.querySelector(".container--inner").innerHTML = null;
@@ -64,12 +69,12 @@ const buildMissionControl = {
 
   // the small circle of each planet (which are spans) have an id associated with them. A click listener is assigned to each one
   clickPlanets() {
-    document.getElementById("planet-tasks").addEventListener("click", () => {buildTasks.buildContainers()})
-    document.getElementById("planet-messages").addEventListener("click", () => {buildMessages.messageMap()})
-    document.getElementById("planet-friends").addEventListener("click", () => {console.log("Friends function called.")
-        buildFriends.friendMap()})
-    document.getElementById("planet-events").addEventListener("click", () => {buildEvents.buildContainers()})
-    document.getElementById("planet-news").addEventListener("click", () => {buildNews.friendsFinder()})
+    document.getElementById("planet-tasks").addEventListener("click", () => { buildTasks.buildContainers() })
+    document.getElementById("planet-messages").addEventListener("click", () => { buildMessages.messageMap() })
+    document.getElementById("planet-friends").addEventListener("click", () =>
+      buildFriends.friendMap())
+    document.getElementById("planet-events").addEventListener("click", () => { buildEvents.buildContainers() })
+    document.getElementById("planet-news").addEventListener("click", () => { buildNews.friendsFinder() })
   }
 }
 
