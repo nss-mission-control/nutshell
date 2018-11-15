@@ -7,12 +7,12 @@
 <h2 style="font-weight: bold;"> Technologies Used
 <h3>Development Languages and Libraries</h3>
 
-<img src="./public/images/readMeImages/node.jpg"/>______<img src="./public/images/readMeImages/js.jpg"/>______<img src="./public/images/readMeImages/jQuery.jpg"/>______<img src="./public/images/readMeImages/moment.jpg"/>______<img src="./public/images/readMeImages/rest.png"/>______<img src="./public/images/readMeImages/html5.jpg"/>______<img src="./public/images/readMeImages/css3.jpg"/>
+<img src="./public/images/readMeImages/node.jpg"/>______<img src="./public/images/readMeImages/js.jpg"/>______<img src="./public/images/readMeImages/jQuery.jpg"/>______<img src="./public/images/readMeImages/moment.jpg"/>______<img src="./public/images/readMeImages/rest.png"/>______<img src="./public/images/readMeImages/nss.jpg"/>______<img src="./public/images/readMeImages/html5.jpg"/>______<img src="./public/images/readMeImages/css3.jpg"/>
 
 <h1></h1>
 <h3>Development Tools</h3>
 
-<img src="./public/images/readMeImages/eslint.png"/>______<img src="./public/images/readMeImages/grunt.jpg"/>______<img src="./public/images/readMeImages/browserify.jpg"/>______<img src="./public/images/readMeImages/vs.jpg"/>______<img src="./public/images/readMeImages/lucid.png"/>______<img src="./public/images/readMeImages/github.jpg"/>______<img src="./public/images/readMeImages/slack.jpg"/>
+<img src="./public/images/readMeImages/eslint.png"/>______<img src="./public/images/readMeImages/grunt.jpg"/>______<img src="./public/images/readMeImages/browserify.jpg"/>______<img src="./public/images/readMeImages/babel.jpg"/>______<img src="./public/images/readMeImages/vs.jpg"/>______<img src="./public/images/readMeImages/lucid.png"/>______<img src="./public/images/readMeImages/github.jpg"/>______<img src="./public/images/readMeImages/slack.jpg"/>
 
 
 <h2>Instructions for Installing Mission Control</h2>
