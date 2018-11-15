@@ -7,6 +7,7 @@ import buildMessages from "./messages";
 import buildNews from "./news";
 import buildTasks from "./tasks"
 import buildEvents from "./events"
+import buildFriends from "./friends";
 
 
 const buildMissionControl = {
@@ -70,7 +71,8 @@ const buildMissionControl = {
   clickPlanets() {
     document.getElementById("planet-tasks").addEventListener("click", () => {buildTasks.buildContainers()})
     document.getElementById("planet-messages").addEventListener("click", () => {buildMessages.messageMap()})
-    document.getElementById("planet-friends").addEventListener("click", () => {console.log("Friends function called.")})
+    document.getElementById("planet-friends").addEventListener("click", () => {console.log("Friends function called.")
+        buildFriends.friendMap()})
     document.getElementById("planet-events").addEventListener("click", () => {buildEvents.buildContainers()})
     document.getElementById("planet-news").addEventListener("click", () => {buildNews.friendsFinder()})
   }

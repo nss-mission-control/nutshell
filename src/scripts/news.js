@@ -23,7 +23,6 @@ const buildNews = {
         API.getAllCategory(`articles/?_expand=user&userId=${activeUser.info().id}${friendsSearchString}&_sort=date,time&_order=asc`)
           .then(friendsNews => {
             friendsNews.forEach(singleNews => {
-              console.log("singleNewS:",singleNews);
 
             buildNews.printNews(singleNews)
             })
@@ -48,16 +47,15 @@ const buildNews = {
   printNews(newsObj) {
     if (newsObj.userId === activeUser.info().id){
     new comp.section({className: "news", id: `${newsObj.id}`},
-    new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
+    new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120"})),
     new comp.div({className: "news-info"},
     new comp.title("h2", {}, `${newsObj.articleName}`),
     new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${formatDate.getCorrectDate(newsObj.dateSaved)}`),
     new comp.par({}, newsObj.about)),
     new comp.btn("Delete Article")).render(".display--news")
     } else {
-      console.log("newsObj", newsObj)
       new comp.section({className: "news friendsNews", id: `${newsObj.id}`},
-      new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120", width: "120"})),
+      new comp.anchor({href: `${newsObj.url}`, target: "_blank"},  new comp.image({src: `${newsObj.articleImage}`, alt: "Article Image", height: "120"})),
       new comp.div({className: "news-info"},
       new comp.title("h2", {}, `${newsObj.articleName}`),
       new comp.title("h4", {}, `Saved by: ${newsObj.user.firstName} | Date Saved: ${formatDate.getCorrectDate(newsObj.dateSaved)}`),
