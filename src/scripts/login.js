@@ -8,7 +8,7 @@ import buildMissionControl from "./missionControl";
 import navBar from "./nav";
 
 const logInFuncs = {
-
+// checks for both username and password input status and toggles alert messages
   checkUser(username, password) {
     if (username === "" && password === "") {
       $("#noInfoLogin").toggle();
@@ -20,6 +20,7 @@ const logInFuncs = {
       $("#noPasswordLogin").toggle();
       return;
     }
+    // performs api call to see if a username exists and password correctness for login else toggles alert
     API.getAllCategory(`users/?username=${username}`).then(data => {
       if (data.length === 0) {
         $("#nameNotFoundLogin").toggle();
@@ -30,6 +31,7 @@ const logInFuncs = {
         return currentUser;
       } else ($("#badPasswordLogin").toggle())
     }).then(currentUser => {
+      // sets session storage for current user and loads mission control after login is verified
       if (currentUser !== undefined) {
         sessionStorage.setItem("currentUser", JSON.stringify(currentUser));
         document.querySelector("#navBar").innerHTML = "";
@@ -40,6 +42,7 @@ const logInFuncs = {
     })
   },
 
+  // loads initial login form with alerts set for different possible errors, toggles set to hide initially
   loadLogIn() {
     document.querySelector(".Log_In").innerHTML = "";
     document.querySelector(".welcome").setAttribute("id", "login")
