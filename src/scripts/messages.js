@@ -1,4 +1,4 @@
-// Author(s): Kelly Morin, Brendan McCray
+// Author(s): Kelly Morin, Brendan McCray, Brad Davis
 // Purpose: Allows creation, viewing, editing, and deletion of messages
 
 import comp from "./components"
@@ -8,6 +8,7 @@ import formatDate from "./format"
 
 
 const buildMessages = {
+  // prints message with edit button if current user is the message author
   printMessages(messageObj) {
     if (activeUser.info().id === messageObj.user.id) {
       new comp.section({
@@ -19,6 +20,7 @@ const buildMessages = {
         new comp.title("h1", {}, messageObj.messageContent),
         new comp.btn("Edit")).render(".old--messages")
     } else {
+      // prints messages not created by current user
       new comp.section({
           className: "message",
           id: `${messageObj.id}`
@@ -30,13 +32,13 @@ const buildMessages = {
     }
   },
 
+  // adds functionality to add friends by message author
   messageMap() {
     document.querySelector(".container--inner").innerHTML = "";
     new comp.title("h1", {id: "messageName"}, "Messages").render(".container--inner");
     new comp.div({className: "old--messages"}).render(".container--inner");
     API.getAllCategory("messages/?_expand=user")
       .then(messageObj => {
-
         messageObj.forEach(message => {
           this.printMessages(message)
         })
@@ -70,7 +72,7 @@ const buildMessages = {
       new comp.btn("Submit")).render(".container--inner")
   },
 
-
+  // adds new message to database and dom
   submitMessage() {
     $("#newMessage > button").click(function (e) {
       //if statment to prevent blank entries
