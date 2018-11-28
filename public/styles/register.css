@@ -15,7 +15,7 @@
 .alertRegister {
   font-style: italic;
   font-weight: lighter;
-  font-size: 1.65vw;
+  font-size: 1vw;
   height: 1.8vw;
   color: red;
 }
@@ -54,7 +54,7 @@
   margin: auto;
 }
 .selectPic {
-  width: 4vw;
-  height: 4vw;
+  width: 30px;
+  height: 30px;
   margin-top: .5vw;
 }

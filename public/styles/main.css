@@ -9,6 +9,7 @@
 @import "news.css";
 @import "events.css";
 @import "register.css";
+@import "friends.css";
 
 :root {
   --theme-main-primary: #42a5f4;

@@ -54,6 +54,7 @@
   border-radius: 5px;
   font-family: var(--font-family-exo);
   box-shadow: var(--box-shadow-2);
+  background-color: rgba(63,50,101, .4);
 }
 
 .news {
