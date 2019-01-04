@@ -1,3 +1,6 @@
+// Author(s): Kelly Morin, Brendan McCray
+// Purpose: Creates navbar functionality and also sets functionality for editing current user and checking database for duplication
+
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"

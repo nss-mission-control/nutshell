@@ -1,3 +1,5 @@
+// Author(s): Kelly Morin
+// Purpose: Creates functionality to render date/time stamps in correct manner
 
 const formatDate = {
   getCorrectDate (eventDate){

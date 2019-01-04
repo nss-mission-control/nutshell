@@ -1,3 +1,6 @@
+// Author(s): Jase Hackman
+// Purpose: Creates functionality to display, add and remove events.
+
 import comp from "./components"
 import API from "./apiData"
 import activeUser from "./sessionStorage"

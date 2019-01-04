@@ -1,9 +1,13 @@
+// Author(s): Kelly Morin, Jase Hackman, Brendan McCray, Brad Davis
+// Purpose: Incorporates nss-domcomponent library and User class for use by other components
+
 import DOMComponent from "../lib/node_modules/nss-domcomponent";
-import comp from "./components";
+
 
 
 export default Object.create(null, {
 
+  // creates user class
   user: {
     value: class User {
       constructor(tempInfo) {
@@ -18,6 +22,7 @@ export default Object.create(null, {
     }
   },
 
+  // creates div using nss-domcomponent
   div: {
     value: class div extends DOMComponent {
       constructor(attributes, ...children) {
@@ -25,6 +30,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates button using nss-domcomponent
   btn: {
     value: class btn extends DOMComponent {
       constructor(...children) {
@@ -32,6 +39,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates input using nss-domcomponent
   input: {
     value: class input extends DOMComponent {
       constructor(attributes, ...children) {
@@ -39,6 +48,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates section using nss-domcomponent
   section: {
     value: class section extends DOMComponent {
       constructor(attributes, ...children) {
@@ -46,6 +57,8 @@ export default Object.create(null, {
       }
     }
   },
+
+
   title: { //define any type of h#.. h1, h2, etc.
     value: class title extends DOMComponent {
       constructor(h_type, attributes, ...children) {
@@ -53,6 +66,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates anchor element using nss-domcomponent
   anchor: {
     value: class anchor extends DOMComponent {
       constructor(attributes, ...children) {
@@ -60,6 +75,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates checkbox using nss-domcomponent
   checkbox: {
     value: class checkbox extends DOMComponent {
       constructor(...children) {
@@ -67,6 +84,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates image using nss-domcomponent
   image: {
     value: class image extends DOMComponent {
       constructor(attributes, ...children) {
@@ -74,6 +93,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates ul using nss-domcomponent
   ul: {
     value: class ul extends DOMComponent {
       constructor(attributes, ...children) {
@@ -81,6 +102,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates li using nss-domcomponent
   li: {
     value: class li extends DOMComponent {
       constructor(attributes, ...children) {
@@ -88,6 +111,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates form using nss-domcomponent
   form: {
     value: class form extends DOMComponent {
       constructor(...children) {
@@ -95,6 +120,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates label using nss-domcomponent
   label: {
     value: class label extends DOMComponent {
       constructor(attributes, ...children) {
@@ -102,6 +129,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates textArea using nss-domcomponent
   textarea: {
     value: class textarea extends DOMComponent {
       constructor(attributes, ...children) {
@@ -109,6 +138,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates p using nss-domcomponent
   par: {
     value: class par extends DOMComponent {
       constructor(attributes, ...children) {
@@ -116,6 +147,8 @@ export default Object.create(null, {
       }
     }
   },
+
+  // creates span using nss-domcomponent
   span: {
     value: class span extends DOMComponent {
       constructor(attributes, ...children) {
