@@ -1,4 +1,4 @@
-const URL = "http://localhost:8088/"
+const URL = "https://mission-control-database.herokuapp.com/"
 
 const API = {
   getAllCategory(category) {
